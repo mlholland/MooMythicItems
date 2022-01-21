@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1525
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegacyItems", "LegacyItems.csproj", "{35AC6B38-EED3-46F7-928A-7BA096B5501F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35AC6B38-EED3-46F7-928A-7BA096B5501F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35AC6B38-EED3-46F7-928A-7BA096B5501F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35AC6B38-EED3-46F7-928A-7BA096B5501F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35AC6B38-EED3-46F7-928A-7BA096B5501F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B17B9BB-109A-4286-99FA-4D0A0597D885}
+	EndGlobalSection
+EndGlobal
