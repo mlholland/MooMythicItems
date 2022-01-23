@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-  <Test_Label>todo</Test_Label>
-  <TestSettingsTitle>Legacy Items Mod Settings</TestSettingsTitle>
+  <MooLI_LogPrefix>Moo Legacy Items:</MooLI_LogPrefix>
+  
+  <MooLI_SettingsLabel>Moo's Legacy Items Settings and Controls</MooLI_SettingsLabel>
+  <MooLI_SettingsTitle>Moo's Legacy Items Settings</MooLI_SettingsTitle>
+  <MooLI_ClearAllSavedItemsDescription>Deletes all saved legacy items.</MooLI_ClearAllSavedItemsDescription>
+  <MooLI_ClearAllSavedItemsButton>Clear Saved Legacy Items</MooLI_ClearAllSavedItemsButton> 
+  <MooLI_FlagNotifyPlayerOnLegacyItemCreation>Notify player when legacy item is created.</MooLI_FlagNotifyPlayerOnLegacyItemCreation>
+  <MooLI_FlagAllowLegacyItemCreation>Allow Legacy Item Saving.</MooLI_FlagAllowLegacyItemCreation>
+  <MooLI_FlagAllowLegacyItemSpawning>Allow Legacy Item Spawning.</MooLI_FlagAllowLegacyItemSpawning>
+  <MooLI_MaxLegacyItemsProducedPerColony>Max Legacy Items Produced Per Colony:</MooLI_MaxLegacyItemsProducedPerColony>
+  <MooLI_MaxLegacyItemsSaved>Max Saved Legacy Items</MooLI_MaxLegacyItemsSaved>
+  
+  
+  <MooLI_ManualSaveButton>save button pressed</MooLI_ManualSaveButton>
+  <MooLI_ManualLoadBUtton>load button pressed</MooLI_ManualLoadBUtton>
 </LanguageData>

@@ -7,19 +7,19 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 
-namespace ModSource
+namespace MooLegacyItems
 {
-    public class TestMod_Mod : Mod
+    public class MooLegacyItems_Mod : Mod
     {
 
-        public static EmptySettings settings;
+        public static LegacyItemSettings settings;
 
-        public TestMod_Mod(ModContentPack content) : base(content)
+        public MooLegacyItems_Mod(ModContentPack content) : base(content)
         {
-            settings = GetSettings<EmptySettings>();
+            settings = GetSettings<LegacyItemSettings>();
         }
 
-        public override string SettingsCategory() => "TestSettingsTitle".Translate();
+        public override string SettingsCategory() => "MooLI_SettingsTitle".Translate();
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
