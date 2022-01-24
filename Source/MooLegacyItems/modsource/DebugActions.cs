@@ -18,7 +18,7 @@ namespace MooLegacyItems
 
         public static void DebugSpawnLegacyItem(LegacyItem legacyItem, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)
         {
-            Log.Message(String.Format("def name: {0}", legacyItem.itemDefName));
+            Log.Message(String.Format("Moo Legacy Items - def name: {0}", legacyItem.itemDefName));
             ThingDef def = DefDatabase<ThingDef>.GetNamed(legacyItem.itemDefName);
             ThingDef stuff = GenStuff.RandomStuffFor(def);
             Thing thing = ThingMaker.MakeThing(def, stuff);
@@ -35,6 +35,16 @@ namespace MooLegacyItems
             {
                 thing = thing.MakeMinified();
             }
+
+            CompLegacy legacyComp = thing.TryGetComp<CompLegacy>();
+            if (legacyComp == null)
+            {
+                Log.Error(String.Format("Moo Legacy Items - Debug action to place a legacy item failed. The item def {0} had no legacy comp to modify", thing.def.defName));
+            } else
+            {
+                legacyComp.newLabel = "Debug Legacy Item: ";
+            }
+
             if (direct)
             {
                 GenPlace.TryPlaceThing(thing, c, Find.CurrentMap, ThingPlaceMode.Direct, null, null, default(Rot4));

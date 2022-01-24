@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Globalization;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
 using RimWorld;
+using HarmonyLib;
 
 namespace MooLegacyItems
 {
@@ -17,6 +13,7 @@ namespace MooLegacyItems
         public MooLegacyItems_Mod(ModContentPack content) : base(content)
         {
             settings = GetSettings<LegacyItemSettings>();
+            new Harmony("rimworld.mooli").PatchAll();
         }
 
         public override string SettingsCategory() => "MooLI_SettingsTitle".Translate();
