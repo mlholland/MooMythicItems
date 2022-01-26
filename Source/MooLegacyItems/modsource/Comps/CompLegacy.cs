@@ -12,7 +12,10 @@ namespace MooLegacyItems
 {
     class CompLegacy : ThingComp
     {
+        // todo cache fully modified values to save overhead?
         public String newLabel = null;
+
+        public String newDescription = null;
 
         public override string TransformLabel(string label)
         {
@@ -23,6 +26,11 @@ namespace MooLegacyItems
             }
 
             return base.TransformLabel(label);
+        }
+
+        public override string GetDescriptionPart()
+        {
+            return newDescription; 
         }
     }
 }

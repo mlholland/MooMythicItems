@@ -28,14 +28,16 @@ namespace MooLegacyItems
         static LegacyItemManager()
         {
             List<LegacyItem> savedItems = SaveUtility.LoadLegacyItemsFile();
-
+            Log.Message(String.Format("found {0} items from the save file into the cache", savedItems.Count));
             foreach (LegacyItem savedItem in savedItems)
             {
-                if (DefDatabase<Def>.GetNamed(savedItem.itemDefName, false) != null)
-                {
+                // todo correctly do Def checks
+                //if (DefDatabase<Def>.GetNamed(savedItem.itemDefName, false) != null)
+                //{
                     s_cachedItems.Add(savedItem);
-                }
+                //}
             }
+            Log.Message(String.Format("loaded {0} items from the save file into the cache", s_cachedItems.Count));
         } 
 
         private static void PopulateDefaultGeneratorSets()
@@ -43,8 +45,8 @@ namespace MooLegacyItems
             s_defaultDefs = new HashSet<string> { "Bow_Great", "Gun_ChargeRifle", "Gun_Revolver", "Gun_BoltActionRifle", "Gun_PumpShotgun", "Gun_Autopistol" };
             s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe", "HI19HI19" };
             s_defaultColonies = new HashSet<string> { "The Last Bastion", "The Frozen Outpost", "Balrog's Rest", "Seahome" };
-            s_defaultStories = new HashSet<string> { "Ran everyday until their hair fell out", "Won an eating contest", "Pulled off their thumb, then put it on again. HOW!?", "Stubbed their toe." };
-            s_defaultAbilities = new HashSet<string> { "Bloodthristy", "Unyielding", "Ceaceless" };
+            s_defaultStories = new HashSet<string> { "Ran everyday until their hair fell out.", "Won an eating contest.", "Pulled off their thumb, then put it on again. HOW!? Also, took my nose and never gabe it back. >:(", "Stubbed their toe." };
+            s_defaultAbilities = new HashSet<string> { "Bloodthirsty", "Unyielding", "Ceaseless" };
          }
 
         /* New values are added to the end of line, to keep an implicitly time-ordered list of items */

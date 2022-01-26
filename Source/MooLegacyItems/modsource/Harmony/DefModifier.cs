@@ -14,7 +14,7 @@ using Verse;
  */
 namespace MooLegacyItems
 {
-    class DefModifier
+    public class DefModifier
     {
         [HarmonyPatch(typeof(DefGenerator), nameof(DefGenerator.GenerateImpliedDefs_PostResolve))]
         static class DefGenerator_GenerateImpliedDefs_PostResolve_Patch
@@ -27,8 +27,7 @@ namespace MooLegacyItems
                 var compProperties = new Verse.CompProperties { compClass = typeof(CompLegacy) };
 
                 foreach (var def in defs)
-                {
-                    Log.Message(String.Format("Adding legacy comp to {0}", def.defName));
+                { 
                     def.comps.Add(compProperties);
                 }
             }

@@ -81,15 +81,17 @@ namespace MooLegacyItems
             }
             string[] fileLines = legacyItemsFileText.Split('\n');
             List<LegacyItem> results = new List<LegacyItem>();
-            foreach(string line in fileLines)
-            {
+            Log.Message("legacy item file:");
+            Log.Message(legacyItemsFileText);
+            foreach (string line in fileLines)
+            { 
                 string escapedLine = line.Replace(s_newLineReplacement, "\n");
                 try
                 {
                     results.Add(ConvertStringToLegacyItem(escapedLine));
                 } catch (InvalidCastException e)
                 {
-                    // skip bad lines
+                    Log.Error(e.Message);
                 }
             }
             return results;
