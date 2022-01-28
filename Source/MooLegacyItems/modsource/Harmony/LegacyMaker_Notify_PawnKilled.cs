@@ -33,7 +33,8 @@ namespace MooLegacyItems
                         // todo maybe check if it exists already
                         if (killer.equipment?.Primary != null)
                         { 
-                            LegacyItem newItem = new LegacyItem(killer.equipment.Primary.def.defName, killer.Name.ToStringFull, "colony", "Said to have been bathed in the blood of like, at least 5 dudes, this {0} is a little rusty with blood, since {1} wasn't known to actually take good care of their weapon", "TODO");
+                            // todo add more robust story and ability selection
+                            LegacyItem newItem = new LegacyItem(killer.equipment.Primary, killer, /*TODO HOW DO I GET THE COLONY NAME*/ "Some colony", killer.equipment.Primary.def.IsRangedWeapon ? "MooLI_LegacyStory_100Kills_Ranged_1" : "MooLI_LegacyStory_100Kills_Melee_1", "ruthless");
                             LegacyItemManager.SaveNewLegacyItem(newItem);
                         }
                     }

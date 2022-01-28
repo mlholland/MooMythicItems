@@ -22,6 +22,7 @@ namespace MooLegacyItems
         private static HashSet<string> s_defaultDefs = null;
         private static HashSet<string> s_defaultNames = null;
         private static HashSet<string> s_defaultColonies = null;
+        private static HashSet<string> s_defaultFactions = null;
         private static HashSet<string> s_defaultStories = null;
         private static HashSet<string> s_defaultAbilities = null;
 
@@ -45,7 +46,8 @@ namespace MooLegacyItems
             s_defaultDefs = new HashSet<string> { "Bow_Great", "Gun_ChargeRifle", "Gun_Revolver", "Gun_BoltActionRifle", "Gun_PumpShotgun", "Gun_Autopistol" };
             s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe", "HI19HI19" };
             s_defaultColonies = new HashSet<string> { "The Last Bastion", "The Frozen Outpost", "Balrog's Rest", "Seahome" };
-            s_defaultStories = new HashSet<string> { "Ran everyday until their hair fell out.", "Won an eating contest.", "Pulled off their thumb, then put it on again. HOW!? Also, took my nose and never gabe it back. >:(", "Stubbed their toe." };
+            s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Carrie's Centurions" };
+            s_defaultStories = new HashSet<string> { "MooLI_LegacyStory_100Kills_Ranged_1" };
             s_defaultAbilities = new HashSet<string> { "Bloodthirsty", "Unyielding", "Ceaseless" };
          }
 
@@ -133,7 +135,8 @@ namespace MooLegacyItems
             {
                 PopulateDefaultGeneratorSets();
             }
-            return new LegacyItem(s_defaultDefs.RandomElement(), s_defaultNames.RandomElement(), s_defaultColonies.RandomElement(), s_defaultStories.RandomElement(), s_defaultAbilities.RandomElement());
+            string name = s_defaultNames.RandomElement();
+            return new LegacyItem(s_defaultDefs.RandomElement(), name, name, s_defaultColonies.RandomElement(),  s_defaultFactions.RandomElement(),s_defaultStories.RandomElement(), s_defaultAbilities.RandomElement(), "");
         }
 
 

@@ -16,11 +16,6 @@ namespace MooLegacyItems
         private string legacyItemSaveLimitInputString = "100";
 
 
-        private static List<LegacyItem> testList = new List<LegacyItem> {
-            new LegacyItem("stick", "john", "john's world", "john killed 100 people", "+100 damage"),
-            new LegacyItem("gun", "jimbo", "jimbo's vengeance", "lvl 20 plants", "+50 plant work speed")
-        };
-
         public override void ExposeData()
         {
             base.ExposeData();

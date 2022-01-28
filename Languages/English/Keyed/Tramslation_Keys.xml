@@ -15,4 +15,25 @@
   
   <MooLI_ManualSaveButton>save button pressed</MooLI_ManualSaveButton>
   <MooLI_ManualLoadBUtton>load button pressed</MooLI_ManualLoadBUtton>
+
+
+  <MooLI_LEgacyPrefix>\n\nLegacy: </MooLI_LEgacyPrefix>
+  <!--In legacy stories, the following variables always apply to the following features
+    0 = the original owner's full name
+    1 = the original owners nickname, or first name if they don't have one
+    2 = the original owner's colony
+    3 = the original owner's faction
+    4 = normal weapon label -->
+  <MooLI_LegacyStory_100Kills_Melee_1>It's said that {0} of {3}, the original owner of this {4}, killed over 100 people. That seems farfetched, but it's undeniable that this weapon has seen untold battles. NO one can fully clean off all the blood stains, and there's a palpable sense of menace emenating from the weapon. This {4} has seen more war than some people ever will.</MooLI_LegacyStory_100Kills_Melee_1>
+  <MooLI_LegacyStory_100Kills_Melee_2>No one believed the stories about {2}, but this {4} is stark evidence of what the people of {3} were capable of. The name {1} is carved into the handle of this {4}, just barely legible beneath untold years of dirt and grime. </MooLI_LegacyStory_100Kills_Melee_2>
+  <MooLI_LegacyStory_100Kills_Ranged_1>Perhaps {1}, the original wielder of this {4}, liked keeping track of things. Or perhaps they liked to show off. Either way, this {4} is etched with more tally marks than you can count. Hopefully you'll be able to add some more of your own.</MooLI_LegacyStory_100Kills_Ranged_1>
+
+
+  <MooLI_LegacyStory_Mastery_Shooting>The last owner of this {4} claimed that they've had it in storage for decades at least, yet it's still in pristine condition. {0}, the mythical sharpshooter who wielded this weapon, must have taken good care of it. Perhaps that attention to detail is what earned them their reputation as the best shot of {3} and beyond.</MooLI_LegacyStory_Mastery_Shooting>
+  <MooLI_LegacyStory_Mastery_Melee>There are old bedtime stories about "{1} the mighty", the greatest fighter who ever lived. Most people thought they were just that - stories - until this weapon showed up. If the engraving on this ancient {4} is to be believed, {3} were a real group of people, and {1} was a paragon among their number.</MooLI_LegacyStory_Mastery_Melee>
+  <MooLI_LegacyStory_Mastery_Construction>No matter how many times you empty out the pockets of this {4}, you always seem to find another nail, screw, or piece of wire. You aren't sure if this {4} is magical, or if the master builder known as {0} just stuffed more random building scraps in the pockets than you believed possible. Whatever the truth, this {2} has seen the rise of grand monuments.</MooLI_LegacyStory_Mastery_Construction>
+  <MooLI_LegacyStory_Mastery_Plants>This {2} is covered in uncleanable dirt stains, a testament to the dedication of {1} the green-thumbed. It's said the people of {2} never went hungry thanks to {0}'s skill, and if the number of loose seeds that have survived in the pockets of this {2} are any evidence, there's probably a kernel (heh) or truth to those tales.</MooLI_LegacyStory_Mastery_Plants>
+  <MooLI_LegacyStory_Mastery_Mining>Something something the first guy liked mining.</MooLI_LegacyStory_Mastery_Mining>
+  
+
 </LanguageData>

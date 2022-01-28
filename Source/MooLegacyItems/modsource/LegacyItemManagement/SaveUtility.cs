@@ -23,7 +23,7 @@ namespace MooLegacyItems
         {
             get
             {
-                return 5;
+                return 8;
             }
         }
 
@@ -61,6 +61,8 @@ namespace MooLegacyItems
             }
         }
 
+        /* Loads the legacy items from the csv located at <RimworldFiles>/PATH_LEGACYITEMS. Legacy items with
+         * invalid def or stuff types are ignored, and will be cleared from the file upon the next save.*/
         internal static List<LegacyItem> LoadLegacyItemsFile()
         {
             string legacyItemsFileText = "";
@@ -80,9 +82,7 @@ namespace MooLegacyItems
                 return null;
             }
             string[] fileLines = legacyItemsFileText.Split('\n');
-            List<LegacyItem> results = new List<LegacyItem>();
-            Log.Message("legacy item file:");
-            Log.Message(legacyItemsFileText);
+            List<LegacyItem> results = new List<LegacyItem>(); 
             foreach (string line in fileLines)
             { 
                 string escapedLine = line.Replace(s_newLineReplacement, "\n");
@@ -97,6 +97,7 @@ namespace MooLegacyItems
             return results;
         }
 
+        /*Saves the inputted list to <RimworldFiles>/PATH_LEGACYITEMS as a csv, overwriting whatever is currently saved there.*/
         internal static void SaveLegacyItemsFile(List<LegacyItem> legacyItems)
         {
             FileIO.CheckOrCreateDir(PATH_MODDIR);
@@ -124,13 +125,11 @@ namespace MooLegacyItems
             }
             for (int i = 0; i < values.Length; i++)
             {
-                if(values[i].Length == 0)
-                {
-                    throw new InvalidCastException(String.Format("Moo Legacy Items: Encountered an empty legacy item field from the legacy item save file. The following line did not have the expected {0} non-empty comma separated values: {1}", s_fieldsPerLine, encodedLegacyItem));
-                }
+
                 values[i] = values[i].Replace(s_commaReplacement, ",");
             }
-            return new LegacyItem(values[0], values[1], values[2], values[3], values[4]); 
+            // todo add validity checks, possibly as a separate function
+            return new LegacyItem(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7]); 
         }
 
         /* Encodes a legacy item into a csv line, escaping commas.
@@ -139,10 +138,13 @@ namespace MooLegacyItems
         private static string ConvertLegacyItemToString(LegacyItem legacyItem)
         {
             string result = legacyItem.itemDefName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.originatorName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.originatorFullName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.originatorShortName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.originatorColonyName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.originatorFactionName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.storyLabel.Replace(",", s_commaReplacement);
             result += "," + legacyItem.abilityLabel.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.stuffDefName.Replace(",", s_commaReplacement);
             return result;
         }
 
