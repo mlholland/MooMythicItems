@@ -29,12 +29,17 @@ namespace MooLegacyItems
                 {
                     if(killer.records.GetValue(RecordDefOf.KillsHumanlikes) == 5) // todo more checks, like isColonist
                     {
-                        Log.Message(String.Format("{0} killed 5 people", killer.Name));
                         // todo maybe check if it exists already
                         if (killer.equipment?.Primary != null)
                         { 
                             // todo add more robust story and ability selection
-                            LegacyItem newItem = new LegacyItem(killer.equipment.Primary, killer, /*TODO HOW DO I GET THE COLONY NAME*/ "Some colony", killer.equipment.Primary.def.IsRangedWeapon ? "MooLI_LegacyStory_100Kills_Ranged_1" : "MooLI_LegacyStory_100Kills_Melee_1", "ruthless");
+                            LegacyItem newItem = new LegacyItem(killer.equipment.Primary, 
+                                killer, 
+                                /*TODO HOW DO I GET THE COLONY NAME*/ "Some colony", 
+                                killer.equipment.Primary.def.IsRangedWeapon ? 
+                                LegacyReasonToDetailOptionsDef.Instance.manyKillsMFD.RandomElement() : 
+                                LegacyReasonToDetailOptionsDef.Instance.manyKillsRFD.RandomElement(),
+                                "ruthless");
                             LegacyItemManager.SaveNewLegacyItem(newItem);
                         }
                     }

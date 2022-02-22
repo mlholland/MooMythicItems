@@ -17,6 +17,15 @@ namespace MooLegacyItems
 
         public String newDescription = null;
 
+        // Need to persist animal stuff across saves
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look<String>(ref newLabel, "newLabel");
+            Scribe_Values.Look<String>(ref newDescription, "newDescription");
+        } 
+
+
         public override string TransformLabel(string label)
         {
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooLegacyItems.LegacyReasonToDetailOptionsDef>
+    <defName>MooLI_ReasonsToFlavorMap</defName>
+    <manyKillsMFD>
+      <li>MooLI_LegacyStory_100Kills_Melee_1</li>
+      <li>MooLI_LegacyStory_100Kills_Melee_2</li>
+    </manyKillsMFD>
+    <manyKillsMT></manyKillsMT>
+    <manyKillsRFD>
+      <li>MooLI_LegacyStory_100Kills_Ranged_1</li>
+      <li>MooLI_LegacyStory_100Kills_Ranged_2</li>
+    </manyKillsRFD>
+    <manyKillsRT></manyKillsRT>
+    <moreKillsMFD></moreKillsMFD>
+    <moreKillsMT></moreKillsMT>
+    <moreKillsRFD></moreKillsRFD>
+    <moreKillsRT></moreKillsRT>
+    <mostKillsMFD></mostKillsMFD>
+    <mostKillsMT></mostKillsMT>
+    <mostKillsRFD></mostKillsRFD>
+    <mostKillsRT></mostKillsRT>
+
+    <manyInsectKillsMFD></manyInsectKillsMFD>
+    <manyInsectKillsMT></manyInsectKillsMT>
+    <manyInsectKillsRFD></manyInsectKillsRFD>
+    <manyInsectKillsRT></manyInsectKillsRT>
+    <manyMechKillsMFD></manyMechKillsMFD>
+    <manyMechKillsMT></manyMechKillsMT>
+    <manyMechKillsRFD></manyMechKillsRFD>
+    <manyMechKillsRT></manyMechKillsRT>
+  
+  
+    <ShootingMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Shooting</li>
+    </ShootingMasterFD>
+    <ShootingMasterT></ShootingMasterT>
+    <MeleeMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Melee</li>
+    </MeleeMasterFD>
+    <MeleeMasterT></MeleeMasterT>
+    <ConstructionMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Construction</li>
+    </ConstructionMasterFD>
+    <ConstructionMasterT></ConstructionMasterT>
+    <MiningMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Mining</li>
+    </MiningMasterFD>
+    <MiningMasterT></MiningMasterT>
+    <CookingMasterFD></CookingMasterFD>
+    <CookingMasterT></CookingMasterT>
+    <PlantsMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Plants</li>
+    </PlantsMasterFD>
+    <PlantsMasterT></PlantsMasterT>
+    <AnimalsMasterFD></AnimalsMasterFD>
+    <AnimalsMasterT></AnimalsMasterT>
+    <CraftingMasterFD></CraftingMasterFD>
+    <CraftingMasterT></CraftingMasterT>
+    <ArtisticMasterFD></ArtisticMasterFD>
+    <ArtisticMasterT></ArtisticMasterT>
+    <MedicalMasterFD></MedicalMasterFD>
+    <MedicalMasterT></MedicalMasterT>
+    <SocialMasterFD></SocialMasterFD>
+    <SocialMasterT></SocialMasterT>
+    <IntellectualMasterFD></IntellectualMasterFD>
+    <IntellectualMasterT></IntellectualMasterT>
+
+    <ColonySlayerMFD></ColonySlayerMFD>
+    <ColonySlayerMT></ColonySlayerMT>
+    <ColonySlayerRFD></ColonySlayerRFD>
+    <ColonySlayerRT></ColonySlayerRT>
+    <TrumboSlayerMFD></TrumboSlayerMFD>
+    <ThrumboSlayerMT></ThrumboSlayerMT>
+    <TrumboSlayerRFD></TrumboSlayerRFD>
+    <ThrumboSlayerRT></ThrumboSlayerRT>
+
+  </MooLegacyItems.LegacyReasonToDetailOptionsDef>
+
+</Defs>
