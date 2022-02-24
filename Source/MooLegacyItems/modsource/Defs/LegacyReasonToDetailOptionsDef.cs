@@ -8,8 +8,8 @@ using Verse;
  * translation strings related to them. This lets
  * 
  * notes about field names:
- * FD = flavor descriptions
- * T = title
+ * FD = flavor descriptions AKA stuff to add to the description of an item
+ * T = title - intended to fully replace the original
  * M = melee
  * R = ranged
  */
@@ -75,8 +75,8 @@ namespace MooLegacyItems
         public List<String> CraftingMasterT;
         public List<String> ArtisticMasterFD;
         public List<String> ArtisticMasterT;
-        public List<String> MedicalMasterFD;
-        public List<String> MedicalMasterT;
+        public List<String> MedicineMasterFD;
+        public List<String> MedicineMasterT;
         public List<String> SocialMasterFD;
         public List<String> SocialMasterT;
         public List<String> IntellectualMasterFD;

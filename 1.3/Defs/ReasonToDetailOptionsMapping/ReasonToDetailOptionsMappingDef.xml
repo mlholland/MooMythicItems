@@ -34,7 +34,9 @@
     <ShootingMasterFD>
       <li>MooLI_LegacyStory_Mastery_Shooting</li>
     </ShootingMasterFD>
-    <ShootingMasterT></ShootingMasterT>
+    <ShootingMasterT>
+      <li>MooLI_LegacyTitle_100Kills_Ranged_1</li>
+    </ShootingMasterT>
     <MeleeMasterFD>
       <li>MooLI_LegacyStory_Mastery_Melee</li>
     </MeleeMasterFD>
@@ -42,7 +44,9 @@
     <ConstructionMasterFD>
       <li>MooLI_LegacyStory_Mastery_Construction</li>
     </ConstructionMasterFD>
-    <ConstructionMasterT></ConstructionMasterT>
+    <ConstructionMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Construction</li>
+    </ConstructionMasterT>
     <MiningMasterFD>
       <li>MooLI_LegacyStory_Mastery_Mining</li>
     </MiningMasterFD>
@@ -59,8 +63,8 @@
     <CraftingMasterT></CraftingMasterT>
     <ArtisticMasterFD></ArtisticMasterFD>
     <ArtisticMasterT></ArtisticMasterT>
-    <MedicalMasterFD></MedicalMasterFD>
-    <MedicalMasterT></MedicalMasterT>
+    <MedicineMasterFD></MedicineMasterFD>
+    <MedicineMasterT></MedicineMasterT>
     <SocialMasterFD></SocialMasterFD>
     <SocialMasterT></SocialMasterT>
     <IntellectualMasterFD></IntellectualMasterFD>

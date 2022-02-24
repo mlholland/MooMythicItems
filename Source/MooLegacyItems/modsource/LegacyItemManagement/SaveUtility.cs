@@ -23,7 +23,7 @@ namespace MooLegacyItems
         {
             get
             {
-                return 8;
+                return 11;
             }
         }
 
@@ -66,6 +66,7 @@ namespace MooLegacyItems
         internal static List<LegacyItem> LoadLegacyItemsFile()
         {
             string legacyItemsFileText = "";
+            List<LegacyItem> results = new List<LegacyItem>();
             try
             {
                 bool flag = FileIO.Exists(PATH_LEGACYITEMS);
@@ -73,16 +74,15 @@ namespace MooLegacyItems
                 {
                     legacyItemsFileText = BytesToString(FileIO.ReadFile(PATH_LEGACYITEMS), Encoding.UTF8);
                 } else {
-                    return null;
+                    return results;
                 }
             }
             catch(Exception e)
             {
                 Log.Error(String.Format("Moo Legacy Items: Failed to read legacy items from save file due the following error: {0}", e.Message)); 
-                return null;
+                return results;
             }
             string[] fileLines = legacyItemsFileText.Split('\n');
-            List<LegacyItem> results = new List<LegacyItem>(); 
             foreach (string line in fileLines)
             { 
                 string escapedLine = line.Replace(s_newLineReplacement, "\n");
@@ -129,8 +129,10 @@ namespace MooLegacyItems
                 values[i] = values[i].Replace(s_commaReplacement, ",");
             }
             // todo add validity checks, possibly as a separate function
-            return new LegacyItem(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7]); 
+            // ALWAYS UPDATE the s_fieldsPerLine VALUE ABOVE WHEN ADDING NEW VALUES HERE
+            return new LegacyItem(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], int.Parse(values[8]), values[9], values[10]); 
         }
+
 
         /* Encodes a legacy item into a csv line, escaping commas.
          * Done this way because it wasn't worth looking up encoding libraries for something so small.
@@ -138,13 +140,16 @@ namespace MooLegacyItems
         private static string ConvertLegacyItemToString(LegacyItem legacyItem)
         {
             string result = legacyItem.itemDefName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.originatorFullName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.originatorShortName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.originatorColonyName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.originatorFactionName.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.storyLabel.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.abilityLabel.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.ownerFullName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.ownerShortName.Replace(",", s_commaReplacement); 
+            result += "," + legacyItem.factionName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.descriptionTranslationString.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.titleTranslationString.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.abilityPlaceholder.Replace(",", s_commaReplacement);
             result += "," + legacyItem.stuffDefName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.prv;
+            result += "," + legacyItem.reason.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.originatorId.Replace(",", s_commaReplacement);
             return result;
         }
 

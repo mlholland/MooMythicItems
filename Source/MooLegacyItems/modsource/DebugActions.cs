@@ -19,7 +19,7 @@ namespace MooLegacyItems
         [DebugAction("Spawning", "Try place Saved Legacy Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedLegacyItem()
         {
-            DebugSpawnLegacyItem(LegacyItemManager.GetFirstLegacyItemNotFromThisColony("~~~", true), UI.MouseCell(), false);
+            DebugSpawnLegacyItem(LegacyItemManager.GetFirstLegacyItemNotFromThisColony(Find.World.info.persistentRandomValue, true), UI.MouseCell(), false);
         }
 
         public static void DebugSpawnLegacyItem(LegacyItem legacyItem, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)

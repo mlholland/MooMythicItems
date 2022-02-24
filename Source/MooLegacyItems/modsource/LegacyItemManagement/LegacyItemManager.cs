@@ -18,12 +18,14 @@ namespace MooLegacyItems
         // since they're checked upon loading the save file, and other incoming elements
         // must be coming from the live game itself.
         public static List<LegacyItem> s_cachedItems = new List<LegacyItem>();
+        // This is just used for bookeeping, and is simply set whenever a list of legacy items from the current colony is requested (assuming the current contents are invalid)
+        private static List<LegacyItem> s_cachedItemsFromThisColony = new List<LegacyItem>();
 
         private static HashSet<string> s_defaultDefs = null;
-        private static HashSet<string> s_defaultNames = null;
-        private static HashSet<string> s_defaultColonies = null;
+        private static HashSet<string> s_defaultNames = null; 
         private static HashSet<string> s_defaultFactions = null;
-        private static HashSet<string> s_defaultStories = null;
+        private static HashSet<string> s_defaultDescriptions = null;
+        private static HashSet<string> s_defaultTitles = null;
         private static HashSet<string> s_defaultAbilities = null;
 
         static LegacyItemManager()
@@ -44,10 +46,10 @@ namespace MooLegacyItems
         private static void PopulateDefaultGeneratorSets()
         {
             s_defaultDefs = new HashSet<string> { "Bow_Great", "Gun_ChargeRifle", "Gun_Revolver", "Gun_BoltActionRifle", "Gun_PumpShotgun", "Gun_Autopistol" };
-            s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe", "HI19HI19" };
-            s_defaultColonies = new HashSet<string> { "The Last Bastion", "The Frozen Outpost", "Balrog's Rest", "Seahome" };
+            s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe" }; 
             s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Carrie's Centurions" };
-            s_defaultStories = new HashSet<string> { "MooLI_LegacyStory_100Kills_Ranged_1" };
+            s_defaultDescriptions = new HashSet<string> { "MooLI_LegacyStory_100Kills_Ranged_1" };
+            s_defaultTitles = new HashSet<string> { "MooLI_LegacyTitle_100Kills_Ranged_1" };
             s_defaultAbilities = new HashSet<string> { "Bloodthirsty", "Unyielding", "Ceaseless" };
          }
 
@@ -63,6 +65,11 @@ namespace MooLegacyItems
         public static void CacheLegacyItem(LegacyItem newLegacyItem)
         {
             s_cachedItems.Add(newLegacyItem);
+            // add to current cache if it's already set to contain values from this colony
+            if (s_cachedItemsFromThisColony.Count > 0 && s_cachedItemsFromThisColony[0].prv == newLegacyItem.prv)
+            {
+                s_cachedItemsFromThisColony.Add(newLegacyItem);
+            }
         }
 
         /* Save the current entire cached list of legacy items to disk, overwriting the previously saved csv file.
@@ -79,7 +86,7 @@ namespace MooLegacyItems
         /* Return the first legacy item from the cached list that is not from the specified colony.
          * Includes optional parameter to keep the returned value from the cache, which is false by default.
          */
-        public static LegacyItem GetFirstLegacyItemNotFromThisColony(String colonyId, bool keepReturnValueInCache=false)
+        public static LegacyItem GetFirstLegacyItemNotFromThisColony(int colonyId, bool keepReturnValueInCache=false)
         {
             List<LegacyItem> returnToStack = new List<LegacyItem>();
             LegacyItem result = null;
@@ -87,7 +94,7 @@ namespace MooLegacyItems
             {
                 LegacyItem next = s_cachedItems.Pop();
                 // legacy items from the current colony are ignored, and eventually re-added in the same order.
-                if(next.originatorColonyName == colonyId)
+                if(next.prv == colonyId)
                 {
                     returnToStack.Add(next);
                 }
@@ -120,10 +127,30 @@ namespace MooLegacyItems
         public static void ClearCacheAndSaveFile()
         {
             s_cachedItems.Clear();
+            s_cachedItemsFromThisColony.Clear();
             SaveCachedLegacyItems();
         }
 
-        public static int CountLegacyItemsProducedByThisColony(String colonyId)
+        // Todo test/validate this, consider returning a copy to avoid data integrity problems.
+        public static List<LegacyItem> GetLegacyItemsFromThisColony(int colonyID)
+        {
+            // check if we've already cached values from this
+            if (s_cachedItemsFromThisColony.Count == 0 || s_cachedItemsFromThisColony[0].prv != colonyID)
+            {
+                // if not, iterate through the main cache to get 
+                s_cachedItemsFromThisColony.Clear();
+                foreach(LegacyItem li in s_cachedItems)
+                {
+                    if (li.prv == colonyID)
+                    {
+                        s_cachedItemsFromThisColony.Add(li);
+                    }
+                }
+            }
+            return s_cachedItemsFromThisColony;
+        }
+
+        public static int CountLegacyItemsProducedByThisColony(int colonyID)
         { 
             throw new NotImplementedException();
             return 0;
@@ -136,7 +163,7 @@ namespace MooLegacyItems
                 PopulateDefaultGeneratorSets();
             }
             string name = s_defaultNames.RandomElement();
-            return new LegacyItem(s_defaultDefs.RandomElement(), name, name, s_defaultColonies.RandomElement(),  s_defaultFactions.RandomElement(),s_defaultStories.RandomElement(), s_defaultAbilities.RandomElement(), "");
+            return new LegacyItem(s_defaultDefs.RandomElement(), name, name, s_defaultFactions.RandomElement(),s_defaultDescriptions.RandomElement(), s_defaultTitles.RandomElement(),s_defaultAbilities.RandomElement(), "", 0, "debug", "0");
         }
 
 

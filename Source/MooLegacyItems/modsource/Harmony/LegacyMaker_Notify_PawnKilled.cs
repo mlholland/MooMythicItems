@@ -31,15 +31,19 @@ namespace MooLegacyItems
                     {
                         // todo maybe check if it exists already
                         if (killer.equipment?.Primary != null)
-                        { 
+                        {
+                            LegacyReasonToDetailOptionsDef details = LegacyReasonToDetailOptionsDef.Instance;
                             // todo add more robust story and ability selection
                             LegacyItem newItem = new LegacyItem(killer.equipment.Primary, 
-                                killer, 
-                                /*TODO HOW DO I GET THE COLONY NAME*/ "Some colony", 
-                                killer.equipment.Primary.def.IsRangedWeapon ? 
-                                LegacyReasonToDetailOptionsDef.Instance.manyKillsMFD.RandomElement() : 
-                                LegacyReasonToDetailOptionsDef.Instance.manyKillsRFD.RandomElement(),
-                                "ruthless");
+                                killer,
+                                killer.equipment.Primary.def.IsRangedWeapon ?
+                                details.manyKillsMFD.RandomElement() :
+                                details.manyKillsRFD.RandomElement(),
+                                killer.equipment.Primary.def.IsRangedWeapon ?
+                                details.manyKillsMT.RandomElement() :
+                                details.manyKillsRT.RandomElement(),
+                                "ruthless",
+                                "100kills");
                             LegacyItemManager.SaveNewLegacyItem(newItem);
                         }
                     }

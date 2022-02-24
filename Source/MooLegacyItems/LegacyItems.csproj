@@ -19,6 +19,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>0</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -321,7 +322,7 @@
   <ItemGroup>
     <Compile Include="modsource\Comps\CompLegacy.cs" />
     <Compile Include="modsource\Defs\LegacyReasonToDetailOptionsDef.cs" />
-    <Compile Include="modsource\Harmony\LegacyMaker_SkillRecord_Level_Set.cs" />
+    <Compile Include="modsource\Harmony\LegacyMaker_LearnTranspiler.cs" />
     <Compile Include="modsource\Harmony\LegacyMaker_Notify_PawnKilled.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
     <Compile Include="modsource\LegacyItemManagement\LegacyItemManager.cs" />
