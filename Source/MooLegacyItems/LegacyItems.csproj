@@ -320,11 +320,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modsource\Defs\ApplyHediffLegacyEffectDef.cs" />
+    <Compile Include="modsource\Defs\LegacyEffectDef.cs" />
     <Compile Include="modsource\Comps\CompLegacy.cs" />
     <Compile Include="modsource\Defs\LegacyReasonToDetailOptionsDef.cs" />
     <Compile Include="modsource\Harmony\LegacyMaker_LearnTranspiler.cs" />
     <Compile Include="modsource\Harmony\LegacyMaker_Notify_PawnKilled.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
+    <Compile Include="modsource\LegacyItemManagement\ThingSetMaker_LegacyItemMaker.cs" />
     <Compile Include="modsource\LegacyItemManagement\LegacyItemManager.cs" />
     <Compile Include="modsource\LegacyItemManagement\LegacyItem.cs" />
     <Compile Include="modsource\LegacyItemManagement\FileIO.cs" />
@@ -343,7 +346,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="modsource\Comps\CompProperties\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

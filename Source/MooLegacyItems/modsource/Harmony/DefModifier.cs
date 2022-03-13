@@ -21,7 +21,10 @@ namespace MooLegacyItems
         {
             static void Postfix()
             {
-                Log.Message("MooLI Generation: Interrupting GenerateImpliedDefs make weapons and clothing 'legacy-able'");
+                if (MooLegacyItems_Mod.settings.flagDebug)
+                {
+                    Log.Message("MooLI Generation: Interrupting GenerateImpliedDefs make weapons and clothing 'legacy-able'");
+                }
                 var defs = DefDatabase<ThingDef>.AllDefs.Where(InjectPredicate).ToList();
 
                 var compProperties = new Verse.CompProperties { compClass = typeof(CompLegacy) };

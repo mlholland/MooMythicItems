@@ -37,45 +37,62 @@
     <ShootingMasterT>
       <li>MooLI_LegacyTitle_100Kills_Ranged_1</li>
     </ShootingMasterT>
+    
     <MeleeMasterFD>
       <li>MooLI_LegacyStory_Mastery_Melee</li>
     </MeleeMasterFD>
     <MeleeMasterT></MeleeMasterT>
+    
     <ConstructionMasterFD>
       <li>MooLI_LegacyStory_Mastery_Construction</li>
     </ConstructionMasterFD>
     <ConstructionMasterT>
       <li>MooLI_LegacyTitle_Mastery_Construction</li>
     </ConstructionMasterT>
+    <ConstructionMasterA>
+      <li>MooLI_ConstructionBoost</li>
+    </ConstructionMasterA>
+    
     <MiningMasterFD>
       <li>MooLI_LegacyStory_Mastery_Mining</li>
     </MiningMasterFD>
     <MiningMasterT></MiningMasterT>
+    
     <CookingMasterFD></CookingMasterFD>
     <CookingMasterT></CookingMasterT>
+    
     <PlantsMasterFD>
       <li>MooLI_LegacyStory_Mastery_Plants</li>
     </PlantsMasterFD>
     <PlantsMasterT></PlantsMasterT>
+    
     <AnimalsMasterFD></AnimalsMasterFD>
     <AnimalsMasterT></AnimalsMasterT>
+    
     <CraftingMasterFD></CraftingMasterFD>
     <CraftingMasterT></CraftingMasterT>
+    
     <ArtisticMasterFD></ArtisticMasterFD>
     <ArtisticMasterT></ArtisticMasterT>
+    
     <MedicineMasterFD></MedicineMasterFD>
     <MedicineMasterT></MedicineMasterT>
+    
     <SocialMasterFD></SocialMasterFD>
     <SocialMasterT></SocialMasterT>
+    
     <IntellectualMasterFD></IntellectualMasterFD>
     <IntellectualMasterT></IntellectualMasterT>
 
     <ColonySlayerMFD></ColonySlayerMFD>
     <ColonySlayerMT></ColonySlayerMT>
+    
     <ColonySlayerRFD></ColonySlayerRFD>
     <ColonySlayerRT></ColonySlayerRT>
+    
     <TrumboSlayerMFD></TrumboSlayerMFD>
     <ThrumboSlayerMT></ThrumboSlayerMT>
+    
     <TrumboSlayerRFD></TrumboSlayerRFD>
     <ThrumboSlayerRT></ThrumboSlayerRT>
 

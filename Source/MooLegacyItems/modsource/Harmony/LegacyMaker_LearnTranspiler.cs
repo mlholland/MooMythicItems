@@ -65,6 +65,7 @@ namespace MooLegacyItems
                 String skillDefName = skillRecord.def.defName;
                 List<String> descriptionOptions;
                 List<String> titleOptions;
+                List<LegacyEffectDef> abilityOptions = null;
                 Thing targetItem = null;
                 switch(skillDefName)
                 {
@@ -82,6 +83,7 @@ namespace MooLegacyItems
                         descriptionOptions = details.ConstructionMasterFD;
                         titleOptions = details.ConstructionMasterT;
                         targetItem = pawn.apparel.WornApparel.RandomElement();
+                        abilityOptions = details.ConstructionMasterA;
                         break;
                     case ("Mining"):
                         descriptionOptions = details.MiningMasterFD;
@@ -142,6 +144,11 @@ namespace MooLegacyItems
                     Log.Error(String.Format("[Moo Legacy Items]: Failed to generate skill mastery-based legacy item because we couldn't find any title options for '{0}'", skillDefName));
                     return;
                 }
+                if (abilityOptions == null || abilityOptions.Count == 0)
+                {
+                    Log.Error(String.Format("[Moo Legacy Items]: Failed to generate skill mastery-based legacy item because we couldn't find any ability options for '{0}'", skillDefName));
+                    return;
+                }
                 if (targetItem == null)
                 {
                     Log.Message(String.Format("[Moo Legacy Items]: Failed to generate skill mastery-based legacy item because we couldn't find an appropriate item to add a legacy to. The pawn {0} is either naked or unarmed in an odd circumstance.", pawn.Name));
@@ -158,7 +165,7 @@ namespace MooLegacyItems
                         return;
                     }
                 }
-                LegacyItem newLegacyItem = new LegacyItem(targetItem, pawn, descriptionOptions.RandomElement(), titleOptions.RandomElement(), "SkillMasterPlaceholder", reason);
+                LegacyItem newLegacyItem = new LegacyItem(targetItem, pawn, descriptionOptions.RandomElement(), titleOptions.RandomElement(), abilityOptions.RandomElement(), reason);
                 LegacyItemManager.SaveNewLegacyItem(newLegacyItem);
             }
         }

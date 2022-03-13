@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <HediffDef>
+    <defName>MooLI_WornConstructionBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy: Construction</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary construction master. They are benefitting from the echoes of their expertise and have an increased construction speed.</description> 
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors> 
+            <ConstructionSpeed>2</ConstructionSpeed>  
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

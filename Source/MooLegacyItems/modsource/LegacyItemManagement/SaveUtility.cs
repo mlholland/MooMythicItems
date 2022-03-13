@@ -23,7 +23,7 @@ namespace MooLegacyItems
         {
             get
             {
-                return 11;
+                return 12;
             }
         }
 
@@ -121,16 +121,39 @@ namespace MooLegacyItems
 
             if(values.Length != s_fieldsPerLine)
             {
-                throw new InvalidCastException(String.Format("Moo Legacy Items: Tried and failed to read a legacy item from the legacy item save file. This is probably due to either data corruption or file modification outside the game. Expected {0} comma separated values and found {1}, Line was '{2}'", s_fieldsPerLine, values.Length, encodedLegacyItem));
+                throw new InvalidCastException(String.Format("Moo Legacy Items: Tried and failed to read a legacy item from the legacy item save file. This is probably due to either data corruption or file modification outside the game. Expected {0} comma separated values and found {1}. The string in question was: '{2}'", s_fieldsPerLine, values.Length, encodedLegacyItem));
             }
             for (int i = 0; i < values.Length; i++)
             {
 
                 values[i] = values[i].Replace(s_commaReplacement, ",");
             }
-            // todo add validity checks, possibly as a separate function
-            // ALWAYS UPDATE the s_fieldsPerLine VALUE ABOVE WHEN ADDING NEW VALUES HERE
-            return new LegacyItem(values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], int.Parse(values[8]), values[9], values[10]); 
+            List<int> worldsUsedIn = new List<int>();
+            if (values[11].Length > 0)
+            {
+                foreach (string val in values[11].Split(':'))
+                {
+                    int intVal;
+                    bool parsed = int.TryParse(val, out intVal);
+                    if (!parsed)
+                    {
+                        Log.Error(String.Format("[Moo Legacy Items]: Failed to parse a string to an int as expected. The string was {0}", val));
+                        continue;
+                    }
+                    worldsUsedIn.Add(intVal);
+                }
+            }
+
+            ThingDef itemDef = DefDatabase<ThingDef>.GetNamed(values[0]);
+            LegacyEffectDef abiltyDef = DefDatabase<LegacyEffectDef>.GetNamed(values[6]);
+            ThingDef stuffDef = null;
+            if (values[7].Length > 0)
+            {
+                stuffDef = DefDatabase<ThingDef>.GetNamed(values[7]);
+            }
+
+
+            return new LegacyItem(itemDef, values[1], values[2], values[3], values[4], values[5], abiltyDef, stuffDef, int.Parse(values[8]), values[9], values[10], worldsUsedIn); 
         }
 
 
@@ -139,17 +162,18 @@ namespace MooLegacyItems
          */
         private static string ConvertLegacyItemToString(LegacyItem legacyItem)
         {
-            string result = legacyItem.itemDefName.Replace(",", s_commaReplacement);
+            string result = legacyItem.itemDef.defName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.ownerFullName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.ownerShortName.Replace(",", s_commaReplacement); 
             result += "," + legacyItem.factionName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.descriptionTranslationString.Replace(",", s_commaReplacement);
             result += "," + legacyItem.titleTranslationString.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.abilityPlaceholder.Replace(",", s_commaReplacement);
-            result += "," + legacyItem.stuffDefName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.abilityDef.defName.Replace(",", s_commaReplacement);
+            result += "," + legacyItem.stuffDef.defName.Replace(",", s_commaReplacement);
             result += "," + legacyItem.prv;
             result += "," + legacyItem.reason.Replace(",", s_commaReplacement);
             result += "," + legacyItem.originatorId.Replace(",", s_commaReplacement);
+            result += "," + string.Join(":", legacyItem.worldsUsedIn);
             return result;
         }
 

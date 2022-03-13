@@ -6,7 +6,7 @@ using Verse;
 
 /* This comp is what actually contains the data on an in-game item that makes it a legacy item, and 
  * gives that items the unusual text/abilities to show it. All items that could possibly be a legacy 
- * item have this comp, but it's only populated in actual legacy items.
+ * item have this comp, but it's only populated with data in actual legacy items.
  */
 namespace MooLegacyItems
 {
@@ -16,22 +16,23 @@ namespace MooLegacyItems
         public String newLabel = null;
 
         public String newDescription = null;
+        
+        public LegacyEffectDef abilityDef = null;
 
-        // Need to persist animal stuff across saves
+        // Need to persist flavor and special abilities across saves
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look<String>(ref newLabel, "newLabel");
             Scribe_Values.Look<String>(ref newDescription, "newDescription");
+            Scribe_Defs.Look<LegacyEffectDef>(ref abilityDef, "abilityDef"); 
         } 
-
 
         public override string TransformLabel(string label)
         {
-
             if (newLabel != null)
             {
-                return newLabel + label;
+                return newLabel;
             }
 
             return base.TransformLabel(label);
@@ -40,6 +41,20 @@ namespace MooLegacyItems
         public override string GetDescriptionPart()
         {
             return newDescription; 
+        }
+
+        public override void Notify_Equipped(Pawn pawn)
+        {
+            base.Notify_Equipped(pawn);
+            if (abilityDef == null)
+            {
+                return;
+            }
+            Apparel app = this.parent as Apparel;
+            if (app != null)
+            {
+                this.abilityDef.ApparelEquipEffect(pawn, app);
+            }
         }
     }
 }

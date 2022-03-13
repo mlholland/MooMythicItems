@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation  Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/ThingSetMakerDef[defName= "Reward_ItemsStandard"]/root/options/*[position()=1]/thingSetMaker/options</xpath>
+          <value> 
+            <li>
+              <weight>.6</weight>
+              <thingSetMaker Class="MooLegacyItems.ThingSetMaker_LegacyItemMaker" />
+            </li> 
+          </value>
+        </li>
+      </operations> 
+  </Operation>
+</Patch>

@@ -42,7 +42,7 @@ namespace MooLegacyItems
                                 killer.equipment.Primary.def.IsRangedWeapon ?
                                 details.manyKillsMT.RandomElement() :
                                 details.manyKillsRT.RandomElement(),
-                                "ruthless",
+                                DefDatabase<LegacyEffectDef>.GetNamed("MooLI_ConstructionBoost"), // todo set to a weapon effect
                                 "100kills");
                             LegacyItemManager.SaveNewLegacyItem(newItem);
                         }

@@ -11,7 +11,11 @@
   <MooLI_FlagAllowLegacyItemSpawning>Allow Legacy Item Spawning.</MooLI_FlagAllowLegacyItemSpawning>
   <MooLI_MaxLegacyItemsProducedPerColony>Max Legacy Items Produced Per Colony:</MooLI_MaxLegacyItemsProducedPerColony>
   <MooLI_MaxLegacyItemsSaved>Max Saved Legacy Items</MooLI_MaxLegacyItemsSaved>
-  
+  <MooLI_MaxItemOccurence>Legacy Item Occurrence Limit: </MooLI_MaxItemOccurence>
+  <MooLI_MaxItemOccurenceTooltip>This value controls how many times a legacy item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of legacy items. If set to 0, then legacy items won't be removed unless the total legacy item save limit is reached, in which case the oldest items are removed first.</MooLI_MaxItemOccurenceTooltip>
+  <MooLI_PrintDebugLogs>Enable Debug Logging</MooLI_PrintDebugLogs>
+  <MooLI_CreateRandomItemsIfNeeded>Create Random Legacy Items If Needed</MooLI_CreateRandomItemsIfNeeded>
+  <MooLI_CreateRandomItemsIfNeededToolTip>If this is enabled, and the game tries to make a legacy items but finds no valid saved options, create a random legacy item based on some hard-coded preset options.</MooLI_CreateRandomItemsIfNeededToolTip>
   
   <MooLI_ManualSaveButton>save button pressed</MooLI_ManualSaveButton>
   <MooLI_ManualLoadBUtton>load button pressed</MooLI_ManualLoadBUtton>
@@ -23,7 +27,7 @@
     1 = the original owners nickname, or first name if they don't have one
     2 = the original owner's faction
     3 = normal item label 
-    For title's, only 2 inputs are given:
+    For titles, only 2 inputs are given:
     0 = original owners nickname
     1 = normal item label
     -->

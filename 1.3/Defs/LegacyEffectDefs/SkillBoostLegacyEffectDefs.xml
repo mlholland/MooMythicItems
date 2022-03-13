@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooLegacyItems.ApplyHediffLegacyEffectDef>
+    <defName>MooLI_ConstructionBoost</defName>
+    <equipHediff>MooLI_WornConstructionBoon</equipHediff>
+  </MooLegacyItems.ApplyHediffLegacyEffectDef>
+</Defs>
