@@ -4,8 +4,8 @@
   <HediffDef>
     <defName>MooLI_WornConstructionBoon</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>Legacy: Construction</label>
-    <description>This person is wearing a piece of clothing that carries legacy of a legendary construction master. They are benefitting from the echoes of their expertise and have an increased construction speed.</description> 
+    <label>Legacy of the Monument-Builder</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary builder. They are benefitting from the echoes of their expertise and have an increased construction speed.</description> 
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
     </comps>
@@ -13,6 +13,201 @@
       <li>
         <statFactors> 
             <ConstructionSpeed>2</ConstructionSpeed>  
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornMiningBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Tunneller</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary miner. They are benefitting from the echoes of their expertise and have an increased mining speed and yield.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MiningSpeed>2</MiningSpeed>
+          <DeepDrillingSpeed>2</DeepDrillingSpeed>
+        </statFactors>
+        <statOffsets>
+          <MiningYield>.3</MiningYield>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornCookingBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Gourmet</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary cook. They are benefitting from the echoes of their expertise and have an increased cooking speed and reduced food poisoning chance.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <CookSpeed>2</CookSpeed>
+        </statFactors>
+        <statOffsets>
+          <Cleanliness>.5</Cleanliness>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornPlantingBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Green Thumb</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary gardener. They are benefitting from the echoes of their expertise and have an increased plant work speed and harvest yield.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <PlantWorkSpeed>2</PlantWorkSpeed>
+        </statFactors>
+        <statOffsets>
+          <PlantHarvestYield>.3</PlantHarvestYield>
+          <DrugHarvestYield>.3</DrugHarvestYield>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornAnimalsBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Shepherd</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary animal handler. They are benefitting from the echoes of their expertise and have an taming and training chances, as well as an improved animal product harvest yield and speed.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <AnimalGatherSpeed>2</AnimalGatherSpeed>
+          <TameAnimalChance>2</TameAnimalChance>
+          <TrainAnimalChance>2</TrainAnimalChance>
+        </statFactors>
+        <statOffsets>
+          <AnimalGatherYield>.3</AnimalGatherYield>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornCraftingBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Tinker</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary crafter. They are benefitting from the echoes of their expertise and have increased crafting speeds.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <AnimalGatherSpeed>2</AnimalGatherSpeed>
+          <TameAnimalChance>2</TameAnimalChance>
+          <TrainAnimalChance>2</TrainAnimalChance>
+        </statFactors>
+        <statOffsets>
+          <AnimalGatherYield>.3</AnimalGatherYield>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornArtistBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Sculper</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary artist. They are benefitting from the echoes of their expertise and have increased art sculpting speeds.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <AnimalGatherSpeed>2</AnimalGatherSpeed>
+          <TameAnimalChance>2</TameAnimalChance>
+          <TrainAnimalChance>2</TrainAnimalChance>
+        </statFactors>
+        <statOffsets>
+          <AnimalGatherYield>.3</AnimalGatherYield>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+  <HediffDef>
+    <defName>MooLI_WornMedicineBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Scalpel</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary doctor. They are benefitting from the echoes of their expertise and have increased medical worlds speeds and improved outcomes.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MedicalTendSpeed>2</MedicalTendSpeed>
+          <MedicalOperationSpeed>2</MedicalOperationSpeed>
+          <TrainAnimalChance>2</TrainAnimalChance>
+        </statFactors>
+        <statOffsets>
+          <MedicalTendQuality>.5</MedicalTendQuality>
+          <MedicalSurgerySuccessChance>.5</MedicalSurgerySuccessChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+  <HediffDef>
+    <defName>MooLI_WornSocialBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Silver-Tongue</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary socialite. They are benefitting from the echoes of their expertise and have increased social skills.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <NegotiationAbility>2</NegotiationAbility>
+          <SocialImpact>2</SocialImpact>
+        </statFactors>
+        <statOffsets>
+          <TradePriceImprovement>.1</TradePriceImprovement>
+          <DrugSellPriceImprovement>.1</DrugSellPriceImprovement>
+          <ArrestSuccessChance>2</ArrestSuccessChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+  <HediffDef>
+    <defName>MooLI_WornIntellectualBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Curious</label>
+    <description>This person is wearing a piece of clothing that carries legacy of a legendary researcher. They are benefitting from the echoes of their expertise and have increased research and learning speeds.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <ResearchSpeed>1.5</ResearchSpeed>
+          <GlobalLearningFactor>1.5</GlobalLearningFactor>
         </statFactors>
       </li>
     </stages>
