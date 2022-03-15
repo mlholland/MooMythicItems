@@ -321,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="modsource\Defs\ApplyHediffLegacyEffectDef.cs" />
+    <Compile Include="modsource\Defs\ThingDefListDef.cs" />
     <Compile Include="modsource\Defs\LegacyEffectDef.cs" />
     <Compile Include="modsource\Comps\CompLegacy.cs" />
     <Compile Include="modsource\Defs\LegacyReasonToDetailOptionsDef.cs" />

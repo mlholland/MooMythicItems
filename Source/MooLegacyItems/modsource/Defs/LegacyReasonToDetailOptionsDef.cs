@@ -131,12 +131,19 @@ namespace MooLegacyItems
         public List<String> ColonySlayerRT;
         public List<LegacyEffectDef> ColonySlayerRA;
         // killing thrumbos
-        public List<String> TrumboSlayerMFD;
+        public List<String> ThrumboSlayerMFD;
         public List<String> ThrumboSlayerMT;
         public List<LegacyEffectDef> ThrumboSlayerMA;
-        public List<String> TrumboSlayerRFD;
+        public List<String> ThrumboSlayerRFD;
         public List<String> ThrumboSlayerRT;
         public List<LegacyEffectDef> ThrumboSlayerRA;
+        // killing faction leaders
+        public List<String> LeaderSlayerMFD;
+        public List<String> LeaderSlayerMT;
+        public List<LegacyEffectDef> LeaderSlayerMA;
+        public List<String> LeaderSlayerRFD;
+        public List<String> LeaderSlayerRT;
+        public List<LegacyEffectDef> LeaderSlayerRA;
         // Being the last colonist standing during a late game raid
         public List<String> LastStandingMFD;
         public List<String> LastStandingMT;
