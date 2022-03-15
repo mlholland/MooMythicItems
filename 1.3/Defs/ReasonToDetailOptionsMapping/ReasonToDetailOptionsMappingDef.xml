@@ -35,13 +35,21 @@
       <li>MooLI_LegacyStory_Mastery_Shooting</li>
     </ShootingMasterFD>
     <ShootingMasterT>
-      <li>MooLI_LegacyTitle_100Kills_Ranged_1</li>
+      <li>MooLI_LegacyTitle_Mastery_Shooting</li>
     </ShootingMasterT>
+    <ShootingMasterA>
+      <li>MooLI_ShootingBoost</li>
+    </ShootingMasterA>
     
     <MeleeMasterFD>
       <li>MooLI_LegacyStory_Mastery_Melee</li>
     </MeleeMasterFD>
-    <MeleeMasterT></MeleeMasterT>
+    <MeleeMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Melee</li>
+    </MeleeMasterT>
+    <MeleeMasterA>
+      <li>MooLI_MeleeBoost</li>
+    </MeleeMasterA>
     
     <ConstructionMasterFD>
       <li>MooLI_LegacyStory_Mastery_Construction</li>
@@ -56,33 +64,92 @@
     <MiningMasterFD>
       <li>MooLI_LegacyStory_Mastery_Mining</li>
     </MiningMasterFD>
-    <MiningMasterT></MiningMasterT>
+    <MiningMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Mining</li>
+    </MiningMasterT>
+    <MiningMasterA>
+      <li>MooLI_MiningBoost</li>
+    </MiningMasterA>
     
-    <CookingMasterFD></CookingMasterFD>
-    <CookingMasterT></CookingMasterT>
+    <CookingMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Cooking</li>
+    </CookingMasterFD>
+    <CookingMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Cooking</li>
+    </CookingMasterT>
+    <CookingMasterA>
+      <li>MooLI_CookingBoost</li>
+    </CookingMasterA>
     
     <PlantsMasterFD>
       <li>MooLI_LegacyStory_Mastery_Plants</li>
     </PlantsMasterFD>
-    <PlantsMasterT></PlantsMasterT>
+    <PlantsMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Plants</li>
+    </PlantsMasterT>
+    <PlantsMasterA>
+      <li>MooLI_PlantingBoost</li>
+    </PlantsMasterA>
     
-    <AnimalsMasterFD></AnimalsMasterFD>
-    <AnimalsMasterT></AnimalsMasterT>
+    <AnimalsMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Animals</li>
+    </AnimalsMasterFD>
+    <AnimalsMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Animals</li>
+    </AnimalsMasterT>
+    <AnimalsMasterA>
+      <li>MooLI_AnimalsBoost</li>
+    </AnimalsMasterA>
     
-    <CraftingMasterFD></CraftingMasterFD>
-    <CraftingMasterT></CraftingMasterT>
+    <CraftingMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Crafting</li>
+    </CraftingMasterFD>
+    <CraftingMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Crafting</li>
+    </CraftingMasterT>
+    <CraftingMasterA>
+      <li>MooLI_CraftingBoost</li>
+    </CraftingMasterA>
     
-    <ArtisticMasterFD></ArtisticMasterFD>
-    <ArtisticMasterT></ArtisticMasterT>
+    <ArtisticMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Artistic</li>
+    </ArtisticMasterFD>
+    <ArtisticMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Artistic</li>
+    </ArtisticMasterT>
+    <ArtisticMasterA>
+      <li>MooLI_ArtisticBoost</li>
+    </ArtisticMasterA>
     
-    <MedicineMasterFD></MedicineMasterFD>
-    <MedicineMasterT></MedicineMasterT>
+    <MedicineMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Medicine</li>
+    </MedicineMasterFD>
+    <MedicineMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Medicine</li>
+    </MedicineMasterT>
+    <MedicineMasterA>
+      <li>MooLI_MedicineBoost</li>
+    </MedicineMasterA>
     
-    <SocialMasterFD></SocialMasterFD>
-    <SocialMasterT></SocialMasterT>
+    <SocialMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Social</li>
+    </SocialMasterFD>
+    <SocialMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Social</li>
+    </SocialMasterT>
+    <SocialMasterA>
+      <li>MooLI_SocialBoost</li>
+    </SocialMasterA>
     
-    <IntellectualMasterFD></IntellectualMasterFD>
-    <IntellectualMasterT></IntellectualMasterT>
+    <IntellectualMasterFD>
+      <li>MooLI_LegacyStory_Mastery_Intellectual</li>
+    </IntellectualMasterFD>
+    <IntellectualMasterT>
+      <li>MooLI_LegacyTitle_Mastery_Intellectual</li>
+    </IntellectualMasterT>
+    <IntellectualMasterA>
+      <li>MooLI_IntellectualBoost</li>
+    </IntellectualMasterA>
 
     <ColonySlayerMFD></ColonySlayerMFD>
     <ColonySlayerMT></ColonySlayerMT>

@@ -1,5 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <HediffDef>
+    <defName>MooLI_WornShootingBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Sharpshooter</label>
+    <description>This person is wielding a weapon that carries legacy of a legendary gunperson. They are benefitting from the echoes of their expertise and have an aim and fire rate.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn><!--TOOO  balance everything-->
+          <AimingDelayFactor>.5</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooLI_WornMeleeBoon</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Legacy of the Master-at-arms</label>
+    <description>This person is wielding a weapon that carries legacy of a legendary fighter. They are benefitting from the echoes of their expertise and have an combat stats.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MeleeDodgeChance>2</MeleeDodgeChance>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MoveSpeed>1.1</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
   
   <HediffDef>
     <defName>MooLI_WornConstructionBoon</defName>
@@ -125,7 +161,7 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>MooLI_WornArtistBoon</defName>
+    <defName>MooLI_WornArtisticBoon</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Sculper</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary artist. They are benefitting from the echoes of their expertise and have increased art sculpting speeds.</description>
@@ -211,6 +247,49 @@
         </statFactors>
       </li>
     </stages>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </HediffDef>
 
 </Defs>
