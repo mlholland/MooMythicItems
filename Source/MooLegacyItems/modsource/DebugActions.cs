@@ -38,5 +38,11 @@ namespace MooLegacyItems
             }
             GenPlace.TryPlaceThing(item, c, Find.CurrentMap, ThingPlaceMode.Near, null, null, default(Rot4));
         }
+
+        [DebugAction("Spawning", "Try place all legacy item types", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void DebugSpawnAllLegacyItems()
+        {
+            // Todo
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace MooLegacyItems
     {
         public bool flagCreateRandomLegacyItemsIfNoneAvailable = true;
         public bool flagDebug = false;
+        public int minimumLevelForSkillItems = 18;
         public int legacyItemSaveLimit = 100;
         public int individualItemOccurenceLimit = 3;
 
+        private string minimumLevelForSkillItemsString = "18";
         private string legacyItemSaveLimitInputString = "100";
         private string individualItemOccurenceLimitString = "3";
 
@@ -25,6 +27,7 @@ namespace MooLegacyItems
 
             Scribe_Values.Look(ref flagCreateRandomLegacyItemsIfNoneAvailable, "flagCreateRandomLegacyItemsIfNoneAvailable", true, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
+            Scribe_Values.Look(ref minimumLevelForSkillItems, "minimumLevelForSkillItems", 18, true);
             Scribe_Values.Look(ref legacyItemSaveLimit, "legacyItemSaveLimit", 100, true);
             Scribe_Values.Look(ref legacyItemSaveLimitInputString, "legacyItemSaveLimit", "100", true);
             Scribe_Values.Look(ref individualItemOccurenceLimit, "individualItemOccurenceLimit", 3, true);
@@ -58,6 +61,8 @@ namespace MooLegacyItems
             */
             ls.CheckboxLabeled("MooLI_CreateRandomItemsIfNeeded".Translate(), ref flagCreateRandomLegacyItemsIfNoneAvailable, "MooLI_CreateRandomItemsIfNeededTooltip".Translate());
             ls.CheckboxLabeled("MooLI_PrintDebugLogs".Translate(), ref flagDebug, null);
+            ls.Label("MooLI_MinLevelForSkillItems".Translate() + ": " + minimumLevelForSkillItems, -1, "MooLI_MinLevelForSkillItemsToolTip".Translate());
+            ls.IntEntry(ref minimumLevelForSkillItems, ref minimumLevelForSkillItemsString);
             ls.Label("MooLI_MaxLegacyItemsSaved".Translate() + ": " + legacyItemSaveLimit, -1);
             ls.IntEntry(ref legacyItemSaveLimit, ref legacyItemSaveLimitInputString);
             ls.Label("MooLI_MaxItemOccurence".Translate() + ": " + individualItemOccurenceLimit, -1, "MooLI_MaxItemOccurenceTooltip".Translate());

@@ -24,7 +24,7 @@ namespace MooLegacyItems
         {
             get
             {
-                if(insectKills == null)
+                if (insectKills == null)
                 {
                     insectKills = DefDatabase<RecordDef>.GetNamed("MooLI_killsInsects");
                 }
@@ -98,9 +98,10 @@ namespace MooLegacyItems
         {
             static void Postfix(Pawn killed, Pawn killer)
             {
+                // update custom records related to tracking certain legacy reasons
                 UpdateNewRecords(killed, killer);
 
-                // make sure there's even a potential weapon to make into an heirloom, should probably check other stuff, like not wood and not single use
+                // make sure there's even a potential weapon to make into an heirloom. TODO should probably check other stuff, like not wood and not single use
                 if (killer.equipment?.Primary == null)
                 {
                     return;
@@ -110,6 +111,12 @@ namespace MooLegacyItems
                 // create the legacy item if needed
                 if (newItem != null)
                 {
+                    // double check that a more impressive kill count-based legacy item hasn't already been made for this pawn
+                    LegacyItem cachedLegacyItem = LegacyItemManager.GetSimilarCachedLegacyItem(null, "kills", killer.ThingID, Find.World.info.persistentRandomValue);
+                    if (cachedLegacyItem != null && !shouldReplaceLegacyItem(cachedLegacyItem.reason, newItem.reason))
+                    {
+                        return;
+                    }
                     LegacyItemManager.SaveNewLegacyItem(newItem);
                 }
             }
@@ -125,14 +132,14 @@ namespace MooLegacyItems
             {
                 killer.records.Increment(LeaderKills);
             }
-            else if (killedNonAllyThrumbo(killed, killer)) 
+            else if (killedNonAllyThrumbo(killed, killer))
             {
                 killer.records.Increment(ThrumboKills);
             }
         }
 
         private static LegacyItem TryCreatingNewLegacyItem(Pawn killed, Pawn killer)
-        { 
+        {
             Thing item = killer.equipment.Primary;
             string reason = "";
             List<string> titles = null, descs = null;
@@ -140,12 +147,12 @@ namespace MooLegacyItems
 
             bool isRanged = killer.equipment.Primary.def.IsRangedWeapon;
             RaceProperties raceProps = killed.RaceProps;
-            
+
             if (raceProps.Humanlike)
             {
                 if (killedLeader(killed, killer) && killer.records.GetValue(LeaderKills) == leaderKillsThreshold1)
                 {
-                    reason = "leader-kills-1";
+                    reason = createLegacyKillReason("leader", 3);
                     if (isRanged)
                     {
                         descs = details.LeaderSlayerRFD;
@@ -160,8 +167,8 @@ namespace MooLegacyItems
                     }
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold1)
-                { 
-                    reason = "humanoid-kills-1";
+                {
+                    reason = createLegacyKillReason("humanoid", 1);
                     if (isRanged)
                     {
                         descs = details.manyKillsRFD;
@@ -176,8 +183,8 @@ namespace MooLegacyItems
                     }
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold2)
-                { 
-                    reason = "humanoid-kills-2";
+                {
+                    reason = createLegacyKillReason("humanoid", 2);
                     if (isRanged)
                     {
                         descs = details.moreKillsRFD;
@@ -192,8 +199,8 @@ namespace MooLegacyItems
                     }
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold3)
-                { 
-                    reason = "humanoid-kills-3";
+                {
+                    reason = createLegacyKillReason("humanoid", 3);
                     if (isRanged)
                     {
                         descs = details.mostKillsRFD;
@@ -212,7 +219,7 @@ namespace MooLegacyItems
             {
                 if (killer.records.GetValue(InsectKills) == manyInsectKillsThreshold1)
                 {
-                    reason = "insect-kills-1";
+                    reason = createLegacyKillReason("insect", 2);
                     if (isRanged)
                     {
                         descs = details.manyInsectKillsRFD;
@@ -231,7 +238,7 @@ namespace MooLegacyItems
             {
                 if (killer.records.GetValue(InsectKills) == thrumboKillsThreshold1)
                 {
-                    reason = "thrumbo-kills-1";
+                    reason = createLegacyKillReason("thrumbo", 2);
                     if (isRanged)
                     {
                         descs = details.ThrumboSlayerRFD;
@@ -250,8 +257,8 @@ namespace MooLegacyItems
             {
                 float mechKills = killer.records.GetValue(RecordDefOf.KillsMechanoids);
                 if (mechKills == manyMechKillsThreshold1)
-                { 
-                    reason = "mech-kills-1";
+                {
+                    reason = createLegacyKillReason("mech", 2);
                     if (isRanged)
                     {
                         descs = details.manyMechKillsRFD;
@@ -290,6 +297,54 @@ namespace MooLegacyItems
                 return new LegacyItem(item, killer, descs.RandomElement(), titles.RandomElement(), effects.RandomElement(), reason);
             }
             return null;
+        }
+
+
+        private static string createLegacyKillReason(string detail, int priority)
+        {
+            if (priority < 1)
+            {
+                string result = detail + "-" + "kills" + "-1";
+                Log.Error(String.Format("[Moo Legacy Items] tried to create a legacy kill reason string with a non-positive priority value {0}. Defaulting to priority 1 to create reason '{1}'", priority, result));
+            }
+            return detail + "-" + "kills" + "-" + priority;
+        }
+
+        // used to determine order of importance among various kill count resons
+        // Returns true if the new reason's ending integer value is greater than the previous, and false for all other reasons
+        // Ex: humanoid-kills-1 is replaced by humanoid-kills-2, but it is also replaced by thrumbo-kills-2, which is technically the first tier of thrumbo kills
+        //
+        private static bool shouldReplaceLegacyItem(string oldReason, string newReason)
+        {
+            string[] oldSplit = oldReason.Split('-');
+            if (oldSplit.Length != 3)
+            {
+                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
+                return false;
+            }
+            int oldPrio = 0;
+            bool parsed = int.TryParse(oldSplit[2], out oldPrio);
+            if (!parsed)
+            {
+                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
+                return false;
+            }
+
+            string[] newSplit = newReason.Split('-');
+            if (newSplit.Length != 3)
+            {
+                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
+                return false;
+            }
+            int newPrio = 0;
+            parsed = int.TryParse(newSplit[2], out newPrio);
+            if (!parsed)
+            {
+                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
+                return false;
+            }
+
+            return newPrio > oldPrio;
         }
 
         private static bool killedLeader(Pawn killed, Pawn killer)

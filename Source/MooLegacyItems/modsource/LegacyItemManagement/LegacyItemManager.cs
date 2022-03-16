@@ -319,5 +319,23 @@ namespace MooLegacyItems
             }
             return result;
         }
+
+        /* Used to check for similarity between potential new items and existing items in order to prevent identical legacy items from being 
+         * repeated created (for example if a pawn keeps reaching level 20 in a skill due to vanilla skill decay).
+         * itemDef, pawnId, and originatingWorldId must be exact matches if def (or non zero for the worldId), but the reasonFragment
+         * only needs to be contained by a legacyItem's reason string to match. This allows for general reason matching (like any kill or skill based item).
+         */
+        public static LegacyItem GetSimilarCachedLegacyItem(ThingDef itemDef, string reasonFragment, string pawnId, int originatingWorldId)
+        {
+            foreach (LegacyItem li in s_cachedItems)
+            {
+                if (itemDef != null && itemDef != li.itemDef) { continue; }
+                if (reasonFragment != null && !li.reason.Contains(reasonFragment)) { continue; }
+                if (pawnId != null && li.originatorId != pawnId) { continue; }
+                if (originatingWorldId != 0 && originatingWorldId != li.prv) { continue; }
+                return li;
+            }
+            return null;
+        }
     }
 }
