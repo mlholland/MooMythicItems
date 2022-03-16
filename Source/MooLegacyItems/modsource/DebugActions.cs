@@ -19,7 +19,16 @@ namespace MooLegacyItems
         [DebugAction("Spawning", "Try place Saved Legacy Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedLegacyItem()
         {
-            DebugSpawnLegacyItem(LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(false, false, false, true), UI.MouseCell(), false);
+            Thing item = LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(false, false, false, true);
+            if (item == null)
+            {
+                if (MooLegacyItems_Mod.settings.flagDebug)
+                {
+                    Log.Message("[Moo Legacy Items] " + "MooLI_FailedToCreateLIFromDebug".Translate());
+                }
+                Messages.Message("MooLI_FailedToCreateLIFromDebug".Translate(), MessageTypeDefOf.NeutralEvent, true);
+            }
+            DebugSpawnLegacyItem(item, UI.MouseCell(), false);
         }
 
         [DebugAction("Spawning", "Try place Saved Legacy Item - Record World", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]

@@ -64,6 +64,14 @@ namespace MooLegacyItems
         /* New values are added to the end of line, to keep an implicitly time-ordered list of items */
         public static void SaveNewLegacyItem(LegacyItem newLegacyItem)
         {
+            if (MooLegacyItems_Mod.settings.flagNotifyItemCreation)
+            {
+                Messages.Message(string.Format("MooLI_CreatedNewItemMessage".Translate(), newLegacyItem.ownerFullName, newLegacyItem.itemDef, newLegacyItem.reason), MessageTypeDefOf.PositiveEvent, true);
+            }
+            if (MooLegacyItems_Mod.settings.flagDebug)
+            {
+                Log.Message(String.Format("Caching and saving new legacy item: {0}", newLegacyItem.ToString()));
+            }
             CacheLegacyItem(newLegacyItem);
             SaveCachedLegacyItems();
         }

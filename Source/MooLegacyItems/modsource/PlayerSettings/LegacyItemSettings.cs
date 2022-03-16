@@ -11,6 +11,7 @@ namespace MooLegacyItems
     public class LegacyItemSettings : ModSettings
     {
         public bool flagCreateRandomLegacyItemsIfNoneAvailable = true;
+        public bool flagNotifyItemCreation = true;
         public bool flagDebug = false;
         public int minimumLevelForSkillItems = 18;
         public int legacyItemSaveLimit = 100;
@@ -26,6 +27,7 @@ namespace MooLegacyItems
             base.ExposeData();
 
             Scribe_Values.Look(ref flagCreateRandomLegacyItemsIfNoneAvailable, "flagCreateRandomLegacyItemsIfNoneAvailable", true, true);
+            Scribe_Values.Look(ref flagNotifyItemCreation, "flagNotifyItemCreation", true, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
             Scribe_Values.Look(ref minimumLevelForSkillItems, "minimumLevelForSkillItems", 18, true);
             Scribe_Values.Look(ref legacyItemSaveLimit, "legacyItemSaveLimit", 100, true);
@@ -60,6 +62,7 @@ namespace MooLegacyItems
             ls.Gap(30f);
             */
             ls.CheckboxLabeled("MooLI_CreateRandomItemsIfNeeded".Translate(), ref flagCreateRandomLegacyItemsIfNoneAvailable, "MooLI_CreateRandomItemsIfNeededTooltip".Translate());
+            ls.CheckboxLabeled("MooLI_FlagNotifyItemCreation".Translate(), ref flagNotifyItemCreation, null);
             ls.CheckboxLabeled("MooLI_PrintDebugLogs".Translate(), ref flagDebug, null);
             ls.Label("MooLI_MinLevelForSkillItems".Translate() + ": " + minimumLevelForSkillItems, -1, "MooLI_MinLevelForSkillItemsToolTip".Translate());
             ls.IntEntry(ref minimumLevelForSkillItems, ref minimumLevelForSkillItemsString);

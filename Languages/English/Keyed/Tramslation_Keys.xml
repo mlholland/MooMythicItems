@@ -5,12 +5,14 @@
   <MooLI_SettingsLabel>Moo's Legacy Items Settings and Controls</MooLI_SettingsLabel>
   <MooLI_SettingsTitle>Moo's Legacy Items Settings</MooLI_SettingsTitle>
   <MooLI_ClearAllSavedItemsDescription>Deletes all saved legacy items.</MooLI_ClearAllSavedItemsDescription>
-  <MooLI_ClearAllSavedItemsButton>Clear Saved Legacy Items</MooLI_ClearAllSavedItemsButton> 
-  <MooLI_FlagNotifyPlayerOnLegacyItemCreation>Notify player when legacy item is created.</MooLI_FlagNotifyPlayerOnLegacyItemCreation>
+  <MooLI_ClearAllSavedItemsButton>Clear Saved Legacy Items</MooLI_ClearAllSavedItemsButton>
+  <MooLI_FlagNotifyItemCreation>Notify player when legacy item is created.</MooLI_FlagNotifyItemCreation>
   <MooLI_FlagAllowLegacyItemCreation>Allow Legacy Item Saving.</MooLI_FlagAllowLegacyItemCreation>
   <MooLI_FlagAllowLegacyItemSpawning>Allow Legacy Item Spawning.</MooLI_FlagAllowLegacyItemSpawning>
   <MooLI_MaxLegacyItemsProducedPerColony>Max Legacy Items Produced Per Colony:</MooLI_MaxLegacyItemsProducedPerColony>
   <MooLI_MaxLegacyItemsSaved>Max Saved Legacy Items</MooLI_MaxLegacyItemsSaved>
+  <MooLI_MinLevelForSkillItems>Minimum level for skill-based legacy items.</MooLI_MinLevelForSkillItems>
+  <MooLI_MinLevelForSkillItemsToolTip>Upon leveling up a skill, the mod will try to create a legacy item if the new level is at least this value. Only creates an item once per skill per pawn.</MooLI_MinLevelForSkillItemsToolTip>
   <MooLI_MaxItemOccurence>Legacy Item Occurrence Limit: </MooLI_MaxItemOccurence>
   <MooLI_MaxItemOccurenceTooltip>This value controls how many times a legacy item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of legacy items. If set to 0, then legacy items won't be removed unless the total legacy item save limit is reached, in which case the oldest items are removed first.</MooLI_MaxItemOccurenceTooltip>
   <MooLI_PrintDebugLogs>Enable Debug Logging</MooLI_PrintDebugLogs>
@@ -20,6 +22,9 @@
   <MooLI_ManualSaveButton>save button pressed</MooLI_ManualSaveButton>
   <MooLI_ManualLoadBUtton>load button pressed</MooLI_ManualLoadBUtton>
 
+  <MooLI_FailedToCreateLIFromDebug>Tried to place a saved legacy item via debug actions, but failed to create one. There's probably no saved legacy items right now.</MooLI_FailedToCreateLIFromDebug>
+
+  <MooLI_CreatedNewItemMessage>{0} achievements have caused their {1} to become a legacy item! The recorded reason for their legacy was {2}</MooLI_CreatedNewItemMessage>
 
   <MooLI_LegacyPrefix>\n\nLegacy: </MooLI_LegacyPrefix>
   <!--In legacy stories, the following variables always apply to the following features
