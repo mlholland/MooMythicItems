@@ -66,7 +66,7 @@ namespace MooLegacyItems
         {
             if (MooLegacyItems_Mod.settings.flagNotifyItemCreation)
             {
-                Messages.Message(string.Format("MooLI_CreatedNewItemMessage".Translate(), newLegacyItem.ownerFullName, newLegacyItem.itemDef, newLegacyItem.reason), MessageTypeDefOf.PositiveEvent, true);
+                Messages.Message(string.Format("MooLI_CreatedNewItemMessage".Translate(), newLegacyItem.ownerFullName, newLegacyItem.itemDef.label, newLegacyItem.reason), MessageTypeDefOf.PositiveEvent, true);
             }
             if (MooLegacyItems_Mod.settings.flagDebug)
             {
@@ -345,5 +345,26 @@ namespace MooLegacyItems
             }
             return null;
         }
+
+        public static List<LegacyItem> GetLegacyItems(bool includeItemsFromThisWorld, bool includeItemsSeenInThisWorld)
+        {
+            List<LegacyItem> results = new List<LegacyItem>();
+            int currentWorldPrv = Find.World.info.persistentRandomValue;
+            foreach(LegacyItem li in s_cachedItems)
+            {
+                if (!includeItemsFromThisWorld && currentWorldPrv == li.prv)
+                {
+                    continue;
+                }
+                if (!includeItemsSeenInThisWorld && li.worldsUsedIn.Contains(currentWorldPrv))
+                {
+                    continue;
+                }
+                results.Add(li);
+            }
+            return results;
+        }
+
+
     }
 }

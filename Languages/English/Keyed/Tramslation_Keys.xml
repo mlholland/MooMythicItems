@@ -27,6 +27,7 @@
   <MooLI_CreatedNewItemMessage>{0} achievements have caused their {1} to become a legacy item! The recorded reason for their legacy was {2}</MooLI_CreatedNewItemMessage>
 
   <MooLI_AddLegacyRelic>Add Heirloom Relic</MooLI_AddLegacyRelic>
+  <MooLI_NoSavedLegacyOptionsForRelics>No Saved Heirlooms Available</MooLI_NoSavedLegacyOptionsForRelics>
   
   <MooLI_LegacyPrefix>\n\nLegacy: </MooLI_LegacyPrefix>
   <!--In legacy stories, the following variables always apply to the following features

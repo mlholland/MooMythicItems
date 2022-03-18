@@ -26,7 +26,7 @@
   </MooLegacyItems.ApplyHediffLegacyEffectDef>
 
   <MooLegacyItems.ApplyHediffLegacyEffectDef>
-    <defName>MooLI_PlantingBoost</defName>
+    <defName>MooLI_PlantsBoost</defName>
     <equipHediff>MooLI_WornPlantingBoon</equipHediff>
   </MooLegacyItems.ApplyHediffLegacyEffectDef>
 
