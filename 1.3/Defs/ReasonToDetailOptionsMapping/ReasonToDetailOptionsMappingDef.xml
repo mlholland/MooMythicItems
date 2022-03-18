@@ -11,7 +11,11 @@
       <li>MooLI_LegacyStory_100Kills_Ranged_1</li>
       <li>MooLI_LegacyStory_100Kills_Ranged_2</li>
     </manyKillsRFD>
-    <manyKillsRT></manyKillsRT>
+    <manyKillsRT>
+      <li>MooLI_LegacyTitle_100Kills_Ranged_1</li>
+      <li>MooLI_LegacyTitle_100Kills_Ranged_2</li>
+      <li>MooLI_LegacyTitle_100Kills_Ranged_3</li>
+    </manyKillsRT>
     <moreKillsMFD></moreKillsMFD>
     <moreKillsMT></moreKillsMT>
     <moreKillsRFD></moreKillsRFD>

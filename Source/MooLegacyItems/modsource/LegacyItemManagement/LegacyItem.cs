@@ -27,6 +27,7 @@ namespace MooLegacyItems
         public String reason; // generic book-keeping string for determining the origin of legacy items. Opted not to make this an enum to avoid mod compatibility issues.'
         public String originatorId; // the ThingId of the pawn related to this item's creation for duplication checking.
         public List<int> worldsUsedIn; // A list of game private random values that this item has been created in. Used for bookkeeping to prevent the same item from being used too much.
+        // public String colony; // TODO make use of (map.Parent as Settlement).Name to get the colony name, then incorporate it into flavor perhaps
 
 
         /* This should only be called by the SaveUtility, all other calls from within the game should use the other constructor*/
@@ -91,6 +92,16 @@ namespace MooLegacyItems
         // TODO add more details once legacyItem fields more concrete
         public override string ToString() {
             return String.Format("Legacy item - {0} made by {1} due to {2} with power {3}", itemDef.defName, ownerFullName, descriptionTranslationString, abilityDef.defName);
+        }
+
+        public string GetFormattedTitle()
+        {
+            return string.Format(this.titleTranslationString.Translate(), ownerShortName, itemDef.label);
+        }
+
+        public string GetFormattedDescription()
+        {
+            return string.Format(this.descriptionTranslationString.Translate(), ownerFullName,ownerShortName, factionName, itemDef.label);
         }
     }
 }

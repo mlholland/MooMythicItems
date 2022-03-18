@@ -325,9 +325,12 @@
     <Compile Include="modsource\Defs\LegacyEffectDef.cs" />
     <Compile Include="modsource\Comps\CompLegacy.cs" />
     <Compile Include="modsource\Defs\LegacyReasonToDetailOptionsDef.cs" />
+    <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
+    <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
     <Compile Include="modsource\Harmony\LegacyMaker_LearnTranspiler.cs" />
     <Compile Include="modsource\Harmony\LegacyMaker_Notify_PawnKilled.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
+    <Compile Include="modsource\Ideology\Precept_LegacyRelic.cs" />
     <Compile Include="modsource\LegacyItemManagement\ThingSetMaker_LegacyItemMaker.cs" />
     <Compile Include="modsource\LegacyItemManagement\LegacyItemManager.cs" />
     <Compile Include="modsource\LegacyItemManagement\LegacyItem.cs" />

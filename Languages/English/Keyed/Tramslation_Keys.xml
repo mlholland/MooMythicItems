@@ -26,6 +26,8 @@
 
   <MooLI_CreatedNewItemMessage>{0} achievements have caused their {1} to become a legacy item! The recorded reason for their legacy was {2}</MooLI_CreatedNewItemMessage>
 
+  <MooLI_AddLegacyRelic>Add Heirloom Relic</MooLI_AddLegacyRelic>
+  
   <MooLI_LegacyPrefix>\n\nLegacy: </MooLI_LegacyPrefix>
   <!--In legacy stories, the following variables always apply to the following features
     0 = the original owner's full name
@@ -45,6 +47,7 @@
   <MooLI_LegacyStory_100Kills_Ranged_2>You've heard many stories about {1}, the headhunter of {2}. It's hard to believe the stories were true, but the bloodlust emenating from this {3} suggests that more than a few people died from this weapon's shots.</MooLI_LegacyStory_100Kills_Ranged_2>
   <MooLI_LegacyTitle_100Kills_Ranged_1>{0}'s Skullpiercer</MooLI_LegacyTitle_100Kills_Ranged_1>
   <MooLI_LegacyTitle_100Kills_Ranged_2>The {1} of a Hundred Deaths</MooLI_LegacyTitle_100Kills_Ranged_2>
+  <MooLI_LegacyTitle_100Kills_Ranged_3>{0}'s headhunting {1}</MooLI_LegacyTitle_100Kills_Ranged_3>
   
   <MooLI_LegacyStory_Mastery_Shooting>The last owner of this {3} claimed that it had been in storage for decades, yet it's still in pristine condition. {0}, the mythical sharpshooter who wielded this weapon, must have taken good care of it. Perhaps that attention to detail is what earned them their reputation as the best shot of {2} and beyond.</MooLI_LegacyStory_Mastery_Shooting>
   <MooLI_LegacyTitle_Mastery_Shooting>The Starsniper's {1}</MooLI_LegacyTitle_Mastery_Shooting>

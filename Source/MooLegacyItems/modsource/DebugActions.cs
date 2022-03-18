@@ -35,8 +35,8 @@ namespace MooLegacyItems
         private static void TryPlaceSavedLegacyItemRecordWorld()
         {
             DebugSpawnLegacyItem(LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
+            
         }
-
 
         public static void DebugSpawnLegacyItem(Thing item, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)
         {
