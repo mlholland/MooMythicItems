@@ -2009,7 +2009,7 @@
              the field's field type; and for value types, <typeparamref name="F"/> must be exactly the field's field type.
              </para>
              <para>
-             This delegate supports static fields, even those defined in structs, for legacy reasons.
+             This delegate supports static fields, even those defined in structs, for mythic reasons.
              For such static fields, <typeparamref name="T"/> is effectively ignored.
              Consider using <see cref="T:HarmonyLib.AccessTools.FieldRef`1"/> (and <c>StaticFieldRefAccess</c> methods that return it) instead for static fields.
              </para>
@@ -2076,7 +2076,7 @@
              in e.g. <see cref="M:HarmonyLib.AccessTools.FieldRefAccess``2(System.String)"/>.
              </para>
              <para>
-             This method supports static fields, even those defined in structs, for legacy reasons.
+             This method supports static fields, even those defined in structs, for mythic reasons.
              Consider using <see cref="M:HarmonyLib.AccessTools.StaticFieldRefAccess``1(System.Type,System.String)"/> (and other overloads) instead for static fields.
              </para>
              </remarks>
@@ -2100,7 +2100,7 @@
              e.g. <see cref="M:HarmonyLib.AccessTools.FieldRefAccess``2(System.String)"/>.
              </para>
              <para>
-             This method supports static fields, even those defined in structs, for legacy reasons.
+             This method supports static fields, even those defined in structs, for mythic reasons.
              For such static fields, <typeparamref name="T"/> is effectively ignored.
              Consider using <see cref="M:HarmonyLib.AccessTools.StaticFieldRefAccess``2(System.Reflection.FieldInfo)"/> (and other overloads) instead for static fields.
              </para>

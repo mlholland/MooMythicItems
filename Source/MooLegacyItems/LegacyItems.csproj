@@ -322,23 +322,23 @@
   <ItemGroup>
     <Compile Include="modsource\Defs\ApplyHediffLegacyEffectDef.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
-    <Compile Include="modsource\Defs\LegacyEffectDef.cs" />
-    <Compile Include="modsource\Comps\CompLegacy.cs" />
-    <Compile Include="modsource\Defs\LegacyReasonToDetailOptionsDef.cs" />
+    <Compile Include="modsource\Defs\MythicEffectDef.cs" />
+    <Compile Include="modsource\Comps\CompMythic.cs" />
+    <Compile Include="modsource\Defs\MythicReasonToDetailOptionsDef.cs" />
     <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
     <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
-    <Compile Include="modsource\Harmony\LegacyMaker_LearnTranspiler.cs" />
-    <Compile Include="modsource\Harmony\LegacyMaker_Notify_PawnKilled.cs" />
+    <Compile Include="modsource\Harmony\MythicMaker_LearnTranspiler.cs" />
+    <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
-    <Compile Include="modsource\Ideology\Precept_LegacyRelic.cs" />
-    <Compile Include="modsource\LegacyItemManagement\ThingSetMaker_LegacyItemMaker.cs" />
-    <Compile Include="modsource\LegacyItemManagement\LegacyItemManager.cs" />
-    <Compile Include="modsource\LegacyItemManagement\LegacyItem.cs" />
-    <Compile Include="modsource\LegacyItemManagement\FileIO.cs" />
-    <Compile Include="modsource\LegacyItemManagement\SaveUtility.cs" />
+    <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />
+    <Compile Include="modsource\MythicItemManagement\ThingSetMaker_MythicItemMaker.cs" />
+    <Compile Include="modsource\MythicItemManagement\MythicItemManager.cs" />
+    <Compile Include="modsource\MythicItemManagement\MythicItem.cs" />
+    <Compile Include="modsource\MythicItemManagement\FileIO.cs" />
+    <Compile Include="modsource\MythicItemManagement\SaveUtility.cs" />
     <Compile Include="modsource\DebugActions.cs" />
-    <Compile Include="modsource\PlayerSettings\MooLegacyItems_Mod.cs" />
-    <Compile Include="modsource\PlayerSettings\LegacyItemSettings.cs" />
+    <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
+    <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

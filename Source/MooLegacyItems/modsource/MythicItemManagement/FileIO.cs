@@ -9,7 +9,7 @@ using System.IO;
 /* Extracted from the character editor mod, since that's the only mod I know that has 
  * colony-agnostic save data.
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
     public class FileIO
     {

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <MooLegacyItems.LegacyReasonToDetailOptionsDef>
-    <defName>MooLI_ReasonsToFlavorMap</defName>
+  <MooMythicItems.MythicReasonToDetailOptionsDef>
+    <defName>MooMF_ReasonsToFlavorMap</defName>
     <manyKillsMFD>
-      <li>MooLI_LegacyStory_100Kills_Melee_1</li>
-      <li>MooLI_LegacyStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
     </manyKillsMFD>
     <manyKillsMT></manyKillsMT>
     <manyKillsRFD>
-      <li>MooLI_LegacyStory_100Kills_Ranged_1</li>
-      <li>MooLI_LegacyStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
     </manyKillsRFD>
     <manyKillsRT>
-      <li>MooLI_LegacyTitle_100Kills_Ranged_1</li>
-      <li>MooLI_LegacyTitle_100Kills_Ranged_2</li>
-      <li>MooLI_LegacyTitle_100Kills_Ranged_3</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
     </manyKillsRT>
     <moreKillsMFD></moreKillsMFD>
     <moreKillsMT></moreKillsMT>
@@ -36,123 +36,123 @@
   
   
     <ShootingMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Shooting</li>
+      <li>MooMF_MythicStory_Mastery_Shooting</li>
     </ShootingMasterFD>
     <ShootingMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Shooting</li>
+      <li>MooMF_MythicTitle_Mastery_Shooting</li>
     </ShootingMasterT>
     <ShootingMasterA>
-      <li>MooLI_ShootingBoost</li>
+      <li>MooMF_ShootingBoost</li>
     </ShootingMasterA>
     
     <MeleeMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Melee</li>
+      <li>MooMF_MythicStory_Mastery_Melee</li>
     </MeleeMasterFD>
     <MeleeMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Melee</li>
+      <li>MooMF_MythicTitle_Mastery_Melee</li>
     </MeleeMasterT>
     <MeleeMasterA>
-      <li>MooLI_MeleeBoost</li>
+      <li>MooMF_MeleeBoost</li>
     </MeleeMasterA>
     
     <ConstructionMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Construction</li>
+      <li>MooMF_MythicStory_Mastery_Construction</li>
     </ConstructionMasterFD>
     <ConstructionMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Construction</li>
+      <li>MooMF_MythicTitle_Mastery_Construction</li>
     </ConstructionMasterT>
     <ConstructionMasterA>
-      <li>MooLI_ConstructionBoost</li>
+      <li>MooMF_ConstructionBoost</li>
     </ConstructionMasterA>
     
     <MiningMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Mining</li>
+      <li>MooMF_MythicStory_Mastery_Mining</li>
     </MiningMasterFD>
     <MiningMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Mining</li>
+      <li>MooMF_MythicTitle_Mastery_Mining</li>
     </MiningMasterT>
     <MiningMasterA>
-      <li>MooLI_MiningBoost</li>
+      <li>MooMF_MiningBoost</li>
     </MiningMasterA>
     
     <CookingMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Cooking</li>
+      <li>MooMF_MythicStory_Mastery_Cooking</li>
     </CookingMasterFD>
     <CookingMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Cooking</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking</li>
     </CookingMasterT>
     <CookingMasterA>
-      <li>MooLI_CookingBoost</li>
+      <li>MooMF_CookingBoost</li>
     </CookingMasterA>
     
     <PlantsMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Plants</li>
+      <li>MooMF_MythicStory_Mastery_Plants</li>
     </PlantsMasterFD>
     <PlantsMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Plants</li>
+      <li>MooMF_MythicTitle_Mastery_Plants</li>
     </PlantsMasterT>
     <PlantsMasterA>
-      <li>MooLI_PlantsBoost</li>
+      <li>MooMF_PlantsBoost</li>
     </PlantsMasterA>
     
     <AnimalsMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Animals</li>
+      <li>MooMF_MythicStory_Mastery_Animals</li>
     </AnimalsMasterFD>
     <AnimalsMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Animals</li>
+      <li>MooMF_MythicTitle_Mastery_Animals</li>
     </AnimalsMasterT>
     <AnimalsMasterA>
-      <li>MooLI_AnimalsBoost</li>
+      <li>MooMF_AnimalsBoost</li>
     </AnimalsMasterA>
     
     <CraftingMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Crafting</li>
+      <li>MooMF_MythicStory_Mastery_Crafting</li>
     </CraftingMasterFD>
     <CraftingMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Crafting</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting</li>
     </CraftingMasterT>
     <CraftingMasterA>
-      <li>MooLI_CraftingBoost</li>
+      <li>MooMF_CraftingBoost</li>
     </CraftingMasterA>
     
     <ArtisticMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Artistic</li>
+      <li>MooMF_MythicStory_Mastery_Artistic</li>
     </ArtisticMasterFD>
     <ArtisticMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Artistic</li>
+      <li>MooMF_MythicTitle_Mastery_Artistic</li>
     </ArtisticMasterT>
     <ArtisticMasterA>
-      <li>MooLI_ArtisticBoost</li>
+      <li>MooMF_ArtisticBoost</li>
     </ArtisticMasterA>
     
     <MedicineMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Medicine</li>
+      <li>MooMF_MythicStory_Mastery_Medicine</li>
     </MedicineMasterFD>
     <MedicineMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Medicine</li>
+      <li>MooMF_MythicTitle_Mastery_Medicine</li>
     </MedicineMasterT>
     <MedicineMasterA>
-      <li>MooLI_MedicineBoost</li>
+      <li>MooMF_MedicineBoost</li>
     </MedicineMasterA>
     
     <SocialMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Social</li>
+      <li>MooMF_MythicStory_Mastery_Social</li>
     </SocialMasterFD>
     <SocialMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Social</li>
+      <li>MooMF_MythicTitle_Mastery_Social</li>
     </SocialMasterT>
     <SocialMasterA>
-      <li>MooLI_SocialBoost</li>
+      <li>MooMF_SocialBoost</li>
     </SocialMasterA>
     
     <IntellectualMasterFD>
-      <li>MooLI_LegacyStory_Mastery_Intellectual</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual</li>
     </IntellectualMasterFD>
     <IntellectualMasterT>
-      <li>MooLI_LegacyTitle_Mastery_Intellectual</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual</li>
     </IntellectualMasterT>
     <IntellectualMasterA>
-      <li>MooLI_IntellectualBoost</li>
+      <li>MooMF_IntellectualBoost</li>
     </IntellectualMasterA>
 
     <ColonySlayerMFD></ColonySlayerMFD>
@@ -167,6 +167,6 @@
     <ThrumboSlayerRFD></ThrumboSlayerRFD>
     <ThrumboSlayerRT></ThrumboSlayerRT>
 
-  </MooLegacyItems.LegacyReasonToDetailOptionsDef>
+  </MooMythicItems.MythicReasonToDetailOptionsDef>
 
 </Defs>

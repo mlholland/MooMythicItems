@@ -4,14 +4,14 @@
   <!-- Combat -->
  
   <RecordDef>
-    <defName>MooLI_killsInsects</defName>
+    <defName>MooMF_killsInsects</defName>
     <label>kills (hive insects)</label>
     <description>The number of aggressive, burrowing insects I have killed.</description>
     <type>Int</type>
   </RecordDef>
 
   <RecordDef>
-    <defName>MooLI_killsThrumbos</defName>
+    <defName>MooMF_killsThrumbos</defName>
     <label>kills (non-ally thrumbos)</label>
     <description>The number of non-allied thrumbos I have killed.</description>
     <type>Int</type>
@@ -19,7 +19,7 @@
 
 
   <RecordDef>
-    <defName>MooLI_killsFactionLeaders</defName>
+    <defName>MooMF_killsFactionLeaders</defName>
     <label>kills (faction leaders)</label>
     <description>The number of faction leaders I have killed.</description>
     <type>Int</type>

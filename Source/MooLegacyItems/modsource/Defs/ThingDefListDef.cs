@@ -6,7 +6,7 @@ using Verse;
 
 /* Simple list for containing a list of ThingDefs of some sort of another. Very generic. Perhaps too much so
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
     public class ThingDefListDef : Def
     {

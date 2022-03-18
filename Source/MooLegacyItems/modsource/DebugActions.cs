@@ -6,39 +6,39 @@ using UnityEngine;
 using Verse;
 
 /* The settings tab for this mod, will eventually include a bunch of controls.*/
-namespace MooLegacyItems
+namespace MooMythicItems
 {
     public class DebugActions : ModSettings
     {
-        [DebugAction("Spawning", "Try place Legacy Item Allow Pregen", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void TryPlaceRandomizedLegacyItem()
+        [DebugAction("Spawning", "Try place Mythic Item Allow Pregen", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void TryPlaceRandomizedMythicItem()
         {
-            DebugSpawnLegacyItem(LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(true, false, false, true), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(true, false, false, true), UI.MouseCell(), false);
         }
 
-        [DebugAction("Spawning", "Try place Saved Legacy Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void TryPlaceSavedLegacyItem()
+        [DebugAction("Spawning", "Try place Saved Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void TryPlaceSavedMythicItem()
         {
-            Thing item = LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(false, false, false, true);
+            Thing item = MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);
             if (item == null)
             {
-                if (MooLegacyItems_Mod.settings.flagDebug)
+                if (MooMythicItems_Mod.settings.flagDebug)
                 {
-                    Log.Message("[Moo Legacy Items] " + "MooLI_FailedToCreateLIFromDebug".Translate());
+                    Log.Message("[Moo Mythic Items] " + "MooMF_FailedToCreateLIFromDebug".Translate());
                 }
-                Messages.Message("MooLI_FailedToCreateLIFromDebug".Translate(), MessageTypeDefOf.NeutralEvent, true);
+                Messages.Message("MooMF_FailedToCreateLIFromDebug".Translate(), MessageTypeDefOf.NeutralEvent, true);
             }
-            DebugSpawnLegacyItem(item, UI.MouseCell(), false);
+            DebugSpawnMythicItem(item, UI.MouseCell(), false);
         }
 
-        [DebugAction("Spawning", "Try place Saved Legacy Item - Record World", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        private static void TryPlaceSavedLegacyItemRecordWorld()
+        [DebugAction("Spawning", "Try place Saved Mythic Item - Record World", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void TryPlaceSavedMythicItemRecordWorld()
         {
-            DebugSpawnLegacyItem(LegacyItemManager.RealizeRandomLegacyItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
             
         }
 
-        public static void DebugSpawnLegacyItem(Thing item, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)
+        public static void DebugSpawnMythicItem(Thing item, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)
         {
             if (direct)
             {
@@ -48,8 +48,8 @@ namespace MooLegacyItems
             GenPlace.TryPlaceThing(item, c, Find.CurrentMap, ThingPlaceMode.Near, null, null, default(Rot4));
         }
 
-        [DebugAction("Spawning", "Try place all legacy item types", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-        public static void DebugSpawnAllLegacyItems()
+        [DebugAction("Spawning", "Try place all mythic item types", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        public static void DebugSpawnAllMythicItems()
         {
             // Todo
         }

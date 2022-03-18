@@ -10,7 +10,7 @@ using System.Reflection.Emit;
 
 /* 
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
     [HarmonyPatch(typeof(Precept_Relic))]
     [HarmonyPatch(nameof(Precept_Relic.GenerateRelic))]
@@ -20,23 +20,23 @@ namespace MooLegacyItems
         {
             if (true) // TODO Change this to setting flag
             {
-                Precept_LegacyRelic legacyRelicPrecept = __instance as Precept_LegacyRelic;
-                if (legacyRelicPrecept != null) { 
-                    if (__instance.ThingDef.CompDefFor<CompLegacy>() == null)
+                Precept_MythicRelic mythicRelicPrecept = __instance as Precept_MythicRelic;
+                if (mythicRelicPrecept != null) { 
+                    if (__instance.ThingDef.CompDefFor<CompMythic>() == null)
                     {
                         // todo print warning
-                        Log.Error(String.Format("[Moo Legacy Item] Trying to add legacy attributes to a relic, but the relic def '{0}' doesn't have a legacy comp to modify.", __instance.ThingDef.defName));
+                        Log.Error(String.Format("[Moo Mythic Item] Trying to add mythic attributes to a relic, but the relic def '{0}' doesn't have a mythic comp to modify.", __instance.ThingDef.defName));
                         return;
                     }
 
-                    if (MooLegacyItems_Mod.settings.flagDebug)
+                    if (MooMythicItems_Mod.settings.flagDebug)
                     {
-                        Log.Message(String.Format("[Moo Legacy Items] Adding Legacy Features to Relic: {0}", __result.Label));
+                        Log.Message(String.Format("[Moo Mythic Items] Adding Mythic Features to Relic: {0}", __result.Label));
                     }
-                    CompLegacy relicLegacyComp = __result.TryGetComp<CompLegacy>();
-                    relicLegacyComp.newLabel = legacyRelicPrecept.newLabel;
-                    relicLegacyComp.newDescription = legacyRelicPrecept.newDescription;
-                    relicLegacyComp.abilityDef = legacyRelicPrecept.abilityDef;
+                    CompMythic relicMythicComp = __result.TryGetComp<CompMythic>();
+                    relicMythicComp.newLabel = mythicRelicPrecept.newLabel;
+                    relicMythicComp.newDescription = mythicRelicPrecept.newDescription;
+                    relicMythicComp.abilityDef = mythicRelicPrecept.abilityDef;
                 }
             }
         }

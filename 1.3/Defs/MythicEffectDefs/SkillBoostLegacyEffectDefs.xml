@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_ShootingBoost</defName>
+    <equipHediff>MooMF_WornShootingBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+  
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_MeleeBoost</defName>
+    <equipHediff>MooMF_WornMeleeBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+  
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_ConstructionBoost</defName>
+    <equipHediff>MooMF_WornConstructionBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+  
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_MiningBoost</defName>
+    <equipHediff>MooMF_WornMiningBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_CookingBoost</defName>
+    <equipHediff>MooMF_WornCookingBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_PlantsBoost</defName>
+    <equipHediff>MooMF_WornPlantingBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_AnimalsBoost</defName>
+    <equipHediff>MooMF_WornAnimalsBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_CraftingBoost</defName>
+    <equipHediff>MooMF_WornCraftingBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_ArtisticBoost</defName>
+    <equipHediff>MooMF_WornArtisticBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_MedicineBoost</defName>
+    <equipHediff>MooMF_WornMedicineBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_SocialBoost</defName>
+    <equipHediff>MooMF_WornSocialBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+
+  <MooMythicItems.ApplyHediffMythicEffectDef>
+    <defName>MooMF_IntellectualBoost</defName>
+    <equipHediff>MooMF_WornIntellectualBoon</equipHediff>
+  </MooMythicItems.ApplyHediffMythicEffectDef>
+</Defs>

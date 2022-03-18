@@ -6,17 +6,17 @@ using RimWorld;
 using Verse;
 
 /* This patch intercepts the code that increments a pawn's # things killed records to check and
- * see if that pawn is worthy of creating a legacy item.
+ * see if that pawn is worthy of creating a mythic item.
  * 
- * Legacy checks that are encompassed by this patch include
+ * Mythic checks that are encompassed by this patch include
  * - 100 humanlike kills
  * - 1000 humanlike kills TODO
  * - 100 mech kills TODO 
  * - 100 insect kills TODO
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
-    public class LegacyMaker_Notify_PawnKilled
+    public class MythicMaker_Notify_PawnKilled
     {
 
         private static RecordDef insectKills;
@@ -26,7 +26,7 @@ namespace MooLegacyItems
             {
                 if (insectKills == null)
                 {
-                    insectKills = DefDatabase<RecordDef>.GetNamed("MooLI_killsInsects");
+                    insectKills = DefDatabase<RecordDef>.GetNamed("MooMF_killsInsects");
                 }
                 return insectKills;
             }
@@ -39,7 +39,7 @@ namespace MooLegacyItems
             {
                 if (thrumboKills == null)
                 {
-                    thrumboKills = DefDatabase<RecordDef>.GetNamed("MooLI_killsThrumbos");
+                    thrumboKills = DefDatabase<RecordDef>.GetNamed("MooMF_killsThrumbos");
                 }
                 return thrumboKills;
             }
@@ -51,11 +51,11 @@ namespace MooLegacyItems
             {
                 if (thrumboDefs == null)
                 {
-                    string listDefName = "MooLI_ThrumboDefList";
+                    string listDefName = "MooMF_ThrumboDefList";
                     ThingDefListDef thrumboDefList = DefDatabase<ThingDefListDef>.GetNamed(listDefName);
                     if (thrumboDefList == null)
                     {
-                        Log.Error("[Moo Legacy Items] tried and failed to retrieve list of animal types that are considered thrumbos for record-keeping purposes. Thrumbo kills won't be recorded, nor will it be possible to produce thrumbo-kill-based legacy items. The def we were looking for was named: " + listDefName);
+                        Log.Error("[Moo Mythic Items] tried and failed to retrieve list of animal types that are considered thrumbos for record-keeping purposes. Thrumbo kills won't be recorded, nor will it be possible to produce thrumbo-kill-based mythic items. The def we were looking for was named: " + listDefName);
                         thrumboDefs = new List<ThingDef>();
                         return thrumboDefs;
                     }
@@ -74,7 +74,7 @@ namespace MooLegacyItems
             {
                 if (leaderKills == null)
                 {
-                    leaderKills = DefDatabase<RecordDef>.GetNamed("MooLI_killsFactionLeaders");
+                    leaderKills = DefDatabase<RecordDef>.GetNamed("MooMF_killsFactionLeaders");
                 }
                 return leaderKills;
             }
@@ -91,14 +91,14 @@ namespace MooLegacyItems
         private static readonly int manyMechKillsThreshold1 = 50;
         private static readonly int manyMechKillsThreshold2 = 300;
 
-        private static readonly LegacyReasonToDetailOptionsDef details = LegacyReasonToDetailOptionsDef.Instance;
+        private static readonly MythicReasonToDetailOptionsDef details = MythicReasonToDetailOptionsDef.Instance;
 
         [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_PawnKilled))]
         static class RecordsUtility_Notify_PawnKilled_PostResolve_Patch
         {
             static void Postfix(Pawn killed, Pawn killer)
             {
-                // update custom records related to tracking certain legacy reasons
+                // update custom records related to tracking certain mythic reasons
                 UpdateNewRecords(killed, killer);
 
                 // make sure there's even a potential weapon to make into an heirloom. TODO should probably check other stuff, like not wood and not single use
@@ -107,17 +107,17 @@ namespace MooLegacyItems
                     return;
                 }
 
-                LegacyItem newItem = TryCreatingNewLegacyItem(killed, killer);
-                // create the legacy item if needed
+                MythicItem newItem = TryCreatingNewMythicItem(killed, killer);
+                // create the mythic item if needed
                 if (newItem != null)
                 {
-                    // double check that a more impressive kill count-based legacy item hasn't already been made for this pawn
-                    LegacyItem cachedLegacyItem = LegacyItemManager.GetSimilarCachedLegacyItem(null, "kills", killer.ThingID, Find.World.info.persistentRandomValue);
-                    if (cachedLegacyItem != null && !shouldReplaceLegacyItem(cachedLegacyItem.reason, newItem.reason))
+                    // double check that a more impressive kill count-based mythic item hasn't already been made for this pawn
+                    MythicItem cachedMythicItem = MythicItemManager.GetSimilarCachedMythicItem(null, "kills", killer.ThingID, Find.World.info.persistentRandomValue);
+                    if (cachedMythicItem != null && !shouldReplaceMythicItem(cachedMythicItem.reason, newItem.reason))
                     {
                         return;
                     }
-                    LegacyItemManager.SaveNewLegacyItem(newItem);
+                    MythicItemManager.SaveNewMythicItem(newItem);
                 }
             }
         }
@@ -138,12 +138,12 @@ namespace MooLegacyItems
             }
         }
 
-        private static LegacyItem TryCreatingNewLegacyItem(Pawn killed, Pawn killer)
+        private static MythicItem TryCreatingNewMythicItem(Pawn killed, Pawn killer)
         {
             Thing item = killer.equipment.Primary;
             string reason = "";
             List<string> titles = null, descs = null;
-            List<LegacyEffectDef> effects = null;
+            List<MythicEffectDef> effects = null;
 
             bool isRanged = killer.equipment.Primary.def.IsRangedWeapon;
             RaceProperties raceProps = killed.RaceProps;
@@ -152,7 +152,7 @@ namespace MooLegacyItems
             {
                 if (killedLeader(killed, killer) && killer.records.GetValue(LeaderKills) == leaderKillsThreshold1)
                 {
-                    reason = createLegacyKillReason("leader", 3);
+                    reason = createMythicKillReason("leader", 3);
                     if (isRanged)
                     {
                         descs = details.LeaderSlayerRFD;
@@ -168,7 +168,7 @@ namespace MooLegacyItems
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold1)
                 {
-                    reason = createLegacyKillReason("humanoid", 1);
+                    reason = createMythicKillReason("humanoid", 1);
                     if (isRanged)
                     {
                         descs = details.manyKillsRFD;
@@ -184,7 +184,7 @@ namespace MooLegacyItems
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold2)
                 {
-                    reason = createLegacyKillReason("humanoid", 2);
+                    reason = createMythicKillReason("humanoid", 2);
                     if (isRanged)
                     {
                         descs = details.moreKillsRFD;
@@ -200,7 +200,7 @@ namespace MooLegacyItems
                 }
                 else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold3)
                 {
-                    reason = createLegacyKillReason("humanoid", 3);
+                    reason = createMythicKillReason("humanoid", 3);
                     if (isRanged)
                     {
                         descs = details.mostKillsRFD;
@@ -219,7 +219,7 @@ namespace MooLegacyItems
             {
                 if (killer.records.GetValue(InsectKills) == manyInsectKillsThreshold1)
                 {
-                    reason = createLegacyKillReason("insect", 2);
+                    reason = createMythicKillReason("insect", 2);
                     if (isRanged)
                     {
                         descs = details.manyInsectKillsRFD;
@@ -238,7 +238,7 @@ namespace MooLegacyItems
             {
                 if (killer.records.GetValue(InsectKills) == thrumboKillsThreshold1)
                 {
-                    reason = createLegacyKillReason("thrumbo", 2);
+                    reason = createMythicKillReason("thrumbo", 2);
                     if (isRanged)
                     {
                         descs = details.ThrumboSlayerRFD;
@@ -258,7 +258,7 @@ namespace MooLegacyItems
                 float mechKills = killer.records.GetValue(RecordDefOf.KillsMechanoids);
                 if (mechKills == manyMechKillsThreshold1)
                 {
-                    reason = createLegacyKillReason("mech", 2);
+                    reason = createMythicKillReason("mech", 2);
                     if (isRanged)
                     {
                         descs = details.manyMechKillsRFD;
@@ -291,21 +291,21 @@ namespace MooLegacyItems
                 } */
             }
 
-            // create the legacy item if needed
+            // create the mythic item if needed
             if (titles != null)
             {
-                return new LegacyItem(item, killer, descs.RandomElement(), titles.RandomElement(), effects.RandomElement(), reason);
+                return new MythicItem(item, killer, descs.RandomElement(), titles.RandomElement(), effects.RandomElement(), reason);
             }
             return null;
         }
 
 
-        private static string createLegacyKillReason(string detail, int priority)
+        private static string createMythicKillReason(string detail, int priority)
         {
             if (priority < 1)
             {
                 string result = detail + "-" + "kills" + "-1";
-                Log.Error(String.Format("[Moo Legacy Items] tried to create a legacy kill reason string with a non-positive priority value {0}. Defaulting to priority 1 to create reason '{1}'", priority, result));
+                Log.Error(String.Format("[Moo Mythic Items] tried to create a mythic kill reason string with a non-positive priority value {0}. Defaulting to priority 1 to create reason '{1}'", priority, result));
             }
             return detail + "-" + "kills" + "-" + priority;
         }
@@ -314,33 +314,33 @@ namespace MooLegacyItems
         // Returns true if the new reason's ending integer value is greater than the previous, and false for all other reasons
         // Ex: humanoid-kills-1 is replaced by humanoid-kills-2, but it is also replaced by thrumbo-kills-2, which is technically the first tier of thrumbo kills
         //
-        private static bool shouldReplaceLegacyItem(string oldReason, string newReason)
+        private static bool shouldReplaceMythicItem(string oldReason, string newReason)
         {
             string[] oldSplit = oldReason.Split('-');
             if (oldSplit.Length != 3)
             {
-                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
+                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
                 return false;
             }
             int oldPrio = 0;
             bool parsed = int.TryParse(oldSplit[2], out oldPrio);
             if (!parsed)
             {
-                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
+                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
                 return false;
             }
 
             string[] newSplit = newReason.Split('-');
             if (newSplit.Length != 3)
             {
-                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
+                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
                 return false;
             }
             int newPrio = 0;
             parsed = int.TryParse(newSplit[2], out newPrio);
             if (!parsed)
             {
-                Log.Error(String.Format("[Moo Legacy Items] tried to compare the creation reasons for two kill-based legacy items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
+                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
                 return false;
             }
 

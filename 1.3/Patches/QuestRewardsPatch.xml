@@ -7,7 +7,7 @@
           <value> 
             <li>
               <weight>.6</weight>
-              <thingSetMaker Class="MooLegacyItems.ThingSetMaker_LegacyItemMaker" />
+              <thingSetMaker Class="MooMythicItems.ThingSetMaker_MythicItemMaker" />
             </li> 
           </value>
         </li>

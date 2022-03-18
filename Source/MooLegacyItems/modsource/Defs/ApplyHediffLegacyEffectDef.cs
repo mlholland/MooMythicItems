@@ -4,11 +4,11 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-/* This def is causes a legacy item to apply an XML-specific hediff when equipped.
+/* This def is causes a mythic item to apply an XML-specific hediff when equipped.
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
-    class ApplyHediffLegacyEffectDef : LegacyEffectDef
+    class ApplyHediffMythicEffectDef : MythicEffectDef
     {
 
         public HediffDef equipHediff = null;
@@ -17,12 +17,12 @@ namespace MooLegacyItems
         {
             if (equipHediff == null)
             {
-                Log.Error(String.Format("[Moo Legacy Items] ApplyHediffLegacyEffectDef.ApparelEquipEffect {0} has no equipHediff, this is probably mis-formatted XML somewhere.", this.defName));
+                Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has no equipHediff, this is probably mis-formatted XML somewhere.", this.defName));
                 return;
             }
             if (pawn == null || app == null)
             {
-                Log.Error(String.Format("[Moo Legacy Items] ApplyHediffLegacyEffectDef.ApparelEquipEffect {0} has received either a null pawn or apparel input", this.defName));
+                Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has received either a null pawn or apparel input", this.defName));
                 return;
             }
             if (pawn.health.hediffSet.GetFirstHediffOfDef(equipHediff, false) == null)
@@ -33,7 +33,7 @@ namespace MooLegacyItems
                     hediffComp_RemoveIfApparelDropped.wornApparel = app;
                 } else
                 {
-                    Log.Error(String.Format("[Moo Legacy Items] ApplyHediffLegacyEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up my Moo.", this.defName, equipHediff.defName));
+                    Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up my Moo.", this.defName, equipHediff.defName));
                 }
             } 
         }

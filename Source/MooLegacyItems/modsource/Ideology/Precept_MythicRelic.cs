@@ -8,28 +8,28 @@ using System.Collections.Generic;
 
 /* 
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
 
-   public class Precept_LegacyRelic : Precept_Relic
+   public class Precept_MythicRelic : Precept_Relic
     {
         public String newLabel = null;
         public String newDescription = null;
-        public LegacyEffectDef abilityDef = null;
+        public MythicEffectDef abilityDef = null;
 
-        public Precept_LegacyRelic() { }
+        public Precept_MythicRelic() { }
 
 
-        public Precept_LegacyRelic(LegacyItem legacyItem, Ideo ideo)
+        public Precept_MythicRelic(MythicItem mythicItem, Ideo ideo)
         {
             this.ideo = ideo;
-            this.newLabel = legacyItem.GetFormattedTitle();
-            this.newDescription = legacyItem.GetFormattedDescription();
-            this.abilityDef = legacyItem.abilityDef;
+            this.newLabel = mythicItem.GetFormattedTitle();
+            this.newDescription = mythicItem.GetFormattedDescription();
+            this.abilityDef = mythicItem.abilityDef;
             this.def = PreceptDefOf.IdeoRelic;
-            this.name = legacyItem.GetFormattedTitle();
-            this.descOverride = legacyItem.GetFormattedDescription();
-            this.ThingDef = legacyItem.itemDef;
+            this.name = mythicItem.GetFormattedTitle();
+            this.descOverride = mythicItem.GetFormattedDescription();
+            this.ThingDef = mythicItem.itemDef;
             this.PostMake();
         }
 
@@ -45,7 +45,7 @@ namespace MooLegacyItems
             {
                 Scribe_Values.Look<string>(ref this.newLabel, "newLabel", null, true);
                 Scribe_Values.Look<string>(ref this.newDescription, "newDescription", null, true);
-                Scribe_Defs.Look<LegacyEffectDef>(ref this.abilityDef, "abilityDef");
+                Scribe_Defs.Look<MythicEffectDef>(ref this.abilityDef, "abilityDef");
             }
         }
 

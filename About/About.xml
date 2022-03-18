@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Moo's Legacy Items </name>
+	<name>Moo's Mythic Framework</name>
 	<supportedVersions>
 		<li>1.3</li>
 	</supportedVersions>
@@ -14,8 +14,8 @@
 	</loadAfter>
 	<author>Mooloh</author>
 
-	<packageId>mooloh.legacyitems</packageId>
+	<packageId>mooloh.mythicitems</packageId>
 
-  <description>This mod make it possible for colonies to generate 'legacy items', which can then show up in other colonies as evidence of your previous colonies' glory.
+  <description>This mod chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities, which appear in other colonies as quest rewards.
   </description>
 </ModMetaData>

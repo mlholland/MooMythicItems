@@ -5,14 +5,14 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-/* This patch adds the CompLegacy comp to all defs that match the CanBeLegaciedPredicate. 
+/* This patch adds the CompMythic comp to all defs that match the CanBeLegaciedPredicate. 
  * In practice this is most weapons and wearable items that are not single use or stackable.
  * 
- * Bear in mind that the CompLegacy comp doesn't immediately make all items legacy items, rather
- * it gives these items the capacity to be legacy items if that comp is further modified by an external
+ * Bear in mind that the CompMythic comp doesn't immediately make all items mythic items, rather
+ * it gives these items the capacity to be mythic items if that comp is further modified by an external
  * source (like other code pathways in this mod).
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
     public class DefModifier
     {
@@ -21,13 +21,13 @@ namespace MooLegacyItems
         {
             static void Postfix()
             {
-                if (MooLegacyItems_Mod.settings.flagDebug)
+                if (MooMythicItems_Mod.settings.flagDebug)
                 {
-                    Log.Message("MooLI Generation: Interrupting GenerateImpliedDefs make weapons and clothing 'legacy-able'");
+                    Log.Message("MooMF Generation: Interrupting GenerateImpliedDefs make weapons and clothing 'mythic-able'");
                 }
                 var defs = DefDatabase<ThingDef>.AllDefs.Where(InjectPredicate).ToList();
 
-                var compProperties = new Verse.CompProperties { compClass = typeof(CompLegacy) };
+                var compProperties = new Verse.CompProperties { compClass = typeof(CompMythic) };
 
                 foreach (var def in defs)
                 { 
@@ -42,7 +42,7 @@ namespace MooLegacyItems
             {
                 return false;
             }
-            if (def.HasComp(typeof(CompLegacy)))
+            if (def.HasComp(typeof(CompMythic)))
             {
                 return false;
             }

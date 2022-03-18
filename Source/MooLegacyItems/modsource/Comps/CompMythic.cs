@@ -4,20 +4,20 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-/* This comp is what actually contains the data on an in-game item that makes it a legacy item, and 
- * gives that items the unusual text/abilities to show it. All items that could possibly be a legacy 
- * item have this comp, but it's only populated with data in actual legacy items.
+/* This comp is what actually contains the data on an in-game item that makes it a mythic item, and 
+ * gives that items the unusual text/abilities to show it. All items that could possibly be a mythic 
+ * item have this comp, but it's only populated with data in actual mythic items.
  */
-namespace MooLegacyItems
+namespace MooMythicItems
 {
-    class CompLegacy : ThingComp
+    class CompMythic : ThingComp
     {
         // todo cache fully modified values to save overhead?
         public String newLabel = null;
 
         public String newDescription = null;
         
-        public LegacyEffectDef abilityDef = null;
+        public MythicEffectDef abilityDef = null;
 
         // Need to persist flavor and special abilities across saves
         public override void PostExposeData()
@@ -25,7 +25,7 @@ namespace MooLegacyItems
             base.PostExposeData();
             Scribe_Values.Look<String>(ref newLabel, "newLabel");
             Scribe_Values.Look<String>(ref newDescription, "newDescription");
-            Scribe_Defs.Look<LegacyEffectDef>(ref abilityDef, "abilityDef"); 
+            Scribe_Defs.Look<MythicEffectDef>(ref abilityDef, "abilityDef"); 
         } 
 
         public override string TransformLabel(string label)
