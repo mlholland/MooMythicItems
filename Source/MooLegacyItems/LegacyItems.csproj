@@ -320,7 +320,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="modsource\Defs\ApplyHediffLegacyEffectDef.cs" />
+    <Compile Include="modsource\Comps\CompAbilityEffect_MythicCooldownSync.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_MythicCooldownSync.cs" />
+    <Compile Include="modsource\Defs\MythicEffectDef_GrantAbility.cs" />
+    <Compile Include="modsource\Defs\MythicEffectDef_EquipHediff.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
     <Compile Include="modsource\Defs\MythicEffectDef.cs" />
     <Compile Include="modsource\Comps\CompMythic.cs" />
@@ -339,6 +342,7 @@
     <Compile Include="modsource\DebugActions.cs" />
     <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
     <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
+    <Compile Include="modsource\Verbs\MythicAbility_Test.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -350,9 +354,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="modsource\Comps\CompProperties\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

@@ -58,8 +58,9 @@ namespace MooMythicItems
             s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Carrie's Centurions" };
             s_defaultDescriptions = new HashSet<string> { "MooMF_MythicStory_100Kills_Ranged_1", "MooMF_MythicStory_100Kills_Ranged_2" };
             s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_100Kills_Ranged_1", "MooMF_MythicTitle_100Kills_Ranged_2", "MooMF_MythicTitle_100Kills_Ranged_3" };
-            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
-         }
+            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
+            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_TestAbility") }; // TODO remove
+        }
 
         /* New values are added to the end of line, to keep an implicitly time-ordered list of items */
         public static void SaveNewMythicItem(MythicItem newMythicItem)
@@ -287,7 +288,7 @@ namespace MooMythicItems
             }
             else
             {
-                mythicComp.newLabel = String.Format(mi.titleTranslationString.Translate(), mi.ownerShortName, mi.itemDef);
+                mythicComp.newLabel = String.Format(mi.titleTranslationString.Translate(), mi.ownerShortName, def.label);
                 mythicComp.newDescription = String.Format(mi.descriptionTranslationString.Translate(), mi.ownerFullName, mi.ownerShortName, mi.factionName, def.label);
                 mythicComp.abilityDef = mi.abilityDef;
             }

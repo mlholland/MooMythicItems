@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_TestAbility</defName>
+    <mythicAbilityDef>MooLI_Test</mythicAbilityDef>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+ 
+</Defs>

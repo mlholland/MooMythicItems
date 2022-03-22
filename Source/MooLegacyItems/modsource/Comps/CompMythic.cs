@@ -12,6 +12,12 @@ namespace MooMythicItems
 {
     class CompMythic : ThingComp
     {
+        public CompMythic()
+        {
+            this.tick
+        }
+
+
         // todo cache fully modified values to save overhead?
         public String newLabel = null;
 
@@ -46,14 +52,44 @@ namespace MooMythicItems
         public override void Notify_Equipped(Pawn pawn)
         {
             base.Notify_Equipped(pawn);
-            if (abilityDef == null)
+            if (abilityDef != null)
             {
-                return;
+                this.abilityDef.OnEquip(pawn, this.parent);
             }
-            Apparel app = this.parent as Apparel;
-            if (app != null)
+        }
+
+        public override void Notify_Unequipped(Pawn pawn)
+        {
+            base.Notify_Unequipped(pawn);
+            if (abilityDef != null)
             {
-                this.abilityDef.ApparelEquipEffect(pawn, app);
+                this.abilityDef.OnUnequip(pawn, this.parent);
+            }
+        }
+
+        public override void CompTick()
+        {
+            base.CompTickLong();
+            Log.Message("A");
+            if (abilityDef != null)
+            {
+                Log.Message("B");
+                Pawn_ApparelTracker pawn_ApparelTracker = this.ParentHolder as Pawn_ApparelTracker;
+                if (pawn_ApparelTracker != null)
+                {
+                    Log.Message("B2");
+                    abilityDef.LongTick(pawn_ApparelTracker.pawn);
+                    return;
+                }
+                Log.Message("C");
+                Pawn_EquipmentTracker equipTracker = this.ParentHolder as Pawn_EquipmentTracker;
+                if (equipTracker != null)
+                {
+                    Log.Message("C2");
+                    abilityDef.LongTick(equipTracker.pawn);
+                    return;
+                }
+                // todo weapon equivalent
             }
         }
     }

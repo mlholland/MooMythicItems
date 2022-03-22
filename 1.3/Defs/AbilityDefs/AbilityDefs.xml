@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>MooLI_Test</defName>
+    <label>work drive</label>
+    <description>Call on a person to work harder for some time.</description>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+    <iconPath>UI/Abilities/WorkDrive</iconPath>
+    <warmupMoteSocialSymbol>UI/Abilities/WorkDrive</warmupMoteSocialSymbol>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>10000</cooldownTicksRange>
+    <groupDef>Leader</groupDef>
+    <hotKey>Misc12</hotKey>
+    <uiOrder>2</uiOrder>
+    <warmupStartSound>WorkDrive_Warmup</warmupStartSound>
+    <statBases>
+      <Ability_Duration>3000</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>-1</range>
+      <warmupTime>3.0</warmupTime>
+      <targetParams>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>false</canTargetMechs>
+        <onlyTargetColonists>true</onlyTargetColonists>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>WorkDrive</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <applicableToMechs>False</applicableToMechs>
+      </li>
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>WorkDrive</interactionDef>
+      </li>
+      <li Class="MooMythicItems.CompProperties_MythicCooldownSync"/>
+    </comps>
+  </AbilityDef>
+</Defs>
