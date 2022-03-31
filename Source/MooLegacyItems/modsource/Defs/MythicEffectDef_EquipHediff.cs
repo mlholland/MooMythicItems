@@ -13,7 +13,7 @@ namespace MooMythicItems
 
         public HediffDef equipHediff = null;
 
-        public override void OnEquip(Pawn pawn, ThingWithComps mythicItem)
+        public override void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
         {
             if (equipHediff == null)
             {
@@ -21,6 +21,8 @@ namespace MooMythicItems
                 return;
             }
 
+            // If mythic item is apparel, don't both with paired logic between equip/unequip functions.
+            // Instead, just leverage the existing hediffComp_RemoveIfApparelDropped hediff comp
             if (mythicItem is Apparel app)
             {
 
@@ -42,7 +44,7 @@ namespace MooMythicItems
                     }
                 }
             }
-            // TODO weapon equip logic
+            // TODO weapon equip logic, the above only works for apparel
         }
     }
 }

@@ -6,16 +6,13 @@ using System.Linq;
 using System;
 
 
-/* This thing set maker tries to create a mythic item. If it for whatever reason it can't make a mythic item, it fails to create a mythic item
- * it functions like a normal ThingSetMaker_MarketValue. This class is what allows mythic items to be generated as quest rewards.
+/* This thing set maker tries to create a mythic item. Used for quest rewards and such.
  */
 namespace MooMythicItems
 {
     public class ThingSetMaker_MythicItemMaker : ThingSetMaker
     { 
-        public ThingSetMaker_MythicItemMaker()
-        { 
-        }
+        public ThingSetMaker_MythicItemMaker() { }
          
         protected override bool CanGenerateSub(ThingSetMakerParams parms)
         {

@@ -9,6 +9,8 @@ using Verse;
  * 
  * Note that for all practical purposes, this is an abstract class. The only reason it's not implented as an abstract class or
  * an interface is to allow this class and its children to be saved by the Scribe_Defs feature to save overhead.
+ * 
+ * Remember, NO PERSISTENT DATA FOR SPECIFIC ITEMS CAN GO IN HERE. THAT's WHAT THE INPUTTED DATA FIELDS ARE FOR.
  */
 namespace MooMythicItems
 {
@@ -16,10 +18,9 @@ namespace MooMythicItems
     {
         public MythicEffectDef() { }
         
-        public virtual void OnEquip(Pawn pawn, ThingWithComps mythicItem) { }
+        public virtual void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
-        public virtual void OnUnequip(Pawn pawn, ThingWithComps mythicItem) { }
-
-        public virtual void Tick(Pawn currentHolder) { }
+        public virtual void OnUnequip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
+        
     }
 }

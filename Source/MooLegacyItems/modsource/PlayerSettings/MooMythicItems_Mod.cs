@@ -3,6 +3,7 @@ using Verse;
 using RimWorld;
 using HarmonyLib;
 
+/* Mod boilerplate. Contains settings and runs all the harmony patches.*/
 namespace MooMythicItems
 {
     public class MooMythicItems_Mod : Mod

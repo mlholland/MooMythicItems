@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-
-/* A MythicItem is an item that was created as a result of a colonist's actions in a colony, which can
+/* A MythicItem is an item that was created as a result of a colonist's actions, which can
  * then be generated into an actual Thing in another colony. The data saved in this class structure is 
- * just the minimal info needed to create the actual in-game item.
+ * the minimal info needed to create the actual in-game item.
  */
 namespace MooMythicItems
 {

@@ -6,7 +6,9 @@ using RimWorld;
 using Verse;
 using System.Collections.Generic;
 
-/* 
+/* A unique type of relic precept that stores extra information about the mythic item backing this relic.
+ * Due to the nature of RW's code, this kind of inheritance can only get us so far. The actual use/functionality
+ * of this precept had to be jammed into a harmony patch (Precept_Relic_GenerateRelic.cs).
  */
 namespace MooMythicItems
 {
@@ -18,7 +20,6 @@ namespace MooMythicItems
         public MythicEffectDef abilityDef = null;
 
         public Precept_MythicRelic() { }
-
 
         public Precept_MythicRelic(MythicItem mythicItem, Ideo ideo)
         {
@@ -48,7 +49,5 @@ namespace MooMythicItems
                 Scribe_Defs.Look<MythicEffectDef>(ref this.abilityDef, "abilityDef");
             }
         }
-
-
     }
 }

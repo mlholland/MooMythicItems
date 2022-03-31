@@ -2,7 +2,8 @@
 <Defs>
   <MooMythicItems.MythicEffectDef_GrantAbility>
     <defName>MooMF_TestAbility</defName>
-    <mythicAbilityDef>MooLI_Test</mythicAbilityDef>
+    <mythicAbilityDef>MooMF_Test2</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
   </MooMythicItems.MythicEffectDef_GrantAbility>
  
 </Defs>

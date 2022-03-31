@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-/* The settings tab for this mod, will eventually include a bunch of controls.*/
+/* The settings tab for this mod.*/
 namespace MooMythicItems
 {
     public class MythicItemSettings : ModSettings

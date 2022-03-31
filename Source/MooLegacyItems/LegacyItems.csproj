@@ -320,8 +320,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="modsource\Comps\CompAbilityEffect_MythicCooldownSync.cs" />
-    <Compile Include="modsource\Comps\CompProperties\CompProperties_MythicCooldownSync.cs" />
     <Compile Include="modsource\Defs\MythicEffectDef_GrantAbility.cs" />
     <Compile Include="modsource\Defs\MythicEffectDef_EquipHediff.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
@@ -354,7 +352,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="modsource\Comps\CompProperties\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

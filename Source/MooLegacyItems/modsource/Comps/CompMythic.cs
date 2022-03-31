@@ -12,10 +12,7 @@ namespace MooMythicItems
 {
     class CompMythic : ThingComp
     {
-        public CompMythic()
-        {
-            this.tick
-        }
+        public CompMythic(){ }
 
 
         // todo cache fully modified values to save overhead?
@@ -24,6 +21,9 @@ namespace MooMythicItems
         public String newDescription = null;
         
         public MythicEffectDef abilityDef = null;
+        
+        // for arbitrary data storage by specific mythic effect logic.
+        private string effectVal1 = null, effectVal2 = null, effectVal3 = null;
 
         // Need to persist flavor and special abilities across saves
         public override void PostExposeData()
@@ -31,6 +31,9 @@ namespace MooMythicItems
             base.PostExposeData();
             Scribe_Values.Look<String>(ref newLabel, "newLabel");
             Scribe_Values.Look<String>(ref newDescription, "newDescription");
+            Scribe_Values.Look<String>(ref effectVal1, "effectVal1");
+            Scribe_Values.Look<String>(ref effectVal2, "effectVal2");
+            Scribe_Values.Look<String>(ref effectVal3, "effectVal3");
             Scribe_Defs.Look<MythicEffectDef>(ref abilityDef, "abilityDef"); 
         } 
 
@@ -54,7 +57,7 @@ namespace MooMythicItems
             base.Notify_Equipped(pawn);
             if (abilityDef != null)
             {
-                this.abilityDef.OnEquip(pawn, this.parent);
+                this.abilityDef.OnEquip(pawn, this.parent, ref effectVal1, ref effectVal2, ref effectVal3);
             }
         }
 
@@ -63,34 +66,9 @@ namespace MooMythicItems
             base.Notify_Unequipped(pawn);
             if (abilityDef != null)
             {
-                this.abilityDef.OnUnequip(pawn, this.parent);
+                this.abilityDef.OnUnequip(pawn, this.parent, ref effectVal1, ref effectVal2, ref effectVal3);
             }
         }
-
-        public override void CompTick()
-        {
-            base.CompTickLong();
-            Log.Message("A");
-            if (abilityDef != null)
-            {
-                Log.Message("B");
-                Pawn_ApparelTracker pawn_ApparelTracker = this.ParentHolder as Pawn_ApparelTracker;
-                if (pawn_ApparelTracker != null)
-                {
-                    Log.Message("B2");
-                    abilityDef.LongTick(pawn_ApparelTracker.pawn);
-                    return;
-                }
-                Log.Message("C");
-                Pawn_EquipmentTracker equipTracker = this.ParentHolder as Pawn_EquipmentTracker;
-                if (equipTracker != null)
-                {
-                    Log.Message("C2");
-                    abilityDef.LongTick(equipTracker.pawn);
-                    return;
-                }
-                // todo weapon equivalent
-            }
-        }
+        
     }
 }

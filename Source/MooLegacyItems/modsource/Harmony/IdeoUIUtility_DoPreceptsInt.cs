@@ -29,14 +29,12 @@ namespace MooMythicItems
             {
                 curY += 15;
                 float num2 = width - (width - IdeoUIUtility.PreceptBoxSize.x * 3f - 16f) / 2f;
-                // add a button that lists relics based on saved mythic items
+                // OPTION 1 relics based on saved mythic items
                 Rect rect = new Rect(num2 - AddMythicRelicButtonSize.x, curY - AddMythicRelicButtonSize.y, AddMythicRelicButtonSize.x, AddMythicRelicButtonSize.y);
                 if (Widgets.ButtonText(rect, "MooMF_AddMythicRelic".Translate(addPreceptLabel).CapitalizeFirst() + "...", true, true, true))
                 {
-                    // todo - add relic limit check
                     // sub todo - add duck's limit removal check
-
-                    // todo - get relics from actual saved LI list
+                    
                     List<FloatMenuOption> opts = new List<FloatMenuOption>();
                     int maxRelics = relicPrecept.maxCount;
                     if (relicPrecept.preceptInstanceCountCurve != null)
@@ -58,7 +56,7 @@ namespace MooMythicItems
                                 RitualPatternDef pat = relicPrecept.ritualPatternBase;
                                 ideo.AddPrecept(precept, true, null, pat);
                                 ideo.anyPreceptEdited = true;
-                            // todo remove LI from saved list once I reconfigure the Mythic Precept to save the entire mythic item properly
+                                // todo remove LI from saved list once I reconfigure the Mythic Precept to save the entire mythic item properly
                             };
                             opts.Add(new FloatMenuOption(mi.GetFormattedTitle(), action, mi.itemDef.uiIcon, IdeoUIUtility.GetIconAndLabelColor(relicPrecept.impact), MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                         }
@@ -67,7 +65,6 @@ namespace MooMythicItems
                             opts.Add(new FloatMenuOption("MooMF_NoSavedMythicOptionsForRelics".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                         }
                     }
-                    // todo if no LI's found, add single no-op drop down option
                     // TODO in other code somewhere, add mythic item back to save list if removed from precept
                     FloatMenu menu = new FloatMenu(opts, "Saved Mythic Item Options");
                     // menu.doCloseButton = true;

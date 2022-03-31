@@ -9,9 +9,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 
 /* This patch intercepts the code that sets a pawn's skill level, and spawns a mythic item if the code is
- * settings a colonist's skill to 20.
- * 
- * 
+ * settings a colonist's skill to 20. Big thanks to the LevelUp mod that I jury-rigged this on. Transpilers are scary.
  */
 namespace MooMythicItems
 {
