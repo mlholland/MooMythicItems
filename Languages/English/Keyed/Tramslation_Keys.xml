@@ -89,5 +89,9 @@
   <MooMF_MythicStory_Kills_Thrumbos_1>Stories of {1} turn up in tribal folklore, where {0} is feared as a slayer of nature spirits. Depending on your view of thrumbos, that might be true.</MooMF_MythicStory_Kills_Thrumbos_1>
   <MooMF_MythicTitle_Kills_Thrumbos_1>The Thrumbobane {1}</MooMF_MythicTitle_Kills_Thrumbos_1>
   <MooMF_MythicTitle_Kills_Thrumbos_2>{0}'s Legendhunter</MooMF_MythicTitle_Kills_Thrumbos_2>
+
+  <MooMF_MythicStory_ThrumboFriend_1>Many tribes around the Rim worship someone known only as 'wise-friend {1}'. Myths about this character can be traced back to the lost settlements of {2}, whose people supposedly knew how to tame the majestic thrumbos. This thurmbofur-covered {3} seems to uphold those stories.</MooMF_MythicStory_ThrumboFriend_1>
+  <MooMF_MythicTitle_ThurmboFriend_1>{0}'s Thrumbo-friend {1}</MooMF_MythicTitle_ThurmboFriend_1>
+  <MooMF_MythicTitle_ThurmboFriend_2>{1} of the Thrumbo-caller</MooMF_MythicTitle_ThurmboFriend_2>
     
 </LanguageData>

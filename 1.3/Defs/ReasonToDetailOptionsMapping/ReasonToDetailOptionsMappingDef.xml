@@ -103,6 +103,7 @@
     </AnimalsMasterT>
     <AnimalsMasterA>
       <li>MooMF_AnimalsBoost</li>
+      <li>MooMF_Thrumbocall</li>
     </AnimalsMasterA>
     
     <CraftingMasterFD>
@@ -166,6 +167,17 @@
     
     <ThrumboSlayerRFD></ThrumboSlayerRFD>
     <ThrumboSlayerRT></ThrumboSlayerRT>
+
+    <ThrumboFriendFD>
+      <li>MooMF_MythicStory_ThrumboFriend_1</li>
+    </ThrumboFriendFD>
+    <ThrumboFriendT>
+      <li>MooMF_MythicTitle_ThurmboFriend_1</li>
+      <li>MooMF_MythicTitle_ThurmboFriend_2</li>
+    </ThrumboFriendT>
+    <ThrumboFriendA>
+      <li>MooMF_GrantThurmbocall</li>
+    </ThrumboFriendA>
 
   </MooMythicItems.MythicReasonToDetailOptionsDef>
 

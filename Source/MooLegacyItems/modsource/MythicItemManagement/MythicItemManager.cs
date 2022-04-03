@@ -77,7 +77,7 @@ namespace MooMythicItems
 
         /* Add a new mythic item to the cache without saving the cache to disk.
          */
-        public static void CacheMythicItem(MythicItem newMythicItem)
+        private static void CacheMythicItem(MythicItem newMythicItem)
         {
             s_cachedItems.Add(newMythicItem);
         }
@@ -331,8 +331,8 @@ namespace MooMythicItems
 
         /* Used to check for similarity between potential new items and existing items in order to prevent identical mythic items from being 
          * repeated created (for example if a pawn keeps reaching level 20 in a skill due to vanilla skill decay).
-         * itemDef, pawnId, and originatingWorldId must be exact matches if def (or non zero for the worldId), but the reasonFragment
-         * only needs to be contained by a mythicItem's reason string to match. This allows for general reason matching (like any kill or skill based item).
+         * itemDef, pawnId, and originatingWorldId must be exact matches if non-null (or non zero for the worldId), but the reasonFragment
+         * only needs to a substring of a mythicItem's reason string to match. This allows for general reason matching (like any kill or skill-based reason).
          */
         public static MythicItem GetSimilarCachedMythicItem(ThingDef itemDef, string reasonFragment, string pawnId, int originatingWorldId)
         {

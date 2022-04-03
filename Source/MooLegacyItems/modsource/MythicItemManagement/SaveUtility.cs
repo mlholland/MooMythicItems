@@ -53,7 +53,7 @@ namespace MooMythicItems
             }
         }
         
-        private static string PATH_LEGACYITEMS
+        private static string PATH_MythicITEMS
         {
             get
             {
@@ -69,10 +69,10 @@ namespace MooMythicItems
             List<MythicItem> results = new List<MythicItem>();
             try
             {
-                bool flag = FileIO.Exists(PATH_LEGACYITEMS);
+                bool flag = FileIO.Exists(PATH_MythicITEMS);
                 if (flag)
                 {
-                    mythicItemsFileText = BytesToString(FileIO.ReadFile(PATH_LEGACYITEMS), Encoding.UTF8);
+                    mythicItemsFileText = BytesToString(FileIO.ReadFile(PATH_MythicITEMS), Encoding.UTF8);
                 } else {
                     return results;
                 }
@@ -106,7 +106,7 @@ namespace MooMythicItems
             {
                 encodedItems.Add(ConvertMythicItemToString(item).Replace("\n", s_newLineReplacement));
             }
-            FileIO.WriteFile(PATH_LEGACYITEMS, StringToBytes(string.Join("\n", encodedItems), Encoding.UTF8));
+            FileIO.WriteFile(PATH_MythicITEMS, StringToBytes(string.Join("\n", encodedItems), Encoding.UTF8));
         }
 
         /* Assumes that a mythic item is encoded as a comma separated value with the

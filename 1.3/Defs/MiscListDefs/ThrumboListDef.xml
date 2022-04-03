@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Combat -->
-  <MooLegacyItems.ThingDefListDef>
-    <defName>MooLI_ThrumboDefList</defName>
+  <MooMythicItems.ThingDefListDef>
+    <defName>MooMF_ThrumboDefList</defName>
     <values>
       <li>Thrumbo</li>
     </values>
-  </MooLegacyItems.ThingDefListDef>
+  </MooMythicItems.ThingDefListDef>
   
 </Defs>

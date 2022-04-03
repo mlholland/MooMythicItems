@@ -320,6 +320,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
     <Compile Include="modsource\Defs\MythicEffectDef_GrantAbility.cs" />
     <Compile Include="modsource\Defs\MythicEffectDef_EquipHediff.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
@@ -327,6 +329,7 @@
     <Compile Include="modsource\Comps\CompMythic.cs" />
     <Compile Include="modsource\Defs\MythicReasonToDetailOptionsDef.cs" />
     <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
+    <Compile Include="modsource\Harmony\MythicMaker_DoRecruit.cs" />
     <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_LearnTranspiler.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
@@ -353,7 +356,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="modsource\Comps\CompProperties\" />
+    <Folder Include="modsource\Abilities\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

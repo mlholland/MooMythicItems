@@ -24,5 +24,13 @@
     <description>The number of faction leaders I have killed.</description>
     <type>Int</type>
   </RecordDef>
-  
+
+
+  <RecordDef>
+    <defName>MooMF_thrumbosTamed</defName>
+    <label>thrumbos tamed</label>
+    <description>The number of wild thurmbos I have tamed.</description>
+    <type>Int</type>
+  </RecordDef>
+
 </Defs>

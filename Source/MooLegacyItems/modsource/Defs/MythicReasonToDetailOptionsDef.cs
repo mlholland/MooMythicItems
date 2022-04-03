@@ -152,5 +152,11 @@ namespace MooMythicItems
         public List<String> LastStandingRT;
         public List<MythicEffectDef> LastStandingRA;
 
+
+        // killing thrumbos
+        public List<String> ThrumboFriendFD;
+        public List<String> ThrumboFriendT;
+        public List<MythicEffectDef> ThrumboFriendA;
+
     }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <MooMythicItems.MythicEffectDef_GrantAbility>
-    <defName>MooMF_TestAbility</defName>
-    <mythicAbilityDef>MooMF_Test2</mythicAbilityDef>
+    <defName>MooMF_GrantThurmbocall</defName>
+    <mythicAbilityDef>MooMF_Thrumbocall</mythicAbilityDef>
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
   </MooMythicItems.MythicEffectDef_GrantAbility>
  

@@ -3,35 +3,28 @@
 
 
   <AbilityDef>
-    <defName>MooMF_Test2</defName>
-    <label>painblock</label>
-    <description>Block pain pathways in the target's brain for a short time. This can allow a person to move and act even with grievous injuries which would normally incapacitate them.</description>
-    <level>1</level>
+    <defName>MooMF_Thrumbocall</defName>
+    <label>Thrumbocall</label>
+    <description>Channel the spirit of a ancient friend of the thrumbos to immediately cause a thrumbo migration event. Has a 1 year cooldown.</description>
     <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
-    <cooldownTicksRange>2400~2400</cooldownTicksRange>
-    <statBases> 
-      <Ability_Duration>120</Ability_Duration>
-    </statBases>
+    <cooldownTicksRange>3600000~3600000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>False</targetRequired>
     <verbProperties>
-      <verbClass>Verb_CastAbilityTouch</verbClass>
-      <warmupTime>0.25</warmupTime>
-      <range>24.9</range>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <range>0</range>
+      <requireLineOfSight>False</requireLineOfSight>
       <targetParams>
         <canTargetSelf>True</canTargetSelf>
-        <canTargetAnimals>True</canTargetAnimals>
       </targetParams>
     </verbProperties>
     <comps>
-      <li Class = "CompProperties_AbilityGiveHediff">
-        <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>PsychicAnesthesia</hediffDef>
-        <durationMultiplier>PsychicSensitivity</durationMultiplier>
-        <psychic>True</psychic>
-        <applicableToMechs>False</applicableToMechs>
-      </li>
-      <li Class="CompProperties_AbilityFleckOnTarget">
-        <fleckDef>PsycastPsychicEffect</fleckDef>
+      <li Class = "MooMythicItems.CompProperties_MapWideIncident">
+        <incident>ThrumboPasses</incident>
       </li>
     </comps>
   </AbilityDef>
