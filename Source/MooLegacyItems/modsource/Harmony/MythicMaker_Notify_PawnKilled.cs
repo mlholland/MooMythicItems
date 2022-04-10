@@ -37,6 +37,7 @@ namespace MooMythicItems
                 return thrumboKills;
             }
         }
+        // Needed for determining what counts as a thrumbo in modded games.
         private static List<ThingDef> thrumboDefs;
         private static List<ThingDef> ThrumboDefs
         {
@@ -57,8 +58,6 @@ namespace MooMythicItems
                 return thrumboDefs;
             }
         }
-
-
 
         private static RecordDef leaderKills;
         private static RecordDef LeaderKills
@@ -81,38 +80,37 @@ namespace MooMythicItems
             {
                 // update custom records related to tracking certain mythic reasons
                 UpdateNewRecords(killed, killer);
+                runOnKillMythicEffects(killed, killer);
             }
         }
 
         private static void UpdateNewRecords(Pawn killed, Pawn killer)
         {
-            if (killedInsectFaction(killed, killer))
+            if (killed.Faction != null && killed.Faction.def.Equals(FactionDefOf.Insect))
             {
                 killer.records.Increment(InsectKills);
             }
-            if (killedLeader(killed, killer))
+            if (killed.RaceProps.Humanlike && killed.Faction != null && killed.Faction.leader != null && killed == killed.Faction.leader)
             {
                 killer.records.Increment(LeaderKills);
             }
-            else if (killedNonAllyThrumbo(killed, killer))
+            else if (killed.RaceProps.Animal && ThrumboDefs.Contains(killed.def) && killer.Faction != killed.Faction)
             {
                 killer.records.Increment(ThrumboKills);
             }
         }
 
-        private static bool killedLeader(Pawn killed, Pawn killer)
+        private static void runOnKillMythicEffects(Pawn killed, Pawn killer)
         {
-            return killed.RaceProps.Humanlike && killed.Faction != null && killed.Faction.leader != null && killed == killed.Faction.leader;
-        }
-
-        private static bool killedInsectFaction(Pawn killed, Pawn killer)
-        {
-            return killed.Faction != null && killed.Faction.def.Equals(FactionDefOf.Insect);
-        }
-
-        private static bool killedNonAllyThrumbo(Pawn killed, Pawn killer)
-        {
-            return killed.RaceProps.Animal && ThrumboDefs.Contains(killed.def) && killer.Faction != killed.Faction;
+            if (killer != null && killer.equipment != null && killer.equipment.Primary != null)
+            {
+                Thing killerWeapon = killer.equipment.Primary;
+                CompMythic mythic = killerWeapon.TryGetComp<CompMythic>();
+                if (mythic != null)
+                {
+                    mythic.DoOnKillEffects(killed, killer);
+                }
+            }
         }
 
     }     

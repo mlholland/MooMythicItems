@@ -10,8 +10,13 @@ namespace MooMythicItems
 {
     class MythicEffectDef_EquipHediff : MythicEffectDef
     {
-
         public HediffDef equipHediff = null;
+
+        public override IEnumerable<string> ConfigErrors()
+        {
+            foreach (var error in base.ConfigErrors()) yield return error;
+            if (equipHediff == null) yield return "equipHediff cannot be null";
+        }
 
         public override void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
         {

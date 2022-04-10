@@ -54,7 +54,6 @@ namespace MooMythicItems
 
         public override void Notify_Equipped(Pawn pawn)
         {
-            base.Notify_Equipped(pawn);
             if (abilityDef != null)
             {
                 this.abilityDef.OnEquip(pawn, this.parent, ref effectVal1, ref effectVal2, ref effectVal3);
@@ -63,12 +62,20 @@ namespace MooMythicItems
 
         public override void Notify_Unequipped(Pawn pawn)
         {
-            base.Notify_Unequipped(pawn);
             if (abilityDef != null)
             {
                 this.abilityDef.OnUnequip(pawn, this.parent, ref effectVal1, ref effectVal2, ref effectVal3);
             }
         }
-        
+
+
+        public virtual void DoOnKillEffects(Pawn killed, Pawn killer)
+        {
+            if (abilityDef != null)
+            {
+                this.abilityDef.OnKill(killed, killer, this.parent, ref effectVal1, ref effectVal2, ref effectVal3);
+            }
+        }
+
     }
 }

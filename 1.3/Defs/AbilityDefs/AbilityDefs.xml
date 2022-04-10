@@ -72,7 +72,7 @@
   <AbilityDef>
     <defName>MooMF_BigEMPRocket</defName>
     <label>Mega-Emp Rocket</label>
-    <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot massive EMP explosive. Deals no damage, but will stun unadapted mechanoids for a very long time.</description>
+    <description>Use the jury-rigged emp cannon mounted on the side of this weapon to shoot massive EMP explosive. Deals no damage, but will stun unadapted mechanoids for a very long time.</description>
     <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>60000~60000</cooldownTicksRange>

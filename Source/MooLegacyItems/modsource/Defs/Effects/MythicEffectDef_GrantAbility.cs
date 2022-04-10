@@ -25,6 +25,13 @@ namespace MooMythicItems
         private static readonly string cooldownRemaining = "cdKey";
         private static readonly AccessTools.FieldRef<object, int> coolDownTicksField = AccessTools.FieldRefAccess<int>(typeof(Ability), "cooldownTicks");
 
+        public override IEnumerable<string> ConfigErrors()
+        {
+            foreach (var error in base.ConfigErrors()) yield return error;
+            if (mythicAbilityDef == null) yield return "mythicAbilityDef cannot be null";
+            if (coolDownWhileUnequipped && startOnCooldown) yield return "coolDownWhileUnequipped and startOnCooldown should not both be true. The associated ability will always just start on cooldown.";
+        }
+
         public override void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
         { 
             if (pawn == null || mythicAbilityDef == null)

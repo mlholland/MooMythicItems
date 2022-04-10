@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooMythicItems.MythicEffectDef_KillsDropItems>
+    <defName>MooMF_KillInsectsForJelly</defName>
+    <worksOnInsects>true</worksOnInsects>
+    <possibleDrops>
+      <li>InsectJelly</li>
+    </possibleDrops>
+  </MooMythicItems.MythicEffectDef_KillsDropItems>
+
+</Defs>

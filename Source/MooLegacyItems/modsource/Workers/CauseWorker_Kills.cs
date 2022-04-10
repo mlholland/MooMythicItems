@@ -62,7 +62,6 @@ namespace MooMythicItems
                 __state = new Dictionary<RecordDef, int>();
                 foreach (RecordDef record in recordsWatched.Keys)
                 {
-                    Log.Message(String.Format(record.defName));
                     __state.Add(record, killer.records.GetAsInt(record));
                 }
             }

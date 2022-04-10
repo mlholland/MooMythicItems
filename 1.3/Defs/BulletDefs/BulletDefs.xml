@@ -31,6 +31,7 @@
       <!-- Use default damage from explosion def -->
       <explosionRadius>7.8</explosionRadius>
       <speed>50</speed>
+      <damageAmountBase>300</damageAmountBase>
     </projectile>
   </ThingDef>
 
