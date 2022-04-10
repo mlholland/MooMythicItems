@@ -320,7 +320,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modsource\Comps\CompAbilityEffect_Empty.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_Empty.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef_LevelUp.cs" />
@@ -346,7 +348,7 @@
     <Compile Include="modsource\DebugActions.cs" />
     <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
     <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
-    <Compile Include="modsource\Verbs\MythicAbility_Test.cs" />
+    <Compile Include="modsource\Verbs\Verb_ShootAbility.cs" />
     <Compile Include="modsource\Workers\CauseWorker_RecruitedOrTamed.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Levelup.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Kills.cs" />

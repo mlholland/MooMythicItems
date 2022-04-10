@@ -5,5 +5,17 @@
     <mythicAbilityDef>MooMF_Thrumbocall</mythicAbilityDef>
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
   </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAPRocket</defName>
+    <mythicAbilityDef>MooMF_GrapeshotRocket</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantEMPRocket</defName>
+    <mythicAbilityDef>MooMF_BigEMPRocket</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
  
 </Defs>

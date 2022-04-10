@@ -29,7 +29,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause1</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_GrantAPRocket</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_100Kills_Ranged_1</li>
@@ -122,7 +122,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_MechKillerCause1</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_GrantEMPRocket</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_100Kills_Ranged_1</li>
