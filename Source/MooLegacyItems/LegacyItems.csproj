@@ -322,21 +322,24 @@
   <ItemGroup>
     <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
-    <Compile Include="modsource\Defs\MythicEffectDef_GrantAbility.cs" />
-    <Compile Include="modsource\Defs\MythicEffectDef_EquipHediff.cs" />
+    <Compile Include="modsource\Defs\Causes\MythicCauseDef.cs" />
+    <Compile Include="modsource\Defs\Causes\MythicCauseDef_LevelUp.cs" />
+    <Compile Include="modsource\Defs\Causes\MythicCauseDef_RecordThreshold.cs" />
+    <Compile Include="modsource\Defs\Effects\MythicEffectDef_GrantAbility.cs" />
+    <Compile Include="modsource\Defs\Effects\MythicEffectDef_EquipHediff.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
-    <Compile Include="modsource\Defs\MythicEffectDef.cs" />
+    <Compile Include="modsource\Defs\Effects\MythicEffectDef.cs" />
     <Compile Include="modsource\Comps\CompMythic.cs" />
-    <Compile Include="modsource\Defs\MythicReasonToDetailOptionsDef.cs" />
     <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_DoRecruit.cs" />
-    <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
-    <Compile Include="modsource\Harmony\MythicMaker_LearnTranspiler.cs" />
+    <Compile Include="modsource\Harmony\Corpse_ButcherProducts.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
+    <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
     <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />
+    <Compile Include="modsource\MythicItemManagement\MythicItemUtilities.cs" />
     <Compile Include="modsource\MythicItemManagement\ThingSetMaker_MythicItemMaker.cs" />
-    <Compile Include="modsource\MythicItemManagement\MythicItemManager.cs" />
+    <Compile Include="modsource\MythicItemManagement\MythicItemCache.cs" />
     <Compile Include="modsource\MythicItemManagement\MythicItem.cs" />
     <Compile Include="modsource\MythicItemManagement\FileIO.cs" />
     <Compile Include="modsource\MythicItemManagement\SaveUtility.cs" />
@@ -344,6 +347,10 @@
     <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
     <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
     <Compile Include="modsource\Verbs\MythicAbility_Test.cs" />
+    <Compile Include="modsource\Workers\CauseWorker_RecruitedOrTamed.cs" />
+    <Compile Include="modsource\Workers\CauseWorker_Levelup.cs" />
+    <Compile Include="modsource\Workers\CauseWorker_Kills.cs" />
+    <Compile Include="modsource\Workers\CauseWorker.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

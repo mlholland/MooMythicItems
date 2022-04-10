@@ -5,14 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-/* This patch intercepts the code that increments a pawn's # things killed records to check and
- * see if that pawn is worthy of creating a mythic item.
- * 
- * Mythic checks that are encompassed by this patch include
- * - 100 humanlike kills
- * - 1000 humanlike kills TODO
- * - 100 mech kills TODO 
- * - 100 insect kills TODO
+/* This patch allows for custom kill-count records to be incremented.
  */
 namespace MooMythicItems
 {
@@ -80,45 +73,14 @@ namespace MooMythicItems
             }
         }
 
-        // Possible todo, make these configurable either as a def, or via settings
-        private static readonly int leaderKillsThreshold1 = 3;
-        private static readonly int thrumboKillsThreshold1 = 6;
-        private static readonly int manyHumanKillsThreshold1 = 100;
-        private static readonly int manyHumanKillsThreshold2 = 500;
-        private static readonly int manyHumanKillsThreshold3 = 1000;
-        private static readonly int manyInsectKillsThreshold1 = 200;
-        private static readonly int manyInsectKillsThreshold2 = 800;
-        private static readonly int manyMechKillsThreshold1 = 50;
-        private static readonly int manyMechKillsThreshold2 = 300;
-
-        private static readonly MythicReasonToDetailOptionsDef details = MythicReasonToDetailOptionsDef.Instance;
-
-        [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_PawnKilled))]
+        // Needs high priority to come before patches that read changed records 
+        [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_PawnKilled)), HarmonyPriority(Priority.High)]
         static class RecordsUtility_Notify_PawnKilled_PostResolve_Patch
         {
             static void Postfix(Pawn killed, Pawn killer)
             {
                 // update custom records related to tracking certain mythic reasons
                 UpdateNewRecords(killed, killer);
-
-                // make sure there's even a potential weapon to make into an heirloom. TODO should probably check other stuff, like not wood and not single use
-                if (killer.equipment?.Primary == null)
-                {
-                    return;
-                }
-
-                MythicItem newItem = TryCreatingNewMythicItem(killed, killer);
-                // create the mythic item if needed
-                if (newItem != null)
-                {
-                    // double check that a more impressive kill count-based mythic item hasn't already been made for this pawn
-                    MythicItem cachedMythicItem = MythicItemManager.GetSimilarCachedMythicItem(null, "kills", killer.ThingID, Find.World.info.persistentRandomValue);
-                    if (cachedMythicItem != null && !shouldReplaceMythicItem(cachedMythicItem.reason, newItem.reason))
-                    {
-                        return;
-                    }
-                    MythicItemManager.SaveNewMythicItem(newItem);
-                }
             }
         }
 
@@ -136,215 +98,6 @@ namespace MooMythicItems
             {
                 killer.records.Increment(ThrumboKills);
             }
-        }
-
-        private static MythicItem TryCreatingNewMythicItem(Pawn killed, Pawn killer)
-        {
-            Thing item = killer.equipment.Primary;
-            string reason = "";
-            List<string> titles = null, descs = null;
-            List<MythicEffectDef> effects = null;
-
-            bool isRanged = killer.equipment.Primary.def.IsRangedWeapon;
-            RaceProperties raceProps = killed.RaceProps;
-
-            if (raceProps.Humanlike)
-            {
-                if (killedLeader(killed, killer) && killer.records.GetValue(LeaderKills) == leaderKillsThreshold1)
-                {
-                    reason = createMythicKillReason("leader", 3);
-                    if (isRanged)
-                    {
-                        descs = details.LeaderSlayerRFD;
-                        titles = details.LeaderSlayerRT;
-                        effects = details.LeaderSlayerRA;
-                    }
-                    else
-                    {
-                        descs = details.LeaderSlayerMFD;
-                        titles = details.LeaderSlayerMT;
-                        effects = details.LeaderSlayerMA;
-                    }
-                }
-                else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold1)
-                {
-                    reason = createMythicKillReason("humanoid", 1);
-                    if (isRanged)
-                    {
-                        descs = details.manyKillsRFD;
-                        titles = details.manyKillsRT;
-                        effects = details.manyKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.manyKillsMFD;
-                        titles = details.manyKillsMT;
-                        effects = details.manyKillsMA;
-                    }
-                }
-                else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold2)
-                {
-                    reason = createMythicKillReason("humanoid", 2);
-                    if (isRanged)
-                    {
-                        descs = details.moreKillsRFD;
-                        titles = details.moreKillsRT;
-                        effects = details.moreKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.moreKillsMFD;
-                        titles = details.moreKillsMT;
-                        effects = details.moreKillsMA;
-                    }
-                }
-                else if (killer.records.GetValue(RecordDefOf.KillsHumanlikes) == manyHumanKillsThreshold3)
-                {
-                    reason = createMythicKillReason("humanoid", 3);
-                    if (isRanged)
-                    {
-                        descs = details.mostKillsRFD;
-                        titles = details.mostKillsRT;
-                        effects = details.mostKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.mostKillsMFD;
-                        titles = details.mostKillsMT;
-                        effects = details.mostKillsMA;
-                    }
-                }
-            }
-            else if (killedInsectFaction(killed, killer))
-            {
-                if (killer.records.GetValue(InsectKills) == manyInsectKillsThreshold1)
-                {
-                    reason = createMythicKillReason("insect", 2);
-                    if (isRanged)
-                    {
-                        descs = details.manyInsectKillsRFD;
-                        titles = details.manyInsectKillsRT;
-                        effects = details.manyInsectKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.manyInsectKillsMFD;
-                        titles = details.manyInsectKillsMT;
-                        effects = details.manyInsectKillsMA;
-                    }
-                }
-            }
-            else if (killedNonAllyThrumbo(killed, killer))
-            {
-                if (killer.records.GetValue(InsectKills) == thrumboKillsThreshold1)
-                {
-                    reason = createMythicKillReason("thrumbo", 2);
-                    if (isRanged)
-                    {
-                        descs = details.ThrumboSlayerRFD;
-                        titles = details.ThrumboSlayerRT;
-                        effects = details.ThrumboSlayerRA;
-                    }
-                    else
-                    {
-                        descs = details.ThrumboSlayerMFD;
-                        titles = details.ThrumboSlayerMT;
-                        effects = details.ThrumboSlayerMA;
-                    }
-                }
-            }
-            else if (raceProps.IsMechanoid)
-            {
-                float mechKills = killer.records.GetValue(RecordDefOf.KillsMechanoids);
-                if (mechKills == manyMechKillsThreshold1)
-                {
-                    reason = createMythicKillReason("mech", 2);
-                    if (isRanged)
-                    {
-                        descs = details.manyMechKillsRFD;
-                        titles = details.manyMechKillsRT;
-                        effects = details.manyMechKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.manyMechKillsMFD;
-                        titles = details.manyMechKillsMT;
-                        effects = details.manyMechKillsMA;
-                    }
-                }
-                /*else if (mechKills == s_manyMechKillsThreshold2)
-                {
-                    trySaveItem = true;
-                    reason = "mech-kills-2";
-                    if (isRanged)
-                    {
-                        descs = details.mech;
-                        titles = details.moreMechKillsRT;
-                        effects = details.moreMechKillsRA;
-                    }
-                    else
-                    {
-                        descs = details.moreMechKillsMFD;
-                        titles = details.moreMechKillsMT;
-                        effects = details.manyMechKillsMA;
-                    }
-                } */
-            }
-
-            // create the mythic item if needed
-            if (titles != null)
-            {
-                return new MythicItem(item, killer, descs.RandomElement(), titles.RandomElement(), effects.RandomElement(), reason);
-            }
-            return null;
-        }
-
-
-        private static string createMythicKillReason(string detail, int priority)
-        {
-            if (priority < 1)
-            {
-                string result = detail + "-" + "kills" + "-1";
-                Log.Error(String.Format("[Moo Mythic Items] tried to create a mythic kill reason string with a non-positive priority value {0}. Defaulting to priority 1 to create reason '{1}'", priority, result));
-            }
-            return detail + "-" + "kills" + "-" + priority;
-        }
-
-        // used to determine order of importance among various kill count resons
-        // Returns true if the new reason's ending integer value is greater than the previous, and false for all other reasons
-        // Ex: humanoid-kills-1 is replaced by humanoid-kills-2, but it is also replaced by thrumbo-kills-2, which is technically the first tier of thrumbo kills
-        //
-        private static bool shouldReplaceMythicItem(string oldReason, string newReason)
-        {
-            string[] oldSplit = oldReason.Split('-');
-            if (oldSplit.Length != 3)
-            {
-                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
-                return false;
-            }
-            int oldPrio = 0;
-            bool parsed = int.TryParse(oldSplit[2], out oldPrio);
-            if (!parsed)
-            {
-                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the old reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", oldReason));
-                return false;
-            }
-
-            string[] newSplit = newReason.Split('-');
-            if (newSplit.Length != 3)
-            {
-                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
-                return false;
-            }
-            int newPrio = 0;
-            parsed = int.TryParse(newSplit[2], out newPrio);
-            if (!parsed)
-            {
-                Log.Error(String.Format("[Moo Mythic Items] tried to compare the creation reasons for two kill-based mythic items, but the new reason '{0}' does not follow the expected format of '<detail>-kills-<priority>'. Defaulting to false - do not replace.", newReason));
-                return false;
-            }
-
-            return newPrio > oldPrio;
         }
 
         private static bool killedLeader(Pawn killed, Pawn killer)

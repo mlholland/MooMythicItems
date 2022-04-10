@@ -3,18 +3,20 @@ using Verse;
 using RimWorld;
 using HarmonyLib;
 
-/* Mod boilerplate. Contains settings and runs all the harmony patches.*/
+/* Mod boilerplate. Contains settings and runs all normal harmony patches.*/
 namespace MooMythicItems
 {
     public class MooMythicItems_Mod : Mod
     {
 
         public static MythicItemSettings settings;
+        public static Harmony harm;
 
         public MooMythicItems_Mod(ModContentPack content) : base(content)
         {
             settings = GetSettings<MythicItemSettings>();
-            new Harmony("rimworld.mooli").PatchAll();
+            harm = new Harmony("rimworld.mooli");
+            harm.PatchAll();
         }
 
         public override string SettingsCategory() => "MooMF_SettingsTitle".Translate();

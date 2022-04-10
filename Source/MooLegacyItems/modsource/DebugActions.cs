@@ -13,13 +13,13 @@ namespace MooMythicItems
         [DebugAction("Spawning", "Try place Mythic Item Allow Pregen", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()
         {
-            DebugSpawnMythicItem(MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(true, false, false, true), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(true, false, false, true), UI.MouseCell(), false);
         }
 
         [DebugAction("Spawning", "Try place Saved Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItem()
         {
-            Thing item = MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);
+            Thing item = MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);
             if (item == null)
             {
                 if (MooMythicItems_Mod.settings.flagDebug)
@@ -34,7 +34,7 @@ namespace MooMythicItems
         [DebugAction("Spawning", "Try place Saved Mythic Item - Record World", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItemRecordWorld()
         {
-            DebugSpawnMythicItem(MythicItemManager.RealizeRandomMythicItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
             
         }
 

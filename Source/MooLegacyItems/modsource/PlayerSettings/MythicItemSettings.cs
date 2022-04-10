@@ -74,7 +74,7 @@ namespace MooMythicItems
             if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ClearAllSavedItemsButton".Translate(), true, true, true))
             {
                 Log.Message("[Moo mythic items] Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file.");
-                MythicItemManager.ClearCacheAndSaveFile();
+                MythicItemCache.ClearCacheAndSaveFile();
             }
             ls.Gap(30f);
 

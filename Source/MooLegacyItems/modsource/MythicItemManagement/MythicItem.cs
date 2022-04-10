@@ -102,5 +102,14 @@ namespace MooMythicItems
         {
             return string.Format(this.descriptionTranslationString.Translate(), ownerFullName,ownerShortName, factionName, itemDef.label);
         }
+
+        public int ExtractPriorityFromReason()
+        {
+            if (Int32.TryParse(reason.Split('-').Last(), out int result))
+            {
+                return result;
+            }
+            return 0;
+        }
     }
 }

@@ -49,15 +49,12 @@ namespace MooMythicItems
             }
         }
 
-        // Possible todo, make these configurable either as a def, or via settings
-        private static readonly int thrumboTamingThreshold = 3;
-
-        private static readonly MythicReasonToDetailOptionsDef details = MythicReasonToDetailOptionsDef.Instance;
-
+        // Needs high priority to come before patches that read changed records 
         [HarmonyPatch(typeof(InteractionWorker_RecruitAttempt),
             nameof(InteractionWorker_RecruitAttempt.DoRecruit), 
             new Type[] { typeof(Pawn), typeof(Pawn), typeof(string), typeof(string), typeof(bool), typeof(bool) }, 
-            new ArgumentType[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal })]
+            new ArgumentType[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal }),
+            HarmonyPriority(Priority.High)]
         static class InteractionWorker_RecruitAttempt_Recruit_PostResolve_Patch
         {
             static void Postfix(Pawn recruiter, Pawn recruitee)
@@ -66,23 +63,7 @@ namespace MooMythicItems
                 if (ThrumboDefs.Contains(recruitee.def))
                 {
                     recruiter.records.Increment(ThrumbosTamed);
-                    // create a mythic item if...
-                    // This pawn has tamed the required number of thrumbos
-                    // There isn't already a mythic item related to thrumbo-taming from any world
-                    if (recruiter.records.GetValue(ThrumbosTamed) == thrumboTamingThreshold
-                        && MythicItemManager.GetSimilarCachedMythicItem(null, thrumboTameReason, null, 0) == null
-                        && recruiter.apparel.WornApparel.Count != 0)
-                    {
-                        MythicItemManager.SaveNewMythicItem(new MythicItem(recruiter.apparel.WornApparel.RandomElement(),
-                            recruiter,
-                            details.ThrumboFriendFD.RandomElement(),
-                            details.ThrumboFriendT.RandomElement(),
-                            details.ThrumboFriendA.RandomElement(),
-                            thrumboTameReason));
-
-                    }
                 }
-
             }
         }
     }

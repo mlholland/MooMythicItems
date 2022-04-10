@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>MooMF_ThrumboButcher</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Thrumbo Butcher</label>
+    <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
+    </comps>
+  </HediffDef>
+</Defs>
+    

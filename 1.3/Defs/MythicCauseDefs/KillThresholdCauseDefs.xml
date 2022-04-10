@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold Abstract="true" Name="baseKillCause">
+    <workerClass>MooMythicItems.CauseWorker_Kills</workerClass>
+    <createsMythicWeapon>true</createsMythicWeapon>
+    <hasDifferentMeleeOptions>true</hasDifferentMeleeOptions>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+  
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_ThrumboKillerCause</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Kills_Thrumbos_1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Kills_Thrumbos_1</li>
+      <li>MooMF_MythicTitle_Kills_Thrumbos_2</li>
+    </titles>
+    <threshold>6</threshold>
+    <record>MooMF_killsThrumbos</record>
+    <priority>2</priority>
+    <subreason>thrumbos</subreason>
+    <hasDifferentMeleeOptions>false</hasDifferentMeleeOptions>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_HumanoidKillerCause1</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>100</threshold>
+    <record>KillsHumanlikes</record>
+    <priority>1</priority>
+    <subreason>humanoids</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_HumanoidKillerCause2</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>500</threshold>
+    <record>KillsHumanlikes</record>
+    <priority>2</priority>
+    <subreason>humanoids</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_HumanoidKillerCause3</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>1000</threshold>
+    <record>KillsHumanlikes</record>
+    <priority>4</priority>
+    <subreason>humanoid</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_MechKillerCause1</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>100</threshold>
+    <record>KillsMechanoids</record>
+    <priority>2</priority>
+    <subreason>mechs</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_InsectKillerCause1</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>100</threshold>
+    <record>MooMF_killsInsects</record>
+    <priority>2</priority>
+    <subreason>insects</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+    <defName>MooMF_LeaderKillerCause1</defName>
+    <effects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
+      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
+      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_GrantThrumboButcher</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_100Kills_Melee_1</li>
+      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
+      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+    </meleeTitles>
+    <threshold>3</threshold>
+    <record>MooMF_killsFactionLeaders</record>
+    <priority>3</priority>
+    <subreason>leaders</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+
+</Defs>

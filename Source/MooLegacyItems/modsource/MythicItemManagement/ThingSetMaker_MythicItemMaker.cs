@@ -20,7 +20,7 @@ namespace MooMythicItems
             {
                 Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker CanGenerateSub");
             }
-            return MythicItemManager.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
+            return MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
         }
          
         protected override void Generate(ThingSetMakerParams parms, List<Thing> outThings)
@@ -29,7 +29,7 @@ namespace MooMythicItems
             {
                 Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker Generate");
             }
-            outThings.Add(MythicItemManager.RealizeRandomMythicItemFromCache());
+            outThings.Add(MythicItemCache.RealizeRandomMythicItemFromCache());
         }
          
         protected virtual IEnumerable<ThingDef> AllowedThingDefs(ThingSetMakerParams parms)
@@ -48,7 +48,7 @@ namespace MooMythicItems
             {
                 Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker AllGeneratableThingsDebugSub");
             }
-            return MythicItemManager.GetPossibleMythicItemDefs().AsEnumerable();
+            return MythicItemCache.GetPossibleMythicItemDefs().AsEnumerable();
         }
          
     }

@@ -47,7 +47,7 @@ namespace MooMythicItems
                         opts.Add(new FloatMenuOption("MaxRelicCount".Translate(maxRelics), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                     }
                     else {
-                        List<MythicItem> cachedItems = MythicItemManager.GetMythicItems(false, false);
+                        List<MythicItem> cachedItems = MythicItemCache.GetMythicItems(false, false);
                         foreach (MythicItem mi in cachedItems)
                         {
                             Action action = delegate ()

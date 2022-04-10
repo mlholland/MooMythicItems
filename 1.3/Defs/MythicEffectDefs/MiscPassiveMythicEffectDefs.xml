@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Mythic effects that grant a passive effect like a hediff, but aren't related to the standard 'improve a skill' array-->
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantThrumboButcher</defName>
+    <equipHediff>MooMF_ThrumboButcher</equipHediff>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+  
+</Defs>
