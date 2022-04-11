@@ -17,7 +17,15 @@ namespace MooMythicItems
     public class MythicEffectDef : Def
     {
         public MythicEffectDef() { }
-        
+
+        public string effectDescTranslationKey = null;
+
+        public override IEnumerable<string> ConfigErrors()
+        {
+            foreach (var error in base.ConfigErrors()) yield return error;
+            if (effectDescTranslationKey == null) yield return "effectDescTranslationKey cannot be null";
+        }
+
         public virtual void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
         public virtual void OnUnequip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
@@ -25,6 +33,9 @@ namespace MooMythicItems
         // You probably don't want to call this directly, see CompMythic.DoOnKillEffects
         public virtual void OnKill(Pawn killedPawn, Pawn killer, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
-
+        public virtual string EffectDescription(ThingWithComps mythicItem)
+        {
+            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label);
+        }
     }
 }

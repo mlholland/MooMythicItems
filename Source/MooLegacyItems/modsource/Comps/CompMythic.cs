@@ -12,8 +12,9 @@ namespace MooMythicItems
 {
     class CompMythic : ThingComp
     {
-        public CompMythic(){ }
+        public static readonly string mythicEffectPrefixKey = "MooMF_AbilityDescription_Addon";
 
+        public CompMythic() { }
 
         // todo cache fully modified values to save overhead?
         public String newLabel = null;
@@ -49,6 +50,10 @@ namespace MooMythicItems
 
         public override string GetDescriptionPart()
         {
+            if (abilityDef != null)
+            {
+                return newDescription + string.Format(mythicEffectPrefixKey.Translate(), abilityDef.EffectDescription(this.parent));
+            }
             return newDescription; 
         }
 

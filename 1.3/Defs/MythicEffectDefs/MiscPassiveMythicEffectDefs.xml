@@ -4,6 +4,7 @@
   <MooMythicItems.MythicEffectDef_EquipHediff>
     <defName>MooMF_GrantThrumboButcher</defName>
     <equipHediff>MooMF_ThrumboButcher</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantThurmboButcher</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_EquipHediff>
   
 </Defs>

@@ -29,6 +29,7 @@ namespace MooMythicItems
         {
             foreach (var error in base.ConfigErrors()) yield return error;
             if (mythicAbilityDef == null) yield return "mythicAbilityDef cannot be null";
+            if (mythicAbilityDef.label == null) yield return "mythicAbilityDef label cannot be null";
             if (coolDownWhileUnequipped && startOnCooldown) yield return "coolDownWhileUnequipped and startOnCooldown should not both be true. The associated ability will always just start on cooldown.";
         }
 
@@ -105,6 +106,11 @@ namespace MooMythicItems
             }
             Log.Error(String.Format("[Moo Mythic items] Tried to pull saved time data about a mythic item's cooldown, but the saved value ({0}) could not be converted back into an numeric value.", value));
             return 0;
+        }
+
+        public override string EffectDescription(ThingWithComps mythicItem)
+        {
+            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label, mythicAbilityDef.label);
         }
     }
 }

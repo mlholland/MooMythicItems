@@ -2,9 +2,21 @@
 <Defs>
   <MooMythicItems.MythicEffectDef_KillsDropItems>
     <defName>MooMF_KillInsectsForJelly</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_InsectDrops</effectDescTranslationKey>
     <worksOnInsects>true</worksOnInsects>
     <possibleDrops>
       <li>InsectJelly</li>
+    </possibleDrops>
+  </MooMythicItems.MythicEffectDef_KillsDropItems>
+
+  <MooMythicItems.MythicEffectDef_KillsDropItems>
+    <defName>MooMF_KillMechsForDrops</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_MechDrops</effectDescTranslationKey>
+    <worksOnMechs>true</worksOnMechs>
+    <possibleDrops>
+      <li>Steel</li>
+      <li>Plasteel</li>
+      <li>ComponentIndustrial</li>
     </possibleDrops>
   </MooMythicItems.MythicEffectDef_KillsDropItems>
 

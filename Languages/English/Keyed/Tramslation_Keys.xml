@@ -93,5 +93,18 @@
   <MooMF_MythicStory_ThrumboFriend_1>Many tribes around the Rim worship someone known only as 'wise-friend {1}'. Myths about this character can be traced back to the lost settlements of {2}, whose people supposedly knew how to tame the majestic thrumbos. This thurmbofur-covered {3} seems to uphold those stories.</MooMF_MythicStory_ThrumboFriend_1>
   <MooMF_MythicTitle_ThurmboFriend_1>{0}'s Thrumbo-friend {1}</MooMF_MythicTitle_ThurmboFriend_1>
   <MooMF_MythicTitle_ThurmboFriend_2>{1} of the Thrumbo-caller</MooMF_MythicTitle_ThurmboFriend_2>
-    
+
+  <!--Effect description notes: 
+   - these are added to the in-game description of mythic items, after the flavor string.
+   - The element {0} should always be the label of the mythic item itself (ex: Revolver).
+   - All other elements can vary depending on what subtype of mythic effect def uses these,
+   although {1} should try to be the label of whatever is added to this weapon, if applicable. -->
+  <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
+  <MooMF_AbilityDescription_GrantStatAbility>Grants the user a buff called "{1}", which increases their performance in the relevant ability.,</MooMF_AbilityDescription_GrantStatAbility>
+  <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yield's from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
+  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. Mechanoid kills will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
+  <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural ability to find extra insect jelly when hunting insects, which is dropped whenever they kill an insect. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
+  <MooMF_AbilityDescription_Thrumbocall>This item grants the user the "{1}" ability to summon a thrumbo herd once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
+  <MooMF_AbilityDescription_APRocket>This weapon has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
+  <MooMF_AbilityDescription_EMPRocket>This weapon has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day quadrum tom immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
 </LanguageData>

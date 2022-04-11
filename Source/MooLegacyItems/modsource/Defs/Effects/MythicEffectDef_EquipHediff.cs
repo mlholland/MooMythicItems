@@ -51,5 +51,10 @@ namespace MooMythicItems
             }
             // TODO weapon equip logic, the above only works for apparel
         }
+
+        public override string EffectDescription(ThingWithComps mythicItem)
+        {
+            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label, equipHediff.label);
+        }
     }
 }

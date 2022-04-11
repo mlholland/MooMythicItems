@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff Abstract="True" Name="baseSkillBuffEffect">
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantStatAbility</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_ShootingBoost</defName>
     <equipHediff>MooMF_WornShootingBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_MeleeBoost</defName>
     <equipHediff>MooMF_WornMeleeBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_ConstructionBoost</defName>
     <equipHediff>MooMF_WornConstructionBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_MiningBoost</defName>
     <equipHediff>MooMF_WornMiningBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_CookingBoost</defName>
     <equipHediff>MooMF_WornCookingBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_PlantsBoost</defName>
     <equipHediff>MooMF_WornPlantingBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_AnimalsBoost</defName>
     <equipHediff>MooMF_WornAnimalsBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_CraftingBoost</defName>
     <equipHediff>MooMF_WornCraftingBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_ArtisticBoost</defName>
     <equipHediff>MooMF_WornArtisticBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_MedicineBoost</defName>
     <equipHediff>MooMF_WornMedicineBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_SocialBoost</defName>
     <equipHediff>MooMF_WornSocialBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff>
+  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_IntellectualBoost</defName>
     <equipHediff>MooMF_WornIntellectualBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
