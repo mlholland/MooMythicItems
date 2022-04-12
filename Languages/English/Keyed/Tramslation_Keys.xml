@@ -107,4 +107,5 @@
   <MooMF_AbilityDescription_Thrumbocall>This item grants the user the "{1}" ability to summon a thrumbo herd once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
   <MooMF_AbilityDescription_APRocket>This weapon has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
   <MooMF_AbilityDescription_EMPRocket>This weapon has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day quadrum tom immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
+  <MooMF_AbilityDescription_KillstreakDR>While equipped, this user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakDR>
 </LanguageData>

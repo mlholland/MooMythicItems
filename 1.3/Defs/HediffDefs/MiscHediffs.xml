@@ -6,8 +6,58 @@
     <label>Thrumbo Butcher</label>
     <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
     <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
     </comps>
   </HediffDef>
+
+  <HediffDef Name="KillstreakBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>0</minSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>3000~3000</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="KillstreakBase">
+    <defName>MooMF_KillstreakDR</defName>
+    <label>Killstreak: Resistance</label>
+    <description>This person is in a battle trance, and gains damage reduction every time they kill something.</description>
+    <stages>
+      <li>
+        <label>1</label>
+        <minSeverity>0</minSeverity>
+        <statFactors> 
+            <IncomingDamageFactor>.95</IncomingDamageFactor> 
+        </statFactors>
+      </li>
+      <li>
+        <label>2</label>
+        <minSeverity>.2</minSeverity>
+        <statFactors>
+          <IncomingDamageFactor>.9</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>3</label>
+        <minSeverity>.3</minSeverity>
+        <statFactors>
+          <IncomingDamageFactor>.85</IncomingDamageFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>4</label>
+        <minSeverity>.4</minSeverity>
+        <statFactors>
+          <IncomingDamageFactor>.80</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>
     

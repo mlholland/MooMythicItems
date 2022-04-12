@@ -41,7 +41,7 @@
       <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_KillstreakDREffect</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>

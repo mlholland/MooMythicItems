@@ -328,6 +328,7 @@
     <Compile Include="modsource\Defs\Causes\MythicCauseDef_LevelUp.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef_RecordThreshold.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_KillsDropItems.cs" />
+    <Compile Include="modsource\Defs\Effects\MythicEffectDef_KillstreakHediff.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_GrantAbility.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_EquipHediff.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />

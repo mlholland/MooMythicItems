@@ -245,6 +245,11 @@ namespace MooMythicItems
             return false;
         }
 
+        public static Thing RealizeRandomlyGeneratedMythicItem()
+        {
+            return RealizeMythicItem(MythicItemUtilities.CreateRandomMythicItem());
+        }
+
         /* This is the normal way of producing a mythic item for in-game use.*/
         public static Thing RealizeRandomMythicItemFromCache()
         {

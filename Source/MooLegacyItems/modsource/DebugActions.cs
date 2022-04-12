@@ -10,13 +10,13 @@ namespace MooMythicItems
 {
     public class DebugActions : ModSettings
     {
-        [DebugAction("Spawning", "Try place Mythic Item Allow Pregen", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Random Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()
         {
-            DebugSpawnMythicItem(MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(true, false, false, true), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemCache.RealizeRandomlyGeneratedMythicItem(), UI.MouseCell(), false);
         }
 
-        [DebugAction("Spawning", "Try place Saved Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItem()
         {
             Thing item = MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);

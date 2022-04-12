@@ -20,4 +20,14 @@
     </possibleDrops>
   </MooMythicItems.MythicEffectDef_KillsDropItems>
 
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_KillstreakDREffect</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>4</maxStacks>
+    <hediffToAdd>MooMF_KillstreakDR</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
 </Defs>

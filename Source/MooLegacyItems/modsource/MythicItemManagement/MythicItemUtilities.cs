@@ -36,14 +36,14 @@ namespace MooMythicItems
         // todo get this to a reasonable combination before live release
         private static void PopulateDefaultGeneratorSets()
         {
-            //s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Bow_Great"), ThingDef.Named("Gun_ChargeRifle"), ThingDef.Named("Gun_Revolver"), ThingDef.Named("Gun_BoltActionRifle"), ThingDef.Named("Gun_PumpShotgun"), ThingDef.Named("Gun_Autopistol") };
-            s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Apparel_FlakVest"), };
+            s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Bow_Great"), ThingDef.Named("Gun_ChargeRifle"), ThingDef.Named("Gun_Revolver"), ThingDef.Named("Gun_BoltActionRifle"), ThingDef.Named("Gun_PumpShotgun"), ThingDef.Named("Gun_Autopistol") };
+            //s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Apparel_FlakVest"), };
             s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe" }; 
             s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Carrie's Centurions" };
             s_defaultDescriptions = new HashSet<string> { "MooMF_MythicStory_100Kills_Ranged_1", "MooMF_MythicStory_100Kills_Ranged_2" };
             s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_100Kills_Ranged_1", "MooMF_MythicTitle_100Kills_Ranged_2", "MooMF_MythicTitle_100Kills_Ranged_3" };
             //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
-            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_TestAbility") }; // TODO remove
+            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_KillstreakDREffect") }; // TODO remove
         }
         
         /* Generate a mythic item by randomly selecting among some hard-coded options. 

@@ -45,7 +45,7 @@ namespace MooMythicItems
                     }
                     else
                     {
-                        Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up my Moo.", this.defName, equipHediff.defName));
+                        Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up by Moo or whoever made this effect.", this.defName, equipHediff.defName));
                     }
                 }
             }
