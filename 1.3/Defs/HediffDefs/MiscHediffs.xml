@@ -59,5 +59,45 @@
     </stages>
   </HediffDef>
 
+  <HediffDef ParentName="KillstreakBase">
+    <defName>MooMF_KillstreakFirerate</defName>
+    <label>Killstreak: More Bullets</label>
+    <description>This person is in a battle trance, and improves their firing rate every time they kill something.</description>
+    <stages>
+      <li>
+        <label>1</label>
+        <minSeverity>0</minSeverity>
+        <statFactors>
+          <AimingDelayFactor>.97</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.97</VEF_VerbCooldownFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>2</label>
+        <minSeverity>.2</minSeverity>
+        <statFactors>
+          <AimingDelayFactor>.95</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.95</VEF_VerbCooldownFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>3</label>
+        <minSeverity>.3</minSeverity>
+        <statFactors>
+          <AimingDelayFactor>.93</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.93</VEF_VerbCooldownFactor>
+        </statFactors>
+      </li>
+      <li>
+        <label>4</label>
+        <minSeverity>.4</minSeverity>
+        <statFactors>
+          <AimingDelayFactor>.90</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.90</VEF_VerbCooldownFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>
     

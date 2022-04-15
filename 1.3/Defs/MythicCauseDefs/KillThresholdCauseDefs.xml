@@ -30,6 +30,7 @@
     <defName>MooMF_HumanoidKillerCause1</defName>
     <effects>
       <li>MooMF_GrantAPRocket</li>
+      <li>MooMF_KillstreakFirerateEffect</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_100Kills_Ranged_1</li>

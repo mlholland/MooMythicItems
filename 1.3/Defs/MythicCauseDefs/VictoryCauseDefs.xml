@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MooMythicItems.MythicCauseDef_Victory Abstract="true" Name="baseVictoryCause">
+    <workerClass>MooMythicItems.CauseWorker_Victory</workerClass>
+    <createsMythicWeapon>false</createsMythicWeapon>
+  </MooMythicItems.MythicCauseDef_Victory>
+
+  <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
+    <defName>MooMF_SpaceVictoryMythicCause</defName>
+    <effects>
+      <li>MooMF_ShootingBoost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicDescription_SpaceVictory1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_SpaceVictory1</li>
+    </titles>
+    <spaceVictory>true</spaceVictory>
+  </MooMythicItems.MythicCauseDef_Victory>
+
+</Defs>

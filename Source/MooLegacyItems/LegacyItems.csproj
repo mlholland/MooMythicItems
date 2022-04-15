@@ -326,6 +326,7 @@
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef_LevelUp.cs" />
+    <Compile Include="modsource\Defs\Causes\MythicCauseDef_Victory.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef_RecordThreshold.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_KillsDropItems.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_KillstreakHediff.cs" />
@@ -351,6 +352,7 @@
     <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
     <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
     <Compile Include="modsource\Verbs\Verb_ShootAbility.cs" />
+    <Compile Include="modsource\Workers\CauseWorker_Victory.cs" />
     <Compile Include="modsource\Workers\CauseWorker_RecruitedOrTamed.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Levelup.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Kills.cs" />

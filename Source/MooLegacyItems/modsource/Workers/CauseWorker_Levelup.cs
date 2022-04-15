@@ -16,7 +16,7 @@ namespace MooMythicItems
     public class CauseWorker_LevelUp : CauseWorker
     {
 
-        public static readonly string killReasonPrefix = "skill-mastery-";
+        public static readonly string masteryPrefix = "skill-mastery-";
         public static Dictionary<SkillDef, List<MythicCauseDef_LevelUp>> skillsWatched = new Dictionary<SkillDef, List<MythicCauseDef_LevelUp>>();
 
         public CauseWorker_LevelUp(MythicCauseDef def) : base(def) { }
@@ -75,7 +75,7 @@ namespace MooMythicItems
                     {
                         Log.Message(String.Format("[Moo Mythic Items] Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName));
                     }
-                    string reason = killReasonPrefix + skillRecord.def.skillLabel;
+                    string reason = masteryPrefix + skillRecord.def.skillLabel;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)
                     {

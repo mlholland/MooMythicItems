@@ -30,4 +30,15 @@
     <hediffToAdd>MooMF_KillstreakDR</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_KillstreakFirerateEffect</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>4</maxStacks>
+    <hediffToAdd>MooMF_KillstreakFirerate</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+
 </Defs>
