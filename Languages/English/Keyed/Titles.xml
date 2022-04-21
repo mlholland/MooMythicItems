@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!--
+    For titles, only 2 inputs are given:
+    0 = original owners nickname
+    1 = normal item label
+    -->
+  
+  <!-- humanoid kills tier 1-->
+  <MooMF_MythicTitle_humanKills1_Melee_1>{0}'s Bloody {1}</MooMF_MythicTitle_humanKills1_Melee_1>
+  <MooMF_MythicTitle_humanKills1_Melee_2>{0}'s Cleaver</MooMF_MythicTitle_humanKills1_Melee_2>
+  <MooMF_MythicTitle_humanKills1_Melee_3>The {1} of Endings</MooMF_MythicTitle_humanKills1_Melee_3>
+  <MooMF_MythicTitle_humanKills1_Melee_4>{0}'s Retort</MooMF_MythicTitle_humanKills1_Melee_4>
+  <MooMF_MythicTitle_humanKills1_Melee_5>The Justice of {0}</MooMF_MythicTitle_humanKills1_Melee_5>
+  <MooMF_MythicTitle_humanKills1_Melee_6>Gravemaker</MooMF_MythicTitle_humanKills1_Melee_6>
+  <MooMF_MythicTitle_humanKills1_Melee_7>Limb-Render</MooMF_MythicTitle_humanKills1_Melee_7>
+  <MooMF_MythicTitle_humanKills1_Melee_8>The Company-Cracking {1}</MooMF_MythicTitle_humanKills1_Melee_8>
+  <MooMF_MythicTitle_humanKills1_Melee_9>{0}'s Worn {1}</MooMF_MythicTitle_humanKills1_Melee_9>
+  <MooMF_MythicTitle_humanKills1_Melee_10>{0}'s Skullsmasher</MooMF_MythicTitle_humanKills1_Melee_10>
+  <MooMF_MythicTitle_humanKills1_Melee_11>{0}'s Lineholding {1}</MooMF_MythicTitle_humanKills1_Melee_11>
+  <MooMF_MythicTitle_humanKills1_Melee_12>{0}'s Kneecapper</MooMF_MythicTitle_humanKills1_Melee_12>
+  
+  <MooMF_MythicTitle_humanKills1_Ranged_1>{0}'s Skullpiercer</MooMF_MythicTitle_humanKills1_Ranged_1>
+  <MooMF_MythicTitle_humanKills1_Ranged_2>{1} of One Hundred Shots</MooMF_MythicTitle_humanKills1_Ranged_2>
+  <MooMF_MythicTitle_humanKills1_Ranged_3>{0}'s Headhunting {1}</MooMF_MythicTitle_humanKills1_Ranged_3>
+  <MooMF_MythicTitle_humanKills1_Ranged_4>{0}'s Brain-Drill</MooMF_MythicTitle_humanKills1_Ranged_4>
+  <MooMF_MythicTitle_humanKills1_Ranged_5>{0}'s Example-Maker</MooMF_MythicTitle_humanKills1_Ranged_5>
+  <MooMF_MythicTitle_humanKills1_Ranged_6>{0}'s Wall-Painter</MooMF_MythicTitle_humanKills1_Ranged_6>
+  <MooMF_MythicTitle_humanKills1_Ranged_7>The Heartseeking {1}</MooMF_MythicTitle_humanKills1_Ranged_7>
+  <MooMF_MythicTitle_humanKills1_Ranged_8>The One-{0} Artillery</MooMF_MythicTitle_humanKills1_Ranged_8>
+  <MooMF_MythicTitle_humanKills1_Ranged_9>The Holey {1}</MooMF_MythicTitle_humanKills1_Ranged_9>
+  <MooMF_MythicTitle_humanKills1_Ranged_10>The Swiss Cheeser</MooMF_MythicTitle_humanKills1_Ranged_10>
+  <MooMF_MythicTitle_humanKills1_Ranged_11>{0}'s Law</MooMF_MythicTitle_humanKills1_Ranged_11>
+
+
+  <!-- humanoid kills tier 2-->
+  <MooMF_MythicTitle_humanKills2_Melee_1>Randy-Blessed {1} of {0}</MooMF_MythicTitle_humanKills2_Melee_1>
+  <MooMF_MythicTitle_humanKills2_Melee_2>{0}'s Peacemaker</MooMF_MythicTitle_humanKills2_Melee_2>
+  <MooMF_MythicTitle_humanKills2_Melee_3>{0} Peacemaking {1}</MooMF_MythicTitle_humanKills2_Melee_3>
+  <MooMF_MythicTitle_humanKills2_Melee_4>{0}'s Mass Gravemaker</MooMF_MythicTitle_humanKills2_Melee_4>
+  <MooMF_MythicTitle_humanKills2_Melee_5>The Hand of {0}</MooMF_MythicTitle_humanKills2_Melee_5>
+  <MooMF_MythicTitle_humanKills2_Melee_6>Everkeen {1} of {0}</MooMF_MythicTitle_humanKills2_Melee_6>
+
+
+  <MooMF_MythicTitle_humanKills2_Ranged_1>{1} of Five Hundred Shots</MooMF_MythicTitle_humanKills2_Ranged_1>
+  <MooMF_MythicTitle_humanKills2_Ranged_2>{0}'s Vigilance</MooMF_MythicTitle_humanKills2_Ranged_2>
+  <MooMF_MythicTitle_humanKills2_Ranged_3>{0}'s Fell {1}</MooMF_MythicTitle_humanKills2_Ranged_3>
+  <MooMF_MythicTitle_humanKills2_Ranged_4>{0}'s People-Hunter</MooMF_MythicTitle_humanKills2_Ranged_4>
+  <MooMF_MythicTitle_humanKills2_Ranged_5>{0}'s Heartstopper</MooMF_MythicTitle_humanKills2_Ranged_5>
+  <MooMF_MythicTitle_humanKills2_Ranged_6>The Battalion-Cracking {1}</MooMF_MythicTitle_humanKills2_Ranged_6>
+  <MooMF_MythicTitle_humanKills2_Ranged_7>{0}'s Deathpointer</MooMF_MythicTitle_humanKills2_Ranged_7>
+  <MooMF_MythicTitle_humanKills2_Ranged_8>Field Fertilizing {1}</MooMF_MythicTitle_humanKills2_Ranged_8>
+
+  <!-- humanoid kills tier 3-->
+  <MooMF_MythicTitle_humanKills3_Melee_1>Doombringer</MooMF_MythicTitle_humanKills3_Melee_1>
+  <MooMF_MythicTitle_humanKills3_Melee_2>Pirate's End</MooMF_MythicTitle_humanKills3_Melee_2>
+  <MooMF_MythicTitle_humanKills3_Melee_3>Wavebreaker of {0}</MooMF_MythicTitle_humanKills3_Melee_3>
+  <MooMF_MythicTitle_humanKills3_Melee_4>The Battalion-Breaking {1}</MooMF_MythicTitle_humanKills3_Melee_4>
+  <MooMF_MythicTitle_humanKills3_Melee_5>{0}'s Raidercide</MooMF_MythicTitle_humanKills3_Melee_5>
+
+
+  <MooMF_MythicTitle_humanKills3_Ranged_1>Deliverance</MooMF_MythicTitle_humanKills3_Ranged_1>
+  <MooMF_MythicTitle_humanKills3_Ranged_2>The First Lawnmower</MooMF_MythicTitle_humanKills3_Ranged_2>
+  <MooMF_MythicTitle_humanKills3_Ranged_3>{0}'s Bloodspiller</MooMF_MythicTitle_humanKills3_Ranged_3>
+  <MooMF_MythicTitle_humanKills3_Ranged_4>{0}'s Judgement</MooMF_MythicTitle_humanKills3_Ranged_4>
+  <MooMF_MythicTitle_humanKills3_Ranged_5>{0}'s {1}</MooMF_MythicTitle_humanKills3_Ranged_5>
+  
+  <!-- insect kills tier 1-->
+  <MooMF_MythicTitle_InsectKills1_Melee_1>{0}'s Chitin Cracker</MooMF_MythicTitle_InsectKills1_Melee_1>
+  <MooMF_MythicTitle_InsectKills1_Melee_2>The Arthrobane {1}</MooMF_MythicTitle_InsectKills1_Melee_2>
+  <MooMF_MythicTitle_InsectKills1_Melee_3>{1} of the Hive Killer</MooMF_MythicTitle_InsectKills1_Melee_3>
+  <MooMF_MythicTitle_InsectKills1_Melee_4>Anti-Creepy Crawly {1}</MooMF_MythicTitle_InsectKills1_Melee_4>
+  <MooMF_MythicTitle_InsectKills1_Melee_5>{0}'s Pesticide-Soaked {1}</MooMF_MythicTitle_InsectKills1_Melee_5>
+
+  <MooMF_MythicTitle_InsectKills1_Ranged_1>DEET-Spraying {1}</MooMF_MythicTitle_InsectKills1_Ranged_1>
+  <MooMF_MythicTitle_InsectKills1_Ranged_2>Wing-Ripper</MooMF_MythicTitle_InsectKills1_Ranged_2>
+  <MooMF_MythicTitle_InsectKills1_Ranged_3>{0}'s Carapace Piercer</MooMF_MythicTitle_InsectKills1_Ranged_3>
+
+  <!-- insect kills tier 2-->
+
+  <MooMF_MythicTitle_InsectKills2_Melee_1>{0}'s Chiten-Breaker</MooMF_MythicTitle_InsectKills2_Melee_1>
+  <MooMF_MythicTitle_InsectKills2_Melee_2>Swarmkiller</MooMF_MythicTitle_InsectKills2_Melee_2>
+  <MooMF_MythicTitle_InsectKills2_Melee_3>A Bug's Death</MooMF_MythicTitle_InsectKills2_Melee_3>
+
+  <MooMF_MythicTitle_InsectKills2_Ranged_1>{0}'s Insecticide</MooMF_MythicTitle_InsectKills2_Ranged_1>
+  <MooMF_MythicTitle_InsectKills2_Ranged_2>The Tunnel Cleanser</MooMF_MythicTitle_InsectKills2_Ranged_2>
+  <MooMF_MythicTitle_InsectKills2_Ranged_3>Hiveshredder</MooMF_MythicTitle_InsectKills2_Ranged_3>
+
+  <!-- mech kills tier 1-->
+
+  <MooMF_MythicTitle_MechKills1_Melee_1>{0}'s Steelripper</MooMF_MythicTitle_MechKills1_Melee_1>
+  <MooMF_MythicTitle_MechKills1_Melee_2>Rustmaker</MooMF_MythicTitle_MechKills1_Melee_2>
+  <MooMF_MythicTitle_MechKills1_Melee_3>{0}'s Robo-Slapping {1}</MooMF_MythicTitle_MechKills1_Melee_3>
+
+  <MooMF_MythicTitle_MechKills1_Ranged_1>{0}'s Battery Blaster</MooMF_MythicTitle_MechKills1_Ranged_1>
+  <MooMF_MythicTitle_MechKills1_Ranged_2>{0}'s Armor Piercing {1}</MooMF_MythicTitle_MechKills1_Ranged_2>
+  <MooMF_MythicTitle_MechKills1_Ranged_3>{0}'s Circuit Breaker</MooMF_MythicTitle_MechKills1_Ranged_3>
+  <!-- mech kills tier 2-->
+
+
+  <MooMF_MythicTitle_MechKills2_Melee_1>The Fender Bender</MooMF_MythicTitle_MechKills2_Melee_1>
+  <MooMF_MythicTitle_MechKills2_Melee_2>The Seg Faulter</MooMF_MythicTitle_MechKills2_Melee_2>
+  <MooMF_MythicTitle_MechKills2_Melee_3>Scyther's Match</MooMF_MythicTitle_MechKills2_Melee_3>
+
+  <MooMF_MythicTitle_MechKills2_Ranged_1>Anti-Terminator</MooMF_MythicTitle_MechKills2_Ranged_1>
+  <MooMF_MythicTitle_MechKills2_Ranged_2>{0}'s Centipede-Cracker</MooMF_MythicTitle_MechKills2_Ranged_2>
+  <MooMF_MythicTitle_MechKills2_Ranged_3>Lancer's Challenge</MooMF_MythicTitle_MechKills2_Ranged_3>
+
+  <!-- skill mastery-->
+  <MooMF_MythicTitle_Mastery_Shooting_1>The Starsniper's {1}</MooMF_MythicTitle_Mastery_Shooting_1>
+  <MooMF_MythicTitle_Mastery_Shooting_2>{1} of {0} the Eagle-Eyed</MooMF_MythicTitle_Mastery_Shooting_2>
+
+  <MooMF_MythicTitle_Mastery_Melee_1>{1} of {0} the Mighty</MooMF_MythicTitle_Mastery_Melee_1>
+  <MooMF_MythicTitle_Mastery_Melee_2>The Blademaster's {1}</MooMF_MythicTitle_Mastery_Melee_2>
+
+  <MooMF_MythicTitle_Mastery_Construction_1>The Architect's {1}</MooMF_MythicTitle_Mastery_Construction_1>
+  <MooMF_MythicTitle_Mastery_Construction_2>{1} of {0}, the Grand Engineer</MooMF_MythicTitle_Mastery_Construction_2>
+  <MooMF_MythicTitle_Mastery_Construction_2>{1} of the Fortress-Raiser</MooMF_MythicTitle_Mastery_Construction_2>
+
+  <MooMF_MythicTitle_Mastery_Mining_1>{0}'s Tunnelling {1}</MooMF_MythicTitle_Mastery_Mining_1>
+  <MooMF_MythicTitle_Mastery_Mining_2>{0}'s Diggy Diggy Hole Digging {1}</MooMF_MythicTitle_Mastery_Mining_2>
+
+  <MooMF_MythicTitle_Mastery_Cooking_1>{1} of Michelin Stars</MooMF_MythicTitle_Mastery_Cooking_1>
+  <MooMF_MythicTitle_Mastery_Cooking_2>The Epicurean's {1}</MooMF_MythicTitle_Mastery_Cooking_2>
+
+  <MooMF_MythicTitle_Mastery_Plants_1>{1} of {0} the Green-Thumbed</MooMF_MythicTitle_Mastery_Plants_1>
+  <MooMF_MythicTitle_Mastery_Plants_2>The Great "Grass" Grower's {1}</MooMF_MythicTitle_Mastery_Plants_2>
+  <MooMF_MythicTitle_Mastery_Plants_3>The Cropsinger's {1}</MooMF_MythicTitle_Mastery_Plants_3>
+  <MooMF_MythicTitle_Mastery_Plants_4>{0}'s Bounty</MooMF_MythicTitle_Mastery_Plants_4>
+
+  <MooMF_MythicTitle_Mastery_Animals_1>{1} of the Shepherd</MooMF_MythicTitle_Mastery_Animals_1>
+  <MooMF_MythicTitle_Mastery_Animals_2>The Wildspeaker's {1}</MooMF_MythicTitle_Mastery_Animals_2>
+  <MooMF_MythicTitle_Mastery_Animals_3>{1} of {0}, Animalfriend</MooMF_MythicTitle_Mastery_Animals_3>
+
+  <MooMF_MythicTitle_Mastery_Crafting_1>{0}'s Crafty {1}</MooMF_MythicTitle_Mastery_Crafting_1>
+  <MooMF_MythicTitle_Mastery_Crafting_2>The Tinkerer's {1}</MooMF_MythicTitle_Mastery_Crafting_2>
+  <MooMF_MythicTitle_Mastery_Crafting_3>The Truesmith's {1}</MooMF_MythicTitle_Mastery_Crafting_3>
+  <MooMF_MythicTitle_Mastery_Crafting_4>{1} of Infinite Pockets</MooMF_MythicTitle_Mastery_Crafting_4>
+
+  <MooMF_MythicTitle_Mastery_Artistic_1>The {1} of Elegance</MooMF_MythicTitle_Mastery_Artistic_1>
+  <MooMF_MythicTitle_Mastery_Artistic_2>{0}'s Inspiration</MooMF_MythicTitle_Mastery_Artistic_2>
+
+  <MooMF_MythicTitle_Mastery_Medecine_1>The Ever-Bandaged {1} of {0}</MooMF_MythicTitle_Mastery_Medecine_1>
+  <MooMF_MythicTitle_Mastery_Medecine_2>The Limb-Sewer's {1}</MooMF_MythicTitle_Mastery_Medecine_2>
+
+  <MooMF_MythicTitle_Mastery_Social_1>{0}'s Diplomatic Attire</MooMF_MythicTitle_Mastery_Social_1>
+  <MooMF_MythicTitle_Mastery_Social_2>{1} of the Silver Tongued</MooMF_MythicTitle_Mastery_Social_2>
+
+  <MooMF_MythicTitle_Mastery_Intellectual_1>{0}'s Curiosity</MooMF_MythicTitle_Mastery_Intellectual_1>
+  <MooMF_MythicTitle_Mastery_Intellectual_2>{1} of Insight</MooMF_MythicTitle_Mastery_Intellectual_2>
+
+  <MooMF_MythicTitle_Kills_Thrumbos_1>The Thrumbobane {1}</MooMF_MythicTitle_Kills_Thrumbos_1>
+  <MooMF_MythicTitle_Kills_Thrumbos_2>{0}'s Thrumbokiller</MooMF_MythicTitle_Kills_Thrumbos_2>
+
+  <!-- misc other causes-->
+  <MooMF_MythicTitle_ThurmboFriend_1>{0}'s Thrumbo-friend {1}</MooMF_MythicTitle_ThurmboFriend_1>
+  <MooMF_MythicTitle_ThurmboFriend_2>{1} of the Thrumbo-caller</MooMF_MythicTitle_ThurmboFriend_2>
+
+  <MooMF_MythicTitle_SpaceVictory_1>{0}'s Starbound {1}</MooMF_MythicTitle_SpaceVictory_1>
+  <MooMF_MythicTitle_SpaceVictory_2>The Starseeker's {1}</MooMF_MythicTitle_SpaceVictory_2>
+
+
+
+
+</LanguageData>
