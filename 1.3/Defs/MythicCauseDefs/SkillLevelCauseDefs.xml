@@ -16,7 +16,8 @@
       <li>MooMF_MythicStory_Mastery_Shooting</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Shooting</li>
+      <li>MooMF_MythicTitle_Mastery_Shooting_1</li>
+      <li>MooMF_MythicTitle_Mastery_Shooting_2</li>
     </titles>
     <skill>Shooting</skill>
     <createsMythicWeapon>true</createsMythicWeapon>
@@ -31,7 +32,8 @@
       <li>MooMF_MythicStory_Mastery_Melee</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Melee</li>
+      <li>MooMF_MythicTitle_Mastery_Melee_1</li>
+      <li>MooMF_MythicTitle_Mastery_Melee_2</li>
     </titles>
     <skill>Melee</skill>
     <createsMythicWeapon>true</createsMythicWeapon>
@@ -46,7 +48,9 @@
       <li>MooMF_MythicStory_Mastery_Construction</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Construction</li>
+      <li>MooMF_MythicTitle_Mastery_Construction_1</li>
+      <li>MooMF_MythicTitle_Mastery_Construction_2</li>
+      <li>MooMF_MythicTitle_Mastery_Construction_3</li>
     </titles>
     <skill>Construction</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -60,7 +64,8 @@
       <li>MooMF_MythicStory_Mastery_Mining</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Mining</li>
+      <li>MooMF_MythicTitle_Mastery_Mining_1</li>
+      <li>MooMF_MythicTitle_Mastery_Mining_2</li>
     </titles>
     <skill>Mining</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -74,7 +79,8 @@
       <li>MooMF_MythicStory_Mastery_Cooking</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Cooking</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking_1</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking_2</li>
     </titles>
     <skill>Cooking</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -88,7 +94,10 @@
       <li>MooMF_MythicStory_Mastery_Plants</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Plants</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_1</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_2</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_3</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_4</li>
     </titles>
     <skill>Plants</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -102,7 +111,9 @@
       <li>MooMF_MythicStory_Mastery_Animals</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Animals</li>
+      <li>MooMF_MythicTitle_Mastery_Animals_1</li>
+      <li>MooMF_MythicTitle_Mastery_Animals_2</li>
+      <li>MooMF_MythicTitle_Mastery_Animals_3</li>
     </titles>
     <skill>Animals</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -116,7 +127,10 @@
       <li>MooMF_MythicStory_Mastery_Crafting</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Crafting</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_1</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_2</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_3</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_4</li>
     </titles>
     <skill>Crafting</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -130,7 +144,8 @@
       <li>MooMF_MythicStory_Mastery_Artistic</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Artistic</li>
+      <li>MooMF_MythicTitle_Mastery_Artistic_1</li>
+      <li>MooMF_MythicTitle_Mastery_Artistic_2</li>
     </titles>
     <skill>Artistic</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -144,7 +159,8 @@
       <li>MooMF_MythicStory_Mastery_Medicine</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Medicine</li>
+      <li>MooMF_MythicTitle_Mastery_Medicine_1</li>
+      <li>MooMF_MythicTitle_Mastery_Medicine_2</li>
     </titles>
     <skill>Medicine</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -158,7 +174,8 @@
       <li>MooMF_MythicStory_Mastery_Social</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Social</li>
+      <li>MooMF_MythicTitle_Mastery_Social_1</li>
+      <li>MooMF_MythicTitle_Mastery_Social_2</li>
     </titles>
     <skill>Social</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -172,7 +189,9 @@
       <li>MooMF_MythicStory_Mastery_Intellectual</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_Mastery_Intellectual</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_1</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_2</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_3</li>
     </titles>
     <skill>Intellectual</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>

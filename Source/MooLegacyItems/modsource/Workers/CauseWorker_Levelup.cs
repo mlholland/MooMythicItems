@@ -24,6 +24,7 @@ namespace MooMythicItems
         //
         public override void enableCauseRecognition(Harmony harm)
         {
+            base.enableCauseRecognition(harm);
             MythicCauseDef_LevelUp causeDef = def as MythicCauseDef_LevelUp;
             if (causeDef == null)
             {

@@ -10,6 +10,17 @@ namespace MooMythicItems
 {
     public class DebugActions : ModSettings
     {
+        public static readonly string debugPrefix = "MooMF_LogPrefix";
+
+        public static void PrintIfDebug(string printVal, object[] args)
+        {
+            if (MooMythicItems_Mod.settings.flagDebug)
+            {
+                Log.Message(debugPrefix.Translate() + String.Format(printVal, args));
+            }
+        }
+
+
         [DebugAction("Spawning", "Spawn Random Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()
         {

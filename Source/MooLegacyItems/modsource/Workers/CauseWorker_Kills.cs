@@ -21,6 +21,7 @@ namespace MooMythicItems
 
         public override void enableCauseRecognition(Harmony harm)
         {
+            base.enableCauseRecognition(harm);
             MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
             if (causeDef == null)
             {

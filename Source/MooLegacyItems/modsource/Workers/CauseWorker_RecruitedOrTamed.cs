@@ -23,6 +23,7 @@ namespace MooMythicItems
         // TODO consider abstracting int-record-based cause workers to have a shared parent that sets up the recordsWatched dictionary.
         public override void enableCauseRecognition(Harmony harm)
         {
+            base.enableCauseRecognition(harm);
             MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
             if (causeDef == null)
             {

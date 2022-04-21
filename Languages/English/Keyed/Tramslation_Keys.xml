@@ -7,6 +7,7 @@
   <MooMF_ClearAllSavedItemsDescription>Deletes all saved mythic items.</MooMF_ClearAllSavedItemsDescription>
   <MooMF_ClearAllSavedItemsButton>Clear Saved Mythic Items</MooMF_ClearAllSavedItemsButton>
   <MooMF_FlagNotifyItemCreation>Notify player when mythic item is created.</MooMF_FlagNotifyItemCreation>
+  <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
