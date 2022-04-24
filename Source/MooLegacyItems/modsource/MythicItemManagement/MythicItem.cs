@@ -59,7 +59,7 @@ namespace MooMythicItems
             this.worldsUsedIn = worldsUsedIn;
             if (itemDef.MadeFromStuff && stuffDef == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] tried to load a saved mythic item based on a {0}, but no stuff type was supplied. The default stuff type will be used instead.", itemDef.defName));
+                DebugActions.LogErr("tried to load a saved mythic item based on a {0}, but no stuff type was supplied. The default stuff type will be used instead.", itemDef.defName);
             }
         }
 

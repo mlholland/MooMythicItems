@@ -26,12 +26,12 @@ namespace MooMythicItems
         static MythicItemCache()
         {
             List<MythicItem> savedItems = SaveUtility.LoadMythicItemsFile();
-            DebugActions.PrintIfDebug("found {0} items from the save file into the cache", savedItems.Count);
+            DebugActions.LogIfDebug("found {0} items from the save file into the cache", savedItems.Count);
             foreach (MythicItem savedItem in savedItems)
             {
                 s_cachedItems.Add(savedItem);
             }
-            DebugActions.PrintIfDebug("loaded {0} items from the save file into the cache", s_cachedItems.Count);
+            DebugActions.LogIfDebug("loaded {0} items from the save file into the cache", s_cachedItems.Count);
         } 
 
         /* The main function for saving new mythic items. Returns true if the cache and save state were modified, and false otherwise.
@@ -45,7 +45,7 @@ namespace MooMythicItems
             // *Two mythic items are identical if they have the same reason, pawn, and originating world. We ignore the specific thingDef used.
             if (MythicItemCache.GetFirstSimilarCachedMythicItem(null, newItem.reason, newItem.originatorId, newItem.prv) != null)
             {
-                DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                DebugActions.LogIfDebug("Stopped mythic item creation with reason '{0}' because we have already " +
                         "have the exact same item saved.", newItem.reason);
                 return false;
             }
@@ -67,7 +67,7 @@ namespace MooMythicItems
                         savedItemsWithPrio++;
                         if (savedItemPrio >= priority)
                         {
-                            DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                            DebugActions.LogIfDebug("Stopped mythic item creation with reason '{0}' because we have already " +
                                     "have a similar item saved for '{1} with a higher priority reason '{2}'.", newItem.reason, newItem.ownerShortName, mi.reason);
                             return false;
                         }
@@ -76,7 +76,7 @@ namespace MooMythicItems
                 }
                 if (savedItemsWithPrio > 1)
                 {
-                    Log.Warning(String.Format("[Moo Mythic Items] While trying to create priority-based mythic item for {0} based on reason {1}, more " +
+                    Log.Warning(String.Format("While trying to create priority-based mythic item for {0} based on reason {1}, more " +
                         "than 1 saved mythic item with a similar reason and a priority was found", newItem.ownerShortName, newItem.reason));
                 }
                 if (itemToOverwrite != null)
@@ -90,7 +90,7 @@ namespace MooMythicItems
             // For items with global reason limits, make sure that this new item won't cause the total number of mythic items
             else if (globalLimit > 0 && MythicItemCache.GetAllSimilarCachedMythicItems(null, newItem.reason, null, 0).Count >= globalLimit)
             {
-                DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                DebugActions.LogIfDebug("Stopped mythic item creation with reason '{0}' because we have already " +
                         "reached the reasonLimit {1} for this category of item.", newItem.reason, globalLimit);
                 return false;
             }
@@ -106,7 +106,7 @@ namespace MooMythicItems
                 if (reason == null) reason = string.Format(noReasonKey.Translate(), newMythicItem.ownerFullName);
                 Messages.Message(string.Format(newItemMessageKey.Translate(), reason, newMythicItem.itemDef.label, newMythicItem.GetFormattedTitle()), MessageTypeDefOf.PositiveEvent, true);
             }
-            DebugActions.PrintIfDebug("Caching and saving new mythic item: {0}", newMythicItem.ToString());
+            DebugActions.LogIfDebug("Caching and saving new mythic item: {0}", newMythicItem.ToString());
             CacheMythicItem(newMythicItem);
             SaveCachedMythicItems();
         }
@@ -289,10 +289,10 @@ namespace MooMythicItems
          */
         private static Thing RealizeMythicItem(MythicItem mi)
         {
-            DebugActions.PrintIfDebug("[Moo Mythic Items] Realizing mythic item: {0}", mi.ToString()); 
+            DebugActions.LogIfDebug("Realizing mythic item: {0}", mi.ToString()); 
             ThingDef def = mi.itemDef;
             ThingDef stuff = null;
-            DebugActions.PrintIfDebug("[Moo Mythic Items] Realized mythic item has stuff type: {0}", mi.stuffDef); 
+            DebugActions.LogIfDebug("Realized mythic item has stuff type: {0}", mi.stuffDef); 
             if (mi.stuffDef != null)
             {
                 stuff  = mi.stuffDef;
@@ -311,7 +311,7 @@ namespace MooMythicItems
             CompMythic mythicComp = thing.TryGetComp<CompMythic>();
             if (mythicComp == null)
             {
-                throw new InvalidCastException(String.Format("[Moo Mythic Items] Mythic Item realization failed. The item def {0} had no mythic comp to modify, yet a saved mythic item was based on one", thing.def.defName));
+                throw new InvalidCastException(String.Format("Mythic Item realization failed. The item def {0} had no mythic comp to modify, yet a saved mythic item was based on one", thing.def.defName));
             }
             else
             {
@@ -320,7 +320,7 @@ namespace MooMythicItems
                 mythicComp.abilityDef = mi.abilityDef;
             }
 
-            DebugActions.PrintIfDebug("[Moo Mythic Items] Created a mythic item with the following attributes: {0}", mi.ToString());
+            DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", mi.ToString());
             return thing;
         } 
 

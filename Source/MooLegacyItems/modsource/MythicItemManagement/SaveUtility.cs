@@ -79,20 +79,15 @@ namespace MooMythicItems
             }
             catch(Exception e)
             {
-                Log.Error(String.Format("Moo Mythic Items: Failed to read mythic items from save file due the following error: {0}", e.Message)); 
+                DebugActions.LogErr("Failed to read mythic items from save file due the following error: {0}", e.Message); 
                 return results;
             }
             string[] fileLines = mythicItemsFileText.Split('\n');
             foreach (string line in fileLines)
             { 
                 string escapedLine = line.Replace(s_newLineReplacement, "\n");
-                try
-                {
-                    results.Add(ConvertStringToMythicItem(escapedLine));
-                } catch (InvalidCastException e)
-                {
-                    Log.Error(e.Message);
-                }
+                MythicItem parsedItem = ConvertStringToMythicItem(escapedLine);
+                if (parsedItem != null) results.Add(parsedItem);
             }
             return results;
         }
@@ -121,7 +116,8 @@ namespace MooMythicItems
 
             if(values.Length != s_fieldsPerLine)
             {
-                throw new InvalidCastException(String.Format("Moo Mythic Items: Tried and failed to read a mythic item from the mythic item save file. This is probably due to either data corruption or file modification outside the game. Expected {0} comma separated values and found {1}. The string in question was: '{2}'", s_fieldsPerLine, values.Length, encodedMythicItem));
+                DebugActions.LogErr("Tried and failed to read a mythic item from the mythic item save file. This is probably due to either data corruption or file modification outside the game. Expected {0} comma separated values and found {1}. The string in question was: '{2}'", s_fieldsPerLine, values.Length, encodedMythicItem);
+                return null;
             }
             for (int i = 0; i < values.Length; i++)
             {
@@ -137,7 +133,7 @@ namespace MooMythicItems
                     bool parsed = int.TryParse(val, out intVal);
                     if (!parsed)
                     {
-                        Log.Error(String.Format("[Moo Mythic Items]: Failed to parse a string to an int as expected. The string was {0}", val));
+                        DebugActions.LogErr("Failed to parse a string to an int as expected. The string was {0}", val);
                         continue;
                     }
                     worldsUsedIn.Add(intVal);

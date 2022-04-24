@@ -39,7 +39,7 @@ namespace MooMythicItems
                     ThingDefListDef thrumboDefList = DefDatabase<ThingDefListDef>.GetNamed(listDefName, false);
                     if (thrumboDefList == null)
                     {
-                        Log.Error("[Moo Mythic Items] tried and failed to retrieve list of animal types that are considered thrumbos for record-keeping purposes. Thrumbo tamings won't be recorded, nor will it be possible to produce thrumbo-taming-based mythic items. The def we were looking for was named: " + listDefName);
+                        DebugActions.LogErr("tried and failed to retrieve list of animal types that are considered thrumbos for record-keeping purposes. Thrumbo tamings won't be recorded, nor will it be possible to produce thrumbo-taming-based mythic items. The def we were looking for was named: " + listDefName);
                         thrumboDefs = new List<ThingDef>();
                         return thrumboDefs;
                     }

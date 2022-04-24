@@ -90,7 +90,6 @@ namespace MooMythicItems
                         if (!p.NonHumanlikeOrWildMan() && p.IsColonist)
                         {
                             options.Add(p);
-                            Log.Message(p.Name.ToString());
                         }
                     }
                 }
@@ -99,7 +98,6 @@ namespace MooMythicItems
                     foreach (Pawn p in PawnsFinder.AllMaps_FreeColonists)
                     {
                         options.Add(p);
-                        Log.Message(p.Name.ToString());
                     }
                 }
                 

@@ -37,7 +37,7 @@ namespace MooMythicItems
         { 
             if (pawn == null || mythicAbilityDef == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] Tried to add a mythic ability to a pawn, but the inputted {0} was null", pawn == null ? "pawn" : "ability"));
+                DebugActions.LogErr("Tried to add a mythic ability to a pawn, but the inputted {0} was null", pawn == null ? "pawn" : "ability");
             }
 
             // The first four lines of this are basically the same code as abilityTracker.addAbility. We wrench it out in order to save the ability that's created.
@@ -67,7 +67,7 @@ namespace MooMythicItems
                 }
             } else
             {
-                Log.Warning(String.Format("[Moo Mythic Items] tried to grant pawn {0} the ability {1}, but they already have it. This could be a rare case of giving a pawn multiple mythic items, but is otherwise likely a bug of some sort", pawn.Name, mythicAbilityDef.label));
+                DebugActions.LogWarn("tried to grant pawn {0} the ability {1}, but they already have it. This could be a rare case of giving a pawn multiple mythic items, but is otherwise likely a bug of some sort", pawn.Name, mythicAbilityDef.label);
             }
             //pawn.abilities.GainAbility(mythicAbility); 
         }
@@ -76,15 +76,15 @@ namespace MooMythicItems
         { 
             if (pawn == null || mythicAbilityDef == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] Tried to remove a mythic ability from a pawn, but the inputted {0} was null", pawn == null ? "pawn" : "ability"));
+                DebugActions.LogErr("Tried to remove a mythic ability from a pawn, but the inputted {0} was null", pawn == null ? "pawn" : "ability");
             }
             effectVal1 = Find.TickManager.TicksGame.ToString();
 
             Ability ability = pawn.abilities.GetAbility(mythicAbilityDef);
             if (ability == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] A pawn just unequipped a mythic item that was supposed to grant a mythic ability. But no mythic ability '{0}' was found to remove from the pawn '{1}'.",
-                    mythicAbilityDef.label, pawn.Name));
+                DebugActions.LogErr("A pawn just unequipped a mythic item that was supposed to grant a mythic ability. But no mythic ability '{0}' was found to remove from the pawn '{1}'.",
+                    mythicAbilityDef.label, pawn.Name);
             } else
             {
                 effectVal2 = ability.CooldownTicksRemaining.ToString();
@@ -104,7 +104,7 @@ namespace MooMythicItems
             {
                 return result;
             }
-            Log.Error(String.Format("[Moo Mythic items] Tried to pull saved time data about a mythic item's cooldown, but the saved value ({0}) could not be converted back into an numeric value.", value));
+            DebugActions.LogErr("Tried to pull saved time data about a mythic item's cooldown, but the saved value ({0}) could not be converted back into an numeric value.", value);
             return 0;
         }
 

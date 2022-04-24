@@ -22,6 +22,8 @@ namespace MooMythicItems
         private string mythicItemSaveLimitInputString = "100";
         private string individualItemOccurenceLimitString = "3";
 
+        private static readonly string clearItemsPrintoutKey = "MooMF_ClearSavedItemsButtonPressed";
+
 
         public override void ExposeData()
         {
@@ -45,21 +47,13 @@ namespace MooMythicItems
             ls.Label("MooMF_SettingsLabel".Translate());
             /*if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ManualSaveButton".Translate(), true, true, true))
             {
-                Log.Message("save was pressed");
                 MythicItemSaveUtility.SaveMythicItemsFile(testList);
             } 
             ls.Gap(30f);
 
             if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ManualLoadBUtton".Translate(), true, true, true))
             {
-                Log.Message("load was pressed");
                 List<MythicItem> loadedList = MythicItemSaveUtility.LoadMythicItemsFile();
-
-                Log.Message(String.Format("loaded {0} items", loadedList.Count));
-                foreach (MythicItem mi in loadedList)
-                {
-                    Log.Message(li.ToString());
-                }
             } 
             ls.Gap(30f);
             */
@@ -76,7 +70,8 @@ namespace MooMythicItems
 
             if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ClearAllSavedItemsButton".Translate(), true, true, true))
             {
-                Log.Message("[Moo mythic items] Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file.");
+                DebugActions.LogIfDebug(clearItemsPrintoutKey.Translate());
+                Messages.Message(clearItemsPrintoutKey.Translate(), MessageTypeDefOf.PositiveEvent, true);
                 MythicItemCache.ClearCacheAndSaveFile();
             }
             ls.Gap(30f);

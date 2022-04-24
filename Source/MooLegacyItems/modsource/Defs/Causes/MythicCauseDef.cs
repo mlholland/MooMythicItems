@@ -107,7 +107,7 @@ namespace MooMythicItems
             string translationKey = Worker.GetReasonFragmentKey();
             if (translationKey == null)
             {
-                DebugActions.PrintErr("Causeworker is returning a null format key. That shouldn't happen.");
+                DebugActions.LogErr("Causeworker is returning a null format key. That shouldn't happen.");
                 return null;
             }
             return String.Format(translationKey.Translate(), args);

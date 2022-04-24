@@ -21,10 +21,7 @@ namespace MooMythicItems
         {
             static void Postfix()
             {
-                if (MooMythicItems_Mod.settings.flagDebug)
-                {
-                    Log.Message("MooMF Generation: Interrupting GenerateImpliedDefs make weapons and clothing 'mythic-able'");
-                }
+                DebugActions.LogIfDebug("Interrupting GenerateImpliedDefs make weapons and clothing 'mythic-able'");
                 var defs = DefDatabase<ThingDef>.AllDefs.Where(InjectPredicate).ToList();
 
                 var compProperties = new Verse.CompProperties { compClass = typeof(CompMythic) };

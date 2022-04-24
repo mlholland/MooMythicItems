@@ -16,38 +16,26 @@ namespace MooMythicItems
          
         protected override bool CanGenerateSub(ThingSetMakerParams parms)
         {
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker CanGenerateSub");
-            }
+            DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker CanGenerateSub");
             return MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
         }
          
         protected override void Generate(ThingSetMakerParams parms, List<Thing> outThings)
         {
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker Generate");
-            }
+            DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker Generate");
             outThings.Add(MythicItemCache.RealizeRandomMythicItemFromCache());
         }
          
         protected virtual IEnumerable<ThingDef> AllowedThingDefs(ThingSetMakerParams parms)
         {
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker AllowedThingDefs");
-            }
+            DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker AllowedThingDefs");
             return ThingSetMakerUtility.GetAllowedThingDefs(parms);
         }
          
          
         protected override IEnumerable<ThingDef> AllGeneratableThingsDebugSub(ThingSetMakerParams parms)
         {
-            if(MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message("[Moo Mythic Items] running ThingSetMaker_MythicItemMaker AllGeneratableThingsDebugSub");
-            }
+            DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker AllGeneratableThingsDebugSub");
             return MythicItemCache.GetPossibleMythicItemDefs().AsEnumerable();
         }
          

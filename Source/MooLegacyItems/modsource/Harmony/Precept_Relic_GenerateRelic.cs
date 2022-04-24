@@ -23,14 +23,11 @@ namespace MooMythicItems
                 if (__instance.ThingDef.CompDefFor<CompMythic>() == null)
                 {
                     // todo print warning
-                    Log.Error(String.Format("[Moo Mythic Items] Trying to add mythic attributes to a ideology relic, but the relic def '{0}' doesn't have a mythic comp to modify.", __instance.ThingDef.defName));
+                    Log.Error(String.Format("Trying to add mythic attributes to a ideology relic, but the relic def '{0}' doesn't have a mythic comp to modify.", __instance.ThingDef.defName));
                     return;
                 }
 
-                if (MooMythicItems_Mod.settings.flagDebug)
-                {
-                    Log.Message(String.Format("[Moo Mythic Items] Adding Mythic Features to Relic: {0}", __result.Label));
-                }
+                DebugActions.LogIfDebug("Adding Mythic Features to Relic: {0}", __result.Label);
                 CompMythic relicMythicComp = __result.TryGetComp<CompMythic>();
                 relicMythicComp.newLabel = mythicRelicPrecept.newLabel;
                 relicMythicComp.newDescription = mythicRelicPrecept.newDescription;

@@ -25,31 +25,31 @@ namespace MooMythicItems
         {
             if(MooMythicItems_Mod.settings.flagStartupDebug)
             {
-                Log.Message(String.Format(DebugActions.debugPrefix.Translate() + String.Format("Printing example mythic text for mythic cause '{0}'", def.defName)));
+                DebugActions.MooLog(String.Format("Printing example mythic text for mythic cause '{0}'", def.defName));
                 String exampleItemName = def.createsMythicWeapon ? "Charge Rifle" : "Flak Vest";
                 String exampleOwnerName = "Randy";
                 String exampleFullName = "Randy Random";
                 String exampleFaction = "Penumbria's Survivors";
                 foreach (String title in def.titles)
                 {
-                    Log.Message(DebugActions.debugPrefix.Translate() + "Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName));
+                    DebugActions.MooLog("Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName));
                 }
                 foreach (String desc in def.descriptions)
                 {
-                    Log.Message(DebugActions.debugPrefix.Translate() + "Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction,  exampleItemName));
+                    DebugActions.MooLog("Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction,  exampleItemName));
                 }
-                Log.Message(DebugActions.debugPrefix.Translate() + "Reason Fragment: " +  def.GetPrintedReasonFragment(exampleOwnerName));
+                DebugActions.MooLog("Reason Fragment: " +  def.GetPrintedReasonFragment(exampleOwnerName));
                 // TODO add effect translation in child implementations
                 if (def.hasDifferentMeleeOptions)
                 {
                     exampleItemName = "Steel Longsword";
                     foreach (String title in def.meleeTitles)
                     {
-                        Log.Message(String.Format(DebugActions.debugPrefix.Translate() + "Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName)));
+                         DebugActions.MooLog("Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName));
                     }
                     foreach (String desc in def.meleeDescriptions)
                     {
-                        Log.Message(String.Format(DebugActions.debugPrefix.Translate() + "Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction, exampleItemName)));
+                        DebugActions.MooLog("Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction, exampleItemName));
                     }
                 }
             }

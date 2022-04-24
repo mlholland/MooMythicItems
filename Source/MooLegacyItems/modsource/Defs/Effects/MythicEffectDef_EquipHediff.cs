@@ -22,7 +22,7 @@ namespace MooMythicItems
         {
             if (equipHediff == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has no equipHediff, this is probably mis-formatted XML somewhere.", this.defName));
+                DebugActions.LogErr("ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has no equipHediff, this is probably mis-formatted XML somewhere.", this.defName);
                 return;
             }
 
@@ -33,7 +33,7 @@ namespace MooMythicItems
 
                 if (pawn == null || app == null)
                 {
-                    Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has received either a null pawn or apparel input", this.defName));
+                    DebugActions.LogErr("ApplyHediffMythicEffectDef.ApparelEquipEffect {0} has received either a null pawn or apparel input", this.defName);
                     return;
                 }
                 if (pawn.health.hediffSet.GetFirstHediffOfDef(equipHediff, false) == null)
@@ -45,7 +45,7 @@ namespace MooMythicItems
                     }
                     else
                     {
-                        Log.Error(String.Format("[Moo Mythic Items] ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up by Moo or whoever made this effect.", this.defName, equipHediff.defName));
+                        DebugActions.LogErr("ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up by Moo or whoever made this effect.", this.defName, equipHediff.defName);
                     }
                 }
             }

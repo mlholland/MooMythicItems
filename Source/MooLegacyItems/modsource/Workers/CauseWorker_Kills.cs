@@ -26,7 +26,7 @@ namespace MooMythicItems
             MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
             if (causeDef == null)
             {
-                DebugActions.PrintErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                DebugActions.LogErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
                     " Use a different worker class, or correct the def class.", def.defName);
                 return;
             }
@@ -40,7 +40,7 @@ namespace MooMythicItems
                 {
                     if (savedCause.threshold == causeDef.threshold)
                     {
-                        DebugActions.PrintErr("Encountered error while loading mythic item creation causes. Two kill count-based causes, '{0}' and '{1}' have the same threshold on the same record." +
+                        DebugActions.LogErr("Encountered error while loading mythic item creation causes. Two kill count-based causes, '{0}' and '{1}' have the same threshold on the same record." +
                             " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName);
                         return;
 
@@ -48,7 +48,7 @@ namespace MooMythicItems
                 }
             }
             recordsWatched[causeDef.record].Add(causeDef);
-            DebugActions.PrintIfDebug("accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold);
+            DebugActions.LogIfDebug("accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold);
         }
 
         public override string GetReasonFragmentKey()
@@ -108,10 +108,7 @@ namespace MooMythicItems
 
             if (bestCause != null)
             {
-                if (MooMythicItems_Mod.settings.flagDebug)
-                {
-                    Log.Message(String.Format("[Moo Mythic Items] Trying to create new mythic item for {0} based on cause {1}.", killer.Name, bestCause.defName));
-                }
+                DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", killer.Name, bestCause.defName);
                 return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(bestCause.TryCreateMythicItem(killer, killReasonPrefix + bestCause.subreason), bestCause);
             }
             return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(null, null);

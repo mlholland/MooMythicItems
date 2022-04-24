@@ -38,8 +38,6 @@ namespace MooMythicItems
 
         public override void OnKill(Pawn killedPawn, Pawn killer, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
         {
-            //Log.Message(killer.Name.ToStringFull);
-            //Log.Message(hediffToAdd.defName);
             if (killedValidTarget(killedPawn.def))
             {
                 if (killer != null && killer.health != null && killer.health.hediffSet != null)
@@ -47,7 +45,6 @@ namespace MooMythicItems
                     Hediff hediff = null;
                     if (killer.health.hediffSet.HasHediff(hediffToAdd))
                     {
-                        Log.Message("DA");
                         hediff = killer.health.hediffSet.GetFirstHediffOfDef(hediffToAdd);
                         if (hediff != null && hediff.Severity + 0.0001 < severityPerStack * maxStacks) // Added value is just defence against floating point problems
                         {
@@ -64,7 +61,6 @@ namespace MooMythicItems
                     }
                     if(hediff != null && resetDurationOnNewStack)
                     {
-                        Log.Message("E");
                         HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>();
                         if (comp != null)
                         {

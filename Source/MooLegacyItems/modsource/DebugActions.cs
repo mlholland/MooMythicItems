@@ -12,20 +12,28 @@ namespace MooMythicItems
     {
         public static readonly string debugPrefix = "MooMF_LogPrefix";
 
-        public static void PrintIfDebug(string printVal, params object[] args)
+
+        public static void MooLog(string printVal, params object[] args)
+        {
+            Log.Message(debugPrefix.Translate() + String.Format(printVal, args));
+        }
+
+        public static void LogIfDebug(string printVal, params object[] args)
         {
             if (MooMythicItems_Mod.settings.flagDebug)
             {
-                Log.Message(debugPrefix.Translate() + String.Format(printVal, args)); 
+                DebugActions.MooLog(debugPrefix.Translate() + String.Format(printVal, args)); 
             }
         }
 
-        public static void PrintErr(string printVal, params object[] args)
+        public static void LogErr(string printVal, params object[] args)
         {
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Error(debugPrefix.Translate() + String.Format(printVal, args));
-            }
+            Log.Error(debugPrefix.Translate() + String.Format(printVal, args));
+        }
+
+        public static void LogWarn(string printVal, params object[] args)
+        {
+            Log.Warning(debugPrefix.Translate() + String.Format(printVal, args));
         }
 
 
@@ -41,7 +49,7 @@ namespace MooMythicItems
             Thing item = MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);
             if (item == null)
             {
-                DebugActions.PrintIfDebug("[Moo Mythic Items] " + "MooMF_FailedToCreateLIFromDebug".Translate());
+                DebugActions.LogIfDebug("MooMF_FailedToCreateMIFromDebug".Translate());
                 Messages.Message("MooMF_FailedToCreateLIFromDebug".Translate(), MessageTypeDefOf.NeutralEvent, true);
             }
             DebugSpawnMythicItem(item, UI.MouseCell(), false);

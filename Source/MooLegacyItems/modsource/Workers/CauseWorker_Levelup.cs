@@ -29,8 +29,8 @@ namespace MooMythicItems
             MythicCauseDef_LevelUp causeDef = def as MythicCauseDef_LevelUp;
             if (causeDef == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
-                    " Use a different worker class, or correct the def class.", def.defName));
+                DebugActions.LogErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                    " Use a different worker class, or correct the def class.", def.defName);
                 return;
             }
             if (!skillsWatched.ContainsKey(causeDef.skill))
@@ -42,7 +42,7 @@ namespace MooMythicItems
                 {
                     if (savedCause.minLevelThreshold == causeDef.minLevelThreshold)
                     {
-                        DebugActions.PrintErr("Encountered error while loading mythic item creation causes. Two skill-based causes, '{0}' and '{1}' have the same level threshold." +
+                        DebugActions.LogErr("Encountered error while loading mythic item creation causes. Two skill-based causes, '{0}' and '{1}' have the same level threshold." +
                             " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName);
                         return;
                             
@@ -50,10 +50,7 @@ namespace MooMythicItems
                 }
             }
             skillsWatched[causeDef.skill].Add(causeDef);
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("[Moo Mythic Items] accounting for new mythic cause that waits for skill '{0}' to reach a level of {1}.", causeDef.skill.defName, causeDef.minLevelThreshold));
-            }
+            DebugActions.LogIfDebug("accounting for new mythic cause that waits for skill '{0}' to reach a level of {1}.", causeDef.skill.defName, causeDef.minLevelThreshold);
         }
 
         public override string GetReasonFragmentKey()
@@ -78,7 +75,7 @@ namespace MooMythicItems
                 }
                 if (curThreshold > -1)
                 {
-                    DebugActions.PrintIfDebug("Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName);
+                    DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName);
                     string reason = masteryPrefix + skillRecord.def.skillLabel;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)
