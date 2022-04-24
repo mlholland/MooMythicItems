@@ -70,7 +70,7 @@ namespace MooMythicItems
         {
             base.ResolveReferences();
             Worker = (CauseWorker)Activator.CreateInstance(workerClass, this);
-            Worker.enableCauseRecognition(MooMythicItems_Mod.harm);
+            Worker.EnableCauseRecognition(MooMythicItems_Mod.harm);
         }
 
         public virtual MythicItem TryCreateMythicItem(Pawn originator, string reason)
@@ -100,6 +100,17 @@ namespace MooMythicItems
             }
 
             return new MythicItem(item, originator, description, title, effect, reason + "-" + priority);
+        }
+
+        /** This string should be a sentence fragment, which will be injected into the printed statement about a mythic item being produced */
+        public virtual String GetPrintedReasonFragment(params object[] args) {
+            string translationKey = Worker.GetReasonFragmentKey();
+            if (translationKey == null)
+            {
+                DebugActions.PrintErr("Causeworker is returning a null format key. That shouldn't happen.");
+                return null;
+            }
+            return String.Format(translationKey.Translate(), args);
         }
     }
 }

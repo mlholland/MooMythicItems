@@ -20,22 +20,18 @@ namespace MooMythicItems
         // since they're checked upon loading the save file, and other incoming elements
         // must be coming from the live game itself.
         private static List<MythicItem> s_cachedItems = new List<MythicItem>();
+        private static readonly string noReasonKey = "MooMF_NoMythicReasonGiven";
+        private static readonly string newItemMessageKey = "MooMF_CreatedNewItemMessage";
 
         static MythicItemCache()
         {
             List<MythicItem> savedItems = SaveUtility.LoadMythicItemsFile();
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("found {0} items from the save file into the cache", savedItems.Count));
-            }
+            DebugActions.PrintIfDebug("found {0} items from the save file into the cache", savedItems.Count);
             foreach (MythicItem savedItem in savedItems)
             {
                 s_cachedItems.Add(savedItem);
             }
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("loaded {0} items from the save file into the cache", s_cachedItems.Count));
-            }
+            DebugActions.PrintIfDebug("loaded {0} items from the save file into the cache", s_cachedItems.Count);
         } 
 
         /* The main function for saving new mythic items. Returns true if the cache and save state were modified, and false otherwise.
@@ -43,17 +39,14 @@ namespace MooMythicItems
          * item with the new item.
          * Does not allow duplicate, equal-or-lower-priority, or too many limited mythic items of the same type to be cached.
          */
-        public static bool TrySaveOrOverwriteNewItem(MythicItem newItem, string reasonPrefix, int priority, int globalLimit)
+        public static bool TrySaveOrOverwriteNewItem(MythicItem newItem, string reasonPrefix, int priority, int globalLimit, string printedReasonFragment)
         {
             // First, make sure that an identical mythic item hasn't already been saved.
             // *Two mythic items are identical if they have the same reason, pawn, and originating world. We ignore the specific thingDef used.
             if (MythicItemCache.GetFirstSimilarCachedMythicItem(null, newItem.reason, newItem.originatorId, newItem.prv) != null)
             {
-                if (MooMythicItems_Mod.settings.flagDebug)
-                {
-                    Log.Message(String.Format("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
-                        "have the exact same item saved.", newItem.reason));
-                }
+                DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                        "have the exact same item saved.", newItem.reason);
                 return false;
             }
 
@@ -74,11 +67,8 @@ namespace MooMythicItems
                         savedItemsWithPrio++;
                         if (savedItemPrio >= priority)
                         {
-                            if (MooMythicItems_Mod.settings.flagDebug)
-                            {
-                                Log.Message(String.Format("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
-                                    "have a similar item saved for '{1} with a higher priority reason '{2}'.", newItem.reason, newItem.ownerShortName, mi.reason));
-                            }
+                            DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                                    "have a similar item saved for '{1} with a higher priority reason '{2}'.", newItem.reason, newItem.ownerShortName, mi.reason);
                             return false;
                         }
                         itemToOverwrite = mi;
@@ -93,35 +83,30 @@ namespace MooMythicItems
                 {
                     s_cachedItems.Remove(itemToOverwrite);
                     newItem.worldsUsedIn = itemToOverwrite.worldsUsedIn;
-                    SaveNewMythicItem(newItem);
+                    SaveNewMythicItem(newItem, printedReasonFragment);
                     return true;
                 }
             }
             // For items with global reason limits, make sure that this new item won't cause the total number of mythic items
             else if (globalLimit > 0 && MythicItemCache.GetAllSimilarCachedMythicItems(null, newItem.reason, null, 0).Count >= globalLimit)
             {
-                if (MooMythicItems_Mod.settings.flagDebug)
-                {
-                    Log.Message(String.Format("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
-                        "reached the reasonLimit {1} for this category of item.", newItem.reason, globalLimit));
-                }
+                DebugActions.PrintIfDebug("[Moo Mythic Items] Stopped mythic item creation with reason '{0}' because we have already " +
+                        "reached the reasonLimit {1} for this category of item.", newItem.reason, globalLimit);
                 return false;
             }
-            SaveNewMythicItem(newItem);
+            SaveNewMythicItem(newItem, printedReasonFragment);
             return true;
         }
 
         /* New values are added to the end of line, to keep an implicitly time-ordered list of items */
-        public static void SaveNewMythicItem(MythicItem newMythicItem)
+        public static void SaveNewMythicItem(MythicItem newMythicItem, string reason)
         {
             if (MooMythicItems_Mod.settings.flagNotifyItemCreation)
             {
-                Messages.Message(string.Format("MooMF_CreatedNewItemMessage".Translate(), newMythicItem.ownerFullName, newMythicItem.itemDef.label, newMythicItem.reason), MessageTypeDefOf.PositiveEvent, true);
+                if (reason == null) reason = string.Format(noReasonKey.Translate(), newMythicItem.ownerFullName);
+                Messages.Message(string.Format(newItemMessageKey.Translate(), reason, newMythicItem.itemDef.label, newMythicItem.GetFormattedTitle()), MessageTypeDefOf.PositiveEvent, true);
             }
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("Caching and saving new mythic item: {0}", newMythicItem.ToString()));
-            }
+            DebugActions.PrintIfDebug("Caching and saving new mythic item: {0}", newMythicItem.ToString());
             CacheMythicItem(newMythicItem);
             SaveCachedMythicItems();
         }
@@ -304,16 +289,10 @@ namespace MooMythicItems
          */
         private static Thing RealizeMythicItem(MythicItem mi)
         {
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("[Moo Mythic Items] Realizing mythic item: {0}", mi.ToString()));
-            }
+            DebugActions.PrintIfDebug("[Moo Mythic Items] Realizing mythic item: {0}", mi.ToString()); 
             ThingDef def = mi.itemDef;
             ThingDef stuff = null;
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("[Moo Mythic Items] Realized mythic item has stuff type: {0}", mi.stuffDef));
-            }
+            DebugActions.PrintIfDebug("[Moo Mythic Items] Realized mythic item has stuff type: {0}", mi.stuffDef); 
             if (mi.stuffDef != null)
             {
                 stuff  = mi.stuffDef;
@@ -341,10 +320,7 @@ namespace MooMythicItems
                 mythicComp.abilityDef = mi.abilityDef;
             }
 
-            if(MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("[Moo Mythic Items] Created a mythic item with the following attributes: {0}", mi.ToString()));
-            }
+            DebugActions.PrintIfDebug("[Moo Mythic Items] Created a mythic item with the following attributes: {0}", mi.ToString());
             return thing;
         } 
 

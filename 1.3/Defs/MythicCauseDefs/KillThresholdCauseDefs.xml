@@ -85,8 +85,8 @@
       <li>MooMF_Effect_KillstreakFirerate_2</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_HumanKills2_Ranged_1</li>
@@ -103,8 +103,8 @@
       <li>MooMF_Effect_KillstreakSpeed_2</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_HumanKills2_Melee_1</li>
@@ -126,8 +126,8 @@
       <li>MooMF_Effect_KillstreakFirerate_3</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_HumanKills3_Ranged_1</li>
@@ -141,8 +141,8 @@
       <li>MooMF_Effect_KillstreakSpeed_3</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_HumanKills3_Melee_1</li>
@@ -164,8 +164,8 @@
       <li>MooMF_GrantEMPRocket</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_MechKills1_Ranged_1</li>
@@ -176,8 +176,8 @@
       <li>MooMF_KillMechsForDrops_1</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_MechKills1_Melee_1</li>
@@ -196,8 +196,8 @@
       <li>MooMF_GrantEMPRocket</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_MechKills2_Ranged_1</li>
@@ -208,8 +208,8 @@
       <li>MooMF_KillMechsForDrops_2</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_MechKills2_Melee_1</li>
@@ -230,8 +230,8 @@
       <li>MooMF_GrantThrumboButcher</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_InsectKills1_Ranged_1</li>
@@ -242,8 +242,8 @@
       <li>MooMF_KillInsectsForJelly_1</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_InsectKills1_Melee_1</li>
@@ -264,8 +264,8 @@
       <li>MooMF_GrantThrumboButcher</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_InsectKills2_Ranged_1</li>
@@ -276,8 +276,8 @@
       <li>MooMF_KillInsectsForJelly_2</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_InsectKills2_Melee_1</li>

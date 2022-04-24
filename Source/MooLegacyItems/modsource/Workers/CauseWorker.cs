@@ -21,7 +21,7 @@ namespace MooMythicItems
         // Run at the end of startup to setup necessary checks to recognize when a mythic item cause has been achieved, and
         // To create a mythic item when that occurs.
         // A harmony instance is required as input, since this is very likely to require harmony patches of some sort.
-        public virtual void enableCauseRecognition(Harmony harm)
+        public virtual void EnableCauseRecognition(Harmony harm)
         {
             if(MooMythicItems_Mod.settings.flagStartupDebug)
             {
@@ -32,12 +32,13 @@ namespace MooMythicItems
                 String exampleFaction = "Penumbria's Survivors";
                 foreach (String title in def.titles)
                 {
-                    Log.Message(String.Format(DebugActions.debugPrefix.Translate() + "Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName)));
+                    Log.Message(DebugActions.debugPrefix.Translate() + "Name: " + String.Format(title.Translate(), exampleOwnerName, exampleItemName));
                 }
                 foreach (String desc in def.descriptions)
                 {
-                    Log.Message(String.Format(DebugActions.debugPrefix.Translate() + "Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction,  exampleItemName)));
+                    Log.Message(DebugActions.debugPrefix.Translate() + "Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction,  exampleItemName));
                 }
+                Log.Message(DebugActions.debugPrefix.Translate() + "Reason Fragment: " +  def.GetPrintedReasonFragment(exampleOwnerName));
                 // TODO add effect translation in child implementations
                 if (def.hasDifferentMeleeOptions)
                 {
@@ -53,7 +54,7 @@ namespace MooMythicItems
                 }
             }
         }
-        
-        
+
+        public abstract string GetReasonFragmentKey();
     }
 }

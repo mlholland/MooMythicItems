@@ -24,5 +24,11 @@ namespace MooMythicItems
             if (record == null) yield return "record must be nonnull";
             if (subreason == null) yield return "subreason must be nonnull";
         }
+
+        // TODO figure out how to properly pipe params through multiple functions
+        public override String GetPrintedReasonFragment(params object[] args)
+        {
+            return base.GetPrintedReasonFragment(args[0], threshold, subreason);
+        }
     }
 }

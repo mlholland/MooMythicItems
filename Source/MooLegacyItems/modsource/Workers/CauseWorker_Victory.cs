@@ -20,14 +20,15 @@ namespace MooMythicItems
         private static readonly string space = "GameOverColonistsEscaped";
         private static readonly string royal = "EndGameIntroText"; // From Script_EndGame_RoyalAscent - will need to test this.
         private static readonly string archo = "GameOverColonistsTranscended";
+        private static readonly string printReasonKey = "MooMF_PrintVictoryReason";
 
         public static Dictionary<string, List<MythicCauseDef_Victory>> victoryToTriggerMap = new Dictionary<string, List<MythicCauseDef_Victory>>();
         public CauseWorker_Victory(MythicCauseDef def) : base(def) { }
 
         // TODO consider abstracting int-record-based cause workers to have a shared parent that sets up the recordsWatched dictionary.
-        public override void enableCauseRecognition(Harmony harm)
+        public override void EnableCauseRecognition(Harmony harm)
         {
-            base.enableCauseRecognition(harm);
+            base.EnableCauseRecognition(harm);
             if (!victoryToTriggerMap.ContainsKey(space))
             {
                 victoryToTriggerMap[space] = new List<MythicCauseDef_Victory>();
@@ -65,6 +66,11 @@ namespace MooMythicItems
             }
         }
 
+        public override string GetReasonFragmentKey()
+        {
+            return printReasonKey;
+        }
+
         [HarmonyPatch(typeof(GameVictoryUtility), nameof(GameVictoryUtility.MakeEndCredits))]
         static class GameVictoryUtility_Postfix_Patch
         {
@@ -76,11 +82,9 @@ namespace MooMythicItems
                     return;
                 }
                 // pick a valid pawn
-                Log.Message("a");
                 List<Pawn> options = new List<Pawn>();
                 if (escaped != null && escaped.Count > 0)
                 {
-                    Log.Message("c1`");
                     foreach (Pawn p in escaped)
                     {
                         if (!p.NonHumanlikeOrWildMan() && p.IsColonist)
@@ -92,25 +96,22 @@ namespace MooMythicItems
                 }
                 else
                 {
-                    Log.Message("c");
                     foreach (Pawn p in PawnsFinder.AllMaps_FreeColonists)
                     {
                         options.Add(p);
                         Log.Message(p.Name.ToString());
                     }
                 }
-
-                Log.Message("b");
+                
                 if (options.Count == 0)
                 {
                     return;
                 } 
-                
-                Log.Message("d");
+                 
                 MythicItem newItem = causeDef.TryCreateMythicItem(options.RandomElement(), victoryPrefix);
                 if (newItem != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(newItem, null, 0, 0);
+                    MythicItemCache.TrySaveOrOverwriteNewItem(newItem, null, 0, 0, causeDef.GetPrintedReasonFragment(newItem.ownerFullName));
                 }
             }
 

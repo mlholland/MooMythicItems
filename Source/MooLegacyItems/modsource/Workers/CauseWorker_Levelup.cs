@@ -17,14 +17,15 @@ namespace MooMythicItems
     {
 
         public static readonly string masteryPrefix = "skill-mastery-";
+        private static readonly string printReasonKey = "MooMF_PrintLevelupReason";
         public static Dictionary<SkillDef, List<MythicCauseDef_LevelUp>> skillsWatched = new Dictionary<SkillDef, List<MythicCauseDef_LevelUp>>();
 
         public CauseWorker_LevelUp(MythicCauseDef def) : base(def) { }
 
         //
-        public override void enableCauseRecognition(Harmony harm)
+        public override void EnableCauseRecognition(Harmony harm)
         {
-            base.enableCauseRecognition(harm);
+            base.EnableCauseRecognition(harm);
             MythicCauseDef_LevelUp causeDef = def as MythicCauseDef_LevelUp;
             if (causeDef == null)
             {
@@ -41,8 +42,8 @@ namespace MooMythicItems
                 {
                     if (savedCause.minLevelThreshold == causeDef.minLevelThreshold)
                     {
-                        Log.Error(String.Format("Moo Mythic Items] Encountered error while loading mythic item creation causes. Two skill-based causes, '{0}' and '{1}' have the same level threshold." +
-                            " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName));
+                        DebugActions.PrintErr("Encountered error while loading mythic item creation causes. Two skill-based causes, '{0}' and '{1}' have the same level threshold." +
+                            " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName);
                         return;
                             
                     }
@@ -53,6 +54,11 @@ namespace MooMythicItems
             {
                 Log.Message(String.Format("[Moo Mythic Items] accounting for new mythic cause that waits for skill '{0}' to reach a level of {1}.", causeDef.skill.defName, causeDef.minLevelThreshold));
             }
+        }
+
+        public override string GetReasonFragmentKey()
+        {
+            return printReasonKey;
         }
 
         // This code is added into the vanilla skill gain code right after a level up occurs via the transpiler below.
@@ -72,17 +78,14 @@ namespace MooMythicItems
                 }
                 if (curThreshold > -1)
                 {
-                    if (MooMythicItems_Mod.settings.flagDebug)
-                    {
-                        Log.Message(String.Format("[Moo Mythic Items] Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName));
-                    }
+                    DebugActions.PrintIfDebug("Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName);
                     string reason = masteryPrefix + skillRecord.def.skillLabel;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)
                     {
                         // When doing reason checks, we only care about mythic items related to the same skill,
                         // So we input a reason fragment that specifies the skill in question.
-                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, reason, bestCause.priority, bestCause.reasonLimit);
+                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, reason, bestCause.priority, bestCause.reasonLimit, bestCause.GetPrintedReasonFragment(newItem.ownerFullName));
                     }
                 }
             }

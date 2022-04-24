@@ -16,14 +16,15 @@ namespace MooMythicItems
     {
 
         public static readonly string recruitReasonPrefix = "recruited-";
+        private static readonly string printReasonKey = "MooMF_PrintRecruitOrTameReason";
         public static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
 
         public CauseWorker_RecruitedOrTamed(MythicCauseDef def) : base(def) { }
 
         // TODO consider abstracting int-record-based cause workers to have a shared parent that sets up the recordsWatched dictionary.
-        public override void enableCauseRecognition(Harmony harm)
+        public override void EnableCauseRecognition(Harmony harm)
         {
-            base.enableCauseRecognition(harm);
+            base.EnableCauseRecognition(harm);
             MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
             if (causeDef == null)
             {
@@ -55,6 +56,11 @@ namespace MooMythicItems
             }
         }
 
+        public override string GetReasonFragmentKey()
+        {
+            return printReasonKey;
+        }
+
         [HarmonyPatch(typeof(InteractionWorker_RecruitAttempt),
             nameof(InteractionWorker_RecruitAttempt.DoRecruit),
             new Type[] { typeof(Pawn), typeof(Pawn), typeof(string), typeof(string), typeof(bool), typeof(bool) },
@@ -81,7 +87,7 @@ namespace MooMythicItems
                 Tuple<MythicItem, MythicCauseDef_RecordThreshold> creationResult = CreateMythicItemIfCauseMet(__state, recruiter);
                 if (creationResult != null && creationResult.Item1 != null && creationResult.Item2 != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, recruitReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit);
+                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, recruitReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
                 }
             }
         }

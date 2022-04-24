@@ -15,18 +15,19 @@ namespace MooMythicItems
     {
 
         public static readonly string killReasonPrefix = "kills-";
+        private static readonly string printReasonKey = "MooMF_PrintKillCountReason";
         public static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
 
         public CauseWorker_Kills(MythicCauseDef def) : base(def) { }
 
-        public override void enableCauseRecognition(Harmony harm)
+        public override void EnableCauseRecognition(Harmony harm)
         {
-            base.enableCauseRecognition(harm);
+            base.EnableCauseRecognition(harm);
             MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
             if (causeDef == null)
             {
-                Log.Error(String.Format("[Moo Mythic Items] Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
-                    " Use a different worker class, or correct the def class.", def.defName));
+                DebugActions.PrintErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                    " Use a different worker class, or correct the def class.", def.defName);
                 return;
             }
             if (!recordsWatched.ContainsKey(causeDef.record))
@@ -39,18 +40,20 @@ namespace MooMythicItems
                 {
                     if (savedCause.threshold == causeDef.threshold)
                     {
-                        Log.Error(String.Format("Moo Mythic Items] Encountered error while loading mythic item creation causes. Two kill count-based causes, '{0}' and '{1}' have the same threshold on the same record." +
-                            " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName));
+                        DebugActions.PrintErr("Encountered error while loading mythic item creation causes. Two kill count-based causes, '{0}' and '{1}' have the same threshold on the same record." +
+                            " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName);
                         return;
 
                     }
                 }
             }
             recordsWatched[causeDef.record].Add(causeDef);
-            if (MooMythicItems_Mod.settings.flagDebug)
-            {
-                Log.Message(String.Format("[Moo Mythic Items] accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold));
-            }
+            DebugActions.PrintIfDebug("accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold);
+        }
+
+        public override string GetReasonFragmentKey()
+        {
+            return printReasonKey;
         }
 
         [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_PawnKilled))]
@@ -75,7 +78,7 @@ namespace MooMythicItems
                 Tuple<MythicItem, MythicCauseDef_RecordThreshold> creationResult = CreateMythicItemIfCauseMet(__state, killer);
                 if (creationResult != null && creationResult.Item1 != null && creationResult.Item2 != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, killReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit);
+                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, killReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
                 }
             }
         }
