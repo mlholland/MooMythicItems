@@ -7,6 +7,7 @@
     <hasDifferentMeleeOptions>true</hasDifferentMeleeOptions>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
   
+  <!-- thumbo killer-->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_ThrumboKillerCause</defName>
     <effects>
@@ -26,49 +27,51 @@
     <hasDifferentMeleeOptions>false</hasDifferentMeleeOptions>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
 
+  <!-- humanoid kills-->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause1</defName>
     <effects>
       <li>MooMF_GrantAPRocket</li>
-      <li>MooMF_KillstreakFirerateEffect</li>
+      <li>MooMF_Effect_KillstreakFirerate_1</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_humanKills1_Ranged_1</li>
-      <li>MooMF_MythicStory_humanKills1_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Ranged_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Ranged_2</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_1</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_2</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_3</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_4</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_5</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_6</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_7</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_8</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_9</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_10</li>
-      <li>MooMF_MythicTitle_humanKills1_Ranged_11</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_1</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_2</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_3</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_4</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_5</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_6</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_7</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_8</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_9</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_10</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_11</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_KillstreakDREffect</li>
+      <li>MooMF_Effect_KillstreakDR_1</li>
+      <li>MooMF_Effect_KillstreakSpeed_1</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_humanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_humanKills1_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills1_Melee_2</li>
     </meleeDescriptions>
     <meleeTitles>
-      <li>MooMF_MythicTitle_humanKills1_Melee_1</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_2</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_3</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_4</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_5</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_6</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_7</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_8</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_9</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_10</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_11</li>
-      <li>MooMF_MythicTitle_humanKills1_Melee_12</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_2</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_3</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_4</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_5</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_6</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_7</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_8</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_9</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_10</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_11</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_12</li>
     </meleeTitles>
     <threshold>100</threshold>
     <record>KillsHumanlikes</record>
@@ -79,36 +82,37 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause2</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_Effect_KillstreakFirerate_2</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_100Kills_Ranged_1</li>
       <li>MooMF_MythicStory_100Kills_Ranged_2</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_1</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_2</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_3</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_4</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_5</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_6</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_7</li>
-      <li>MooMF_MythicTitle_humanKills2_Ranged_8</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_1</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_2</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_3</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_4</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_5</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_6</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_7</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_8</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_Effect_KillstreakDR_2</li>
+      <li>MooMF_Effect_KillstreakSpeed_2</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
       <li>MooMF_MythicStory_100Kills_Melee_2</li>
     </meleeDescriptions>
     <meleeTitles>
-      <li>MooMF_MythicTitle_humanKills2_Melee_1</li>
-      <li>MooMF_MythicTitle_humanKills2_Melee_2</li>
-      <li>MooMF_MythicTitle_humanKills2_Melee_3</li>
-      <li>MooMF_MythicTitle_humanKills2_Melee_4</li>
-      <li>MooMF_MythicTitle_humanKills2_Melee_5</li>
-      <li>MooMF_MythicTitle_humanKills2_Melee_6</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_1</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_2</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_3</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_4</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_5</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_6</li>
     </meleeTitles>
     <threshold>500</threshold>
     <record>KillsHumanlikes</record>
@@ -119,33 +123,33 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause3</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_Effect_KillstreakFirerate_3</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_100Kills_Ranged_1</li>
       <li>MooMF_MythicStory_100Kills_Ranged_2</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_humanKills3_Ranged_1</li>
-      <li>MooMF_MythicTitle_humanKills3_Ranged_2</li>
-      <li>MooMF_MythicTitle_humanKills3_Ranged_3</li>
-      <li>MooMF_MythicTitle_humanKills3_Ranged_4</li>
-      <li>MooMF_MythicTitle_humanKills3_Ranged_5</li>
+      <li>MooMF_MythicTitle_HumanKills3_Ranged_1</li>
+      <li>MooMF_MythicTitle_HumanKills3_Ranged_2</li>
+      <li>MooMF_MythicTitle_HumanKills3_Ranged_3</li>
+      <li>MooMF_MythicTitle_HumanKills3_Ranged_4</li>
+      <li>MooMF_MythicTitle_HumanKills3_Ranged_5</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_Effect_KillstreakDR_3</li>
+      <li>MooMF_Effect_KillstreakSpeed_3</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
       <li>MooMF_MythicStory_100Kills_Melee_2</li>
     </meleeDescriptions>
     <meleeTitles>
-      <li>MooMF_MythicTitle_humanKills3_Melee_1</li>
-      <li>MooMF_MythicTitle_humanKills3_Melee_2</li>
-      <li>MooMF_MythicTitle_humanKills3_Melee_3</li>
-      <li>MooMF_MythicTitle_humanKills3_Melee_4</li>
-      <li>MooMF_MythicTitle_humanKills3_Melee_5</li>
-      <li>MooMF_MythicTitle_humanKills3_Melee_6</li>
+      <li>MooMF_MythicTitle_HumanKills3_Melee_1</li>
+      <li>MooMF_MythicTitle_HumanKills3_Melee_2</li>
+      <li>MooMF_MythicTitle_HumanKills3_Melee_3</li>
+      <li>MooMF_MythicTitle_HumanKills3_Melee_4</li>
+      <li>MooMF_MythicTitle_HumanKills3_Melee_5</li>
     </meleeTitles>
     <threshold>1000</threshold>
     <record>KillsHumanlikes</record>
@@ -169,7 +173,7 @@
       <li>MooMF_MythicTitle_MechKills1_Ranged_3</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_KillMechsForDrops</li>
+      <li>MooMF_KillMechsForDrops_1</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
@@ -201,7 +205,7 @@
       <li>MooMF_MythicTitle_MechKills2_Ranged_3</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_KillMechsForDrops</li>
+      <li>MooMF_KillMechsForDrops_2</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
@@ -235,7 +239,7 @@
       <li>MooMF_MythicTitle_InsectKills1_Ranged_3</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_KillInsectsForJelly</li>
+      <li>MooMF_KillInsectsForJelly_1</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
@@ -269,7 +273,7 @@
       <li>MooMF_MythicTitle_InsectKills2_Ranged_3</li>
     </titles>
     <meleeEffects>
-      <li>MooMF_KillInsectsForJelly</li>
+      <li>MooMF_KillInsectsForJelly_2</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_100Kills_Melee_1</li>
@@ -292,24 +296,23 @@
       <li>MooMF_GrantThrumboButcher</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_100Kills_Ranged_1</li>
-      <li>MooMF_MythicStory_100Kills_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Ranged_2</li><!-- todo real titles-->
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_100Kills_Ranged_1</li>
-      <li>MooMF_MythicTitle_100Kills_Ranged_2</li>
-      <li>MooMF_MythicTitle_100Kills_Ranged_3</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Ranged_1</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Ranged_2</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Ranged_3</li>
     </titles>
     <meleeEffects>
       <li>MooMF_GrantThrumboButcher</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_100Kills_Melee_1</li>
-      <li>MooMF_MythicStory_100Kills_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills1_Ranged_2</li>
     </meleeDescriptions>
     <meleeTitles>
-      <li>MooMF_MythicTitle_100Kills_Melee_1</li>
-      <li>MooMF_MythicTitle_100Kills_Melee_2</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Melee_1</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Melee_2</li>
+      <li>MooMF_MythicTitle_LeaderKills1_Melee_3</li>
     </meleeTitles>
     <threshold>3</threshold>
     <record>MooMF_killsFactionLeaders</record>

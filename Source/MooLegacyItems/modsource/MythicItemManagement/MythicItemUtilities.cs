@@ -36,7 +36,7 @@ namespace MooMythicItems
             s_defaultDescriptions = new HashSet<string> { "MooMF_MythicStory_100Kills_Ranged_1", "MooMF_MythicStory_100Kills_Ranged_2" };
             s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_100Kills_Ranged_1", "MooMF_MythicTitle_100Kills_Ranged_2", "MooMF_MythicTitle_100Kills_Ranged_3" };
             //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
-            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_KillstreakFirerateEffect") }; // TODO remove
+            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_Effect_KillstreakFirerate_3") }; // TODO remove
         }
         
         /* Generate a mythic item by randomly selecting among some hard-coded options. 

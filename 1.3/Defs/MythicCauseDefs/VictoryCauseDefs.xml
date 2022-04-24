@@ -15,7 +15,8 @@
       <li>MooMF_MythicDescription_SpaceVictory1</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_SpaceVictory1</li>
+      <li>MooMF_MythicTitle_SpaceVictory_1</li>
+      <li>MooMF_MythicTitle_SpaceVictory_2</li>
     </titles>
     <spaceVictory>true</spaceVictory>
   </MooMythicItems.MythicCauseDef_Victory>

@@ -3,7 +3,7 @@
   <!-- Mythic effects that grant a passive effect like a hediff, but aren't related to the standard 'improve a skill' array-->
   <MooMythicItems.MythicEffectDef_EquipHediff>
     <defName>MooMF_GrantThrumboButcher</defName>
-    <equipHediff>MooMF_ThrumboButcher</equipHediff>
+    <equipHediff>MooMF_Hediff_ThrumboButcher</equipHediff>
     <effectDescTranslationKey>MooMF_AbilityDescription_GrantThurmboButcher</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_EquipHediff>
   

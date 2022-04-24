@@ -6,11 +6,11 @@
     2 = the original owner's faction
     3 = normal item label 
     -->
-  <MooMF_MythicStory_100Kills_Melee_1>It's said that {0} of {2}, the original owner of this {3}, killed over 100 people. That seems farfetched, but it's undeniable that this weapon has seen untold battles. No one can fully clean off all the blood stains, and there's a palpable sense of menace emenating from the weapon. This {3} has seen more war than most people ever will.</MooMF_MythicStory_100Kills_Melee_1>
-  <MooMF_MythicStory_100Kills_Melee_2>No one believed the stories about them, but this {3} is stark evidence of what the people of {2} were capable of. The name {1} is carved into the handle of this {3}, just barely legible beneath untold years of dirt and grime. </MooMF_MythicStory_100Kills_Melee_2>
+  <MooMF_MythicStory_HumanKills1_Melee_1>It's said that {0} of {2}, the original owner of this {3}, killed over 100 people. That seems farfetched, but it's undeniable that this weapon has seen untold battles. No one can fully clean off all the blood stains, and there's a palpable sense of menace emenating from the weapon. This {3} has seen more war than most people ever will.</MooMF_MythicStory_HumanKills1_Melee_1>
+  <MooMF_MythicStory_HumanKills1_Melee_2>No one believed the stories about them, but this {3} is stark evidence of what the people of {2} were capable of. The name {1} is carved into the handle of this {3}, just barely legible beneath untold years of dirt and grime. </MooMF_MythicStory_HumanKills1_Melee_2>
   
-  <MooMF_MythicStory_100Kills_Ranged_1>Perhaps {0}, the original wielder of this {3}, liked keeping track of things. Or perhaps they liked to show off. Either way, this weapon is etched with more tally marks than you can count. Hopefully you'll be able to add some more of your own.</MooMF_MythicStory_100Kills_Ranged_1>
-  <MooMF_MythicStory_100Kills_Ranged_2>You've heard many stories about {1}, the headhunter of {2}. It's hard to believe the stories were true, but the bloodlust emenating from this {3} suggests that more than a few people died from this weapon's shots.</MooMF_MythicStory_100Kills_Ranged_2>
+  <MooMF_MythicStory_HumanKills1_Ranged_1>Perhaps {0}, the original wielder of this {3}, liked keeping track of things. Or perhaps they liked to show off. Either way, this weapon is etched with more tally marks than you can count. Hopefully you'll be able to add some more of your own.</MooMF_MythicStory_HumanKills1_Ranged_1>
+  <MooMF_MythicStory_HumanKills1_Ranged_2>You've heard many stories about {1}, the headhunter of {2}. It's hard to believe the stories were true, but the bloodlust emenating from this {3} suggests that more than a few people died from this weapon's shots.</MooMF_MythicStory_HumanKills1_Ranged_2>
   
   <MooMF_MythicStory_Mastery_Shooting>The last owner of this {3} claimed that it had been in storage for decades, yet it's still in pristine condition. {0}, the mythical sharpshooter who wielded this weapon, must have taken good care of it. Perhaps that attention to detail is what earned them their reputation as the best shot of {2} and beyond.</MooMF_MythicStory_Mastery_Shooting>
   
@@ -41,6 +41,7 @@
   <MooMF_MythicStory_ThrumboFriend_1>Many tribes around the Rim worship someone known only as 'wise-friend {1}'. Myths about this character can be traced back to the lost settlements of {2}, whose people supposedly knew how to tame the majestic thrumbos. This thurmbofur-covered {3} seems to uphold those stories.</MooMF_MythicStory_ThrumboFriend_1>
   
   <MooMF_MythicDescription_SpaceVictory1>It is said that the people of {2} were one of the few groups of people to have the grit, brains, and the metaphysical patience to build or find a spaceship and successfully get off a Rimworld. No one from their original planet knows where they went. This {3} from escapee {1} is evidence that they eventually reached another planet. Maybe it was this one in the distant past.</MooMF_MythicDescription_SpaceVictory1>
+
 
 
 

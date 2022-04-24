@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  
+  <!-- drops on kills-->
   <MooMythicItems.MythicEffectDef_KillsDropItems>
-    <defName>MooMF_KillInsectsForJelly</defName>
+    <defName>MooMF_KillInsectsForJelly_1</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_InsectDrops</effectDescTranslationKey>
+    <worksOnInsects>true</worksOnInsects>
+    <valueRangePerDrop>50~150</valueRangePerDrop>
+    <possibleDrops>
+      <li>InsectJelly</li>
+    </possibleDrops>
+  </MooMythicItems.MythicEffectDef_KillsDropItems>
+
+  <MooMythicItems.MythicEffectDef_KillsDropItems>
+    <defName>MooMF_KillInsectsForJelly_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_InsectDrops</effectDescTranslationKey>
     <worksOnInsects>true</worksOnInsects>
     <possibleDrops>
@@ -9,8 +21,20 @@
     </possibleDrops>
   </MooMythicItems.MythicEffectDef_KillsDropItems>
 
+
   <MooMythicItems.MythicEffectDef_KillsDropItems>
-    <defName>MooMF_KillMechsForDrops</defName>
+    <defName>MooMF_KillMechsForDrops_1</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_MechDrops</effectDescTranslationKey>
+    <worksOnMechs>true</worksOnMechs>
+    <valueRangePerDrop>50~150</valueRangePerDrop>
+    <possibleDrops>
+      <li>Steel</li>
+    </possibleDrops>
+  </MooMythicItems.MythicEffectDef_KillsDropItems>
+
+
+  <MooMythicItems.MythicEffectDef_KillsDropItems>
+    <defName>MooMF_KillMechsForDrops_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_MechDrops</effectDescTranslationKey>
     <worksOnMechs>true</worksOnMechs>
     <possibleDrops>
@@ -19,26 +43,103 @@
       <li>ComponentIndustrial</li>
     </possibleDrops>
   </MooMythicItems.MythicEffectDef_KillsDropItems>
+  
+  
+
+  
+  <!-- damage resistance killstreak-->
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakDR_1</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.05</severityPerStack>
+    <maxStacks>8</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff>
-    <defName>MooMF_KillstreakDREffect</defName>
+    <defName>MooMF_Effect_KillstreakDR_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
     <worksOnAll>true</worksOnAll>
     <effectDurationTicks>3000</effectDurationTicks>
     <severityPerStack>.1</severityPerStack>
-    <maxStacks>4</maxStacks>
-    <hediffToAdd>MooMF_KillstreakDR</hediffToAdd>
+    <maxStacks>6</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff>
-    <defName>MooMF_KillstreakFirerateEffect</defName>
+    <defName>MooMF_Effect_KillstreakDR_3</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>10</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <!-- firerate killstreak-->
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakFirerate_1</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.05</severityPerStack>
+    <maxStacks>8</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakFirerate_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
     <worksOnAll>true</worksOnAll>
     <effectDurationTicks>3000</effectDurationTicks>
     <severityPerStack>.1</severityPerStack>
-    <maxStacks>4</maxStacks>
-    <hediffToAdd>MooMF_KillstreakFirerate</hediffToAdd>
+    <maxStacks>6</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakFirerate_3</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>10</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <!-- speed killstreak -->
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakSpeed_1</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.05</severityPerStack>
+    <maxStacks>8</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakSpeed_2</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>6</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
+  <MooMythicItems.MythicEffectDef_KillstreakHediff>
+    <defName>MooMF_Effect_KillstreakSpeed_3</defName>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
+    <worksOnAll>true</worksOnAll>
+    <effectDurationTicks>3000</effectDurationTicks>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>10</maxStacks>
+    <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
+  </MooMythicItems.MythicEffectDef_KillstreakHediff>
+
 
 
 </Defs>

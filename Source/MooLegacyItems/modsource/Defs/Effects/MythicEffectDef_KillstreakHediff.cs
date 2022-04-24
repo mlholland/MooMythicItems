@@ -28,18 +28,18 @@ namespace MooMythicItems
         {
             foreach (var error in base.ConfigErrors()) yield return error;
             if (allowedTargetsDefList != null && allowedTargetsDefList.Count == 0) yield return "allowedTargetsDefList cannot be set to an empty list. Either leave it null or supply at least one element.";
-            if (hediffToAdd == null) yield return "hediffToAdd must be set.";
             if (maxStacks < 1) yield return "maxStacks must be a positive integer.";
             if (effectDurationTicks < 1) yield return "effectDurationTicks must be a positive integer.";
             if (severityPerStack <= 0) yield return "severityPerStack must be a positive value.";
-            if (severityPerStack * maxStacks > hediffToAdd.maxSeverity) yield return "Severity at max stacks cannot exceed target hediff's max possible severity.";
+            if (hediffToAdd == null) yield return "hediffToAdd must be set.";
+            else if (severityPerStack * maxStacks > hediffToAdd.maxSeverity + 0.0001) yield return String.Format("Severity at max stacks ({0} * {1} = {2}) cannot exceed target hediff's max possible severity (3).", severityPerStack, maxStacks, severityPerStack * maxStacks, hediffToAdd.maxSeverity);
         }
 
 
         public override void OnKill(Pawn killedPawn, Pawn killer, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
         {
-            Log.Message(killer.Name.ToStringFull);
-            Log.Message(hediffToAdd.defName);
+            //Log.Message(killer.Name.ToStringFull);
+            //Log.Message(hediffToAdd.defName);
             if (killedValidTarget(killedPawn.def))
             {
                 if (killer != null && killer.health != null && killer.health.hediffSet != null)
