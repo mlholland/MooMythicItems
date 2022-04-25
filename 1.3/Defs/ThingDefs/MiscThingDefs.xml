@@ -5,12 +5,12 @@
   <ThingDef ParentName="MealCookedIngredientless">
     <defName>MooMF_MealEpicurean</defName>
     <statBases>
-      <MarketValue>40</MarketValue>
-      <WorkToMake>800</WorkToMake>
+      <MarketValue>350</MarketValue>
+      <WorkToMake>4000</WorkToMake>
       <Nutrition>1</Nutrition>
     </statBases>
     <label>Epicurean Delight</label>
-    <description>A meal worthy of song and praise, produced using the guidance of a legendary cook. Beyond wasteful and decadant, this meal will motivate the consumer beyond their mortal limits.</description>
+    <description>A meal worthy of song and praise, produced using the supernatural guidance of a mythical cook. Beyond wasteful and decadant, this meal will motivate the eater beyond their mortal limits.</description>
     <graphicData>
       <texPath>Things/Item/Meal/Lavish</texPath>
       <graphicClass>Graphic_MealVariants</graphicClass>
@@ -23,6 +23,12 @@
       <tasteThought>MooMF_AteEpicureanDelight</tasteThought>
       <ingestEffect>EatVegetarian</ingestEffect>
       <ingestSound>Meal_Eat</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>MooMF_Hediff_EpicureanDelight</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
     </ingestible>
   </ThingDef>
   

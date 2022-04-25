@@ -16,22 +16,33 @@
   <HediffDef>
     <defName>MooMF_Hediff_EpicureanDelight</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>Epicurean Delight</label>
+    <label>Epicurean Inspiration</label>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>1</minSeverity>
     <description>The person recently consumed an epicurean delight. They have been empowered by the awe-inspiring flavors.</description>
     <stages>
       <li>
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1</offset>
+            <offset>.5</offset>
           </li>
         </capMods>
         <statFactors>
           <IncomingDamageFactor>.75</IncomingDamageFactor>
-          <GlobalWorkSpeed>2</GlobalWorkSpeed>
         </statFactors>
+        <statOffsets>
+          <WorkSpeedGlobal>.5</WorkSpeedGlobal>
+        </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+    </comps>
   </HediffDef>
 
 
