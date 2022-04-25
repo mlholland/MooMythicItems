@@ -74,6 +74,7 @@
     <defName>MooMF_CookingMastery</defName>
     <effects>
       <li>MooMF_CookingBoost</li>
+      <li>MooMF_GrantEpicureanWisdom</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Cooking_1</li>

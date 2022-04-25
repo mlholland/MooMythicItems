@@ -50,19 +50,21 @@
   <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
   <MooMF_AbilityDescription_GrantStatAbility>Grants the user a buff called "{1}", which increases their performance in the relevant ability.,</MooMF_AbilityDescription_GrantStatAbility>
   <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yield's from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
-  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. Mechanoid kills will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
+  <MooMF_AbilityDescription_GrantEpicureanWisdom>Grants the user the "{1}" buff, which allows them to cook epicurean delights.</MooMF_AbilityDescription_GrantEpicureanWisdom>
+  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. When the user kills a mechanoid, it will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
   <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural ability to find extra insect jelly when hunting insects, which is dropped whenever they kill an insect. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
-  <MooMF_AbilityDescription_Thrumbocall>This item grants the user the "{1}" ability to summon a thrumbo herd once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
+  <MooMF_AbilityDescription_Thrumbocall>This item grants the user the "{1}" ability, which summons a thrumbo herd up to once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
   <MooMF_AbilityDescription_APRocket>This weapon has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
-  <MooMF_AbilityDescription_EMPRocket>This weapon has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day quadrum tom immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
+  <MooMF_AbilityDescription_EMPRocket>This weapon has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day to immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
   <MooMF_AbilityDescription_KillstreakDR>While equipped, this weapon's user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakDR>
   <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this weapon's user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakFirerate>
+  <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this weapon's user enters a battle trance every time they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakSpeed>
 
 >
   <MooMF_MythicDescription_SpaceVictory1>It is said that the people of {2} were one of the few groups of people to have the grit, brains, and the metaphysical patience to build or find a spaceship and successfully get off a Rimworld. No one from their original planet knows where they went. This {3} from escapee {1} is evidence that they eventually reached another planet. Maybe it was this one in the distant past.</MooMF_MythicDescription_SpaceVictory1>
 
 
-
+  <MooMF_RecipeRequiresHediffs>{0} cannot perform the job "{1}" because said job requires the worker to have a specific hediff affecting them.</MooMF_RecipeRequiresHediffs>
 
 
 

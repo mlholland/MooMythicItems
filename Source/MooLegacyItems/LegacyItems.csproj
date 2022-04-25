@@ -332,6 +332,7 @@
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_KillstreakHediff.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_GrantAbility.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef_EquipHediff.cs" />
+    <Compile Include="modsource\Defs\RecipeHediffRequirementsDef.cs" />
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef.cs" />
     <Compile Include="modsource\Comps\CompMythic.cs" />
@@ -339,6 +340,7 @@
     <Compile Include="modsource\Harmony\MythicMaker_DoRecruit.cs" />
     <Compile Include="modsource\Harmony\Corpse_ButcherProducts.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
+    <Compile Include="modsource\Harmony\Pawn_PawnAllowedToStartAnew.cs" />
     <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
     <Compile Include="modsource\Harmony\DefModifier.cs" />
     <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- This is a separate incident from the normal Thurmbopasses event to ensure that calling thrumbos doesn't affect the likelihood of a normal thrumbo event from occurring.-->
+  <ThingDef ParentName="MealCookedIngredientless">
+    <defName>MooMF_MealEpicurean</defName>
+    <statBases>
+      <MarketValue>40</MarketValue>
+      <WorkToMake>800</WorkToMake>
+      <Nutrition>1</Nutrition>
+    </statBases>
+    <label>Epicurean Delight</label>
+    <description>A meal worthy of song and praise, produced using the guidance of a legendary cook. Beyond wasteful and decadant, this meal will motivate the consumer beyond their mortal limits.</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/Lavish</texPath>
+      <graphicClass>Graphic_MealVariants</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Ingredients" />
+    </comps>
+    <ingestible>
+      <preferability>MealLavish</preferability>
+      <tasteThought>MooMF_AteEpicureanDelight</tasteThought>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+    </ingestible>
+  </ThingDef>
+  
+  
+</Defs>

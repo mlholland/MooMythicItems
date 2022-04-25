@@ -6,5 +6,11 @@
     <equipHediff>MooMF_Hediff_ThrumboButcher</equipHediff>
     <effectDescTranslationKey>MooMF_AbilityDescription_GrantThurmboButcher</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantEpicureanWisdom</defName>
+    <equipHediff>MooMF_Hediff_EpicureanWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantEpicureanWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
   
 </Defs>

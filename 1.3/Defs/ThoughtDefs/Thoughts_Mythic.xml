@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ======= Basic quality thoughts ========= -->
+
+  <ThoughtDef>
+    <defName>MooMF_AteEpicureanDelight</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate epicurean delight</label>
+        <description>That epicurean delight was... beyond perfection. I will work myself to the bone, if that's what it takes to produce another.</description>
+        <baseMoodEffect>25</baseMoodEffect>
+      </li>
+    </stages>
+    <!--workerClass>ThoughtWorker_Hediff</workerClass> TODO figure out how to force a thought to add a hediff instead of the other way around, or to make a meal give the eater a hediff (probably easier, check VEF foods)
+    <hediff>MooMF_Hediff_EpicureanDelight</hediff-->
+  </ThoughtDef>
+
+</Defs>

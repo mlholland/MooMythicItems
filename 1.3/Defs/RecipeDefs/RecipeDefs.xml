@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>MooMF_CookMealEpicureanDelight</defName>
+    <label>cook epicurean delight</label>
+    <description>Draw upon the wisdom of a legendary cook to produce a masterpiece of culinary prowess. The resulting meal is incomprehensibly wasteful and slow to make, but it is also transcendentally decilious, and grants numerous benefits.
+    
+This meal can only be cooked by someone who has the mythical "Epicurean Wisdom" effect bestowed upon them.</description>
+    <jobString>Cooking epicurean delight.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <workAmount>4000</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MooMF_MealEpicurean>1</MooMF_MealEpicurean>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+      <li>Campfire</li>
+    </recipeUsers>
+    <!--researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite-->
+  </RecipeDef>
+</Defs>

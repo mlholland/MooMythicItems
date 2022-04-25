@@ -2,12 +2,38 @@
 <Defs>
   <HediffDef>
     <defName>MooMF_Hediff_ThrumboButcher</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Thrumbo Butcher</label>
     <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
-    <comps>
-    </comps>
   </HediffDef>
+
+
+  <HediffDef>
+    <defName>MooMF_Hediff_EpicureanWisdom</defName>
+    <label>Epicurean Wisdom</label>
+    <description>The epicurean wisdom of a legendary cook is granting this person the ability to cook similarly legendary meals.</description>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooMF_Hediff_EpicureanDelight</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Epicurean Delight</label>
+    <description>The person recently consumed an epicurean delight. They have been empowered by the awe-inspiring flavors.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>1</offset>
+          </li>
+        </capMods>
+        <statFactors>
+          <IncomingDamageFactor>.75</IncomingDamageFactor>
+          <GlobalWorkSpeed>2</GlobalWorkSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
 
   <HediffDef Name="KillstreakBase" Abstract="True">
     <hediffClass>HediffWithComps</hediffClass>
