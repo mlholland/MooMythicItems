@@ -22,7 +22,7 @@
     </verbProperties>
     <comps>
       <li Class = "MooMythicItems.CompProperties_MapWideIncident">
-        <incident>ThrumboPasses</incident>
+        <incident>MooMF_ThrumbosAnswer</incident>
       </li>
     </comps>
   </AbilityDef>
@@ -107,6 +107,33 @@
     </verbProperties>
     <comps>
       <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef>
+    <defName>MooMF_AttractTradeShips</defName>
+    <label>Emit Trade Attractor Signal</label>
+    <description>Use the special merchant codes embroidered in this clothing to attact a nearby trade ship. Has a 10 day cooldown.</description>
+    <iconPath>UI/Abilities/Painblock</iconPath>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>600000~600000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>False</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <range>0</range>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_MapWideIncident">
+        <incident>ThrumboPasses</incident>
+      </li>
     </comps>
   </AbilityDef>
 

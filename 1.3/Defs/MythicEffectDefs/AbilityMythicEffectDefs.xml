@@ -20,5 +20,12 @@
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
     <effectDescTranslationKey>MooMF_AbilityDescription_EMPRocket</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAttractTradeShips</defName>
+    <mythicAbilityDef>MooMF_AttractTradeShips</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_AttactTradeShips</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
  
 </Defs>

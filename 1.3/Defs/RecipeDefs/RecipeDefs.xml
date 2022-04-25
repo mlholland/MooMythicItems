@@ -35,11 +35,11 @@ This meal can only be cooked by someone who has the mythical "Epicurean Wisdom" 
     <products>
       <MooMF_MealEpicurean>1</MooMF_MealEpicurean>
     </products>
+    <researchPrerequisite>MooMF_UnlockEpicureanDelight</researchPrerequisite> 
     <recipeUsers>
       <li>ElectricStove</li>
       <li>FueledStove</li>
       <li>Campfire</li>
     </recipeUsers>
-    <!--researchPrerequisite>PackagedSurvivalMeal</researchPrerequisite-->
   </RecipeDef>
 </Defs>

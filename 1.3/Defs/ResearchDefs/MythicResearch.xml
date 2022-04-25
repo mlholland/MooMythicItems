@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <!-- add a tab for this? Final choice will depend on how many recipes like this I add-->
+  <ResearchTabDef>
+    <defName>MooMF_MythicTab</defName>
+    <label>Mythic</label>
+  </ResearchTabDef>
+
+
+
+  <!-- recipe unlocks-->
+  <ResearchProjectDef>
+    <defName>MooMF_UnlockEpicureanDelight</defName>
+    <label>Epicurean Delight</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Unlocks the ability to cook epicurean delights, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing an item. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>1.0</researchViewY>
+  </ResearchProjectDef>
+  
+</Defs>

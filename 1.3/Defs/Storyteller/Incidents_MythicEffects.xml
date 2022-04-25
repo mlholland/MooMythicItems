@@ -13,4 +13,17 @@
     <baseChance>0.0</baseChance>
   </IncidentDef>
 
+
+  <IncidentDef>
+    <defName>MooMF_OrbitalTraderSummoned</defName>
+    <label>orbital traders attracted</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_OrbitalTraderArrival</workerClass>
+    <category>OrbitalVisitor</category>
+    <baseChance>0</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
 </Defs>
