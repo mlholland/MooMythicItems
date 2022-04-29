@@ -64,10 +64,11 @@
   <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master's crafter's insight. A wearer can draw upon this insight to immediately gain a creative inspirtion.</MooMF_AbilityDescription_CreativeInspiration>
   <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to theirself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
   <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
-  
+  <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
   <MooMF_RecipeRequiresHediffs>{0} cannot {1} because it requires the worker to have a specific mythic item ability affecting them.</MooMF_RecipeRequiresHediffs>
 
-
+  <MooMF_MineralsProspectedLetterTitle>{0} Prospected</MooMF_MineralsProspectedLetterTitle>
+  <MooMF_MineralsProspectedLetterText>The mythical wisdom of an ancient mining expert has divined the location of an underground deposit of {0}. You'll still need the usual equipment to find it though.</MooMF_MineralsProspectedLetterText>
 
 
 </LanguageData>

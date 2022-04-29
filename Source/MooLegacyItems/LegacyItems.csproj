@@ -356,6 +356,7 @@
     <Compile Include="modsource\PlayerSettings\MooMythicItems_Mod.cs" />
     <Compile Include="modsource\PlayerSettings\MythicItemSettings.cs" />
     <Compile Include="modsource\Verbs\Verb_ShootAbility.cs" />
+    <Compile Include="modsource\Workers\IncidentWorker_MineralsProspected.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Victory.cs" />
     <Compile Include="modsource\Workers\CauseWorker_RecruitedOrTamed.cs" />
     <Compile Include="modsource\Workers\CauseWorker_Levelup.cs" />

@@ -26,4 +26,16 @@
     <requireColonistsPresent>True</requireColonistsPresent>
   </IncidentDef>
 
+  <IncidentDef>
+    <defName>MooMF_MineralsProspected</defName>
+    <label>Minerals Prospected</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MooMythicItems.IncidentWorker_MineralsProspected</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
 </Defs>

@@ -138,6 +138,33 @@
   </AbilityDef>
 
   <AbilityDef>
+    <defName>MooMF_DiscoverUndergroundDeposit</defName>
+    <label>Prospect Minerals</label>
+    <description>Draw upon the instinct of this item's original owner to divine the location of an underground mining deposit. Has a 2 day cooldown, which only progresses while this clothing is worn.</description>
+    <iconPath>UI/Abilities/Painblock</iconPath>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>120000~120000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>False</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <range>0</range>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_MapWideIncident">
+        <incident>MooMF_MineralsProspected</incident>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
     <defName>MooMF_GiveTamingInspiration</defName>
     <label>Animal Guidance</label>
     <description>Call upon the wisdom of a mythical shepherd to grant this person a taming inspiration. The ability cannot be cast if the wearer is not a valid target for this type of inspiration.  Has a 1 year cooldown, which only progresses while this clothing is worn.</description>

@@ -60,6 +60,7 @@
     <defName>MooMF_MiningMastery</defName>
     <effects>
       <li>MooMF_MiningBoost</li>
+      <li>MooMF_GrantDiscoverUndergroundDeposit</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Mining_1</li>

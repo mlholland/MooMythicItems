@@ -50,5 +50,12 @@
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
     <effectDescTranslationKey>MooMF_AbilityDescription_ShootingInspiration</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantDiscoverUndergroundDeposit</defName>
+    <mythicAbilityDef>MooMF_DiscoverUndergroundDeposit</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_Prospecting</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
  
 </Defs>
