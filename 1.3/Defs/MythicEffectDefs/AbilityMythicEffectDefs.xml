@@ -27,5 +27,28 @@
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
     <effectDescTranslationKey>MooMF_AbilityDescription_AttactTradeShips</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_GrantAbility>
+
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantTamingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveTamingInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_TamingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantCreativeInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveCreativeInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_CreativeInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantShootingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveMassShootingInspirations</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_ShootingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
  
 </Defs>

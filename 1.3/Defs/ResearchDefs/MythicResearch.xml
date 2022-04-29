@@ -13,11 +13,22 @@
     <defName>MooMF_UnlockEpicureanDelight</defName>
     <label>Epicurean Delight</label>
     <tab>MooMF_MythicTab</tab>
-    <description>Unlocks the ability to cook epicurean delights, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing an item. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <description>Unlocks the ability to cook epicurean delights, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing this item. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
     <baseCost>1</baseCost>
     <techLevel>Neolithic</techLevel>
     <researchViewX>1.0</researchViewX>
     <researchViewY>1.0</researchViewY>
+  </ResearchProjectDef> 
+
+  <ResearchProjectDef>
+  <defName>MooMF_UnlockEfficientKibble</defName>
+    <label>Hyper-Efficient Kibble Production</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Unlocks the ability to produce kibble with absurd efficiency, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing this recipe. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
   </ResearchProjectDef>
-  
+
 </Defs>

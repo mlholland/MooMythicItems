@@ -10,7 +10,13 @@
   <HediffDef>
     <defName>MooMF_Hediff_EpicureanWisdom</defName>
     <label>Epicurean Wisdom</label>
-    <description>The epicurean wisdom of a legendary cook is granting this person the ability to cook similarly legendary meals.</description>
+    <description>The epicurean wisdom of a legendary cook grants this person the ability to cook similarly legendary meals.</description>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>MooMF_Hediff_HerdFeedersWisdom</defName>
+    <label>Herd Feeder's Wisdom</label>
+    <description>The wisdom of a legendary animal handler grants this person the ability to produce enough kibble to feed a herd of thrumbos with ease.</description>
   </HediffDef>
 
   <HediffDef>

@@ -60,11 +60,12 @@
   <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this {0}'s user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakFirerate>
   <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this {0}'s user enters a battle trance every time they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakSpeed>
   <MooMF_AbilityDescription_AttactTradeShips>This {0} has some special radio codes embroidered into it. Anyone wearing it can occasionally use these codes to attract a nearby merchant ship into trading range.</MooMF_AbilityDescription_AttactTradeShips>
-
-  <MooMF_MythicDescription_SpaceVictory1>It is said that the people of {2} were one of the few groups of people to have the grit, brains, and the metaphysical patience to build or find a spaceship and successfully get off a Rimworld. No one from their original planet knows where they went. This {3} from escapee {1} is evidence that they eventually reached another planet. Maybe it was this one in the distant past.</MooMF_MythicDescription_SpaceVictory1>
-
-
-  <MooMF_RecipeRequiresHediffs>{0} cannot perform the job "{1}" because said job requires the worker to have a specific hediff affecting them.</MooMF_RecipeRequiresHediffs>
+  <MooMF_AbilityDescription_TamingInspiration>This {0} contains the vestiges of an animal master's wisdom. A wearer can draw upon this wisdom to immediately gain a taming inspiration.</MooMF_AbilityDescription_TamingInspiration>
+  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master's crafter's insight. A wearer can draw upon this insight to immediately gain a creative inspirtion.</MooMF_AbilityDescription_CreativeInspiration>
+  <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to theirself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
+  <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
+  
+  <MooMF_RecipeRequiresHediffs>{0} cannot {1} because it requires the worker to have a specific mythic item ability affecting them.</MooMF_RecipeRequiresHediffs>
 
 
 

@@ -48,8 +48,34 @@ namespace MooMythicItems
                         DebugActions.LogErr("ApplyHediffMythicEffectDef.ApparelEquipEffect '{0}' Tried to tie hediff '{1}' to worn apparel, but it didn't have a hediffComp_RemoveIfApparelDropped comp to tie in. The hediff is permanent now, and this is probably a screw-up by Moo or whoever made this effect.", this.defName, equipHediff.defName);
                     }
                 }
+            } else
+            {
+                // TODO look into how other mods add hediffs on weapons, and try to make this more robust?
+                pawn.health.AddHediff(equipHediff);
             }
-            // TODO weapon equip logic, the above only works for apparel
+        }
+
+
+        public override void OnUnequip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3)
+        {
+            if (equipHediff == null)
+            {
+                // We already complained on equip.
+                return;
+            }
+
+            // If mythic item is apparel, don't both with paired logic between equip/unequip functions.
+            // Instead, just leverage the existing hediffComp_RemoveIfApparelDropped hediff comp
+            if (!(mythicItem is Apparel app))
+            {
+                Hediff targetHediff = pawn.health.hediffSet.GetFirstHediffOfDef(equipHediff);
+                if (targetHediff == null)
+                {
+                    DebugActions.LogErr("A mythic {0} is supposed to remove an associated hediff {1} when unequipped, but no such hediff could be found on wielder {2} when an unequip occurred.", mythicItem.Label, equipHediff.label, pawn.Name.ToStringFull);
+                    return;
+                }
+                pawn.health.RemoveHediff(targetHediff);
+            }
         }
 
         public override string EffectDescription(ThingWithComps mythicItem)

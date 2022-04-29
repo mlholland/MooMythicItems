@@ -11,8 +11,6 @@ namespace MooMythicItems
 {
     class CompProperties_Empty : CompProperties_AbilityEffect
     {
-        public IncidentDef incident;
-
         public CompProperties_Empty()
         {
             this.compClass = typeof(CompAbilityEffect_Empty);

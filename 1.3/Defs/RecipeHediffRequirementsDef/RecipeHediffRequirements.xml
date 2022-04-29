@@ -8,4 +8,12 @@
     </hediffDefOptions>
   </MooMythicItems.RecipeHediffRequirementsDef>
 
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_EfficientKibbleRequirements</defName>
+    <recipeDef>MooMF_EfficientKibble</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HerdFeedersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
 </Defs>

@@ -11,6 +11,7 @@
     <defName>MooMF_ShootingMastery</defName>
     <effects>
       <li>MooMF_ShootingBoost</li>
+      <li>MooMF_GrantShootingInspiration</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Shooting_1</li>
@@ -107,6 +108,7 @@
     <defName>MooMF_AnimalsMastery</defName>
     <effects>
       <li>MooMF_AnimalsBoost</li>
+      <li>MooMF_GrantTamingInspiration</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Animals_1</li>
@@ -140,6 +142,7 @@
     <defName>MooMF_ArtisticMastery</defName>
     <effects>
       <li>MooMF_ArtisticBoost</li>
+      <li>MooMF_GrantCreativeInspiration</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Artistic_1</li>

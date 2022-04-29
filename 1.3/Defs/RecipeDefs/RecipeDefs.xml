@@ -42,4 +42,70 @@ This meal can only be cooked by someone who has the mythical "Epicurean Wisdom" 
       <li>Campfire</li>
     </recipeUsers>
   </RecipeDef>
+
+
+  <RecipeDef ParentName="CookMealBase">
+    <defName>MooMF_EfficientKibble</defName>
+    <label>make hyper-efficient kibble</label>
+    <description>Draw upon the wisdom of a grand animal handler to produce kibble at an unimaginably efficient rate. This technique seems to create extra nutrition out of thin air, and is invaluable for feeding large herds on small budgets.
+
+Kibble can only be produced this way by someone who has the mythical "Herd Feeder's Wisdom" effect bestowed upon them.</description>
+    <jobString>Making kibble.</jobString>
+    <workAmount>1000</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <li>ButcherSpot</li>
+      <li>TableButcher</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+          <thingDefs>
+            <li>Hay</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Kibble>300</Kibble>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <thingDefs>
+        <li>Hay</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Foods</li>
+      </categories>
+      <disallowedCategories>
+        <li>EggsFertilized</li>
+      </disallowedCategories>
+      <disallowedThingDefs>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MooMF_UnlockEfficientKibble</researchPrerequisite>
+  </RecipeDef>
 </Defs>

@@ -12,5 +12,11 @@
     <equipHediff>MooMF_Hediff_EpicureanWisdom</equipHediff>
     <effectDescTranslationKey>MooMF_AbilityDescription_GrantEpicureanWisdom</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantHerdFeedersWisdom</defName>
+    <equipHediff>MooMF_Hediff_HerdFeedersWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantHerdFeedersWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
   
 </Defs>

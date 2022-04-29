@@ -320,8 +320,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modsource\Comps\CompAbilityEffect_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_Empty.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_Empty.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
     <Compile Include="modsource\Defs\Causes\MythicCauseDef.cs" />
