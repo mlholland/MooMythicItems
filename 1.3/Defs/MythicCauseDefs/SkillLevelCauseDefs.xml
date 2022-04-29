@@ -159,6 +159,7 @@
     <defName>MooMF_MedicineMastery</defName>
     <effects>
       <li>MooMF_MedicineBoost</li>
+      <li>MooMF_GrantHealersWisdom</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Medicine_1</li>

@@ -108,4 +108,77 @@ Kibble can only be produced this way by someone who has the mythical "Herd Feede
     <workSkill>Cooking</workSkill>
     <researchPrerequisite>MooMF_UnlockEfficientKibble</researchPrerequisite>
   </RecipeDef>
+
+  <RecipeDef>
+    <defName>MooMF_UpgradeIndustrialMedicine</defName>
+    <label>Upgrade Industrial Medicine</label>
+    <description>Draw upon the wisdom of a legendary doctor to upgrade industrial medicine into glitterworld medicine. This task is time-comsuming, but upgrades medicine at a 1-to-1 ratio.
+
+This task can only be performed by someone who has the mythical "Healer's Wisdom" effect bestowed upon them.</description>
+    <jobString>Upgrading Medicine.</jobString>
+    <workAmount>2000</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MedicineUltratech>1</MedicineUltratech>
+    </products>
+    <researchPrerequisite>MooMF_UnlockUpgradeMedicine</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+  </RecipeDef>
+
+
+  <RecipeDef>
+    <defName>MooMF_UpgradeHerbalMedicine</defName>
+    <label>Upgrade Herbal Medicine</label>
+    <description>Draw upon the wisdom of a legendary doctor to upgrade herbal medicine directly into glitterworld medicine. This task is time-comsuming, but upgrades medicine at a 3-to-1 ratio.
+
+This task can only be performed by someone who has the mythical "Healer's Wisdom" effect bestowed upon them.</description>
+    <jobString>Upgrading Medicine.</jobString>
+    <workAmount>2700</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MedicineUltratech>1</MedicineUltratech>
+    </products>
+    <researchPrerequisite>MooMF_UnlockUpgradeMedicine</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+  </RecipeDef>
 </Defs>

@@ -20,6 +20,12 @@
   </HediffDef>
 
   <HediffDef>
+    <defName>MooMF_Hediff_HealersWisdom</defName>
+    <label>Healer's Wisdom</label>
+    <description>The wisdom of a legendary doctor grants this person the ability to produce glitterworld medicine.</description>
+  </HediffDef>
+
+  <HediffDef>
     <defName>MooMF_Hediff_EpicureanDelight</defName>
     <hediffClass>HediffWithComps</hediffClass>
     <label>Epicurean Inspiration</label>

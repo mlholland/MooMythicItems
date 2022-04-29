@@ -16,4 +16,22 @@
     </hediffDefOptions>
   </MooMythicItems.RecipeHediffRequirementsDef>
 
+
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_UpgradeIndustrialMedicineRequirements</defName>
+    <recipeDef>MooMF_UpgradeIndustrialMedicine</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HealersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
+
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_UpgradeHerbalMedicineRequirements</defName>
+    <recipeDef>MooMF_UpgradeHerbalMedicine</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HealersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
 </Defs>

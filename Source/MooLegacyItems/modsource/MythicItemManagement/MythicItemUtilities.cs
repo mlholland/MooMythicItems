@@ -36,8 +36,8 @@ namespace MooMythicItems
             s_defaultDescriptions = new HashSet<string> { "MooMF_MythicStory_HumanKills1_Ranged_1", "MooMF_MythicStory_HumanKills1_Ranged_2" };
             s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_HumanKills2_Ranged_1", "MooMF_MythicTitle_HumanKills2_Ranged_2", "MooMF_MythicTitle_HumanKills2_Ranged_3" };
             //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
-            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantTamingInspiration") }; // TODO removeMooMF_GrantHerdFeedersWisdom
-            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantDiscoverUndergroundDeposit") }; // TODO remov
+            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantTamingInspiration") }; // TODO remove
+            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantHealersWisdom") }; // TODO remove
         }
         
         /* Generate a mythic item by randomly selecting among some hard-coded options. 

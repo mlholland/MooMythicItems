@@ -140,7 +140,7 @@
   <AbilityDef>
     <defName>MooMF_DiscoverUndergroundDeposit</defName>
     <label>Prospect Minerals</label>
-    <description>Draw upon the instinct of this item's original owner to divine the location of an underground mining deposit. Has a 2 day cooldown, which only progresses while this clothing is worn.</description>
+    <description>Draw upon the instinct of this item's original owner to prospect the location of an underground mining deposit. Has a 2 day cooldown, which only progresses while this clothing is worn.</description>
     <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>120000~120000</cooldownTicksRange>

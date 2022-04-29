@@ -18,5 +18,11 @@
     <equipHediff>MooMF_Hediff_HerdFeedersWisdom</equipHediff>
     <effectDescTranslationKey>MooMF_AbilityDescription_GrantHerdFeedersWisdom</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantHealersWisdom</defName>
+    <equipHediff>MooMF_Hediff_HealersWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantHealersWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
   
 </Defs>
