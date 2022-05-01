@@ -104,12 +104,12 @@ namespace MooMythicItems
                 if (options.Count == 0)
                 {
                     return;
-                } 
-                 
-                MythicItem newItem = causeDef.TryCreateMythicItem(options.RandomElement(), victoryPrefix);
+                }
+                Pawn selectedPawn = options.RandomElement();
+                MythicItem newItem = causeDef.TryCreateMythicItem(selectedPawn, victoryPrefix);
                 if (newItem != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(newItem, null, 0, 0, causeDef.GetPrintedReasonFragment(newItem.ownerFullName));
+                    MythicItemCache.TrySaveOrOverwriteNewItem(newItem, selectedPawn, null, 0, 0, causeDef.GetPrintedReasonFragment(newItem.ownerFullName));
                 }
             }
 

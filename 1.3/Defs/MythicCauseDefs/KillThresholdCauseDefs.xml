@@ -54,6 +54,7 @@
     <meleeEffects>
       <li>MooMF_Effect_KillstreakDR_1</li>
       <li>MooMF_Effect_KillstreakSpeed_1</li>
+      <li>MooMF_Effect_KillstreakHealing_1</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
@@ -101,6 +102,7 @@
     <meleeEffects>
       <li>MooMF_Effect_KillstreakDR_2</li>
       <li>MooMF_Effect_KillstreakSpeed_2</li>
+      <li>MooMF_Effect_KillstreakHealing_2</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
@@ -139,6 +141,7 @@
     <meleeEffects>
       <li>MooMF_Effect_KillstreakDR_3</li>
       <li>MooMF_Effect_KillstreakSpeed_3</li>
+      <li>MooMF_Effect_KillstreakHealing_3</li>
     </meleeEffects>
     <meleeDescriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>

@@ -37,15 +37,25 @@ namespace MooMythicItems
         /* The main function for saving new mythic items. Returns true if the cache and save state were modified, and false otherwise.
          * Can modify the cache by either adding newItem to the cache, or by replacing a lower-priority version of this type of mythic
          * item with the new item.
-         * Does not allow duplicate, equal-or-lower-priority, or too many limited mythic items of the same type to be cached.
+         * The saving function can fail for the following reasons:
+         *  - The originator pawn already has a mythic item.
+         *  - The inputted mythic item is effectively the same as an already saved item (same reason, originating pawn, and originating world)
+         *  - The inputted item is a equal or lower priority as a saved mythic item from the same person in a similar mythic 'class'
+         *  - Too many mythic items of the same type have already been cached.
          */
-        public static bool TrySaveOrOverwriteNewItem(MythicItem newItem, string reasonPrefix, int priority, int globalLimit, string printedReasonFragment)
+        public static bool TrySaveOrOverwriteNewItem(MythicItem newItem, Pawn originator, string reasonPrefix, int priority, int globalLimit, string printedReasonFragment)
         {
+            if (!MooMythicItems_Mod.settings.flagMythicOwnersCanCreateNewMythicItems && MythicItemUtilities.PawnHasMythicItem(originator))
+            {
+                DebugActions.LogIfDebug("Stopped creation of mythic item with reason '{0}' because the originator pawn '{1}' possesses a mythic item.", newItem.reason, newItem.ownerShortName);
+                return false;
+            }
+
             // First, make sure that an identical mythic item hasn't already been saved.
             // *Two mythic items are identical if they have the same reason, pawn, and originating world. We ignore the specific thingDef used.
             if (MythicItemCache.GetFirstSimilarCachedMythicItem(null, newItem.reason, newItem.originatorId, newItem.prv) != null)
             {
-                DebugActions.LogIfDebug("Stopped mythic item creation with reason '{0}' because we have already " +
+                DebugActions.LogIfDebug("Stopped creation of mythic item with reason '{0}' because we have already " +
                         "have the exact same item saved.", newItem.reason);
                 return false;
             }
@@ -67,7 +77,7 @@ namespace MooMythicItems
                         savedItemsWithPrio++;
                         if (savedItemPrio >= priority)
                         {
-                            DebugActions.LogIfDebug("Stopped mythic item creation with reason '{0}' because we have already " +
+                            DebugActions.LogIfDebug("Stopped creation of mythic item with reason '{0}' because we have already " +
                                     "have a similar item saved for '{1} with a higher priority reason '{2}'.", newItem.reason, newItem.ownerShortName, mi.reason);
                             return false;
                         }
@@ -76,8 +86,8 @@ namespace MooMythicItems
                 }
                 if (savedItemsWithPrio > 1)
                 {
-                    Log.Warning(String.Format("While trying to create priority-based mythic item for {0} based on reason {1}, more " +
-                        "than 1 saved mythic item with a similar reason and a priority was found", newItem.ownerShortName, newItem.reason));
+                    DebugActions.LogWarn("While trying to create priority-based mythic item for {0} based on reason {1}, more " +
+                        "than 1 saved mythic item with a similar reason and a priority was found. This shouldn't occur in normal gameplay.", newItem.ownerShortName, newItem.reason);
                 }
                 if (itemToOverwrite != null)
                 {

@@ -10,6 +10,8 @@
   <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
+  <MooMF_FlagMythicOwnersCanCreateNewMythicItems>Mythic Item Owners Can Create New Mythic Items</MooMF_FlagMythicOwnersCanCreateNewMythicItems>
+  <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to minor balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
   <MooMF_MaxMythicItemsSaved>Max Saved Mythic Items</MooMF_MaxMythicItemsSaved>
   <MooMF_MinLevelForSkillItems>Minimum level for skill-based mythic items.</MooMF_MinLevelForSkillItems>
@@ -65,6 +67,8 @@
   <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to theirself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
   <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
   <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
+  <MooMF_AbilityDescription_KillstreakHealing>While equipped, this {0}'s user enters a battle trance every time they kill something, granting a huge natural healing increase. Old stories about this weapon claim that heartless warriors recoved from intense battles by killing their pets. But surely you wouldn't do that, would you?</MooMF_AbilityDescription_KillstreakHealing>
+  
   <MooMF_RecipeRequiresHediffs>{0} cannot {1} because it requires the worker to have a specific mythic item ability affecting them.</MooMF_RecipeRequiresHediffs>
 
   <MooMF_MineralsProspectedLetterTitle>{0} Prospected</MooMF_MineralsProspectedLetterTitle>

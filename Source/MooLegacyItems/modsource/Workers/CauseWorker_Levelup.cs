@@ -82,7 +82,7 @@ namespace MooMythicItems
                     {
                         // When doing reason checks, we only care about mythic items related to the same skill,
                         // So we input a reason fragment that specifies the skill in question.
-                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, reason, bestCause.priority, bestCause.reasonLimit, bestCause.GetPrintedReasonFragment(newItem.ownerFullName));
+                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, pawn, reason, bestCause.priority, bestCause.reasonLimit, bestCause.GetPrintedReasonFragment(newItem.ownerFullName));
                     }
                 }
             }

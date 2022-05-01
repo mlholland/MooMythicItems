@@ -37,7 +37,7 @@ namespace MooMythicItems
             s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_HumanKills2_Ranged_1", "MooMF_MythicTitle_HumanKills2_Ranged_2", "MooMF_MythicTitle_HumanKills2_Ranged_3" };
             //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
             //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantTamingInspiration") }; // TODO remove
-            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantHealersWisdom") }; // TODO remove
+            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_Effect_KillstreakHealing_3") }; // TODO remove
         }
         
         /* Generate a mythic item by randomly selecting among some hard-coded options. 
@@ -51,6 +51,26 @@ namespace MooMythicItems
         public static List<ThingDef> RandomItemDefOptions()
         {
             return s_defaultDefs.ToList();
+        }
+
+
+        public static bool PawnHasMythicItem(Pawn p)
+        {
+            ThingWithComps weapon = p.equipment.Primary;
+            CompMythic mythicComp = weapon.TryGetComp<CompMythic>();
+            if (mythicComp != null && mythicComp.abilityDef != null)
+            {
+                return true;
+            }
+            foreach(Apparel app in p.apparel.WornApparel)
+            {
+                CompMythic appMythicComp = weapon.TryGetComp<CompMythic>();
+                if (appMythicComp != null && mythicComp.abilityDef != null)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         
 

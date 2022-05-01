@@ -83,7 +83,7 @@ namespace MooMythicItems
                 Tuple<MythicItem, MythicCauseDef_RecordThreshold> creationResult = CreateMythicItemIfCauseMet(__state, recruiter);
                 if (creationResult != null && creationResult.Item1 != null && creationResult.Item2 != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, recruitReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
+                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, recruiter, recruitReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
                 }
             }
         }

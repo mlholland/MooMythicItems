@@ -345,6 +345,39 @@
       </li>
     </stages>
   </HediffDef>
+
+
+  <HediffDef ParentName="KillstreakBase">
+    <defName>MooMF_Hediff_KillstreakHealing</defName>
+    <label>Killstreak: Regeneration</label>
+    <description>This person is in a battle trance. They gain a huge boost to natural healing whenever they kill something.</description>
+    <stages>
+      <li>
+        <label>1</label>
+        <minSeverity>0</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>15</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>2</label>
+        <minSeverity>.2</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>30</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>3</label>
+        <minSeverity>.3</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>45</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
   
 </Defs>
     

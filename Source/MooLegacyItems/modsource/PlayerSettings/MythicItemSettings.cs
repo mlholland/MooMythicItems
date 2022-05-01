@@ -12,6 +12,7 @@ namespace MooMythicItems
     {
         public bool flagCreateRandomMythicItemsIfNoneAvailable = true;
         public bool flagNotifyItemCreation = true;
+        public bool flagMythicOwnersCanCreateNewMythicItems = false;
         public bool flagDebug = false;
         public bool flagStartupDebug = false;
         public int minimumLevelForSkillItems = 18;
@@ -31,6 +32,7 @@ namespace MooMythicItems
 
             Scribe_Values.Look(ref flagCreateRandomMythicItemsIfNoneAvailable, "flagCreateRandomMythicItemsIfNoneAvailable", true, true);
             Scribe_Values.Look(ref flagNotifyItemCreation, "flagNotifyItemCreation", true, true);
+            Scribe_Values.Look(ref flagMythicOwnersCanCreateNewMythicItems, "flagMythicOwnersCanCreateNewMythicItems", false, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
             Scribe_Values.Look(ref flagStartupDebug, "flagStartupDebug", false, true);
             Scribe_Values.Look(ref minimumLevelForSkillItems, "minimumLevelForSkillItems", 18, true);
@@ -59,6 +61,7 @@ namespace MooMythicItems
             */
             ls.CheckboxLabeled("MooMF_CreateRandomItemsIfNeeded".Translate(), ref flagCreateRandomMythicItemsIfNoneAvailable, "MooMF_CreateRandomItemsIfNeededTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagNotifyItemCreation".Translate(), ref flagNotifyItemCreation, null);
+            ls.CheckboxLabeled("MooMF_FlagMythicOwnersCanCreateNewMythicItems".Translate(), ref flagMythicOwnersCanCreateNewMythicItems, "MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip".Translate());
             ls.CheckboxLabeled("MooMF_PrintDebugLogs".Translate(), ref flagDebug, null);
             ls.CheckboxLabeled("MooMF_PrintExtraStartupDebugLogs".Translate(), ref flagStartupDebug, null);
             ls.Label("MooMF_MinLevelForSkillItems".Translate() + ": " + minimumLevelForSkillItems, -1, "MooMF_MinLevelForSkillItemsToolTip".Translate());
