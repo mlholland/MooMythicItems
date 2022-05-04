@@ -33,9 +33,13 @@
        {2} is the resulting mythic item's name-->
   <MooMF_CreatedNewItemMessage>Congragulations! Because {0}, their {1} become a mythic item called "{2}"!</MooMF_CreatedNewItemMessage>
   <MooMF_NoMythicReasonGiven>{0} did something impressive (it's unclear what and this is probably either a bug or a debug action)</MooMF_NoMythicReasonGiven>
+  <!-- Killer name, quantity, killed thing type-->
   <MooMF_PrintKillCountReason>{0} killed {1} {2}</MooMF_PrintKillCountReason>
+  <!-- Leveler name, skill level, skill name-->
   <MooMF_PrintLevelupReason>{0} reached level {1} in {2}</MooMF_PrintLevelupReason>
+  <!-- Recruiter, quantity, recruited thing type-->
   <MooMF_PrintRecruitOrTameReason>{0} got {1} {2} to join the colony</MooMF_PrintRecruitOrTameReason>
+  <!-- Name-->
   <MooMF_PrintVictoryReason>{0} escaped this Rimworld</MooMF_PrintVictoryReason>
   
   <MooMF_AddMythicRelic>Add Mythic Relic</MooMF_AddMythicRelic>
@@ -43,35 +47,11 @@
   
   <MooMF_MythicPrefix>\n\nMythic: </MooMF_MythicPrefix>
 
-
-  <!--Effect description notes: 
-   - these are added to the in-game description of mythic items, after the flavor string.
-   - The element {0} should always be the label of the mythic item itself (ex: Revolver).
-   - All other elements can vary depending on what subtype of mythic effect def uses these,
-   although {1} should try to be the label of whatever is added to this weapon, if applicable. -->
-  <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
-  <MooMF_AbilityDescription_GrantStatAbility>Grants the user a buff called "{1}", which increases their performance in the relevant ability.,</MooMF_AbilityDescription_GrantStatAbility>
-  <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yield's from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
-  <MooMF_AbilityDescription_GrantEpicureanWisdom>Grants the user the "{1}" buff, which allows them to cook epicurean delights.</MooMF_AbilityDescription_GrantEpicureanWisdom>
-  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. When the user kills a mechanoid, it will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
-  <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural ability to find extra insect jelly when hunting insects, which is dropped whenever they kill an insect. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
-  <MooMF_AbilityDescription_Thrumbocall>This {0} grants the user the "{1}" ability, which summons a thrumbo herd up to once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
-  <MooMF_AbilityDescription_APRocket>This {0} has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
-  <MooMF_AbilityDescription_EMPRocket>This {0} has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day to immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
-  <MooMF_AbilityDescription_KillstreakDR>While equipped, this {0}'s user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakDR>
-  <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this {0}'s user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakFirerate>
-  <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this {0}'s user enters a battle trance every time they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakSpeed>
-  <MooMF_AbilityDescription_AttactTradeShips>This {0} has some special radio codes embroidered into it. Anyone wearing it can occasionally use these codes to attract a nearby merchant ship into trading range.</MooMF_AbilityDescription_AttactTradeShips>
-  <MooMF_AbilityDescription_TamingInspiration>This {0} contains the vestiges of an animal master's wisdom. A wearer can draw upon this wisdom to immediately gain a taming inspiration.</MooMF_AbilityDescription_TamingInspiration>
-  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master's crafter's insight. A wearer can draw upon this insight to immediately gain a creative inspirtion.</MooMF_AbilityDescription_CreativeInspiration>
-  <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to theirself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
-  <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
-  <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
-  <MooMF_AbilityDescription_KillstreakHealing>While equipped, this {0}'s user enters a battle trance every time they kill something, granting a huge natural healing increase. Old stories about this weapon claim that heartless warriors recoved from intense battles by killing their pets. But surely you wouldn't do that, would you?</MooMF_AbilityDescription_KillstreakHealing>
-  
+  <!--Name, Job -->
   <MooMF_RecipeRequiresHediffs>{0} cannot {1} because it requires the worker to have a specific mythic item ability affecting them.</MooMF_RecipeRequiresHediffs>
-
+  <!-- Name-->
   <MooMF_MineralsProspectedLetterTitle>{0} Prospected</MooMF_MineralsProspectedLetterTitle>
+  <!-- Metal label-->
   <MooMF_MineralsProspectedLetterText>The mythical wisdom of an ancient mining expert has divined the location of an underground deposit of {0}. You'll still need the usual equipment to find it though.</MooMF_MineralsProspectedLetterText>
 
 
