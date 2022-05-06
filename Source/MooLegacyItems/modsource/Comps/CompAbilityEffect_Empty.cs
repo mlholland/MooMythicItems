@@ -12,6 +12,8 @@ namespace MooMythicItems
     class CompAbilityEffect_Empty : CompAbilityEffect
     {
 
+        public CompAbilityEffect_Empty() { }
+
         public CompProperties_Empty Props
         {
             get

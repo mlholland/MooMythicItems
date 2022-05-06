@@ -98,8 +98,8 @@
   <!-- mech kills tier 2-->
 
 
-  <MooMF_MythicTitle_MechKills2_Melee_1>The Fender Bender</MooMF_MythicTitle_MechKills2_Melee_1>
-  <MooMF_MythicTitle_MechKills2_Melee_2>The Seg Faulter</MooMF_MythicTitle_MechKills2_Melee_2>
+  <MooMF_MythicTitle_MechKills2_Melee_1>The Fender Bending {1}</MooMF_MythicTitle_MechKills2_Melee_1>
+  <MooMF_MythicTitle_MechKills2_Melee_2>{0}'s Seg Faulter</MooMF_MythicTitle_MechKills2_Melee_2>
   <MooMF_MythicTitle_MechKills2_Melee_3>Scyther's Match</MooMF_MythicTitle_MechKills2_Melee_3>
 
   <MooMF_MythicTitle_MechKills2_Ranged_1>Anti-Terminator</MooMF_MythicTitle_MechKills2_Ranged_1>

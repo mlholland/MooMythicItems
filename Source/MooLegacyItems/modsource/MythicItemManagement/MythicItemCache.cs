@@ -4,6 +4,7 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using HarmonyLib;
 
 /* This class is contains a cache of mythic items that the game can use to produce in-game mythic items. It is also in charge of saving new items,
  * and producing data about the current state of the cache.
@@ -21,7 +22,9 @@ namespace MooMythicItems
         // must be coming from the live game itself.
         private static List<MythicItem> s_cachedItems = new List<MythicItem>();
         private static readonly string noReasonKey = "MooMF_NoMythicReasonGiven";
+
         private static readonly string newItemMessageKey = "MooMF_CreatedNewItemMessage";
+        private static AccessTools.FieldRef<object, List<ThingComp>> compsField = AccessTools.FieldRefAccess<List<ThingComp>>(typeof(ThingWithComps), "comps");
 
         static MythicItemCache()
         {
@@ -307,7 +310,8 @@ namespace MooMythicItems
             {
                 stuff  = mi.stuffDef;
             }
-            Thing thing = ThingMaker.MakeThing(def, stuff);
+            ThingWithComps thing = (ThingWithComps)ThingMaker.MakeThing(def, stuff);
+
             CompQuality compQuality = thing.TryGetComp<CompQuality>();
             if (compQuality != null)
             {
@@ -318,17 +322,14 @@ namespace MooMythicItems
                 thing = thing.MakeMinified();
             }
 
-            CompMythic mythicComp = thing.TryGetComp<CompMythic>();
-            if (mythicComp == null)
-            {
-                throw new InvalidCastException(String.Format("Mythic Item realization failed. The item def {0} had no mythic comp to modify, yet a saved mythic item was based on one", thing.def.defName));
-            }
-            else
-            {
-                mythicComp.newLabel = String.Format(mi.titleTranslationString.Translate(), mi.ownerShortName, def.label);
-                mythicComp.newDescription = String.Format(mi.descriptionTranslationString.Translate(), mi.ownerFullName, mi.ownerShortName, mi.factionName, def.label);
-                mythicComp.abilityDef = mi.abilityDef;
-            }
+            List<ThingComp> comps = compsField.Invoke(thing);
+            CompMythic mythicComp = (CompMythic)Activator.CreateInstance(typeof(CompMythic));
+            mythicComp.parent = thing;
+            comps.Add(mythicComp);
+            mythicComp.Initialize(new CompProperties_Mythic()); 
+            mythicComp.newLabel = String.Format(mi.titleTranslationString.Translate(), mi.ownerShortName, def.label);
+            mythicComp.newDescription = String.Format(mi.descriptionTranslationString.Translate(), mi.ownerFullName, mi.ownerShortName, mi.factionName, def.label);
+            mythicComp.abilityDef = mi.abilityDef; 
 
             DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", mi.ToString());
             return thing;

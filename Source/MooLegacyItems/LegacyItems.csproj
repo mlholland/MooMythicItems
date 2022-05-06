@@ -323,6 +323,7 @@
     <Compile Include="modsource\Comps\CompAbilityEffect_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_Empty.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_Mythic.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_Empty.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
@@ -338,13 +339,13 @@
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef.cs" />
     <Compile Include="modsource\Comps\CompMythic.cs" />
+    <Compile Include="modsource\Harmony\MythicCompLoader.cs" />
     <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_DoRecruit.cs" />
     <Compile Include="modsource\Harmony\Corpse_ButcherProducts.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
     <Compile Include="modsource\Harmony\Pawn_PawnAllowedToStartAnew.cs" />
     <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
-    <Compile Include="modsource\Harmony\DefModifier.cs" />
     <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />
     <Compile Include="modsource\MythicItemManagement\MythicItemUtilities.cs" />
     <Compile Include="modsource\MythicItemManagement\ThingSetMaker_MythicItemMaker.cs" />
