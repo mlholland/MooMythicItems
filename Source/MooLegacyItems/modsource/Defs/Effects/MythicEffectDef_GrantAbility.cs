@@ -4,6 +4,7 @@ using System.Linq;
 using RimWorld;
 using Verse;
 using HarmonyLib;
+using UnityEngine;
 
 /* This def is an effect that can be applied to a mythic item. When applied, it causes the mythic item to grant
  * the wielder/wearer an ability.
@@ -44,6 +45,14 @@ namespace MooMythicItems
             if (!pawn.abilities.abilities.Any((Ability a) => a.def == mythicAbilityDef))
             {
                 Ability ability = AbilityUtility.MakeAbility(mythicAbilityDef, pawn);
+                foreach (Command c in ability.GetGizmos())
+                {
+                    c.icon = mythicItem.def.uiIcon;
+                    if (mythicItem.Stuff != null)
+                    {
+                        c.defaultIconColor = mythicItem.Stuff.stuffProps.color;
+                    }
+                }
                 pawn.abilities.abilities.Add(ability);
                 pawn.abilities.Notify_TemporaryAbilitiesChanged();
                 int curTick = Find.TickManager.TicksGame;

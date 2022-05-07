@@ -4,7 +4,6 @@
     <defName>MooMF_Thrumbocall</defName>
     <label>Thrumbocall</label>
     <description>Channel the spirit of a ancient friend of the thrumbos to immediately cause a thrumbo migration event. Has a 1 year cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>3600000~3600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
@@ -31,7 +30,6 @@
     <defName>MooMF_GrapeshotRocket</defName>
     <label>Anti-personnel Rocket</label>
     <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 3-day cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>180000~180000</cooldownTicksRange>
     <jobDef>CastAbilityOnThing</jobDef>
@@ -73,7 +71,6 @@
     <defName>MooMF_BigEMPRocket</defName>
     <label>Mega-Emp Rocket</label>
     <description>Use the jury-rigged emp cannon mounted on the side of this weapon to shoot massive EMP explosive. Deals no damage, but will stun unadapted mechanoids for a very long time. Has a 10 day cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>600000~600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThing</jobDef>
@@ -114,7 +111,6 @@
     <defName>MooMF_AttractTradeShips</defName>
     <label>Emit Trade Attractor Signal</label>
     <description>Use the special merchant codes embroidered in this clothing to attact a nearby trade ship. Has a 10 day cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>600000~600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
@@ -141,7 +137,6 @@
     <defName>MooMF_DiscoverUndergroundDeposit</defName>
     <label>Prospect Minerals</label>
     <description>Draw upon the instinct of this item's original owner to prospect the location of an underground mining deposit. Has a 2 day cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>120000~120000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
@@ -168,7 +163,6 @@
     <defName>MooMF_GiveTamingInspiration</defName>
     <label>Animal Guidance</label>
     <description>Call upon the wisdom of a mythical shepherd to grant this person a taming inspiration. The ability cannot be cast if the wearer is not a valid target for this type of inspiration.  Has a 1 year cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>3600000~3600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
@@ -196,7 +190,6 @@
     <defName>MooMF_GiveCreativeInspiration</defName>
     <label>Shaper's Intuition</label>
     <description>Call upon the wisdom of a grand artist to grant the wearer a creative inspiration. The ability cannot be cast if the wearer is not a valid target for this type of inspiration.  Has a 30-day cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>1800000~1800000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
@@ -225,7 +218,6 @@
     <defName>MooMF_GiveMassShootingInspirations</defName>
     <label>Eagle-Eyed Blessing</label>
     <description>Call upon the wisdom of a mythical sniper to grant a shooting inspiration to all valid colonists in the affected area, as well as the caster. Has a 1 year cooldown, which only progresses while this clothing is worn.</description>
-    <iconPath>UI/Abilities/Painblock</iconPath>
     <hotKey>Misc1</hotKey>
     <cooldownTicksRange>3600000~3600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThingUninterruptible</jobDef>
