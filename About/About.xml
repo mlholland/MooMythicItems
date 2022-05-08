@@ -28,6 +28,74 @@
 
 	<packageId>mooloh.mythicitems</packageId>
 
-  <description>This mod chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities, which appear in other colonies as quest rewards.
-  </description>
+  <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities, which appear in your later colonies as quest rewards.
+
+&lt;size=24&gt;Overview&lt;/size&gt;
+
+  I play a lot of Dungeons and Dragons, so I believe that what makes an item 'legendary' is more than just the quality of its make when it was first constructed. The stories and events that artifacts have been part of also matter in making that item important. However, the words 'legendary', 'relic', and 'artifact' are already used in this game, so this mod calls storied items 'mythic items'.
+  
+  To that end, this mod waits for your colonists to achieve impressive feats. When that happens, it creates a mythic item based on that colonist's weapon or clothing. This mythic item is a legendary version of the original item, with a unique name, description, and ability that pertain to whatever the colonist did to earn their reputation. Once mythic items have been created, this mod will occasionally spawn those mythic items as quest rewards. Be warned: Once an item shows up in a world, you won't see it in that world again. So you only get one chance!
+
+  For more detailed info about the mechanics of this mod, continue reading.
+  
+&lt;size=24&gt;Mythic Creation&lt;/size&gt;
+
+Mythic Items can be created and saved whenever a colonist meets one of the following conditions, assuming the colonist does not have a mythic item equipped:
+
+ - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Note: Kill thresholds differ between categories, and some categories have multiple thresholds which 'upgrade' the resulting item. 
+ 
+ - A colonist reaches level 20 in a skill.
+ 
+ - A colonist tames their second thrumbo.
+ 
+ - A colonist escapes the Rim (AKA is part of any vanilla or DLC ending, only one is selected among the victors).
+
+&lt;size=24&gt;Finding Mythic Items&lt;/size&gt;
+
+Once you've played the game enough and created a few mythic items, these items can show up in subsequent games in several ways. Bear in mind that mythic items can only show up ONCE per world, and after showing up in a few worlds, will disappear entirely.
+
+ - As a vanilla quest reward item. This reward can only generate after at least a year has passed.
+ 
+ - If you are allied with a faction, you can pay 10000 silver and 50 goodwill to create a quest to find a mythic item (works like the AI persona core quest).
+ 
+ - If Ideology is installed, a mythic items can be selected as Ideologion relics. 
+ 
+&lt;size=24&gt;Mythic Effects&lt;/size&gt;
+
+Mythic items can have a variety of effects, and are always of legendary quality. The exact effect depends on the situation that created the mythic item in the first place. Some possible effects include:
+
+ - Combat abilities, like a mini-doomsday launcher mounted on the side of a charge rifle, which can fire once a day (reward for lots of human kills).
+
+ - Recipe unlocks, like A shirt that grants the wearer the ability to cook Epicurean Delights, a wildly opulent meal that grants a huge buff to people who eat it (reward for reaching level 20 in cooking).
+
+ - Passive Effects, like a cowboy hat which passively boosts the wearer's mining abilities (reward for reaching level 20 in mining).
+
+ - Utility Abilities, like a pair of pants which can grant the wearer a creative inspiration (reward for reaching level 20 in artistic).
+
+
+&lt;size=24&gt;Modding and want to make your own Mythic Items?&lt;/size&gt;
+
+I designed this mod with other modders in mind. It's possible to add new mythic item titles and descriptions with just XML. It's sometimes possible to add new mythic creation triggers and effects using just XML, depending on the exact trigger or ability, and minimal coding otherwise.
+
+For more information and a few examples of how you can add your own mythic stuff, please see the README on the mod's Github page: TODO
+
+&lt;size=24&gt;Credits and Thanks&lt;/size&gt;
+
+ - Code: Mooloh
+ 
+ - Thanks for Hi19hi19, who helped me come up with a bunch of ideas for mythic abilities, and wrote a bunch of flavor text.
+ 
+ - Thanks to the RimWorld Discord's modding channel, who helped me figure out how to properly code this, that way other modders can more easily add new mythic items themselves.
+ 
+&lt;size=24&gt;Legal&lt;/size&gt;
+
+  - MIT License: TODO
+
+  - Source Code on Github: TODO
+
+&lt;size=24&gt;Changelog&lt;/size&gt;
+
+  - v1.0 Initial Release
+
+</description>
 </ModMetaData>
