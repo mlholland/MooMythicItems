@@ -58,7 +58,7 @@ Once you've played the game enough and created a few mythic items, these items c
  
  - If you are allied with a faction, you can pay 10000 silver and 50 goodwill to create a quest to find a mythic item (works like the AI persona core quest).
  
- - If Ideology is installed, a mythic items can be selected as Ideologion relics. 
+ - If Ideology is installed, a mythic items can be selected as Ideologion relics. Note: This does not remove mythic items from the pool (that way you can use a mythic item in multiple Ideologions), so this can lead to duplicate mythic items in the same world.
  
 &lt;size=24&gt;Mythic Effects&lt;/size&gt;
 

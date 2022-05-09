@@ -11,7 +11,7 @@
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
   <MooMF_FlagMythicOwnersCanCreateNewMythicItems>Mythic Item Owners Can Create New Mythic Items</MooMF_FlagMythicOwnersCanCreateNewMythicItems>
-  <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to minor balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
+  <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
   <MooMF_MaxMythicItemsSaved>Max Saved Mythic Items</MooMF_MaxMythicItemsSaved>
   <MooMF_MinLevelForSkillItems>Minimum level for skill-based mythic items.</MooMF_MinLevelForSkillItems>
@@ -54,5 +54,9 @@
   <!-- Metal label-->
   <MooMF_MineralsProspectedLetterText>The mythical wisdom of an ancient mining expert has divined the location of an underground deposit of {0}. You'll still need the usual equipment to find it though.</MooMF_MineralsProspectedLetterText>
 
+  <MooMF_RequestMythicItemDialogOption>Request mythic item location for {0} silver and {1} goodwill.</MooMF_RequestMythicItemDialogOption>
+  <MooMF_MythicItemRequestedDialogFollowUp>The {0} recites an old story about ancient heroes of the Rim. Supposedly the events from those stories transpired nearby, and the {0} is convinced that you'll find something there.</MooMF_MythicItemRequestedDialogFollowUp>
+  <MooMF_NoMythicItemsExist>No valid mythic items exist</MooMF_NoMythicItemsExist>
+  <MooMF_MinDaysRequired>Earn trust after {0} days here.</MooMF_MinDaysRequired>
 
 </LanguageData>

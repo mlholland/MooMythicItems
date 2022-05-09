@@ -4,6 +4,7 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using HarmonyLib;
 
 /* A MythicItem is an item that was created as a result of a colonist's actions, which can
  * then be generated into an actual Thing in another colony. The data saved in this class structure is 
@@ -14,6 +15,9 @@ namespace MooMythicItems
     [Serializable]
     public class MythicItem
     {
+        // Needed for realization to add a mythic comp to Things that don't normally have it.
+        private static AccessTools.FieldRef<object, List<ThingComp>> compsField = AccessTools.FieldRefAccess<List<ThingComp>>(typeof(ThingWithComps), "comps");
+
         public ThingDef itemDef { get; }
         public String ownerFullName { get; } //Owner in this context refers to the original owner
         public String ownerShortName { get; } 
@@ -110,6 +114,44 @@ namespace MooMythicItems
                 return result;
             }
             return 0;
+        }
+
+        /* Turn a mythic item into a real Thing that can show up in-game.
+        * Kept private in this file to ensure that realization only occurs in concert with behind-the-scenes management of saved mythic items.
+        */
+        public Thing Realize()
+        {
+            DebugActions.LogIfDebug("Realizing mythic item: {0}", this.ToString());
+            ThingDef def = this.itemDef;
+            ThingDef stuff = null;
+            DebugActions.LogIfDebug("Realized mythic item has stuff type: {0}", this.stuffDef);
+            if (this.stuffDef != null)
+            {
+                stuff = this.stuffDef;
+            }
+            ThingWithComps thing = (ThingWithComps)ThingMaker.MakeThing(def, stuff);
+
+            CompQuality compQuality = thing.TryGetComp<CompQuality>();
+            if (compQuality != null)
+            {
+                compQuality.SetQuality(QualityCategory.Legendary, ArtGenerationContext.Outsider);
+            }
+            if (thing.def.Minifiable)
+            {
+                thing = thing.MakeMinified();
+            }
+
+            List<ThingComp> comps = compsField.Invoke(thing);
+            CompMythic mythicComp = (CompMythic)Activator.CreateInstance(typeof(CompMythic));
+            mythicComp.parent = thing;
+            comps.Add(mythicComp);
+            mythicComp.Initialize(new CompProperties_Mythic());
+            mythicComp.newLabel = String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label);
+            mythicComp.newDescription = String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label);
+            mythicComp.abilityDef = this.abilityDef;
+
+            DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", this.ToString());
+            return thing;
         }
     }
 }

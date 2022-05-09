@@ -339,11 +339,13 @@
     <Compile Include="modsource\Defs\ThingDefListDef.cs" />
     <Compile Include="modsource\Defs\Effects\MythicEffectDef.cs" />
     <Compile Include="modsource\Comps\CompMythic.cs" />
+    <Compile Include="modsource\Harmony\SitePartWorker_ItemStash_Notify_GeneratedByQuestGen.cs" />
     <Compile Include="modsource\Harmony\MythicCompLoader.cs" />
     <Compile Include="modsource\Harmony\IdeoUIUtility_DoPreceptsInt.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_DoRecruit.cs" />
     <Compile Include="modsource\Harmony\Corpse_ButcherProducts.cs" />
     <Compile Include="modsource\Harmony\MythicMaker_Notify_PawnKilled.cs" />
+    <Compile Include="modsource\Harmony\FactionDialogMaker_FactionDialogFor.cs" />
     <Compile Include="modsource\Harmony\Pawn_PawnAllowedToStartAnew.cs" />
     <Compile Include="modsource\Harmony\Precept_Relic_GenerateRelic.cs" />
     <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />

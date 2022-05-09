@@ -4,7 +4,6 @@ using Verse;
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using HarmonyLib;
 
 /* This class is contains a cache of mythic items that the game can use to produce in-game mythic items. It is also in charge of saving new items,
  * and producing data about the current state of the cache.
@@ -24,7 +23,6 @@ namespace MooMythicItems
         private static readonly string noReasonKey = "MooMF_NoMythicReasonGiven";
 
         private static readonly string newItemMessageKey = "MooMF_CreatedNewItemMessage";
-        private static AccessTools.FieldRef<object, List<ThingComp>> compsField = AccessTools.FieldRefAccess<List<ThingComp>>(typeof(ThingWithComps), "comps");
 
         static MythicItemCache()
         {
@@ -216,54 +214,17 @@ namespace MooMythicItems
             }
             return count;
         }
-        
-       /* Answers the question of 'given the current cached mythic items and settings, could we create a mythic item for the current world?'*/
-        public static bool CanRealizeRandomMythicItem(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool allowDuplicatesInCurrentMap)
+
+        /* Return the first mythic item from the cached list that is not from the specified colony. Contains a bunch of optional parameters, most of which are only used for debugging/testing.
+  */
+        public static MythicItem SelectRandomMythicItemFromCacheWithOptions(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool allowDuplicatesInCurrentMap)
         {
-            if (createRandomMythicItemsIfNoValidOptionsFound)
-            {
-                return true;
-            }
             HashSet<MythicItem> validItems = new HashSet<MythicItem>();
             int currentMapPrv = Find.World.info.persistentRandomValue;
 
             // determine valid options
             foreach (MythicItem mi in s_cachedItems)
             {
-                if (excludeItemsFromThisWorld && mi.prv == currentMapPrv)
-                {
-                    continue;
-                }
-                if (!allowDuplicatesInCurrentMap && mi.worldsUsedIn.Contains(currentMapPrv))
-                {
-                    continue;
-                }
-                return true;
-            }
-            return false;
-        }
-
-        public static Thing RealizeRandomlyGeneratedMythicItem()
-        {
-            return RealizeMythicItem(MythicItemUtilities.CreateRandomMythicItem());
-        }
-
-        /* This is the normal way of producing a mythic item for in-game use.*/
-        public static Thing RealizeRandomMythicItemFromCache()
-        {
-            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true, true);
-        }
-
-        /* Return the first mythic item from the cached list that is not from the specified colony. Contains a bunch of optional parameters, most of which are only used for debugging/testing.
-         */
-        public static Thing RealizeRandomMythicItemFromCacheWithOptions(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool addThisMapToItemWorldsUsedInListUponRealization, bool allowDuplicatesInCurrentMap)
-        {
-            HashSet<MythicItem> validItems = new HashSet<MythicItem>();
-            int currentMapPrv = Find.World.info.persistentRandomValue;
-
-            // determine valid options
-            foreach(MythicItem mi in s_cachedItems)
-            { 
                 if (excludeItemsFromThisWorld && mi.prv == currentMapPrv)
                 {
                     continue;
@@ -279,63 +240,75 @@ namespace MooMythicItems
             {
                 if (createRandomMythicItemsIfNoValidOptionsFound)
                 {
-                    return RealizeMythicItem(MythicItemUtilities.CreateRandomMythicItem());
+                    return MythicItemUtilities.CreateRandomMythicItem();
                 }
                 return null;
             }
             // pick an option, then realize it and perform behind-the-scenes bookkeeping 
-            MythicItem selectedItem = validItems.RandomElement();
-            if (addThisMapToItemWorldsUsedInListUponRealization && !selectedItem.worldsUsedIn.Contains(currentMapPrv))
+            return validItems.RandomElement();
+        }
+
+
+        public static MythicItem SelectRandomMythicItemFromCache()
+        {
+            return SelectRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
+        }
+
+
+        /* Answers the question of 'given the current cached mythic items and settings, could we create a mythic item for the current world?'*/
+        public static bool CanRealizeRandomMythicItem(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool allowDuplicatesInCurrentMap)
+        {
+            return SelectRandomMythicItemFromCacheWithOptions(createRandomMythicItemsIfNoValidOptionsFound, excludeItemsFromThisWorld, allowDuplicatesInCurrentMap) != null;
+        }
+
+        /* Return the first mythic item from the cached list that is not from the specified colony. Contains a bunch of optional parameters, most of which are only used for debugging/testing.
+         */
+        public static Thing RealizeRandomMythicItemFromCacheWithOptions(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool addWorldToCount, bool allowDuplicatesInCurrentMap)
+        {
+            // pick an option, then realize it and perform behind-the-scenes bookkeeping 
+            MythicItem selectedItem = SelectRandomMythicItemFromCacheWithOptions(createRandomMythicItemsIfNoValidOptionsFound, excludeItemsFromThisWorld, allowDuplicatesInCurrentMap);
+            if (addWorldToCount) AddThisWorldToWorldsSeen(selectedItem);
+            return selectedItem.Realize();
+        }
+
+        /* Mostly used by spawning tools, might refactor later into something that selects a mythic item more directly.*/
+        public static Thing RealizeRandomlyGeneratedMythicItem()
+        {
+            return MythicItemUtilities.CreateRandomMythicItem().Realize();
+        }
+
+        /* This is the normal way of producing a mythic item for in-game use.*/
+        public static Thing RealizeRandomMythicItemFromCache()
+        {
+            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true, true);
+        }
+
+
+        public static Thing RealizeSelectedMythicItem(MythicItem mi, bool addWorldToCount)
+        {
+            if (addWorldToCount) AddThisWorldToWorldsSeen(mi);
+            return mi.Realize();
+        }
+
+        public static bool AddThisWorldToWorldsSeen(MythicItem mi)
+        {
+            int currentMapPrv = Find.World.info.persistentRandomValue;
+            if (!mi.worldsUsedIn.Contains(currentMapPrv))
             {
-                selectedItem.worldsUsedIn.Add(currentMapPrv);
-                if (MooMythicItems_Mod.settings.individualItemOccurenceLimit > 0 && selectedItem.worldsUsedIn.Count >= MooMythicItems_Mod.settings.individualItemOccurenceLimit)
+                mi.worldsUsedIn.Add(currentMapPrv);
+                if (MooMythicItems_Mod.settings.individualItemOccurenceLimit > 0 && mi.worldsUsedIn.Count >= MooMythicItems_Mod.settings.individualItemOccurenceLimit)
                 {
-                    s_cachedItems.Remove(selectedItem);
+                    s_cachedItems.Remove(mi);
+                    SaveCachedMythicItems();
+                    DebugActions.LogIfDebug("Mythic Item {0} has been used in {1} worlds, removing it from the saved list of mythic items.", mi.GetFormattedTitle(), mi.worldsUsedIn.Count);
+                    return true;
                 }
                 SaveCachedMythicItems();
             }
-            return RealizeMythicItem(selectedItem);
+            return false;
         }
 
-        /* Turn a mythic item into a real Thing that can show up in-game.
-         * Kept private in this file to ensure that realization only occurs in concert with behind-the-scenes management of saved mythic items.
-         */
-        private static Thing RealizeMythicItem(MythicItem mi)
-        {
-            DebugActions.LogIfDebug("Realizing mythic item: {0}", mi.ToString()); 
-            ThingDef def = mi.itemDef;
-            ThingDef stuff = null;
-            DebugActions.LogIfDebug("Realized mythic item has stuff type: {0}", mi.stuffDef); 
-            if (mi.stuffDef != null)
-            {
-                stuff  = mi.stuffDef;
-            }
-            ThingWithComps thing = (ThingWithComps)ThingMaker.MakeThing(def, stuff);
-
-            CompQuality compQuality = thing.TryGetComp<CompQuality>();
-            if (compQuality != null)
-            {
-                compQuality.SetQuality(QualityCategory.Legendary, ArtGenerationContext.Outsider);
-            }
-            if (thing.def.Minifiable)
-            {
-                thing = thing.MakeMinified();
-            }
-
-            List<ThingComp> comps = compsField.Invoke(thing);
-            CompMythic mythicComp = (CompMythic)Activator.CreateInstance(typeof(CompMythic));
-            mythicComp.parent = thing;
-            comps.Add(mythicComp);
-            mythicComp.Initialize(new CompProperties_Mythic()); 
-            mythicComp.newLabel = String.Format(mi.titleTranslationString.Translate(), mi.ownerShortName, def.label);
-            mythicComp.newDescription = String.Format(mi.descriptionTranslationString.Translate(), mi.ownerFullName, mi.ownerShortName, mi.factionName, def.label);
-            mythicComp.abilityDef = mi.abilityDef; 
-
-            DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", mi.ToString());
-            return thing;
-        } 
-
-        public static HashSet<ThingDef> GetPossibleMythicItemDefs()
+        public static HashSet<ThingDef> GetPossibleMythicThingDefs()
         {
             HashSet<ThingDef> result = new HashSet<ThingDef>();
             if (MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable)

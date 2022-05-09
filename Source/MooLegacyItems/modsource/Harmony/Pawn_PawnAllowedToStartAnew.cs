@@ -9,7 +9,9 @@ using System.Reflection;
 using System.Reflection.Emit;
 using Verse.AI;
 
-/* This patch modifies job acceptance to allow some jobs to require the worker to have a specific hediff
+/* This patch modifies job acceptance to allow some jobs to require the worker to have a specific hediff in order to perform them.
+ * Certain mythic abilities "unlock" the ability to perform jobs, usually to make special, impressive items. This code is part of that
+ * system.
  */
 namespace MooMythicItems
 {
