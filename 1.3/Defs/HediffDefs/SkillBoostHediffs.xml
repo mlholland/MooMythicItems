@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef>
-    <defName>MooMF_WornShootingBoon</defName>
+  <HediffDef Abstract="true" Name="OnApparelHediff">
     <hediffClass>HediffWithComps</hediffClass>
-    <label>Legacy of the Sharpshooter</label>
-    <description>This person is wielding a weapon that carries legacy of a legendary gunperson. They are benefitting from the echoes of their expertise and have an aim and fire rate.</description>
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
     </comps>
+  </HediffDef>
+    
+  <HediffDef ParentName="OnApparelHediff">
+    <defName>MooMF_WornShootingBoon</defName>
+    <label>Legacy of the Sharpshooter</label>
+    <description>This person is wielding a weapon that carries legacy of a legendary gunperson. They are benefitting from the echoes of their expertise and have an aim and fire rate.</description>
     <stages>
       <li>
         <statFactors>
@@ -18,14 +21,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornMeleeBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Master-at-arms</label>
     <description>This person is wielding a weapon that carries legacy of a legendary fighter. They are benefitting from the echoes of their expertise and have an combat stats.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -37,14 +36,10 @@
     </stages>
   </HediffDef>
   
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornConstructionBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Monument-Builder</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary builder. They are benefitting from the echoes of their expertise and have an increased construction speed.</description> 
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors> 
@@ -54,14 +49,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornMiningBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Tunneller</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary miner. They are benefitting from the echoes of their expertise and have an increased mining speed and yield.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -75,14 +66,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornCookingBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Gourmet</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary cook. They are benefitting from the echoes of their expertise and have an increased cooking speed and reduced food poisoning chance.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -95,14 +82,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornPlantingBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Green Thumb</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary gardener. They are benefitting from the echoes of their expertise and have an increased plant work speed and harvest yield.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -116,14 +99,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornAnimalsBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Shepherd</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary animal handler. They are benefitting from the echoes of their expertise and have an taming and training chances, as well as an improved animal product harvest yield and speed.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -138,14 +117,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornCraftingBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Tinker</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary crafter. They are benefitting from the echoes of their expertise and have increased crafting speeds.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -160,14 +135,10 @@
     </stages>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornArtisticBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Sculper</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary artist. They are benefitting from the echoes of their expertise and have increased art sculpting speeds.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -183,14 +154,10 @@
   </HediffDef>
 
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornMedicineBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Scalpel</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary doctor. They are benefitting from the echoes of their expertise and have increased medical worlds speeds and improved outcomes.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -207,14 +174,10 @@
   </HediffDef>
 
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornSocialBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Silver-Tongue</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary socialite. They are benefitting from the echoes of their expertise and have increased social skills.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>
@@ -231,14 +194,10 @@
   </HediffDef>
 
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_WornIntellectualBoon</defName>
-    <hediffClass>HediffWithComps</hediffClass>
     <label>Legacy of the Curious</label>
     <description>This person is wearing a piece of clothing that carries legacy of a legendary researcher. They are benefitting from the echoes of their expertise and have increased research and learning speeds.</description>
-    <comps>
-      <li Class="HediffCompProperties_RemoveIfApparelDropped"/>
-    </comps>
     <stages>
       <li>
         <statFactors>

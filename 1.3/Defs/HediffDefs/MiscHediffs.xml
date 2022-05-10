@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_ThrumboButcher</defName>
     <label>Thrumbo Butcher</label>
     <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
   </HediffDef>
 
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_EpicureanWisdom</defName>
     <label>Epicurean Wisdom</label>
     <description>The epicurean wisdom of a legendary cook grants this person the ability to cook similarly legendary meals.</description>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_HerdFeedersWisdom</defName>
     <label>Herd Feeder's Wisdom</label>
     <description>The wisdom of a legendary animal handler grants this person the ability to produce enough kibble to feed a herd of thrumbos with ease.</description>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_HealersWisdom</defName>
     <label>Healer's Wisdom</label>
     <description>The wisdom of a legendary doctor grants this person the ability to produce glitterworld medicine.</description>
@@ -57,6 +57,46 @@
     </comps>
   </HediffDef>
 
+
+  <HediffDef ParentName="OnApparelHediff">
+    <defName>MooMF_Hediff_ImpPsyboost</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>High Stellarch's Eltex Weave</label>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>1</minSeverity>
+    <description>This person is wearing clothes that have been rewoven with the best psychic focusing materials known to the Imperium.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>4</PsychicSensitivity>
+          <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">1.2</PsychicEntropyRecoveryRate>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+
+  <HediffDef ParentName="OnApparelHediff">
+    <defName>MooMF_Hediff_ArchoPriest</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Archopriest</label>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>1</minSeverity>
+    <description>The persuasive whispers of an ancient archotech have empowered this person's ideological certainty, making them much better at converting people.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <NegotiationAbility>5</NegotiationAbility>
+          <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">.1</CertaintyLossFactor>
+          <SocialIdeoSpreadFrequencyFactor MayRequire="Ludeon.RimWorld.Ideology">10</SocialIdeoSpreadFrequencyFactor>
+          <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">10</ConversionPower>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
 
   <HediffDef Name="KillstreakBase" Abstract="True">
     <hediffClass>HediffWithComps</hediffClass>

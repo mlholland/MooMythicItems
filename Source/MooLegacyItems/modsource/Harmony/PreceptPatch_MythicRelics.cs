@@ -14,7 +14,7 @@ namespace MooMythicItems
 {
     [HarmonyPatch(typeof(Precept_Relic))]
     [HarmonyPatch(nameof(Precept_Relic.GenerateRelic))]
-    public class Precept_Relic_GenerateRelic
+    public class PreceptPatch_MythicRelics
     {
         static void Postfix(ref Thing __result, Precept_Relic __instance) //pass the __result by ref to alter it.
         {

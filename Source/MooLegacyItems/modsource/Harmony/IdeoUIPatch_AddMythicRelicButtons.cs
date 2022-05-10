@@ -15,7 +15,7 @@ using UnityEngine;
 namespace MooMythicItems
 {
     [HarmonyPatch(typeof(IdeoUIUtility)), HarmonyPatch("DoPreceptsInt")]
-    public class IdeoUIUtility_DoPreceptsInt
+    public class IdeoUIPatch_AddMythicRelicButtons
     {
         private static readonly PreceptDef relicPrecept = PreceptDefOf.IdeoRelic;
 

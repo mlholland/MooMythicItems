@@ -18,6 +18,7 @@ namespace MooMythicItems
         public static readonly string victoryPrefix = "victory";
 
         private static readonly string space = "GameOverColonistsEscaped";
+        private static readonly string spaceIntroKey = "GameOverShipLaunchedIntro";
         private static readonly string royal = "EndGameIntroText"; // From Script_EndGame_RoyalAscent - will need to test this.
         private static readonly string archo = "GameOverColonistsTranscended";
         private static readonly string printReasonKey = "MooMF_PrintVictoryReason";
@@ -74,9 +75,9 @@ namespace MooMythicItems
         [HarmonyPatch(typeof(GameVictoryUtility), nameof(GameVictoryUtility.MakeEndCredits))]
         static class GameVictoryUtility_Postfix_Patch
         {
-            public static void Postfix(IList<Pawn> escaped , string colonistsEscapeeTKey)
+            public static void Postfix(string intro, string ending, string escapees, string colonistsEscapeeTKey, IList<Pawn> escaped)
             {
-                MythicCauseDef_Victory causeDef = GetValidCauseDef(colonistsEscapeeTKey);
+                MythicCauseDef_Victory causeDef = GetValidCauseDef(intro, colonistsEscapeeTKey);
                 if (causeDef == null)
                 {
                     return;
@@ -114,25 +115,29 @@ namespace MooMythicItems
             }
 
             // TODO Royal and Space victories have same escape key - need further differention somehow.
-            private static MythicCauseDef_Victory GetValidCauseDef(string colonistsEscapeeTKey)
+            private static MythicCauseDef_Victory GetValidCauseDef(string intro, string colonistsEscapeeTKey)
             {
-                if (space == colonistsEscapeeTKey)
+                if (archo == colonistsEscapeeTKey) // archo victory
                 {
+                    Log.Message("archo ending achieved");
+                    if (victoryToTriggerMap.ContainsKey(archo) && victoryToTriggerMap[archo].Count > 0)
+                    {
+                        return victoryToTriggerMap[archo].RandomElement();
+                    }
+                    return null;
+                }
+                else if (spaceIntroKey.Translate() == intro) // space and royal victory can't be differentiated by escapee translation string, use space intro string instead
+                {
+                    Log.Message("space ending achieved");
                     if (victoryToTriggerMap.ContainsKey(space) && victoryToTriggerMap[space].Count > 0)
                     {
                         return victoryToTriggerMap[space].RandomElement();
                     }
                     return null;
                 }
-                if (archo == colonistsEscapeeTKey)
+                else // AFAIK royalty has no consistent values that are hard-coded in or near the victory code, so just assume this ending until the 3rd expansion.
                 {
-                    if (victoryToTriggerMap.ContainsKey(archo) && victoryToTriggerMap[archo].Count > 0)
-                    {
-                        return victoryToTriggerMap[archo].RandomElement();
-                    }
-                    return null;
-                } else // does royalty have a translation string for victory? Where is it?
-                {
+                    Log.Message("royal ending achieved");
                     if (victoryToTriggerMap.ContainsKey(royal) && victoryToTriggerMap[royal].Count > 0)
                     {
                         return victoryToTriggerMap[royal].RandomElement();

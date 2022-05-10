@@ -17,7 +17,7 @@ namespace MooMythicItems
 {
     [HarmonyPatch(typeof(Bill))]
     [HarmonyPatch(nameof(Bill.PawnAllowedToStartAnew))]
-    public class Bill_PawnAllowedToStartAnew_Postfix
+    public class JobPatch_HediffRequirements
     {
         static void Postfix(Pawn p, Bill __instance, ref bool __result) //pass the __result by ref to alter it.
         {

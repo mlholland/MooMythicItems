@@ -25,7 +25,7 @@
   <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
   <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
   <MooMF_AbilityDescription_KillstreakHealing>While equipped, this {0}'s user enters a battle trance every time they kill something, granting a huge natural healing boost. Old stories about this weapon claim that heartless warriors recoved from intense battles by killing their pets. But surely you wouldn't do that... would you?</MooMF_AbilityDescription_KillstreakHealing>
-
-
+  <MooMF_AbilityDescription_GrantRoyalPsyboost>This {0} has been retrofitted with a weave of the highest-quality eltex threads - a luxury only available to the most powerful royals of the imperium. Wearing this will grant an absurd boost to the wearer's psychic abilities.</MooMF_AbilityDescription_GrantRoyalPsyboost>
+  <MooMF_AbilityDescription_ArchoPriest>This {0} is still psychically linked to an ancient archotect. People who wear this {0} occasionally hear persuasive whispers and ideological advice. This makes the pawn incredibly persuasive, especially in matters concerning ideologions.</MooMF_AbilityDescription_ArchoPriest>
 
 </LanguageData>

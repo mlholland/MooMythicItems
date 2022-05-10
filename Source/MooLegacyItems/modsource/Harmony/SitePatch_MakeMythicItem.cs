@@ -18,7 +18,7 @@ namespace MooMythicItems
 {
     // Priority set to high to make sure the rule removing happens immeditely after the original function concludes.
     [HarmonyPatch(typeof(SitePartWorker_ItemStash), nameof(SitePartWorker_ItemStash.Notify_GeneratedByQuestGen)), HarmonyPriority(Priority.High)]
-    public class SitePartWorker_ItemStash_Notify_GeneratedByQuestGen
+    public class SitePatch_MakeMythicItem
     {
         static void Postfix(SitePart part, Slate slate, List<Rule> outExtraDescriptionRules, Dictionary<string, string> outExtraDescriptionConstants) //pass the __result by ref to alter it.
         {

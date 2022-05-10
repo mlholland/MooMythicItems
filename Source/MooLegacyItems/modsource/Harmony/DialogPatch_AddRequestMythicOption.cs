@@ -16,7 +16,7 @@ using RimWorld.QuestGen;
 namespace MooMythicItems
 {
     [HarmonyPatch(typeof(FactionDialogMaker), nameof(FactionDialogMaker.FactionDialogFor))]
-    public class FactionDialogMaker_FactionDialogFor
+    public class DialogPatch_AddRequestMythicOption
     {
         public static int MythicItemQuestCost = 7500;
         public static int GoodwillCost = 75;

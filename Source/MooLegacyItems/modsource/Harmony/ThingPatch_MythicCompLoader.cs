@@ -12,7 +12,7 @@ using Verse;
  */
 namespace MooMythicItems
 {
-    public class MythicCompLoader
+    public class ThingPatch_MythicCompLoader
     {
         private static readonly string isMiythicLookString = "MooMFIsMythic";
 

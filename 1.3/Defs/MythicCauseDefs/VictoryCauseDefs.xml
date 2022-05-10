@@ -21,4 +21,35 @@
     <spaceVictory>true</spaceVictory>
   </MooMythicItems.MythicCauseDef_Victory>
 
+
+  <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
+    <defName>MooMF_RoyalVictoryMythicCause</defName>
+    <effects>
+      <li>MooMF_GrantRoyalPsyboost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicDescription_SpaceVictory_1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_SpaceVictory_1</li>
+      <li>MooMF_MythicTitle_SpaceVictory_2</li>
+    </titles>
+    <royalVictory>true</royalVictory>
+  </MooMythicItems.MythicCauseDef_Victory>
+
+  <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
+    <defName>MooMF_ArchoVictoryMythicCause</defName>
+    <effects>
+      <li>MooMF_GrantArchoPriest</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicDescription_SpaceVictory_1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_SpaceVictory_1</li>
+      <li>MooMF_MythicTitle_SpaceVictory_2</li>
+    </titles>
+    <archoVictory>true</archoVictory>
+  </MooMythicItems.MythicCauseDef_Victory>
+
 </Defs>
