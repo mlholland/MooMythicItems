@@ -81,6 +81,13 @@
   </MooMythicItems.MythicEffectDef_GrantAbility>
 
   <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantTradingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveTradingInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_TradingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
     <defName>MooMF_GrantShootingInspiration</defName>
     <mythicAbilityDef>MooMF_GiveMassShootingInspirations</mythicAbilityDef>
     <coolDownWhileUnequipped>false</coolDownWhileUnequipped>

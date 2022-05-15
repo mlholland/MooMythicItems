@@ -175,6 +175,7 @@
     <defName>MooMF_SocialMastery</defName>
     <effects>
       <li>MooMF_SocialBoost</li>
+      <li>MooMF_GrantTradingInspiration</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Social_1</li>
