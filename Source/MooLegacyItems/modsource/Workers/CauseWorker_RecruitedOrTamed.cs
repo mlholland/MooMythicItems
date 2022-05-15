@@ -50,7 +50,6 @@ namespace MooMythicItems
                 }
             }
             recordsWatched[causeDef.record].Add(causeDef);
-            DebugActions.LogIfDebug("accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold);
         }
 
         public override string GetReasonFragmentKey()

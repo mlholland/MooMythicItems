@@ -313,7 +313,11 @@ namespace MooMythicItems
             HashSet<ThingDef> result = new HashSet<ThingDef>();
             if (MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable)
             {
-                foreach(ThingDef def in MythicItemUtilities.RandomItemDefOptions())
+                foreach(ThingDef def in from def in DefDatabase<ThingDef>.AllDefs
+                                        where def.equipmentType == EquipmentType.Primary || def.IsApparel
+                                        select def into d
+                                        orderby d.defName
+                                        select d)
                 {
                     result.Add(def);
                 }

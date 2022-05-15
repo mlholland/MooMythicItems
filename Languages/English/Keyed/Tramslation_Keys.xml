@@ -25,7 +25,6 @@
   <MooMF_ManualSaveButton>save button pressed</MooMF_ManualSaveButton>
   <MooMF_ManualLoadBUtton>load button pressed</MooMF_ManualLoadBUtton>
   <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file</MooMF_ClearSavedItemsButtonPressed>
-  
   <MooMF_FailedToCreateMIFromDebug>Tried to place a saved mythic item via debug actions, but failed to create one. There's probably no saved mythic items right now.</MooMF_FailedToCreateMIFromDebug>
 
   <!-- {0} is expected to be a sentence clause that includes the achiever's name, and a reason for why they produced a mythic item

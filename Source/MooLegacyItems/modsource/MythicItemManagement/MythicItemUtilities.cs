@@ -12,49 +12,57 @@ namespace MooMythicItems
 {
     public static class MythicItemUtilities
     { 
-        private static HashSet<ThingDef> s_defaultDefs = null;
-        private static HashSet<string> s_defaultNames = null; 
-        private static HashSet<string> s_defaultFactions = null;
-        private static HashSet<string> s_defaultDescriptions = null;
-        private static HashSet<string> s_defaultTitles = null;
-        private static HashSet<MythicEffectDef> s_defaultAbilities = null;
+        private static HashSet<string> s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe", "Hi19Hi19" };
+        private static HashSet<string> s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Cassie's Centurions", "Pheobe's Pilgrims" };
 
-
-        // todo get this to a reasonable combination before live release
-        private static void PopulateDefaultGeneratorSets()
+        public static string RandomName()
         {
-            //s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Bow_Great"), ThingDef.Named("Gun_ChargeRifle"), ThingDef.Named("Gun_Revolver"), ThingDef.Named("Gun_BoltActionRifle"), ThingDef.Named("Gun_PumpShotgun"), ThingDef.Named("Gun_Autopistol") };
-            s_defaultDefs = new HashSet<ThingDef> { ThingDef.Named("Apparel_FlakVest"), };
-            s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe" }; 
-            s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Carrie's Centurions" };
-            s_defaultDescriptions = new HashSet<string> { "MooMF_MythicStory_HumanKills1_Ranged_1", "MooMF_MythicStory_HumanKills1_Ranged_2" };
-            s_defaultTitles = new HashSet<string> { "MooMF_MythicTitle_HumanKills2_Ranged_1", "MooMF_MythicTitle_HumanKills2_Ranged_2", "MooMF_MythicTitle_HumanKills2_Ranged_3" };
-            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_ConstructionBoost") }; // TODO set this to weapon effects
-            //s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantTamingInspiration") }; // TODO remove
-            s_defaultAbilities = new HashSet<MythicEffectDef> { DefDatabase<MythicEffectDef>.GetNamed("MooMF_GrantAPRocket") }; // TODO remove
+            
+            return s_defaultNames.RandomElement();
         }
-        
+
+        public static string RandomFaction()
+        {
+            return s_defaultFactions.RandomElement();
+        }
+
         /* Generate a mythic item by randomly selecting among some hard-coded options. 
          */
         public static MythicItem CreateRandomMythicItem()
         {
-            if (s_defaultDefs == null)
+            System.Random rnd = new System.Random();
+            MythicCauseDef cause = DefDatabase<MythicCauseDef>.GetRandom();
+            ThingDef item;
+            if (cause.createsMythicWeapon)
             {
-                PopulateDefaultGeneratorSets();
+                item = (from def in DefDatabase<ThingDef>.AllDefs
+                where def.equipmentType == EquipmentType.Primary
+                orderby rnd.Next()
+                select def).First();
+            } else
+            {
+                item = (from def in DefDatabase<ThingDef>.AllDefs
+                        where def.IsApparel
+                        orderby rnd.Next()
+                        select def).First();
+            }
+            MythicEffectDef effect;
+            string title;
+            string description;
+            if (cause.createsMythicWeapon && item.IsMeleeWeapon)
+            {
+                effect = cause.meleeEffects.RandomElement();
+                title = cause.meleeTitles.RandomElement();
+                description = cause.meleeDescriptions.RandomElement();
+            } else
+            { 
+                effect = cause.effects.RandomElement();
+                title = cause.titles.RandomElement();
+                description = cause.descriptions.RandomElement();
             }
             string name = s_defaultNames.RandomElement();
-            return new MythicItem(s_defaultDefs.RandomElement(), name, name, s_defaultFactions.RandomElement(),s_defaultDescriptions.RandomElement(), s_defaultTitles.RandomElement(),s_defaultAbilities.RandomElement(), null, 0, "debug", "0", new List<int>());
+            return new MythicItem(item, name, name, s_defaultFactions.RandomElement(), description, title, effect, item.MadeFromStuff ? GenStuff.RandomStuffFor(item) : null, 0, "debug", "0", new List<int>());
         }
-
-        public static List<ThingDef> RandomItemDefOptions()
-        {
-            if (s_defaultDefs == null)
-            {
-                PopulateDefaultGeneratorSets();
-            }
-            return s_defaultDefs.ToList();
-        }
-
 
         public static bool PawnHasMythicItem(Pawn p)
         {

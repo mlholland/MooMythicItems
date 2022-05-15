@@ -50,7 +50,6 @@ namespace MooMythicItems
                 }
             }
             skillsWatched[causeDef.skill].Add(causeDef);
-            DebugActions.LogIfDebug("accounting for new mythic cause that waits for skill '{0}' to reach a level of {1}.", causeDef.skill.defName, causeDef.minLevelThreshold);
         }
 
         public override string GetReasonFragmentKey()

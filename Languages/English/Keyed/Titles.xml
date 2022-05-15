@@ -117,8 +117,6 @@
   <MooMF_MythicTitle_LeaderKills1_Ranged_2>Widowermaker</MooMF_MythicTitle_LeaderKills1_Ranged_2>
   <MooMF_MythicTitle_LeaderKills1_Ranged_3>The Hero-Hunting {1}</MooMF_MythicTitle_LeaderKills1_Ranged_3>
 
-  <MooMF_MythicTitle_LeaderKills1_Ranged_3></MooMF_MythicTitle_LeaderKills1_Ranged_3>
-
   <!-- skill mastery-->
   <MooMF_MythicTitle_Mastery_Shooting_1>The Starsniper's {1}</MooMF_MythicTitle_Mastery_Shooting_1>
   <MooMF_MythicTitle_Mastery_Shooting_2>{1} of {0} the Eagle-Eyed</MooMF_MythicTitle_Mastery_Shooting_2>
@@ -173,8 +171,10 @@
   <MooMF_MythicTitle_SpaceVictory_1>{0}'s Starbound {1}</MooMF_MythicTitle_SpaceVictory_1>
   <MooMF_MythicTitle_SpaceVictory_2>The Starseeker's {1}</MooMF_MythicTitle_SpaceVictory_2>
 
+  <MooMF_MythicTitle_RoyalVictory_M1>{0}'s Grand Imperial {1}</MooMF_MythicTitle_RoyalVictory_M1>
+  <MooMF_MythicTitle_RoyalVictory_M2>{0}'s Regal Legacy</MooMF_MythicTitle_RoyalVictory_M2>
 
-
-
+  <MooMF_MythicTitle_ArchoVictory_M1>Archotouched {1}</MooMF_MythicTitle_ArchoVictory_M1>
+  <MooMF_MythicTitle_ArchoVictory_M2>The Machine God's {1}</MooMF_MythicTitle_ArchoVictory_M2>
 
 </LanguageData>

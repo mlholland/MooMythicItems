@@ -36,6 +36,105 @@ namespace MooMythicItems
             Log.Warning(debugPrefix.Translate() + String.Format(printVal, args));
         }
 
+        [DebugAction("Spawning", "Create Mythic Item", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void CreateAndPlaceMythicItem()
+        {
+            // select a cause
+            List<DebugMenuOption> causeList = new List<DebugMenuOption>();
+            foreach (MythicCauseDef cause in DefDatabase<MythicCauseDef>.AllDefs)
+            {
+                causeList.Add(new DebugMenuOption(cause.defName, DebugMenuOptionMode.Action, delegate ()
+                {
+                    // then select a cause
+                    List<DebugMenuOption> effectList = new List<DebugMenuOption>();
+                    foreach (MythicEffectDef effectDef in cause.effects)
+                    {
+                        
+                        effectList.Add(new DebugMenuOption(effectDef.defName, DebugMenuOptionMode.Action, delegate ()
+                        {
+                            // select the item - ranged weapons or apparel
+                            List<DebugMenuOption> itemList = new List<DebugMenuOption>();
+                            if (cause.createsMythicWeapon)
+                            {
+                                foreach (ThingDef rangedWeaponDef in from def in DefDatabase<ThingDef>.AllDefs
+                                                               where def.equipmentType == EquipmentType.Primary && !def.IsMeleeWeapon
+                                                               select def into d
+                                                               orderby d.defName
+                                                               select d)
+                                {
+                                    itemList.Add(new DebugMenuOption(rangedWeaponDef.defName, DebugMenuOptionMode.Tool, delegate ()
+                                    {
+                                        string name = MythicItemUtilities.RandomName();
+                                        MythicItem createdItem = new MythicItem(rangedWeaponDef, name, name, MythicItemUtilities.RandomFaction(),
+                                            cause.descriptions.RandomElement(),
+                                            cause.titles.RandomElement(),
+                                            effectDef,
+                                            rangedWeaponDef.MadeFromStuff ? GenStuff.RandomStuffFor(rangedWeaponDef) : null, 0, "debug", "debug", new List<int>());
+                                        DebugSpawnMythicItem(createdItem.Realize(), UI.MouseCell(), false);
+                                    }));
+                                }
+                            } else
+                            {
+                                foreach (ThingDef apparelDef in from def in DefDatabase<ThingDef>.AllDefs
+                                                                     where def.IsApparel
+                                                                     select def into d
+                                                                     orderby d.defName
+                                                                     select d)
+                                {
+                                    itemList.Add(new DebugMenuOption(apparelDef.defName, DebugMenuOptionMode.Tool, delegate ()
+                                    {
+                                        string name = MythicItemUtilities.RandomName();
+                                        MythicItem createdItem = new MythicItem(apparelDef, name, name, MythicItemUtilities.RandomFaction(),
+                                            cause.descriptions.RandomElement(),
+                                            cause.titles.RandomElement(),
+                                            effectDef,
+                                            apparelDef.MadeFromStuff ? GenStuff.RandomStuffFor(apparelDef) : null, 0, "debug", "debug", new List<int>());
+                                        DebugSpawnMythicItem(createdItem.Realize(), UI.MouseCell(), false);
+                                    }));
+                                }
+                            }
+                            Find.WindowStack.Add(new Dialog_DebugOptionListLister(itemList));
+                        }));
+                    }
+                    if (!cause.createsMythicWeapon || !cause.hasDifferentMeleeOptions)
+                    {
+                        Find.WindowStack.Add(new Dialog_DebugOptionListLister(effectList));
+                        return;
+                    }
+                    // account for melee stuff if needed
+                    foreach (MythicEffectDef effectDef in cause.meleeEffects)
+                    {
+                        effectList.Add(new DebugMenuOption(effectDef.defName, DebugMenuOptionMode.Action, delegate ()
+                        {
+                            // select the item - melee
+                            List<DebugMenuOption> meleeItemList = new List<DebugMenuOption>();
+                            foreach (ThingDef weaponDef in from def in DefDatabase<ThingDef>.AllDefs
+                                                           where def.equipmentType == EquipmentType.Primary && def.IsMeleeWeapon
+                                                           select def into d
+                                                           orderby d.defName
+                                                           select d)
+                            {
+                                ThingDef localWeaponDef = weaponDef;
+                                meleeItemList.Add(new DebugMenuOption(localWeaponDef.defName, DebugMenuOptionMode.Tool, delegate ()
+                                {
+                                    string name = MythicItemUtilities.RandomName();
+                                    MythicItem createdItem = new MythicItem(localWeaponDef, name, name, MythicItemUtilities.RandomFaction(),
+                                        cause.meleeDescriptions.RandomElement(), 
+                                        cause.meleeTitles.RandomElement(), 
+                                        effectDef, 
+                                        localWeaponDef.MadeFromStuff ? GenStuff.RandomStuffFor(localWeaponDef) : null, 0, "debug", "debug", new List<int>());
+                                    DebugSpawnMythicItem(createdItem.Realize(), UI.MouseCell(), false);
+                                }));
+                            }
+                            Find.WindowStack.Add(new Dialog_DebugOptionListLister(meleeItemList));
+                        }));
+                    }
+
+                    Find.WindowStack.Add(new Dialog_DebugOptionListLister(effectList));
+                }));
+            }
+            Find.WindowStack.Add(new Dialog_DebugOptionListLister(causeList));
+        }
 
         [DebugAction("Spawning", "Spawn Random Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()

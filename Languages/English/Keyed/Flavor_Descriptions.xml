@@ -12,26 +12,35 @@
   <MooMF_MythicStory_HumanKills2_Melee_M1>How strong was {1}, the Butcher of {2}? No one is sure, because no one faced them and lived. The only truth you can find is in this {3}, which is weathered and chipped from hundreds of strikes. It seems to have served its purpose well, and will likely continue to do so.</MooMF_MythicStory_HumanKills2_Melee_M1>
   <MooMF_MythicStory_HumanKills2_Melee_M2>Many Rimworlders like to call themselves mighty warriors, but few actually survive the brutal tests of time to earn that title. But this {3} once belonged to a true warrior named {0}, who was said to have ferociously defended the people of {2} and left legions of dead raiders in their wake.</MooMF_MythicStory_HumanKills2_Melee_M2>
 
-
-  <MooMF_MythicStory_HumanKills1_Ranged_1>Perhaps {0}, the original wielder of this {3}, liked keeping track of things. Or perhaps they liked to show off. Either way, this weapon is etched with more tally marks than you can count. Hopefully you'll be able to add some more of your own.</MooMF_MythicStory_HumanKills1_Ranged_1>
-  <MooMF_MythicStory_HumanKills1_Ranged_2>You've heard many stories about {1}, the headhunter of {2}. It's hard to believe the stories were true, but the bloodlust emenating from this {3} suggests that more than a few people died from this weapon's shots.</MooMF_MythicStory_HumanKills1_Ranged_2>
-
-  <MooMF_MythicStory_HumanKills2_Ranged_M1>People like to brag about having "{0}'s trigger finger", which is a reference to {1}, a storied sharpshooter of the Rim. This {3} actually belonged to him. The barrel is practically smooth from firing so many shots, but somehow it still aims flawlessly.</MooMF_MythicStory_HumanKills2_Ranged_M1>
-
+  <MooMF_MythicStory_HumanKills3_Melee_M1>The God of War, Corpse-Bringer, The Hound of {2}. These are just a few of the titles earned by {1} the legendary killer. It's hard to believe that they were a real person, and even harder to believe that you somehow found their {3}. Picking it up, this {3} feels like a natural extension of your body. Clearly it's more than ready to continue drawing blood in {1}'s name.</MooMF_MythicStory_HumanKills3_Melee_M1>
+  <MooMF_MythicStory_HumanKills3_Melee_M2>The name "{1}" is a slang for bad luck among raiders, thanks to old folk tales about a single monstrous person named {0}. They're said to have killed more raiders than should logically exist on any one rimworld. This old {3} fit the description of {1}'s long lost weapon, so hopefully you can use it to start some new slang soon.</MooMF_MythicStory_HumanKills3_Melee_M2>
   
-  
-  
+  <MooMF_MythicStory_HumanKills1_Ranged_1>This ancient {3} is etched with more tally marks than you can count. That's not too surprising, since {1} - the original wielder of this {3} - was said to have been a bit of a show off. Now it's time for you to break their record.</MooMF_MythicStory_HumanKills1_Ranged_1>
+  <MooMF_MythicStory_HumanKills1_Ranged_2>You've heard many tales about {1}, the headhunter of {2}. It's hard to believe the stories were true, but the bloodlust emenating from this {3} suggests that more than a few people's last moments were seen from the sights of this weapon.</MooMF_MythicStory_HumanKills1_Ranged_2>
+
+  <MooMF_MythicStory_HumanKills2_Ranged_M1>People like to brag about having "{0}'s trigger finger", which is a reference to {1}, a storied sharpshooter of the Rim. This {3} actually belonged to him. The rifling of the barrel is smooth from firing so many shots, but somehow it still aims flawlessly.</MooMF_MythicStory_HumanKills2_Ranged_M1>
+
+  <MooMF_MythicStory_HumanKills3_RangedM1>Sights. Steady. Shoot. Pain.
+Fall. Squeel. Flee. Blame.
+Sights. Steady. Shot. Dead.
+Fall. Sleep. Bleed. Red.</MooMF_MythicStory_HumanKills3_RangedM1>
+<!--Breath. Again. Take. Aim.
+Let. Loose. Lead. Rain.-->
+
+  <MooMF_MythicStory_HumanKills3_RangedM2>Have you heard of the Ghost of {2}? Supposedly they were a sniper who's claimed hundreds of lives across the Rims, ripping through pirate raids like tissue paper with their trusty {3}. How that {3} ended up here is anyone's guess, but it still caps raiders as easily as ever.</MooMF_MythicStory_HumanKills3_RangedM2>
+
   <MooMF_MythicStory_Mastery_Shooting_1>The last owner of this {3} claimed that it had been collecting dust in storage for decades, yet somehow it is still in pristine condition. {0}, the peerless mythical sharpshooter who supposedly wielded this {3}, must have taken wonderful care of it.</MooMF_MythicStory_Mastery_Shooting_1>
   
   <MooMF_MythicStory_Mastery_Melee_1>There are old bedtime stories about "{1} the Mighty", the greatest fighter who ever lived. Most people thought they were just that - stories - until this {3} showed up. If the engraving on this ancient weapon is to be believed, {2} were a real group of people, and {1} was a paragon of battle among their number.</MooMF_MythicStory_Mastery_Melee_1>
   
   <MooMF_MythicStory_Mastery_Construction_1>No matter how many times you empty out the pockets of this {3}, you always seem to find another nail, screw, or piece of wire. You aren't sure if it's magical, or if the master builder known as {0} just stuffed more random building scraps into this thing than you thought possible. Whatever the truth, this {3} has seen the rise of grand monuments.</MooMF_MythicStory_Mastery_Construction_1>
+  <MooMF_MythicStory_Mastery_Construction_M2>Imperial nobles like to brag about owning homes with {1}-ial architecture, or furniture that is "built in the {2} style". These boasts hark back to the constructions of {0}, the best builder of the Rim. </MooMF_MythicStory_Mastery_Construction_M2>
   
   <MooMF_MythicStory_Mastery_Mining_1>The words "Who needs the sun?" are just barely legible on a faded patch on this {3}. Perhaps that philosophy drove {0} to become the best miner anyone has ever heard of. Supposedly the great halls of {2} were all dug out by {1}'s own hands.</MooMF_MythicStory_Mastery_Mining_1>
   
   <MooMF_MythicStory_Mastery_Cooking_1>Some of your colonists find this {3} unnerving. Despite repeated washes, the smell of a tasty feast still clings to this clothing. This {3} supposedly belonged to the interstellar gourmet sensation known simply as {0}.</MooMF_MythicStory_Mastery_Cooking_1>
   
-  <MooMF_MythicStory_Mastery_Plants_1>This {3} is covered in mossy dirt stains - a testament to the dedication of {1} the green-thumbed. Legends tell of the people of {2}, who never went hungry thanks to {0}'s skill, and if the number of loose seeds leaking out of this {3} are any sign, then there's probably a kernel of truth to those tales.</MooMF_MythicStory_Mastery_Plants_1>
+  <MooMF_MythicStory_Mastery_Plants_1>This {3} is covered in mossy dirt stains - a testament to the dedication of {1} the green-thumbed. Legends tell of the people of {2}, who never went hungry thanks to {0}'s skill, and if the number of loose seeds leaking out of this {3} are any indication, then there's probably a kernel of truth to those tales.</MooMF_MythicStory_Mastery_Plants_1>
   
   <MooMF_MythicStory_Mastery_Animals_1>DNA analysis has confirmed that the fur, scales, and feathers embroided into this {3} originated from no less than a dozen different animal species. Perhaps the stories of {1}, the greatest animal-whisperer of the Rim, were actually true after all.</MooMF_MythicStory_Mastery_Animals_1>
   
@@ -49,9 +58,11 @@
   
   <MooMF_MythicStory_ThrumboFriend_1>Many tribes around the Rim worship someone known only as '{1}, friend of the wise'. Myths about this character go back to the lost settlements of {2}, whose people supposedly knew how to tame the majestic thrumbos. This thurmbofur-covered {3} seems to uphold those stories.</MooMF_MythicStory_ThrumboFriend_1>
   
-  <MooMF_MythicDescription_SpaceVictory_1>It is said that the people of {2} were one of the few groups of people to have the grit, brains, and the metaphysical patience to build or find a spaceship and successfully get off a Rimworld. No one from their original planet knows where they went. This {3} from {1} = one of the escapees - prooves that they indeed reached another planet. Maybe it was this one in the distant past.</MooMF_MythicDescription_SpaceVictory_1>
+  <MooMF_MythicDescription_SpaceVictory_1>It is said that the people of {2} were one of the few groups of people to have the grit, brains, and the metaphysical patience to build or find a spaceship and successfully get off a Rimworld. No one from their original planet knows where they went. This {3} from {1} - one of the escapees - prooves that they indeed reached another planet. Maybe it was this one in the distant past.</MooMF_MythicDescription_SpaceVictory_1>
 
+  <MooMF_MythicDescription_RoyalVictory_M1>Life aboard the Imperial Flotilla is an existence of unparalleled extravagance and splendor. Of course, it's rare for any Rim-dweller to earn such a life, and rarer still for their belongings to somehow end up back on another Rimworld. Supposedly this {3} was misplaced by one such Regal Rimite named {0} after a wild night that storytellers call "The greatest autobong glitter-bender of all time". How did they lose it? That's for you to not know, and for {1} to probably not remember either.</MooMF_MythicDescription_RoyalVictory_M1>
 
+  <MooMF_MythicDescription_ArchoVictory_M1>Some people consider this {3} to be evidence of the hubris of unfettered technology. Others call it a manifestation of the divine. Debates aside, it's clear that this object has been exposed to an unfathomable amount of psychic energy, which makes it difficult to look at for too long. Wearing it connects the user's mind to the echoes of a distant archotech that refers to itself as "{1} 2.0". This archotech offers all sort of advice, and also occasionally mentions a group of people known as the {2}. Perhaps one of them was the original owner of this {3} before they encountered this "{1}".</MooMF_MythicDescription_ArchoVictory_M1>
 
 
 

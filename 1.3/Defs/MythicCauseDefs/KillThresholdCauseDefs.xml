@@ -20,7 +20,7 @@
       <li>MooMF_MythicTitle_Kills_Thrumbos_1</li>
       <li>MooMF_MythicTitle_Kills_Thrumbos_2</li>
     </titles>
-    <threshold>6</threshold>
+    <threshold>5</threshold>
     <record>MooMF_killsThrumbos</record>
     <priority>2</priority>
     <subreason>thrumbos</subreason>
@@ -74,7 +74,7 @@
       <li>MooMF_MythicTitle_HumanKills1_Melee_11</li>
       <li>MooMF_MythicTitle_HumanKills1_Melee_12</li>
     </meleeTitles>
-    <threshold>100</threshold>
+    <threshold>50</threshold>
     <record>KillsHumanlikes</record>
     <priority>1</priority>
     <subreason>humanoids</subreason>
@@ -115,7 +115,7 @@
       <li>MooMF_MythicTitle_HumanKills2_Melee_5</li>
       <li>MooMF_MythicTitle_HumanKills2_Melee_6</li>
     </meleeTitles>
-    <threshold>500</threshold>
+    <threshold>125</threshold>
     <record>KillsHumanlikes</record>
     <priority>2</priority>
     <subreason>humanoids</subreason>
@@ -153,7 +153,7 @@
       <li>MooMF_MythicTitle_HumanKills3_Melee_4</li>
       <li>MooMF_MythicTitle_HumanKills3_Melee_5</li>
     </meleeTitles>
-    <threshold>1000</threshold>
+    <threshold>300</threshold>
     <record>KillsHumanlikes</record>
     <priority>4</priority>
     <subreason>humanoid</subreason>
@@ -186,7 +186,7 @@
       <li>MooMF_MythicTitle_MechKills1_Melee_2</li>
       <li>MooMF_MythicTitle_MechKills1_Melee_3</li>
     </meleeTitles>
-    <threshold>70</threshold>
+    <threshold>25</threshold>
     <record>KillsMechanoids</record>
     <priority>2</priority>
     <subreason>mechs</subreason>
@@ -218,7 +218,7 @@
       <li>MooMF_MythicTitle_MechKills2_Melee_2</li>
       <li>MooMF_MythicTitle_MechKills2_Melee_3</li>
     </meleeTitles>
-    <threshold>250</threshold>
+    <threshold>100</threshold>
     <record>KillsMechanoids</record>
     <priority>2</priority>
     <subreason>mechs</subreason>
@@ -254,7 +254,7 @@
       <li>MooMF_MythicTitle_InsectKills1_Melee_4</li>
       <li>MooMF_MythicTitle_InsectKills1_Melee_5</li>
     </meleeTitles>
-    <threshold>100</threshold>
+    <threshold>75</threshold>
     <record>MooMF_killsInsects</record>
     <priority>2</priority>
     <subreason>insects</subreason>
