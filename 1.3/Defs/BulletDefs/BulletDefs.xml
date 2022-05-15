@@ -35,6 +35,27 @@
     </projectile>
   </ThingDef>
 
+  <ThingDef ParentName="BaseBullet">
+    <defName>MooMF_Bullet_InfernoRocket</defName>
+    <label>inferno cannon shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/LauncherShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <!-- Use default damage from explosion def -->
+      <speed>50</speed>
+      <explosionRadius>7.4</explosionRadius >
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.77</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+  </ThingDef>
+
   
   
 </Defs>

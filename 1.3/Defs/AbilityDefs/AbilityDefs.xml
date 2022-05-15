@@ -29,9 +29,9 @@
   <AbilityDef>
     <defName>MooMF_GrapeshotRocket</defName>
     <label>Anti-personnel Rocket</label>
-    <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 3-day cooldown, which only progresses while this clothing is worn.</description>
+    <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 10-day cooldown, which only progresses while this clothing is worn.</description>
     <hotKey>Misc1</hotKey>
-    <cooldownTicksRange>180000~180000</cooldownTicksRange>
+    <cooldownTicksRange>600000~600000</cooldownTicksRange>
     <jobDef>CastAbilityOnThing</jobDef>
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
@@ -66,6 +66,86 @@
     </comps>
   </AbilityDef>
 
+  <AbilityDef>
+    <defName>MooMF_GrapeshotRocket2</defName>
+    <label>Anti-personnel Rocket</label>
+    <description>Use the large, jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 1-day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>60000~60000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_GrapeshotRocket</defaultProjectile>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <warmupTime>1.5</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>35.9</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+
+
+  <AbilityDef>
+    <defName>MooMF_GrapeshotRocket3</defName>
+    <label>Anti-personnel Rocket</label>
+    <description>Use the unreasonably large, jury-rigged rocket launcher mounted on the side of this weapon to shoot a burst of anti-personnel explosives. Deals heavy damage, but has no armor shredding power. Has a 1-day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>60000~60000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_GrapeshotRocket</defaultProjectile>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <warmupTime>1.5</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>45.9</range>
+      <burstShotCount>5</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
 
   <AbilityDef>
     <defName>MooMF_BigEMPRocket</defName>
@@ -106,7 +186,129 @@
       <li Class = "MooMythicItems.CompProperties_Empty"/>
     </comps>
   </AbilityDef>
-  
+
+  <AbilityDef>
+    <defName>MooMF_BigEMPRocket2</defName>
+    <label>Mega-Emp Rocket</label>
+    <description>Use the jury-rigged emp cannon mounted on the side of this weapon to shoot massive EMP explosive. Deals no damage, but will stun unadapted mechanoids for a very long time. Has a 2 day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>600000~600000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_EMPRocket</defaultProjectile>
+      <forcedMissRadius>1</forcedMissRadius>
+      <warmupTime>1</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>45.9</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+
+
+  <AbilityDef>
+    <defName>MooMF_BigInfernoRocket</defName>
+    <label>Inferno Rocket</label>
+    <description>Use the jury-rigged inferno cannon mounted on the side of this weapon to shoot a massive fire-starting explosive. Has a 15 day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>900000~900000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_InfernoRocket</defaultProjectile>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <warmupTime>1.5</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>35.9</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>MooMF_BigInfernoRocket2</defName>
+    <label>Kill it with Fire</label>
+    <description>Use the large jury-rigged inferno cannon mounted on the side of this weapon to shoot a volley of massive fire-starting explosive. Has a 5 day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>300000~300000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_InfernoRocket</defaultProjectile>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <warmupTime>1.5</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>45.9</range>
+      <burstShotCount>3</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+
+
   <AbilityDef>
     <defName>MooMF_AttractTradeShips</defName>
     <label>Emit Trade Attractor Signal</label>

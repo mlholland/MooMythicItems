@@ -83,6 +83,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause2</defName>
     <effects>
+      <li>MooMF_GrantAPRocket2</li>
       <li>MooMF_Effect_KillstreakFirerate_2</li>
     </effects>
     <descriptions>
@@ -124,6 +125,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause3</defName>
     <effects>
+      <li>MooMF_GrantAPRocket3</li>
       <li>MooMF_Effect_KillstreakFirerate_3</li>
     </effects>
     <descriptions>
@@ -195,7 +197,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_MechKillerCause2</defName>
     <effects>
-      <li>MooMF_GrantEMPRocket</li>
+      <li>MooMF_GrantEMPRocket2</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
@@ -229,7 +231,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_InsectKillerCause1</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_GrantInfernoRocket</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
@@ -263,7 +265,7 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_InsectKillerCause2</defName>
     <effects>
-      <li>MooMF_GrantThrumboButcher</li>
+      <li>MooMF_GrantInfernoRocket2</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
