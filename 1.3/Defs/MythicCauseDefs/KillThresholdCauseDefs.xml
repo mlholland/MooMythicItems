@@ -15,6 +15,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Kills_Thrumbos_1</li>
+      <li>MooMF_MythicStory_Kills_Thrumbos_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Kills_Thrumbos_1</li>
@@ -294,13 +295,13 @@
     <subreason>insects</subreason>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
 
-  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
+  <!--MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_LeaderKillerCause1</defName>
     <effects>
       <li>MooMF_GrantThrumboButcher</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills1_Ranged_2</li><!-- todo real titles-->
+      <li>MooMF_MythicStory_HumanKills1_Ranged_2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_LeaderKills1_Ranged_1</li>
@@ -322,7 +323,7 @@
     <record>MooMF_killsFactionLeaders</record>
     <priority>3</priority>
     <subreason>leaders</subreason>
-  </MooMythicItems.MythicCauseDef_RecordThreshold>
+  </MooMythicItems.MythicCauseDef_RecordThreshold-->
 
 
 </Defs>

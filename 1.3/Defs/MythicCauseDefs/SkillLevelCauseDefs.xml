@@ -31,6 +31,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Melee_1</li>
+      <li>MooMF_MythicStory_Mastery_Melee_M1</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Melee_1</li>
@@ -47,6 +48,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Construction_1</li>
+      <li>MooMF_MythicStory_Mastery_Construction_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Construction_1</li>
@@ -64,6 +66,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Mining_1</li>
+      <li>MooMF_MythicStory_Mastery_Mining_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Mining_1</li>
@@ -95,6 +98,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Plants_1</li>
+      <li>MooMF_MythicStory_Mastery_Plants_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Plants_1</li>
@@ -113,6 +117,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Animals_1</li>
+      <li>MooMF_MythicStory_Mastery_Animals_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Animals_1</li>
@@ -129,6 +134,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Crafting_1</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Crafting_1</li>
@@ -147,6 +153,7 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Artistic_1</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_M2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Artistic_1</li>
@@ -194,6 +201,10 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Intellectual_1</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M2</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M3</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M4</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M5</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Intellectual_1</li>
