@@ -57,8 +57,8 @@ namespace MooMythicItems
                             if (cause.createsMythicWeapon)
                             {
                                 foreach (ThingDef rangedWeaponDef in from def in DefDatabase<ThingDef>.AllDefs
-                                                               where def.equipmentType == EquipmentType.Primary && !def.IsMeleeWeapon
-                                                               select def into d
+                                                               where def.equipmentType == EquipmentType.Primary && !def.IsMeleeWeapon && MythicItemUtilities.IsValidDefOption(def)
+                                                                     select def into d
                                                                orderby d.defName
                                                                select d)
                                 {
@@ -76,7 +76,7 @@ namespace MooMythicItems
                             } else
                             {
                                 foreach (ThingDef apparelDef in from def in DefDatabase<ThingDef>.AllDefs
-                                                                     where def.IsApparel
+                                                                     where def.IsApparel && MythicItemUtilities.IsValidDefOption(def)
                                                                      select def into d
                                                                      orderby d.defName
                                                                      select d)
@@ -109,7 +109,7 @@ namespace MooMythicItems
                             // select the item - melee
                             List<DebugMenuOption> meleeItemList = new List<DebugMenuOption>();
                             foreach (ThingDef weaponDef in from def in DefDatabase<ThingDef>.AllDefs
-                                                           where def.equipmentType == EquipmentType.Primary && def.IsMeleeWeapon
+                                                           where def.equipmentType == EquipmentType.Primary && def.IsMeleeWeapon && MythicItemUtilities.IsValidDefOption(def)
                                                            select def into d
                                                            orderby d.defName
                                                            select d)
@@ -139,7 +139,7 @@ namespace MooMythicItems
         [DebugAction("Spawning", "Spawn Random Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()
         {
-            DebugSpawnMythicItem(MythicItemCache.RealizeRandomlyGeneratedMythicItem(), UI.MouseCell(), false);
+            DebugSpawnMythicItem(MythicItemUtilities.CreateRandomMythicItem().Realize(), UI.MouseCell(), false);
         }
 
         [DebugAction("Spawning", "Spawn Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]

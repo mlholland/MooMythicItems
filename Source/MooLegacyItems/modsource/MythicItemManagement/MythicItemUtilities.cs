@@ -26,6 +26,20 @@ namespace MooMythicItems
             return s_defaultFactions.RandomElement();
         }
 
+        public static bool IsValidDefOption(ThingDef def)
+        {
+            // make sure it's not stackable like a thrumbo horn
+            if (def.stackLimit != 1) return false;
+            // make sure it's not a single shot weapon like a doomday launcher
+            if (def.Verbs != null && def.Verbs.Count > 0 && def.Verbs.Any(verb => verb.verbClass == typeof(Verb_ShootOneUse))) return false;
+            // make sure it's not an unobtainable weapon like a mech gun
+            if (def.destroyOnDrop) return false;
+            // make sure it's not an item that destroys after running out of charges like an insanity lance.
+            CompProperties_Reloadable reload = def.GetCompProperties<CompProperties_Reloadable>();
+            if (reload != null && reload.destroyOnEmpty) return false;
+            return true;
+        }
+
         /* Generate a mythic item by randomly selecting among some hard-coded options. 
          */
         public static MythicItem CreateRandomMythicItem()
@@ -36,20 +50,20 @@ namespace MooMythicItems
             if (cause.createsMythicWeapon)
             {
                 item = (from def in DefDatabase<ThingDef>.AllDefs
-                where def.equipmentType == EquipmentType.Primary
-                orderby rnd.Next()
+                where def.equipmentType == EquipmentType.Primary && IsValidDefOption(def)
+                        orderby rnd.Next()
                 select def).First();
             } else
             {
                 item = (from def in DefDatabase<ThingDef>.AllDefs
-                        where def.IsApparel
+                        where def.IsApparel && IsValidDefOption(def)
                         orderby rnd.Next()
                         select def).First();
             }
             MythicEffectDef effect;
             string title;
             string description;
-            if (cause.createsMythicWeapon && item.IsMeleeWeapon)
+            if (cause.createsMythicWeapon && item.IsMeleeWeapon && cause.hasDifferentMeleeOptions)
             {
                 effect = cause.meleeEffects.RandomElement();
                 title = cause.meleeTitles.RandomElement();
@@ -82,18 +96,5 @@ namespace MooMythicItems
             }
             return false;
         }
-
-
-        public static void AddMythicCompToThing(ThingWithComps thing) { }
-
-        [HarmonyPatch(typeof(MythicItemUtilities), nameof(MythicItemUtilities.AddMythicCompToThing))]
-        static class MythicItemUtilities_PawnHasMythicItem_Postfix_Patch
-        {
-            static void Postfix(ThingWithComps thing)
-            {
-
-            }
-        }
-
     }
 }

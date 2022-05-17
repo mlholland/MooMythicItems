@@ -271,12 +271,6 @@ namespace MooMythicItems
             return selectedItem.Realize();
         }
 
-        /* Mostly used by spawning tools, might refactor later into something that selects a mythic item more directly.*/
-        public static Thing RealizeRandomlyGeneratedMythicItem()
-        {
-            return MythicItemUtilities.CreateRandomMythicItem().Realize();
-        }
-
         /* This is the normal way of producing a mythic item for in-game use.*/
         public static Thing RealizeRandomMythicItemFromCache()
         {

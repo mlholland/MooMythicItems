@@ -83,6 +83,12 @@ namespace MooMythicItems
             if (createsMythicWeapon)
             {
                 item = originator.equipment.Primary;
+                // don't allow stackabout stuff like thrumbo horns and wood
+                // don't allow single use stuff like rocket launchers
+                if (item == null && MythicItemUtilities.IsValidDefOption(item.def))
+                {
+                    return null;
+                }
                 if (hasDifferentMeleeOptions && !item.def.IsRangedWeapon)
                 {
                     title = meleeTitles.RandomElement();
