@@ -57,7 +57,8 @@ namespace MooMythicItems
                             if (cause.createsMythicWeapon)
                             {
                                 foreach (ThingDef rangedWeaponDef in from def in DefDatabase<ThingDef>.AllDefs
-                                                               where def.equipmentType == EquipmentType.Primary && !def.IsMeleeWeapon && MythicItemUtilities.IsValidDefOption(def)
+                                                               where def.equipmentType == EquipmentType.Primary && MythicItemUtilities.IsValidDefOption(def)
+                                                               && (cause.hasDifferentMeleeOptions ? !def.IsMeleeWeapon : true)
                                                                      select def into d
                                                                orderby d.defName
                                                                select d)

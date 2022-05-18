@@ -7,7 +7,8 @@
     </comps>
   </HediffDef>
     
-  <HediffDef ParentName="OnApparelHediff">
+  <!-- NOTE: Hediffs that are meant to be on-equip hediffs for weapons - not apparel - should NOT inherit from OnApparelHediff. -->
+  <HediffDef>
     <defName>MooMF_WornShootingBoon</defName>
     <label>Legacy of the Sharpshooter</label>
     <description>This person is wielding a weapon that carries legacy of a legendary gunperson. They are benefitting from the echoes of their expertise and have an aim and fire rate.</description>
@@ -21,7 +22,7 @@
     </stages>
   </HediffDef>
 
-  <HediffDef ParentName="OnApparelHediff">
+  <HediffDef>
     <defName>MooMF_WornMeleeBoon</defName>
     <label>Legacy of the Master-at-arms</label>
     <description>This person is wielding a weapon that carries legacy of a legendary fighter. They are benefitting from the echoes of their expertise and have an combat stats.</description>
