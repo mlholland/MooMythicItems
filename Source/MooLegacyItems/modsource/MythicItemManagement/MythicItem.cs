@@ -15,9 +15,6 @@ namespace MooMythicItems
     [Serializable]
     public class MythicItem
     {
-        // Needed for realization to add a mythic comp to Things that don't normally have it.
-        private static AccessTools.FieldRef<object, List<ThingComp>> compsField = AccessTools.FieldRefAccess<List<ThingComp>>(typeof(ThingWithComps), "comps");
-
         public ThingDef itemDef { get; }
         public String ownerFullName { get; } //Owner in this context refers to the original owner
         public String ownerShortName { get; } 
@@ -141,15 +138,8 @@ namespace MooMythicItems
                 thing = thing.MakeMinified();
             }
 
-            List<ThingComp> comps = compsField.Invoke(thing);
-            CompMythic mythicComp = (CompMythic)Activator.CreateInstance(typeof(CompMythic));
-            mythicComp.parent = thing;
-            comps.Add(mythicComp);
-            mythicComp.Initialize(new CompProperties_Mythic());
-            mythicComp.newLabel = String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label);
-            mythicComp.newDescription = String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label);
-            mythicComp.abilityDef = this.abilityDef;
-
+            MythicItemUtilities.AddMythicCompToThing(thing, String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label), String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label), this.abilityDef);
+        
             DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", this.ToString());
             return thing;
         }

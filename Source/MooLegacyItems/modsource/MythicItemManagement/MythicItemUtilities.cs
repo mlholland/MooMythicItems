@@ -14,6 +14,8 @@ namespace MooMythicItems
     { 
         private static HashSet<string> s_defaultNames = new HashSet<string> { "Moo", "Tynan", "Randy", "Cassie", "Pheobe", "Hi19Hi19" };
         private static HashSet<string> s_defaultFactions = new HashSet<string> { "Tynan's Tyranny Brigade", "Randy's Rabble Rousers", "Cassie's Centurions", "Pheobe's Pilgrims" };
+        // Needed for realization to add a mythic comp to Things that don't normally have it.
+        private static AccessTools.FieldRef<object, List<ThingComp>> compsField = AccessTools.FieldRefAccess<List<ThingComp>>(typeof(ThingWithComps), "comps");
 
         public static string RandomName()
         {
@@ -95,6 +97,18 @@ namespace MooMythicItems
                 }
             }
             return false;
+        }
+
+        public static void AddMythicCompToThing(ThingWithComps thing, string label, string desc, MythicEffectDef ability)
+        {
+            List<ThingComp> comps = compsField.Invoke(thing);
+            CompMythic mythicComp = (CompMythic)Activator.CreateInstance(typeof(CompMythic));
+            mythicComp.parent = thing;
+            comps.Add(mythicComp);
+            mythicComp.Initialize(new CompProperties_Mythic());
+            mythicComp.newLabel = label;
+            mythicComp.newDescription = desc;
+            mythicComp.abilityDef = ability;
         }
     }
 }

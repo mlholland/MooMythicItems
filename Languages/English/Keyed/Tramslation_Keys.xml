@@ -14,6 +14,7 @@
   <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
   <MooMF_MaxMythicItemsSaved>Max Saved Mythic Items</MooMF_MaxMythicItemsSaved>
+  <MooMF_RandomMythicRelicButtonText>Create Random Mythic Relic</MooMF_RandomMythicRelicButtonText>
   <MooMF_MinLevelForSkillItems>Minimum level for skill-based mythic items.</MooMF_MinLevelForSkillItems>
   <MooMF_MinLevelForSkillItemsToolTip>Upon leveling up a skill, the mod will try to create a mythic item if the new level is at least this value. Only creates an item once per skill per pawn.</MooMF_MinLevelForSkillItemsToolTip>
   <MooMF_MaxItemOccurence>Mythic Item Occurrence Limit: </MooMF_MaxItemOccurence>

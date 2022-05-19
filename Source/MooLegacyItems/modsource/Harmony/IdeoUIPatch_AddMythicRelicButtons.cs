@@ -29,7 +29,6 @@ namespace MooMythicItems
             {
                 curY += 15;
                 float num2 = width - (width - IdeoUIUtility.PreceptBoxSize.x * 3f - 16f) / 2f;
-                // OPTION 1 relics based on saved mythic items
                 Rect rect = new Rect(num2 - AddMythicRelicButtonSize.x, curY - AddMythicRelicButtonSize.y, AddMythicRelicButtonSize.x, AddMythicRelicButtonSize.y);
                 if (Widgets.ButtonText(rect, "MooMF_AddMythicRelic".Translate(addPreceptLabel).CapitalizeFirst() + "...", true, true, true))
                 {
@@ -47,6 +46,19 @@ namespace MooMythicItems
                         opts.Add(new FloatMenuOption("MaxRelicCount".Translate(maxRelics), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                     }
                     else {
+                        if(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable)
+                        {
+                            MythicItem mi = MythicItemUtilities.CreateRandomMythicItem();
+                            Action action = delegate ()
+                            {
+                                Precept_MythicRelic precept = new Precept_MythicRelic(mi, ideo);
+                                RitualPatternDef pat = relicPrecept.ritualPatternBase;
+                                ideo.AddPrecept(precept, true, null, pat);
+                                ideo.anyPreceptEdited = true;
+                            };
+                            opts.Add(new FloatMenuOption("MooMF_RandomMythicRelicButtonText".Translate(), action, null, IdeoUIUtility.GetIconAndLabelColor(relicPrecept.impact), MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
+                        }
+
                         List<MythicItem> cachedItems = MythicItemCache.GetMythicItems(false, false);
                         foreach (MythicItem mi in cachedItems)
                         {
@@ -56,7 +68,7 @@ namespace MooMythicItems
                                 RitualPatternDef pat = relicPrecept.ritualPatternBase;
                                 ideo.AddPrecept(precept, true, null, pat);
                                 ideo.anyPreceptEdited = true;
-                                // todo remove LI from saved list once I reconfigure the Mythic Precept to save the entire mythic item properly
+                                // todo consider remove LI from saved list once I reconfigure the Mythic Precept to save the entire mythic item properly
                             };
                             opts.Add(new FloatMenuOption(mi.GetFormattedTitle(), action, mi.itemDef.uiIcon, IdeoUIUtility.GetIconAndLabelColor(relicPrecept.impact), MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                         }
@@ -65,9 +77,8 @@ namespace MooMythicItems
                             opts.Add(new FloatMenuOption("MooMF_NoSavedMythicOptionsForRelics".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                         }
                     }
-                    // TODO in other code somewhere, add mythic item back to save list if removed from precept
                     FloatMenu menu = new FloatMenu(opts, "Saved Mythic Item Options");
-                    // menu.doCloseButton = true;
+                    // menu.doCloseButton = true; // TODO what was this for?
                     Find.WindowStack.Add(menu);
                 }
                 curY += 15;

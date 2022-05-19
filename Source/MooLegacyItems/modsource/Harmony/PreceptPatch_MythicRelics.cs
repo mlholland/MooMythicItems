@@ -19,19 +19,18 @@ namespace MooMythicItems
         static void Postfix(ref Thing __result, Precept_Relic __instance) //pass the __result by ref to alter it.
         {
             Precept_MythicRelic mythicRelicPrecept = __instance as Precept_MythicRelic;
-            if (mythicRelicPrecept != null) { 
-                if (__instance.ThingDef.CompDefFor<CompMythic>() == null)
+            if (mythicRelicPrecept != null) {
+
+                ThingWithComps thing = __result as ThingWithComps;
+                if (thing == null)
                 {
                     // todo print warning
-                    Log.Error(String.Format("Trying to add mythic attributes to a ideology relic, but the relic def '{0}' doesn't have a mythic comp to modify.", __instance.ThingDef.defName));
+                    DebugActions.LogErr("Trying to add mythic attributes to a ideology relic, but the relic def '{0}' isn't actually a thing with comps, so it can't have mythic attributes added.", __instance.ThingDef.defName);
                     return;
                 }
 
                 DebugActions.LogIfDebug("Adding Mythic Features to Relic: {0}", __result.Label);
-                CompMythic relicMythicComp = __result.TryGetComp<CompMythic>();
-                relicMythicComp.newLabel = mythicRelicPrecept.newLabel;
-                relicMythicComp.newDescription = mythicRelicPrecept.newDescription;
-                relicMythicComp.abilityDef = mythicRelicPrecept.abilityDef;
+                MythicItemUtilities.AddMythicCompToThing(thing, mythicRelicPrecept.newLabel, mythicRelicPrecept.newDescription, mythicRelicPrecept.abilityDef);
             } 
         }
     }
