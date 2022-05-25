@@ -5,7 +5,7 @@ Steamlink: TODO once published
 
 # Info for modders
 
-I designed the mod to make it fairly easy for modders to add their own flavor text to existing mythic creation triggers, to add their own mythic effects, or entirely new mythic creation triggers. For code examples, skip to the patch examples section, or continue reading the defs section for a small code overview.
+I designed this mod to make it possible for modders to add their own flavor text to existing mythic creation triggers, to add their own mythic effects, or add entirely new mythic creation triggers. For code examples, skip to the patch examples section, or continue reading the defs section for a small code overview.
 
 ## Defs
 This mod adds some new defs. Here's an overview of the important ones. Once you've skimmed this, I encourage you to check out the actual [usages](https://github.com/mlholland/MooMythicItems/tree/main/1.3/Defs) of these defs to understand what they look like in practice.
