@@ -7,7 +7,8 @@
   - Add a new MythicEffectDef that wraps the new ability into something that can be processed by the mythic framework.
   - Modify an existing MythicCauseDef to make use of this new MythicEffectDef.
   
-The final point - adding the effect into a cause's options list - is actually done in the another example which adds values to existing cause defs. Check that out here: TODO
+The final point - adding the effect into a cause's options list - is actually done in the another example which adds values to existing cause defs. Check that out here: 
+https://github.com/mlholland/MooMythicItems/blob/main/1.3/Patches/examples/addValuesToExistingCauseDef.xml.
  -->
 <Defs MayRequire="mooloh.mythicitems"> 
   <!--the 'MayRequire' ensures that these defs are only added if the mythic mod is present. This can also be achieve for all your patches at once using loadFolders.
