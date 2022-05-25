@@ -26,45 +26,7 @@
     </comps>
   </AbilityDef>
 
-  <AbilityDef>
-    <defName>MooMF_GrapeshotRocket</defName>
-    <label>Anti-personnel Rocket</label>
-    <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 10-day cooldown, which only progresses while this clothing is worn.</description>
-    <hotKey>Misc1</hotKey>
-    <cooldownTicksRange>600000~600000</cooldownTicksRange>
-    <jobDef>CastAbilityOnThing</jobDef>
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-    <targetRequired>True</targetRequired>
-    <statBases>
-      <AccuracyTouch>1</AccuracyTouch>
-      <AccuracyShort>1</AccuracyShort>
-      <AccuracyMedium>1</AccuracyMedium>
-      <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
-    </statBases>
-    <verbProperties>
-      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>MooMF_Bullet_GrapeshotRocket</defaultProjectile>
-      <forcedMissRadius>1.9</forcedMissRadius>
-      <warmupTime>1.5</warmupTime>
-      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
-      <range>35.9</range>
-      <burstShotCount>1</burstShotCount>
-      <soundCast>InfernoCannon_Fire</soundCast>
-      <soundCastTail>GunTail_Heavy</soundCastTail>
-      <onlyManualCast>true</onlyManualCast>
-      <targetParams>
-        <canTargetLocations>true</canTargetLocations>
-        <canTargetAnimals>true</canTargetAnimals>
-      </targetParams>
-      <muzzleFlashScale>14</muzzleFlashScale>
-    </verbProperties>
-    <comps>
-      <li Class = "MooMythicItems.CompProperties_Empty"/>
-    </comps>
-  </AbilityDef>
+  <!-- MooMF_GrapeshotRocket tier 1 moved to examples folder-->
 
   <AbilityDef>
     <defName>MooMF_GrapeshotRocket2</defName>

@@ -7,13 +7,7 @@
     <effectDescTranslationKey>MooMF_AbilityDescription_Thrumbocall</effectDescTranslationKey>
   </MooMythicItems.MythicEffectDef_GrantAbility>
 
-  <MooMythicItems.MythicEffectDef_GrantAbility>
-    <defName>MooMF_GrantAPRocket</defName>
-    <mythicAbilityDef>MooMF_GrapeshotRocket</mythicAbilityDef>
-    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
-    <effectDescTranslationKey>MooMF_AbilityDescription_APRocket</effectDescTranslationKey>
-  </MooMythicItems.MythicEffectDef_GrantAbility>
-
+  <!---MooMF_GrantAPRocket is in example patches -->
   <MooMythicItems.MythicEffectDef_GrantAbility>
     <defName>MooMF_GrantAPRocket2</defName>
     <mythicAbilityDef>MooMF_GrapeshotRocket2</mythicAbilityDef>

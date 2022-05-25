@@ -30,7 +30,7 @@ namespace MooMythicItems
 
         public virtual void OnUnequip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
-        // You probably don't want to call this directly, see CompMythic.DoOnKillEffects
+        // Mythic weapons only
         public virtual void OnKill(Pawn killedPawn, Pawn killer, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
         public virtual string EffectDescription(ThingWithComps mythicItem)

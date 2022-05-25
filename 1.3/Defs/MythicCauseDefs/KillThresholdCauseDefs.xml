@@ -32,15 +32,12 @@
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause1</defName>
     <effects>
-      <li>MooMF_GrantAPRocket</li>
       <li>MooMF_Effect_KillstreakFirerate_1</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills1_Ranged_1</li>
       <li>MooMF_MythicStory_HumanKills1_Ranged_2</li>
     </descriptions>
     <titles>
-      <li>MooMF_MythicTitle_HumanKills1_Ranged_1</li>
       <li>MooMF_MythicTitle_HumanKills1_Ranged_2</li>
       <li>MooMF_MythicTitle_HumanKills1_Ranged_3</li>
       <li>MooMF_MythicTitle_HumanKills1_Ranged_4</li>
@@ -81,48 +78,8 @@
     <subreason>humanoids</subreason>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
 
-  <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
-    <defName>MooMF_HumanoidKillerCause2</defName>
-    <effects>
-      <li>MooMF_GrantAPRocket2</li>
-      <li>MooMF_Effect_KillstreakFirerate_2</li>
-    </effects>
-    <descriptions>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_M1</li>
-    </descriptions>
-    <titles>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_1</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_2</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_3</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_4</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_5</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_6</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_7</li>
-      <li>MooMF_MythicTitle_HumanKills2_Ranged_8</li>
-    </titles>
-    <meleeEffects>
-      <li>MooMF_Effect_KillstreakDR_2</li>
-      <li>MooMF_Effect_KillstreakSpeed_2</li>
-      <li>MooMF_Effect_KillstreakHealing_2</li>
-    </meleeEffects>
-    <meleeDescriptions>
-      <li>MooMF_MythicStory_HumanKills2_Melee_M1</li>
-      <li>MooMF_MythicStory_HumanKills2_Melee_M2</li>
-    </meleeDescriptions>
-    <meleeTitles>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_1</li>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_2</li>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_3</li>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_4</li>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_5</li>
-      <li>MooMF_MythicTitle_HumanKills2_Melee_6</li>
-    </meleeTitles>
-    <threshold>125</threshold>
-    <record>KillsHumanlikes</record>
-    <priority>2</priority>
-    <subreason>humanoids</subreason>
-  </MooMythicItems.MythicCauseDef_RecordThreshold>
-
+  <!-- MooMF_HumanoidKillerCause2 moved to example folder-->
+  
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause3</defName>
     <effects>

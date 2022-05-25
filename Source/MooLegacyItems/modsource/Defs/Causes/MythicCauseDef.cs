@@ -22,28 +22,27 @@ namespace MooMythicItems
         public List<String> descriptions;
         public List<String> titles;
 
-        // If true, uses the pawn's currently equipped weapon to make a mythic item.
-        // Randomly selects from their apparel otherwise.
+        // If true, then use the pawn's currently equipped weapon to make a mythic item.
+        // If false, then randomly select from their apparel to make a mythic item.
         public bool createsMythicWeapon = false;
-        // if true, then use the melee lists when creating a mythic item out of a melee weapon, and use the original lists for ranged weapons.
+        // if true, then use the melee lists below when creating a mythic item out of a melee weapon, and use the original lists for ranged weapons.
         public bool hasDifferentMeleeOptions = false;
         public List<MythicEffectDef> meleeEffects;
         public List<String> meleeDescriptions;
         public List<String> meleeTitles;
 
         /* If positive, then this is the maximum number of mythic items with identical reasons that this cause will save, regardless of the originating pawn or colony of those items.
-         * This feature is incompatible with priority-based logic, and is ignored if this cause's priority is non-zero.
-         * */
-
+         * This feature is incompatible with priority-based logic, and is ignored if this cause's priority is non-zero. */
         public int reasonLimit = 0;
         /* This value is always added to a created mythic item's reason after a dash. Ex: survivalist -> survivalist-0.
          * This is added even if the priority is unset and unused (AKA at 0).
-         */
+         * Certain sub-types of mythic item use this priority value to determine whether or not a mythic item should overwrite another 
+         * EX: the same colonist reaches the second insect kill threshold, so their original first threshold mythic item is replaced. */
         public int priority = 0;
 
         // Class for inputting specific logic for determining if a mythic cause is met. 
         public Type workerClass = typeof(CauseWorker);
-        public CauseWorker Worker { get; protected set; }
+        protected CauseWorker Worker { get; set; }
 
         public MythicCauseDef() { }
 

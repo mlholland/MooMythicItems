@@ -28,70 +28,69 @@
 
 	<packageId>mooloh.mythicitems</packageId>
 
-  <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities, which appear in your later colonies as quest rewards.
+  <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities, which appear in your OTHER colonies as quest rewards.
 
 &lt;size=24&gt;Overview&lt;/size&gt;
 
-  I play a lot of Dungeons and Dragons, so I believe that what makes an item 'legendary' is more than just the quality of its make when it was first constructed. The stories and events that artifacts have been part of also matter in making that item important. However, the words 'legendary', 'relic', and 'artifact' are already used in this game, so this mod calls storied items 'mythic items'.
+  I play a lot of Dungeons and Dragons, so I believe items shouldn't be 'legendary' just because of their quality first constructed. The stories and events that items have been part of also make that item important. And since the words 'legendary', 'relic', and 'artifact' are already used in this game, I'm dubbing these storied items 'mythic items'.
   
-  To that end, this mod waits for your colonists to achieve impressive feats. When that happens, it creates a mythic item based on that colonist's weapon or clothing. This mythic item is a legendary version of the original item, with a unique name, description, and ability that pertain to whatever the colonist did to earn their reputation. Once mythic items have been created, this mod will occasionally spawn those mythic items as quest rewards. Be warned: Once an item shows up in a world, you won't see it in that world again. So you only get one chance!
-
-  For more detailed info about the mechanics of this mod, continue reading.
+  To that end, this mod waits for your colonists to achieve impressive feats. When that happens, it creates a mythic item based on that colonist's weapon or clothing. This mythic item is a legendary version of the original item, with a unique name, description, and ability that pertain to whatever the colonist did to earn their reputation. Once mythic items have been created, this mod will occasionally spawn those mythic items as quest rewards once you play as a new colony. Be warned: Once an item shows up in a world, you won't see it in that world again. So you only get one chance!
   
 &lt;size=24&gt;Mythic Creation&lt;/size&gt;
 
 Mythic Items can be created and saved whenever a colonist meets one of the following conditions, assuming the colonist does not have a mythic item equipped:
 
- - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Note: Kill thresholds differ between categories, and some categories have multiple thresholds which 'upgrade' the resulting item. 
+ - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Note: Kill thresholds differ between categories, and some categories have multiple thresholds which replace/upgrade the resulting mythic item. 
  
  - A colonist reaches level 20 in a skill.
  
  - A colonist tames their second thrumbo.
  
- - A colonist escapes the Rim (AKA is part of any vanilla or DLC ending, only one is selected among the victors).
+ - A colonist escapes the Rim (AKA they are part of any vanilla or DLC ending. Only one colonist is selected per victory to make a mythic item).
 
 &lt;size=24&gt;Finding Mythic Items&lt;/size&gt;
 
-Once you've played the game enough and created a few mythic items, these items can show up in subsequent games in several ways. Bear in mind that mythic items can only show up ONCE per world, and after showing up in a few worlds, will disappear entirely.
+Once you've played the game enough and created a few mythic items, these items can show up in subsequent games in several ways. Bear in mind that mythic items can only show up ONCE per world, and after showing up in a few worlds, will disappear entirely (this can be changed in the mod settings).
 
- - As a vanilla quest reward item. This reward can only generate after at least a year has passed.
+ - As a vanilla quest reward item. This reward can only generate after at least a year has passed in the current colony.
  
- - If you are allied with a faction, you can pay 10000 silver and 50 goodwill to create a quest to find a mythic item (works like the AI persona core quest).
+ - If you are allied with a faction, you can pay 7500 silver and 75 goodwill to create a quest to find a mythic item (this works like the AI persona core quest).
  
- - If Ideology is installed, a mythic items can be selected as Ideologion relics. Note: This does not remove mythic items from the pool (that way you can use a mythic item in multiple Ideologions), so this can lead to duplicate mythic items in the same world.
+ - If Ideology is installed, a mythic item can be selected as an Ideologion relic. Note: This does not remove mythic items from the pool, that way you can use a mythic item in multiple Ideologions. This can lead to duplicate mythic items in the same world - one as a relic and one as a normal quest reward - but that seemed worth it to allow for relic/mythic items without rewriting too much code.
  
-&lt;size=24&gt;Mythic Effects&lt;/size&gt;
+&lt;size=24&gt;Mythic Item Effects&lt;/size&gt;
 
-Mythic items can have a variety of effects, and are always of legendary quality. The exact effect depends on the situation that created the mythic item in the first place. Some possible effects include:
+Mythic items can have a variety of effects, and are always of legendary quality. The exact effect depends on the situation that created the mythic item in the first place. Some items and effects include:
 
- - Combat abilities, like a mini-doomsday launcher mounted on the side of a charge rifle, which can fire once a day (reward for lots of human kills).
+ - A grapeshot rocket launcher mounted on the side of a charge rifle, which can be fired once every few days to rip through unarmored foes.
 
- - Recipe unlocks, like A shirt that grants the wearer the ability to cook Epicurean Delights, a wildly opulent meal that grants a huge buff to people who eat it (reward for reaching level 20 in cooking).
+ - A shirt that grants the wearer the ability to cook Epicurean Delights, a wildly opulent meal that grants a huge buff to people who eat it.
 
- - Passive Effects, like a cowboy hat which passively boosts the wearer's mining abilities (reward for reaching level 20 in mining).
+ - A cowboy hat which passively boosts the wearer's mining abilities.
 
- - Utility Abilities, like a pair of pants which can grant the wearer a creative inspiration (reward for reaching level 20 in artistic).
+ - A pair of pants which can periodically grant the wearer a creative inspiration.
 
+&lt;size=24&gt;Want to make your own Mythic Items?&lt;/size&gt;
 
-&lt;size=24&gt;Modding and want to make your own Mythic Items?&lt;/size&gt;
+I designed this mod with other modders in mind. It's possible to add new mythic item titles and descriptions with just XML. It's sometimes possible to add new mythic creation triggers and mythic item effects using just XML, depending on the exact trigger or ability, and minimal coding otherwise.
 
-I designed this mod with other modders in mind. It's possible to add new mythic item titles and descriptions with just XML. It's sometimes possible to add new mythic creation triggers and effects using just XML, depending on the exact trigger or ability, and minimal coding otherwise.
-
-For more information and a few examples of how you can add your own mythic stuff, please see the README on the mod's Github page: TODO
+For more information and a few examples of how you can add your own mythic stuff, please see the README on the mod's Github: https://github.com/mlholland/MooMythicItems
 
 &lt;size=24&gt;Credits and Thanks&lt;/size&gt;
 
  - Code: Mooloh
  
- - Thanks for Hi19hi19, who helped me come up with a bunch of ideas for mythic abilities, and wrote a bunch of flavor text.
+ - Cover art: Erok
  
- - Thanks to the RimWorld Discord's modding channel, who helped me figure out how to properly code this, that way other modders can more easily add new mythic items themselves.
+ - Thanks for Hi19hi19, who helped me come up with a many of the ideas for mythic effects and abilities, and wrote a bunch of flavor text.
+ 
+ - Thanks to the RimWorld Discord's modding channel, who helped me figure out how to properly code this.
  
 &lt;size=24&gt;Legal&lt;/size&gt;
 
-  - MIT License: TODO
+  - MIT License: https://github.com/mlholland/MooMythicItems/blob/main/LICENSE
 
-  - Source Code on Github: TODO
+  - Source Code on Github: https://github.com/mlholland/MooMythicItems
 
 &lt;size=24&gt;Changelog&lt;/size&gt;
 

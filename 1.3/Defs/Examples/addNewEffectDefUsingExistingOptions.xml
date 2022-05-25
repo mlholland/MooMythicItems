@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Difficulty: Medium/XML only.
+
+  This def file shows how to create a new mythic effect.
+  In this case, we'll be adding a new mythic effect where the holder of this mythic item gains a new ability. This will require adding two new defs into the game, and modifying one existing def:
+  - Add a new AbilityDef that will be part of the mythic effect
+  - Add a new MythicEffectDef that wraps the new ability into something that can be processed by the mythic framework.
+  - Modify an existing MythicCauseDef to make use of this new MythicEffectDef.
+  
+The final point - adding the effect into a cause's options list - is actually done in the another example which adds values to existing cause defs. Check that out here: TODO
+ -->
+<Defs MayRequire="mooloh.mythicitems"> 
+  <!--the 'MayRequire' ensures that these defs are only added if the mythic mod is present. This can also be achieve for all your patches at once using loadFolders.
+  See https://rimworldwiki.com/wiki/Modding_Tutorials/Mod_folder_structure for more info.-->
+  
+  <!-- Here's the ability. It allows the user to shoot a a rocket once every 10 days which deals moderate damage, but with no armor shred.-->
+  <AbilityDef>
+    <defName>MooMF_GrapeshotRocket</defName>
+    <label>Anti-personnel Rocket</label>
+    <description>Use the jury-rigged rocket launcher mounted on the side of this weapon to shoot an anti-personnel explosive. Deals heavy damage, but has no armor shredding power. Has a 10-day cooldown, which only progresses while this clothing is worn.</description>
+    <hotKey>Misc1</hotKey>
+    <cooldownTicksRange>600000~600000</cooldownTicksRange>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <targetRequired>True</targetRequired>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <verbProperties>
+      <verbClass>MooMythicItems.Verb_ShootAbility</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>MooMF_Bullet_GrapeshotRocket</defaultProjectile>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <warmupTime>1.5</warmupTime>
+      <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+      <range>35.9</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Heavy</soundCastTail>
+      <onlyManualCast>true</onlyManualCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+      </targetParams>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </verbProperties>
+    <comps>
+      <li Class = "MooMythicItems.CompProperties_Empty"/>
+    </comps>
+  </AbilityDef>
+
+  <!-- Here's the mythic effect that takes the AbilityDef we just made, and turns it into a potential effect on a mythic item. Complete with a effect translation key that's defined in my translation files.-->
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAPRocket</defName>
+    <mythicAbilityDef>MooMF_GrapeshotRocket</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_APRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+</Defs>
