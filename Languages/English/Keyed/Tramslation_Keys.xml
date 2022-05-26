@@ -4,10 +4,13 @@
   
   <MooMF_SettingsLabel>Moo's Mythic Framework Settings and Controls</MooMF_SettingsLabel>
   <MooMF_SettingsTitle>Moo's Mythic Framework Settings</MooMF_SettingsTitle>
-  <MooMF_ClearAllSavedItemsDescription>Deletes all saved mythic items.</MooMF_ClearAllSavedItemsDescription>
+  <MooMF_DeleteWarning>DANGER ZONE BELOW</MooMF_DeleteWarning>
+  <MooMF_ClearAllSavedItemsDescription>WARNING: The button below does exactly what it says and deletes all saved mythic items. You won't see any new mythic items for a while after pressing this.</MooMF_ClearAllSavedItemsDescription>
   <MooMF_ClearAllSavedItemsButton>Clear Saved Mythic Items</MooMF_ClearAllSavedItemsButton>
   <MooMF_FlagNotifyItemCreation>Notify player when mythic item is created.</MooMF_FlagNotifyItemCreation>
+  <MooMF_FlagNotifyItemCreationTooltip>If active, then you'll get a small notification whenever a colonist's achievements create a new mythic item.</MooMF_FlagNotifyItemCreationTooltip>
   <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
+  <MooMF_PrintExtraStartupDebugLogsTooltip>Prints a bunch of extra stuff during startup for debugging purposes, like all the flavor text. Not recommended during normal play unless you want to clog your log file.</MooMF_PrintExtraStartupDebugLogsTooltip>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
   <MooMF_FlagMythicOwnersCanCreateNewMythicItems>Mythic Item Owners Can Create New Mythic Items</MooMF_FlagMythicOwnersCanCreateNewMythicItems>
@@ -20,12 +23,11 @@
   <MooMF_MaxItemOccurence>Mythic Item Occurrence Limit: </MooMF_MaxItemOccurence>
   <MooMF_MaxItemOccurenceTooltip>This value controls how many times a mythic item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of mythic items. If set to 0, then mythic items won't be removed unless the total mythic item save limit is reached, in which case the oldest items are removed first.</MooMF_MaxItemOccurenceTooltip>
   <MooMF_PrintDebugLogs>Enable Debug Logging</MooMF_PrintDebugLogs>
+  <MooMF_PrintDebugLogsTooltip>Causes various events to print extra info to the logs. Useful for modders, or for trying to determine if this mod is causing problems.</MooMF_PrintDebugLogsTooltip>
   <MooMF_CreateRandomItemsIfNeeded>Create Random Mythic Items If Needed</MooMF_CreateRandomItemsIfNeeded>
-  <MooMF_CreateRandomItemsIfNeededToolTip>If this is enabled, and the game tries to make a mythic items but finds no valid saved options, create a random mythic item based on some hard-coded preset options.</MooMF_CreateRandomItemsIfNeededToolTip>
+  <MooMF_CreateRandomItemsIfNeededTooltip>If this is enabled, then when the game tries to make a mythic item but finds no valid saved items, it will create a random mythic item. Off by default to encourage your own stories.</MooMF_CreateRandomItemsIfNeededTooltip>
   
-  <MooMF_ManualSaveButton>save button pressed</MooMF_ManualSaveButton>
-  <MooMF_ManualLoadBUtton>load button pressed</MooMF_ManualLoadBUtton>
-  <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file</MooMF_ClearSavedItemsButtonPressed>
+  <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file. You must play the game more before Mythic Items will start showing up again.</MooMF_ClearSavedItemsButtonPressed>
   <MooMF_FailedToCreateMIFromDebug>Tried to place a saved mythic item via debug actions, but failed to create one. There's probably no saved mythic items right now.</MooMF_FailedToCreateMIFromDebug>
 
   <!-- {0} is expected to be a sentence clause that includes the achiever's name, and a reason for why they produced a mythic item
@@ -58,5 +60,6 @@
   <MooMF_MythicItemRequestedDialogFollowUp>The {0} recites an old story about ancient heroes of the Rim. Supposedly the events from those stories transpired nearby, and the {0} is convinced that you'll find something there.</MooMF_MythicItemRequestedDialogFollowUp>
   <MooMF_NoMythicItemsExist>No valid mythic items exist</MooMF_NoMythicItemsExist>
   <MooMF_MinDaysRequired>Earn trust after {0} days here.</MooMF_MinDaysRequired>
+
 
 </LanguageData>
