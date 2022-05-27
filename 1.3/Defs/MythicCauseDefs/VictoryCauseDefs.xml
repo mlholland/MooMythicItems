@@ -48,6 +48,7 @@
     <titles>
       <li>MooMF_MythicTitle_ArchoVictory_M1</li>
       <li>MooMF_MythicTitle_ArchoVictory_M2</li>
+      <li>MooMF_MythicTitle_ArchoVictory_M3</li>
     </titles>
     <archoVictory>true</archoVictory>
   </MooMythicItems.MythicCauseDef_Victory>

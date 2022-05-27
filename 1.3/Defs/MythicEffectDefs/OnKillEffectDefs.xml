@@ -50,78 +50,70 @@
   <MooMythicItems.MythicEffectDef_KillstreakHediff Abstract="true" Name="baseKillstreak">
     <worksOnAll>true</worksOnAll>
     <effectDurationTicks>9000</effectDurationTicks>
-    <severityPerStack>.05</severityPerStack>
+    <severityPerStack>.1</severityPerStack>
+    <maxStacks>3</maxStacks>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <!-- damage resistance killstreak-->
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakDR_1</defName>
-    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
-    <maxStacks>8</maxStacks>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey> 
     <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakDR_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>6</maxStacks>
+    <severityPerStack>.2</severityPerStack> 
     <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakDR_3</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakDR</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>10</maxStacks>
+    <severityPerStack>.35</severityPerStack>
     <hediffToAdd>MooMF_Hediff_KillstreakDR</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <!-- firerate killstreak-->
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakFirerate_1</defName>
-    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
-    <maxStacks>8</maxStacks>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey> 
     <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakFirerate_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>6</maxStacks>
+    <severityPerStack>.2</severityPerStack> 
     <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakFirerate_3</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakFirerate</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>10</maxStacks>
+    <severityPerStack>.34</severityPerStack> 
     <hediffToAdd>MooMF_Hediff_KillstreakFirerate</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <!-- speed killstreak -->
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakSpeed_1</defName>
-    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
-    <maxStacks>8</maxStacks>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey> 
     <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakSpeed_2</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>6</maxStacks>
+    <severityPerStack>.2</severityPerStack> 
     <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakSpeed_3</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakSpeed</effectDescTranslationKey>
-    <severityPerStack>.1</severityPerStack>
-    <maxStacks>10</maxStacks>
+    <severityPerStack>.34</severityPerStack> 
     <hediffToAdd>MooMF_Hediff_KillstreakSpeed</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
@@ -135,17 +127,15 @@
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakHealing_2</defName>
-    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakHealing</effectDescTranslationKey>
-    <severityPerStack>.07</severityPerStack>
-    <maxStacks>3</maxStacks>
+    <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakHealing</effectDescTranslationKey> 
+    <maxStacks>2</maxStacks>
     <hediffToAdd>MooMF_Hediff_KillstreakHealing</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 
   <MooMythicItems.MythicEffectDef_KillstreakHediff ParentName="baseKillstreak">
     <defName>MooMF_Effect_KillstreakHealing_3</defName>
     <effectDescTranslationKey>MooMF_AbilityDescription_KillstreakHealing</effectDescTranslationKey>
-    <severityPerStack>.07</severityPerStack>
-    <maxStacks>5</maxStacks>
+    <maxStacks>3</maxStacks>
     <hediffToAdd>MooMF_Hediff_KillstreakHealing</hediffToAdd>
   </MooMythicItems.MythicEffectDef_KillstreakHediff>
 

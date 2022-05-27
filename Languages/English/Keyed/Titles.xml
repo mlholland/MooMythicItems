@@ -27,14 +27,14 @@
   <MooMF_MythicTitle_HumanKills1_Ranged_5>{0}'s Example-Maker</MooMF_MythicTitle_HumanKills1_Ranged_5>
   <MooMF_MythicTitle_HumanKills1_Ranged_6>{0}'s Wall-Painter</MooMF_MythicTitle_HumanKills1_Ranged_6>
   <MooMF_MythicTitle_HumanKills1_Ranged_7>The Heartseeking {1}</MooMF_MythicTitle_HumanKills1_Ranged_7>
-  <MooMF_MythicTitle_HumanKills1_Ranged_8>The One-{0} Artillery</MooMF_MythicTitle_HumanKills1_Ranged_8>
+  <MooMF_MythicTitle_HumanKills1_Ranged_8>{0}'s One-Shotter</MooMF_MythicTitle_HumanKills1_Ranged_8>
   <MooMF_MythicTitle_HumanKills1_Ranged_9>The Holey {1}</MooMF_MythicTitle_HumanKills1_Ranged_9>
   <MooMF_MythicTitle_HumanKills1_Ranged_10>The Swiss Cheeser</MooMF_MythicTitle_HumanKills1_Ranged_10>
   <MooMF_MythicTitle_HumanKills1_Ranged_11>{0}'s Law</MooMF_MythicTitle_HumanKills1_Ranged_11>
 
 
   <!-- Humanoid kills tier 2-->
-  <MooMF_MythicTitle_HumanKills2_Melee_1>Randy-Blessed {1} of {0}</MooMF_MythicTitle_HumanKills2_Melee_1>
+  <MooMF_MythicTitle_HumanKills2_Melee_1>Blessed {1} of {0}</MooMF_MythicTitle_HumanKills2_Melee_1>
   <MooMF_MythicTitle_HumanKills2_Melee_2>{0}'s Peacemaker</MooMF_MythicTitle_HumanKills2_Melee_2>
   <MooMF_MythicTitle_HumanKills2_Melee_3>{0} Peacekeeping {1}</MooMF_MythicTitle_HumanKills2_Melee_3>
   <MooMF_MythicTitle_HumanKills2_Melee_4>{0}'s Mass Gravemaker</MooMF_MythicTitle_HumanKills2_Melee_4>
@@ -49,30 +49,30 @@
   <MooMF_MythicTitle_HumanKills2_Ranged_5>{0}'s Heartstopper</MooMF_MythicTitle_HumanKills2_Ranged_5>
   <MooMF_MythicTitle_HumanKills2_Ranged_6>The Battalion-Cracking {1}</MooMF_MythicTitle_HumanKills2_Ranged_6>
   <MooMF_MythicTitle_HumanKills2_Ranged_7>{0}'s Deathpointer</MooMF_MythicTitle_HumanKills2_Ranged_7>
-  <MooMF_MythicTitle_HumanKills2_Ranged_8>Field Fertilizing {1}</MooMF_MythicTitle_HumanKills2_Ranged_8>
+  <MooMF_MythicTitle_HumanKills2_Ranged_8>The Field-Fertilizing {1}</MooMF_MythicTitle_HumanKills2_Ranged_8>
 
   <!-- Humanoid kills tier 3-->
   <MooMF_MythicTitle_HumanKills3_Melee_1>Doombringer</MooMF_MythicTitle_HumanKills3_Melee_1>
   <MooMF_MythicTitle_HumanKills3_Melee_2>Pirate's End</MooMF_MythicTitle_HumanKills3_Melee_2>
-  <MooMF_MythicTitle_HumanKills3_Melee_3>Wavebreaker of {0}</MooMF_MythicTitle_HumanKills3_Melee_3>
+  <MooMF_MythicTitle_HumanKills3_Melee_3>Wavebreaker</MooMF_MythicTitle_HumanKills3_Melee_3>
   <MooMF_MythicTitle_HumanKills3_Melee_4>The Battalion-Breaking {1}</MooMF_MythicTitle_HumanKills3_Melee_4>
   <MooMF_MythicTitle_HumanKills3_Melee_5>{0}'s Raidercide</MooMF_MythicTitle_HumanKills3_Melee_5>
 
 
   <MooMF_MythicTitle_HumanKills3_Ranged_1>Deliverance</MooMF_MythicTitle_HumanKills3_Ranged_1>
   <MooMF_MythicTitle_HumanKills3_Ranged_2>The First Lawnmower</MooMF_MythicTitle_HumanKills3_Ranged_2>
-  <MooMF_MythicTitle_HumanKills3_Ranged_3>{0}'s Bloodspiller</MooMF_MythicTitle_HumanKills3_Ranged_3>
+  <MooMF_MythicTitle_HumanKills3_Ranged_3>{0}'s Bloodmaker</MooMF_MythicTitle_HumanKills3_Ranged_3>
   <MooMF_MythicTitle_HumanKills3_Ranged_4>{0}'s Judgement</MooMF_MythicTitle_HumanKills3_Ranged_4>
   <MooMF_MythicTitle_HumanKills3_Ranged_5>{0}'s {1}</MooMF_MythicTitle_HumanKills3_Ranged_5>
   
   <!-- insect kills tier 1-->
-  <MooMF_MythicTitle_InsectKills1_Melee_1>{0}'s Chitin Cracker</MooMF_MythicTitle_InsectKills1_Melee_1>
+  <MooMF_MythicTitle_InsectKills1_Melee_1>{0}'s Chitin-Cracker</MooMF_MythicTitle_InsectKills1_Melee_1>
   <MooMF_MythicTitle_InsectKills1_Melee_2>The Arthrobane {1}</MooMF_MythicTitle_InsectKills1_Melee_2>
   <MooMF_MythicTitle_InsectKills1_Melee_3>{1} of the Hive Killer</MooMF_MythicTitle_InsectKills1_Melee_3>
   <MooMF_MythicTitle_InsectKills1_Melee_4>Anti-Creepy Crawly {1}</MooMF_MythicTitle_InsectKills1_Melee_4>
   <MooMF_MythicTitle_InsectKills1_Melee_5>{0}'s Pesticide-Soaked {1}</MooMF_MythicTitle_InsectKills1_Melee_5>
 
-  <MooMF_MythicTitle_InsectKills1_Ranged_1>DEET-Spraying {1}</MooMF_MythicTitle_InsectKills1_Ranged_1>
+  <MooMF_MythicTitle_InsectKills1_Ranged_1>The DEET-Spraying {1}</MooMF_MythicTitle_InsectKills1_Ranged_1>
   <MooMF_MythicTitle_InsectKills1_Ranged_2>Wing-Ripper</MooMF_MythicTitle_InsectKills1_Ranged_2>
   <MooMF_MythicTitle_InsectKills1_Ranged_3>{0}'s Carapace Piercer</MooMF_MythicTitle_InsectKills1_Ranged_3>
 
@@ -93,7 +93,7 @@
   <MooMF_MythicTitle_MechKills1_Melee_3>{0}'s Robo-Slapping {1}</MooMF_MythicTitle_MechKills1_Melee_3>
 
   <MooMF_MythicTitle_MechKills1_Ranged_1>{0}'s Battery Blaster</MooMF_MythicTitle_MechKills1_Ranged_1>
-  <MooMF_MythicTitle_MechKills1_Ranged_2>{0}'s Armor Piercing {1}</MooMF_MythicTitle_MechKills1_Ranged_2>
+  <MooMF_MythicTitle_MechKills1_Ranged_2>{0}'s Armor-Piercing {1}</MooMF_MythicTitle_MechKills1_Ranged_2>
   <MooMF_MythicTitle_MechKills1_Ranged_3>{0}'s Circuit Breaker</MooMF_MythicTitle_MechKills1_Ranged_3>
   <!-- mech kills tier 2-->
 
@@ -102,7 +102,7 @@
   <MooMF_MythicTitle_MechKills2_Melee_2>{0}'s Seg Faulter</MooMF_MythicTitle_MechKills2_Melee_2>
   <MooMF_MythicTitle_MechKills2_Melee_3>Scyther's Match</MooMF_MythicTitle_MechKills2_Melee_3>
 
-  <MooMF_MythicTitle_MechKills2_Ranged_1>Anti-Terminator</MooMF_MythicTitle_MechKills2_Ranged_1>
+  <MooMF_MythicTitle_MechKills2_Ranged_1>The Terminator Terminator</MooMF_MythicTitle_MechKills2_Ranged_1>
   <MooMF_MythicTitle_MechKills2_Ranged_2>{0}'s Centipede-Cracker</MooMF_MythicTitle_MechKills2_Ranged_2>
   <MooMF_MythicTitle_MechKills2_Ranged_3>Lancer's Challenge</MooMF_MythicTitle_MechKills2_Ranged_3>
   
@@ -131,7 +131,7 @@
   <MooMF_MythicTitle_Mastery_Mining_1>{0}'s Tunnelling {1}</MooMF_MythicTitle_Mastery_Mining_1>
   <MooMF_MythicTitle_Mastery_Mining_2>{0}'s Diggy Diggy Hole Digging {1}</MooMF_MythicTitle_Mastery_Mining_2>
 
-  <MooMF_MythicTitle_Mastery_Cooking_1>Michelin Star-Studded {1}</MooMF_MythicTitle_Mastery_Cooking_1>
+  <MooMF_MythicTitle_Mastery_Cooking_1>The Michelin Star-Studded {1}</MooMF_MythicTitle_Mastery_Cooking_1>
   <MooMF_MythicTitle_Mastery_Cooking_2>The Epicurean's {1}</MooMF_MythicTitle_Mastery_Cooking_2>
 
   <MooMF_MythicTitle_Mastery_Plants_1>{1} of {0} the Green-Thumbed</MooMF_MythicTitle_Mastery_Plants_1>
@@ -176,5 +176,6 @@
 
   <MooMF_MythicTitle_ArchoVictory_M1>Archotouched {1}</MooMF_MythicTitle_ArchoVictory_M1>
   <MooMF_MythicTitle_ArchoVictory_M2>The Machine God's {1}</MooMF_MythicTitle_ArchoVictory_M2>
+  <MooMF_MythicTitle_ArchoVictory_M3>{1}'s Archo-Echo {1}</MooMF_MythicTitle_ArchoVictory_M3>
 
 </LanguageData>

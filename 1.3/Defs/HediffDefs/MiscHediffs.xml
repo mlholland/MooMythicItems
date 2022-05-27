@@ -121,70 +121,70 @@
         <label>1</label>
         <minSeverity>0</minSeverity>
         <statFactors> 
-            <IncomingDamageFactor>.95</IncomingDamageFactor> 
+            <IncomingDamageFactor>.75</IncomingDamageFactor> 
         </statFactors>
       </li>
       <li>
         <label>2</label>
         <minSeverity>.2</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.9</IncomingDamageFactor>
+          <IncomingDamageFactor>.7</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>3</label>
         <minSeverity>.3</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.85</IncomingDamageFactor>
+          <IncomingDamageFactor>.65</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>4</label>
         <minSeverity>.4</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.80</IncomingDamageFactor>
+          <IncomingDamageFactor>.60</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>5</label>
         <minSeverity>.5</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.75</IncomingDamageFactor>
+          <IncomingDamageFactor>.55</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>6</label>
         <minSeverity>.6</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.70</IncomingDamageFactor>
+          <IncomingDamageFactor>.50</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>7</label>
         <minSeverity>.7</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.65</IncomingDamageFactor>
+          <IncomingDamageFactor>.45</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>8</label>
         <minSeverity>.8</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.60</IncomingDamageFactor>
+          <IncomingDamageFactor>.40</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>9</label>
         <minSeverity>.9</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.55</IncomingDamageFactor>
+          <IncomingDamageFactor>.35</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>10</label>
         <minSeverity>1</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.50</IncomingDamageFactor>
+          <IncomingDamageFactor>.30</IncomingDamageFactor>
         </statFactors>
       </li>
     </stages>
@@ -199,80 +199,80 @@
         <label>1</label>
         <minSeverity>0</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.975</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.975</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.85</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.85</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>2</label>
         <minSeverity>.2</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.95</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.95</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.825</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.825</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>3</label>
         <minSeverity>.3</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.925</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.925</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.8</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.8</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>4</label>
         <minSeverity>.4</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.90</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.90</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.775</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.775</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>5</label>
         <minSeverity>.5</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.875</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.875</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.75</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.75</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>6</label>
         <minSeverity>.6</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.85</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.85</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.725</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.725</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>7</label>
         <minSeverity>.7</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.825</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.825</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.7</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.7</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>8</label>
         <minSeverity>.8</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.80</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.80</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.625</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.625</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>9</label>
         <minSeverity>.9</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.775</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.775</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.6</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.6</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>10</label>
         <minSeverity>1</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.75</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.75</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.575</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.575</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
     </stages>
@@ -289,7 +289,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.2</offset>
+            <offset>2</offset>
           </li>
         </capMods>
       </li>
@@ -299,7 +299,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.4</offset>
+            <offset>2.5</offset>
           </li>
         </capMods>
       </li>
@@ -309,7 +309,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.6</offset>
+            <offset>3</offset>
           </li>
         </capMods>
       </li>
@@ -319,7 +319,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.8</offset>
+            <offset>3.5</offset>
           </li>
         </capMods>
       </li>
@@ -329,7 +329,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1</offset>
+            <offset>4</offset>
           </li>
         </capMods>
       </li>
@@ -339,7 +339,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.2</offset>
+            <offset>4.5</offset>
           </li>
         </capMods>
       </li>
@@ -349,7 +349,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.4</offset>
+            <offset>5</offset>
           </li>
         </capMods>
       </li>
@@ -359,7 +359,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.6</offset>
+            <offset>5.5</offset>
           </li>
         </capMods>
       </li>
@@ -369,7 +369,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.8</offset>
+            <offset>6</offset>
           </li>
         </capMods>
       </li>
@@ -379,7 +379,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>2</offset>
+            <offset>6.5</offset>
           </li>
         </capMods>
       </li>
