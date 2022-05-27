@@ -108,10 +108,13 @@ namespace MooMythicItems
          * fields in the same order as they're listed in the MythicItem.cs file's field
          * ordering.
          * 
-         * Doing it this way because I don't want to learn encoding libraries for something so trivial.
+         * Doing it this way because I don't want to learn/involve encoding libraries for something so trivial.
          */
         private static MythicItem ConvertStringToMythicItem(string encodedMythicItem)
         {
+            // ignore empty lines.
+            if (encodedMythicItem.Trim().Length == 0) return null;
+
             string[] values = encodedMythicItem.Split(',');
 
             if(values.Length != s_fieldsPerLine)
