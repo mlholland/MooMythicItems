@@ -74,20 +74,31 @@ namespace MooMythicItems
 
         public virtual MythicItem TryCreateMythicItem(Pawn originator, string reason)
         {
-            if (!originator.IsColonist || originator.NonHumanlikeOrWildMan()) return null; // only make mythic items for colonists, not animals, and not raiders
+            if (originator == null || !originator.IsColonist || originator.NonHumanlikeOrWildMan())// only make mythic items for colonists, not animals, and not raiders
+            {
+                DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn either wasn't a colonist, wasn't humanoid, or didn't exist at all.");
+                return null;
+            }
             // Get the item to turn into a mythic item, and return null if nothing could be found that fits this cause's requirements.
             Thing item = null;
             string title = titles.RandomElement(), description = descriptions.RandomElement();
             MythicEffectDef effect = effects.RandomElement();
             if (createsMythicWeapon)
             {
+                if (originator.equipment == null)
+                {
+                    DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn {0} did not have any equipment", originator.Name);
+                    return null;
+                }
                 item = originator.equipment.Primary;
                 // don't allow stackabout stuff like thrumbo horns and wood
                 // don't allow single use stuff like rocket launchers
-                if (item == null && MythicItemUtilities.IsValidDefOption(item.def))
+                if (item == null || MythicItemUtilities.IsValidDefOption(item.def))
                 {
+                    DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn {0} did not have a valid weapon equipped.", originator.Name);
                     return null;
                 }
+                // modify attributes selected if the user has a melee weapon and this cause has separate melee options.
                 if (hasDifferentMeleeOptions && !item.def.IsRangedWeapon)
                 {
                     title = meleeTitles.RandomElement();
@@ -95,15 +106,23 @@ namespace MooMythicItems
                     effect = meleeEffects.RandomElement();
                 }
             }
-            else if (originator.apparel.AnyApparel)
+            else 
             {
-                item = originator.apparel.WornApparel.RandomElement();
+                if (originator.apparel != null && originator.apparel.AnyApparel && originator.apparel.WornApparel != null && originator.apparel.WornApparelCount > 0)
+                {
+                    item = originator.apparel.WornApparel.RandomElement();
+                } else
+                {
+                    DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn {0} is not wearing any apparel", originator.Name);
+                    return null;
+                }
             }
+            // make sure we got 
             if (item == null)
             {
+                DebugActions.LogIfDebug("Mythic Item Creation Failed. Failed to find a valid item to make a mythic item for an unknown reason.");
                 return null;
             }
-
             return new MythicItem(item, originator, description, title, effect, reason + "-" + priority);
         }
 
