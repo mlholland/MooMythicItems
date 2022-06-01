@@ -48,6 +48,7 @@
       <li>MooMF_MythicTitle_HumanKills1_Ranged_9</li>
       <li>MooMF_MythicTitle_HumanKills1_Ranged_10</li>
       <li>MooMF_MythicTitle_HumanKills1_Ranged_11</li>
+      <li>MooMF_MythicTitle_HumanKills1_Ranged_M12</li>
     </titles>
     <meleeEffects>
       <li>MooMF_Effect_KillstreakDR_1</li>
@@ -71,6 +72,8 @@
       <li>MooMF_MythicTitle_HumanKills1_Melee_10</li>
       <li>MooMF_MythicTitle_HumanKills1_Melee_11</li>
       <li>MooMF_MythicTitle_HumanKills1_Melee_12</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_M13</li>
+      <li>MooMF_MythicTitle_HumanKills1_Melee_M14</li>
     </meleeTitles>
     <threshold>50</threshold>
     <record>KillsHumanlikes</record>
@@ -192,20 +195,19 @@
       <li>MooMF_GrantInfernoRocket</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_InsectKills1_RangedM1</li> 
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_InsectKills1_Ranged_1</li>
       <li>MooMF_MythicTitle_InsectKills1_Ranged_2</li>
       <li>MooMF_MythicTitle_InsectKills1_Ranged_3</li>
+      <li>MooMF_MythicTitle_InsectKills1_Ranged_M4</li>
     </titles>
     <meleeEffects>
       <li>MooMF_KillInsectsForJelly_1</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_InsectKills1_MeleeM1</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_InsectKills1_Melee_1</li>
@@ -213,6 +215,7 @@
       <li>MooMF_MythicTitle_InsectKills1_Melee_3</li>
       <li>MooMF_MythicTitle_InsectKills1_Melee_4</li>
       <li>MooMF_MythicTitle_InsectKills1_Melee_5</li>
+      <li>MooMF_MythicTitle_InsectKills2_Melee_M6</li>
     </meleeTitles>
     <threshold>75</threshold>
     <record>MooMF_killsInsects</record>
@@ -226,8 +229,7 @@
       <li>MooMF_GrantInfernoRocket2</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_InsectKills2_RangedM1</li> 
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_InsectKills2_Ranged_1</li>
@@ -238,8 +240,7 @@
       <li>MooMF_KillInsectsForJelly_2</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_InsectKills2_MeleeM1</li> 
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_InsectKills2_Melee_1</li>

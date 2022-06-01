@@ -36,6 +36,7 @@
     <titles>
       <li>MooMF_MythicTitle_Mastery_Melee_1</li>
       <li>MooMF_MythicTitle_Mastery_Melee_2</li>
+      <li>MooMF_MythicTitle_Mastery_Melee_M3</li>
     </titles>
     <skill>Melee</skill>
     <createsMythicWeapon>true</createsMythicWeapon>
@@ -71,6 +72,7 @@
     <titles>
       <li>MooMF_MythicTitle_Mastery_Mining_1</li>
       <li>MooMF_MythicTitle_Mastery_Mining_2</li>
+      <li>MooMF_MythicTitle_Mastery_Mining_M3</li>
     </titles>
     <skill>Mining</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>
@@ -87,6 +89,7 @@
     <titles>
       <li>MooMF_MythicTitle_Mastery_Cooking_1</li>
       <li>MooMF_MythicTitle_Mastery_Cooking_2</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking_M3</li>
     </titles>
     <skill>Cooking</skill>
   </MooMythicItems.MythicCauseDef_LevelUp>

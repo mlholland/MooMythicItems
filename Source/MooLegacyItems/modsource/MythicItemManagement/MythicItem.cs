@@ -8,15 +8,15 @@ using HarmonyLib;
 
 /* A MythicItem is an item that was created as a result of a colonist's actions, which can
  * then be generated into an actual Thing in another colony. The data saved in this class structure is 
- * the minimal info needed to create the actual in-game item.
+ * the minimal info needed to create the actual in-game item, without any direct references to the original 
+ * colony or pawn.
  */
 namespace MooMythicItems
 {
-    [Serializable]
     public class MythicItem
     {
         public ThingDef itemDef { get; }
-        public String ownerFullName { get; } //Owner in this context refers to the original owner
+        public String ownerFullName { get; } // Owner in this context refers to the original owner
         public String ownerShortName { get; } 
         public String factionName { get; }
         public String descriptionTranslationString { get; }
@@ -27,23 +27,40 @@ namespace MooMythicItems
         public String reason; // generic book-keeping string for determining the origin of mythic items. Opted not to make this an enum to avoid mod compatibility issues.'
         public String originatorId; // the ThingId of the pawn related to this item's creation for duplication checking.
         public List<int> worldsUsedIn; // A list of game private random values that this item has been created in. Used for bookkeeping to prevent the same item from being used too much.
-        // public String colony; // TODO make use of (map.Parent as Settlement).Name to get the colony name, then incorporate it into flavor perhaps
+                                       // public String colony; // TODO make use of (map.Parent as Settlement).Name to get the colony name, then incorporate it into flavor perhaps
+
+        // These values are intended to be used by other modders to add extra info to their own descriptions.
+        // These two lists have their entire contents added to the input list of formatted translation strings.
+        // Bear in mind that the first 2 values for titles, and the first 4 values for descriptions are already reserved,
+        // Also, I recommend that you only use these values for flavor text in NEW cause defs that your mod adds, as this will become jarbled if two mods try to add values to existing causes.
+        public List<string> extraTitleValues;
+        public List<string> extraDescriptionValues;
+        
+        // This value is designed to allow extra info to be saved to a mythic item.
+        // I do nothing to help with parsing this data, just saving it. The actual transformation of this info into attributes on an in-game thing must be done by you 
+        // via a Harmony patch to the Realize function below.
+        // Make sure you select keys for your info that is unlikely to be used by anyone else. Ex: Don't use a key named "data", use a key named "your-mod's-initials-data".
+        public Dictionary<string, string> extraItemData;
 
 
         /* This should only be called by the SaveUtility, all other calls from within the game should use the other constructor*/
         public MythicItem(
-            ThingDef itemDef, 
-            string originatorFullName, 
-            string originatorShortName,  
+            ThingDef itemDef,
+            string originatorFullName,
+            string originatorShortName,
             string originatorFactionName,
             string descriptionTranslationString,
             string titleTranslationString,
             MythicEffectDef abilityDef,
-            ThingDef stuffDef, 
-            int prv, 
-            string reason, 
+            ThingDef stuffDef,
+            int prv,
+            string reason,
             string originatorId,
-            List<int> worldsUsedIn)
+            List<int> worldsUsedIn,
+            List<string> extraTitleValues = null,
+            List<string> extraDescriptionValues = null,
+            Dictionary<string, string> extraItemData = null
+            )
         {
             // TODO add checks to ensure that itemDefName and stuffDefName are valid
             this.itemDef = itemDef;
@@ -58,13 +75,25 @@ namespace MooMythicItems
             this.reason = reason;
             this.originatorId = originatorId;
             this.worldsUsedIn = worldsUsedIn;
+            this.extraTitleValues = extraTitleValues;
+            this.extraDescriptionValues = extraDescriptionValues;
+            this.extraItemData = extraItemData;
             if (itemDef.MadeFromStuff && stuffDef == null)
             {
-                DebugActions.LogErr("tried to load a saved mythic item based on a {0}, but no stuff type was supplied. The default stuff type will be used instead.", itemDef.defName);
+                DebugActions.LogErr("tried to load a saved mythic item based on a {0}, which is usually made from stuff, but no stuff def was supplied. The default stuff type will be used instead.", itemDef.defName);
+                this.stuffDef = itemDef.defaultStuff;
             }
         }
 
-        public MythicItem(Thing item, Pawn originator,string descriptionTranslationString, string titleTranslationString, MythicEffectDef abilityDef, string reason)
+        public MythicItem(Thing item, 
+            Pawn originator,
+            string descriptionTranslationString, 
+            string titleTranslationString, 
+            MythicEffectDef abilityDef, 
+            string reason, 
+            List<string> extraTitleValues = null, 
+            List<string> extraDescriptionValues = null, 
+            Dictionary<string, string> extraItemData = null)
         {
             this.itemDef = item.def;
             this.ownerFullName = originator.Name.ToStringFull;
@@ -87,6 +116,11 @@ namespace MooMythicItems
             this.originatorId = originator.ThingID;
 
             this.worldsUsedIn = new List<int>();
+
+            this.extraTitleValues = extraTitleValues;
+            this.extraDescriptionValues = extraDescriptionValues;
+            this.extraItemData = extraItemData;
+            
         }
         
         // TODO add more details once mythicItem fields more concrete
@@ -94,13 +128,23 @@ namespace MooMythicItems
             return String.Format("Mythic item - {0} made by {1} due to {2} with power {3}", itemDef.defName, ownerFullName, descriptionTranslationString, abilityDef.defName);
         }
 
+        // Produce the title that replaces the normal item label
         public string GetFormattedTitle()
         {
+            if (extraTitleValues != null && extraTitleValues.Count > 0)
+            {
+                return string.Format(this.titleTranslationString.Translate(), ownerShortName, itemDef.label, extraTitleValues);
+            }
             return string.Format(this.titleTranslationString.Translate(), ownerShortName, itemDef.label);
         }
 
+        // Produce the description that's appended to the item's normal description.
         public string GetFormattedDescription()
         {
+            if (extraDescriptionValues != null && extraDescriptionValues.Count > 0)
+            { 
+                return string.Format(this.descriptionTranslationString.Translate(), ownerFullName, ownerShortName, factionName, itemDef.label, extraDescriptionValues);
+            }
             return string.Format(this.descriptionTranslationString.Translate(), ownerFullName,ownerShortName, factionName, itemDef.label);
         }
 
@@ -114,9 +158,10 @@ namespace MooMythicItems
         }
 
         /* Turn a mythic item into a real Thing that can show up in-game.
-        * Kept private in this file to ensure that realization only occurs in concert with behind-the-scenes management of saved mythic items.
+         * MODDER INFO. If you try to patch this file for whatever reason, you'll probably just need to input the hand-typed function name
+         * into the harmony header, since this function is internal.
         */
-        public Thing Realize()
+        internal Thing Realize()
         {
             DebugActions.LogIfDebug("Realizing mythic item: {0}", this.ToString());
             ThingDef def = this.itemDef;
