@@ -80,7 +80,9 @@ namespace MooMythicItems
 
         public override string EffectDescription(ThingWithComps mythicItem)
         {
-            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label, equipHediff.label);
+            List<string> args = new List<string>() { mythicItem.def.label, equipHediff.label };
+            args.AddRange(extraDescriptionFields);
+            return string.Format(effectDescTranslationKey.Translate(), args.ToArray());
         }
     }
 }

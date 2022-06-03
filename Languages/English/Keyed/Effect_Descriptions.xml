@@ -7,7 +7,7 @@
    - All other elements can vary depending on what subtype of mythic effect def uses these,
    although {1} should try to be the label of whatever is added to this weapon (ex a hediff, or ability label), if applicable. -->
   <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
-  <MooMF_AbilityDescription_GrantStatAbility>Grants the user the "{1}" buff, which passively improves their performance in the relevant skill.</MooMF_AbilityDescription_GrantStatAbility>
+  <MooMF_AbilityDescription_GrantStatAbility>Grants the user the "{1}" buff, which passively improves attributes related to the {2} skill.</MooMF_AbilityDescription_GrantStatAbility>
   <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yields from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
   <MooMF_AbilityDescription_GrantEpicureanWisdom>Grants the user the "{1}" buff, which allows them to cook epicurean delights.</MooMF_AbilityDescription_GrantEpicureanWisdom>
   <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. When they kill a mechanoid, it will drop extra steel, and possibly other things.</MooMF_AbilityDescription_MechDrops>
@@ -21,7 +21,7 @@
   <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this {0}'s user enters a battle trance when they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect slightly.</MooMF_AbilityDescription_KillstreakSpeed>
   <MooMF_AbilityDescription_AttactTradeShips>This {0} has some special ship codes embroidered into it. Anyone wearing it can occasionally broadcast these codes to attract a nearby merchant ship into trading range.</MooMF_AbilityDescription_AttactTradeShips>
   <MooMF_AbilityDescription_TamingInspiration>This {0} contains the vestiges of an animal master's wisdom. A wearer can draw upon this wisdom to gain a taming inspiration.</MooMF_AbilityDescription_TamingInspiration>
-  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master crafter's insight. A wearer can draw upon this insight to gain a creative inspirtion.</MooMF_AbilityDescription_CreativeInspiration>
+  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master crafter's insight. A wearer can draw upon this insight to gain a creative inspiration.</MooMF_AbilityDescription_CreativeInspiration>
   <MooMF_AbilityDescription_TradingInspiration>This {0} bears the ancient instincts of a master merchant. A wearer can draw upon this instinct to gain a trading inspiration.</MooMF_AbilityDescription_TradingInspiration>
   <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to themself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
   <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>

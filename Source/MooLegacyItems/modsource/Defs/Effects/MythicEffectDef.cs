@@ -19,6 +19,7 @@ namespace MooMythicItems
         public MythicEffectDef() { }
 
         public string effectDescTranslationKey = null;
+        public List<string> extraDescriptionFields = new List<string>(); // For arbitary extra info that needs to be injected into a description.
 
         public override IEnumerable<string> ConfigErrors()
         {
@@ -35,7 +36,9 @@ namespace MooMythicItems
 
         public virtual string EffectDescription(ThingWithComps mythicItem)
         {
-            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label);
+            List<string> args = new List<string>() { mythicItem.def.label};
+            args.AddRange(extraDescriptionFields);
+            return string.Format(effectDescTranslationKey.Translate(), args.ToArray());
         }
     }
 }
