@@ -133,7 +133,8 @@
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_CraftingMastery</defName>
     <effects>
-      <li>MooMF_CraftingBoost</li>
+      <!--li>MooMF_CraftingBoost</li-->
+      <li>MooMF_GrantCreativeInspiration</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Crafting_1</li>
@@ -151,7 +152,7 @@
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_ArtisticMastery</defName>
     <effects>
-      <li>MooMF_ArtisticBoost</li>
+      <!--li>MooMF_ArtisticBoost</li-->
       <li>MooMF_GrantCreativeInspiration</li>
     </effects>
     <descriptions>

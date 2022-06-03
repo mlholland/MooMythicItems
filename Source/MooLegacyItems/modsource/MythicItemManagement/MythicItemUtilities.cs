@@ -30,15 +30,36 @@ namespace MooMythicItems
 
         public static bool IsValidDefOption(ThingDef def)
         {
+            if (def == null)
+            {
+                DebugActions.LogErr("Null def inputted to IsValidDefOption, this should never happen.");
+                return false;
+            }
             // make sure it's not stackable like a thrumbo horn
-            if (def.stackLimit != 1) return false;
+            if (def.stackLimit != 1)
+            {
+                DebugActions.LogIfDebug("Item type '{0}' is not a valid mythic item option because it can be stacked.", def.label);
+                return false;
+            }
             // make sure it's not a single shot weapon like a doomday launcher
-            if (def.Verbs != null && def.Verbs.Count > 0 && def.Verbs.Any(verb => verb.verbClass == typeof(Verb_ShootOneUse))) return false;
+            if (def.Verbs != null && def.Verbs.Count > 0 && def.Verbs.Any(verb => verb.verbClass == typeof(Verb_ShootOneUse)))
+            {
+                DebugActions.LogIfDebug("Item type '{0}' is not a valid mythic item option because it has verbs (indicating that it's a gun), and one of them is Verb_ShootOneUse (indicating that it's a single-use rocket launcher).", def.label);
+                return false;
+            }
             // make sure it's not an unobtainable weapon like a mech gun
-            if (def.destroyOnDrop) return false;
+            if (def.destroyOnDrop)
+            {
+                DebugActions.LogIfDebug("Item type '{0}' is not a valid mythic item option because it gets destroyed when dropped.", def.label);
+                return false;
+            }
             // make sure it's not an item that destroys after running out of charges like an insanity lance.
             CompProperties_Reloadable reload = def.GetCompProperties<CompProperties_Reloadable>();
-            if (reload != null && reload.destroyOnEmpty) return false;
+            if (reload != null && reload.destroyOnEmpty)
+            {
+                DebugActions.LogIfDebug("Item type '{0}' is not a valid mythic item option because it gets destroyed when it runs out of charges.", def.label);
+                return false;
+            }
             return true;
         }
 

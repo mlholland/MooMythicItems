@@ -39,7 +39,8 @@
     <equipHediff>MooMF_WornAnimalsBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
 
-  <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
+  <!-- Disabled until I can think of appropriate stats to give for these-->
+  <!--MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_CraftingBoost</defName>
     <equipHediff>MooMF_WornCraftingBoon</equipHediff>
   </MooMythicItems.MythicEffectDef_EquipHediff>
@@ -47,7 +48,7 @@
   <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_ArtisticBoost</defName>
     <equipHediff>MooMF_WornArtisticBoon</equipHediff>
-  </MooMythicItems.MythicEffectDef_EquipHediff>
+  </MooMythicItems.MythicEffectDef_EquipHediff-->
 
   <MooMythicItems.MythicEffectDef_EquipHediff ParentName="baseSkillBuffEffect">
     <defName>MooMF_MedicineBoost</defName>

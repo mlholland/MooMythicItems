@@ -218,19 +218,33 @@ namespace MooMythicItems
         private static string ConvertMythicItemToCSVString(MythicItem mythicItem)
         {
             string result = mythicItem.itemDef.defName.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("a");
             result += "," + mythicItem.ownerFullName.Replace(",", s_commaReplacement);
-            result += "," + mythicItem.ownerShortName.Replace(",", s_commaReplacement); 
+            DebugActions.LogIfDebug("b");
+            result += "," + mythicItem.ownerShortName.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("c");
             result += "," + mythicItem.factionName.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("d");
             result += "," + mythicItem.descriptionTranslationString.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("e");
             result += "," + mythicItem.titleTranslationString.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("f");
             result += "," + mythicItem.abilityDef.defName.Replace(",", s_commaReplacement);
-            result += "," + mythicItem.stuffDef.defName.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("g");
+            result += "," + (mythicItem.stuffDef == null ? "" : mythicItem.stuffDef.defName.Replace(",", s_commaReplacement)); // this, unlike most other values, can be null
+            DebugActions.LogIfDebug("h");
             result += "," + mythicItem.prv;
+            DebugActions.LogIfDebug("i");
             result += "," + mythicItem.reason.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("j");
             result += "," + mythicItem.originatorId.Replace(",", s_commaReplacement);
+            DebugActions.LogIfDebug("k");
             result += "," + ConvertIntListToArg(mythicItem.worldsUsedIn);
+            DebugActions.LogIfDebug("l");
             result += "," + ConvertStringListToArg(mythicItem.extraTitleValues);
+            DebugActions.LogIfDebug("m");
             result += "," + ConvertStringListToArg(mythicItem.extraDescriptionValues);
+            DebugActions.LogIfDebug("n");
             result += "," + ConvertStringDictToArg(mythicItem.extraItemData);
             return result;
         }

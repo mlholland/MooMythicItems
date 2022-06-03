@@ -74,7 +74,6 @@ namespace MooMythicItems
                 }
                 if (curThreshold > -1)
                 {
-                    DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName);
                     string reason = masteryPrefix + skillRecord.def.skillLabel;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)

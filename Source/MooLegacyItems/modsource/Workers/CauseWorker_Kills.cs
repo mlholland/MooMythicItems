@@ -107,7 +107,6 @@ namespace MooMythicItems
 
             if (bestCause != null)
             {
-                DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", killer.Name, bestCause.defName);
                 return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(bestCause.TryCreateMythicItem(killer, killReasonPrefix + bestCause.subreason), bestCause);
             }
             return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(null, null);

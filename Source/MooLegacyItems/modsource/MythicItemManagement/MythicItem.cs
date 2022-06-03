@@ -15,6 +15,11 @@ namespace MooMythicItems
 {
     public class MythicItem
     {
+        private static readonly string bladelink_key_traits = "RWR_BL_T"; // rimworld royalty bladelink traits
+        // The traits field is private normally - this lets us mess with it.
+        private static readonly AccessTools.FieldRef<object, List<WeaponTraitDef>> weaponTraitsField = AccessTools.FieldRefAccess<List<WeaponTraitDef>>(typeof(CompBladelinkWeapon), "traits");
+
+
         public ThingDef itemDef { get; }
         public String ownerFullName { get; } // Owner in this context refers to the original owner
         public String ownerShortName { get; } 
@@ -35,13 +40,14 @@ namespace MooMythicItems
         // Also, I recommend that you only use these values for flavor text in NEW cause defs that your mod adds, as this will become jarbled if two mods try to add values to existing causes.
         public List<string> extraTitleValues;
         public List<string> extraDescriptionValues;
-        
-        // This value is designed to allow extra info to be saved to a mythic item.
-        // I do nothing to help with parsing this data, just saving it. The actual transformation of this info into attributes on an in-game thing must be done by you 
-        // via a Harmony patch to the Realize function below.
-        // Make sure you select keys for your info that is unlikely to be used by anyone else. Ex: Don't use a key named "data", use a key named "your-mod's-initials-data".
-        public Dictionary<string, string> extraItemData;
 
+        // This value is designed to allow extra info to be saved to a mythic item.
+        // I do nothing to help with parsing this data, just saving it to/from disk. There are two things you need to do to make thiswork.
+        // 1. Add data to this field by patching the SECOND constructor below to pull data from the inputted item. field.
+        // 2. Patch the realize function to read that data and append the necessary data the resulting in-game thing.
+        // Make sure you select keys for your info that is unlikely to be used by anyone else. Ex: Don't use a key named "data", use a key named "your-mod's-initials-data".
+        // For an example of how to do this, you can see how persona weapons have their persona type saved via this system.
+        public Dictionary<string, string> extraItemData;
 
         /* This should only be called by the SaveUtility, all other calls from within the game should use the other constructor*/
         public MythicItem(
@@ -75,14 +81,14 @@ namespace MooMythicItems
             this.reason = reason;
             this.originatorId = originatorId;
             this.worldsUsedIn = worldsUsedIn;
-            this.extraTitleValues = extraTitleValues;
-            this.extraDescriptionValues = extraDescriptionValues;
-            this.extraItemData = extraItemData;
             if (itemDef.MadeFromStuff && stuffDef == null)
             {
                 DebugActions.LogErr("tried to load a saved mythic item based on a {0}, which is usually made from stuff, but no stuff def was supplied. The default stuff type will be used instead.", itemDef.defName);
                 this.stuffDef = itemDef.defaultStuff;
             }
+            this.extraTitleValues = extraTitleValues == null ? new List<string>() : extraTitleValues;
+            this.extraDescriptionValues = extraDescriptionValues == null ? new List<string>() : extraDescriptionValues;
+            this.extraItemData = extraItemData == null ? new Dictionary<string, string>() : extraItemData; 
         }
 
         public MythicItem(Thing item, 
@@ -104,22 +110,23 @@ namespace MooMythicItems
             this.abilityDef = abilityDef;
             
             this.prv = Find.World.info.persistentRandomValue;
-            if (item.Stuff != null)
-            {
-                stuffDef = item.Stuff;
-            } else
-            {
-                stuffDef = null;
-            }
+            this.stuffDef = item.Stuff;
 
             this.reason = reason;
             this.originatorId = originator.ThingID;
 
             this.worldsUsedIn = new List<int>();
 
-            this.extraTitleValues = extraTitleValues;
-            this.extraDescriptionValues = extraDescriptionValues;
-            this.extraItemData = extraItemData;
+            this.extraTitleValues = extraTitleValues == null ? new List<string>() : extraTitleValues;
+            this.extraDescriptionValues = extraDescriptionValues == null ? new List<string>() : extraDescriptionValues;
+            this.extraItemData = extraItemData == null ? new Dictionary<string, string>() : extraItemData;
+
+            // extra item data in vanilla
+            CompBladelinkWeapon linkComp = item.TryGetComp<CompBladelinkWeapon>();
+            if (linkComp != null && linkComp.TraitsListForReading != null)
+            {
+                this.extraItemData[bladelink_key_traits] =string.Join("/", linkComp.TraitsListForReading.Select(def => def.defName));
+            }
             
         }
         
@@ -166,7 +173,6 @@ namespace MooMythicItems
             DebugActions.LogIfDebug("Realizing mythic item: {0}", this.ToString());
             ThingDef def = this.itemDef;
             ThingDef stuff = null;
-            DebugActions.LogIfDebug("Realized mythic item has stuff type: {0}", this.stuffDef);
             if (this.stuffDef != null)
             {
                 stuff = this.stuffDef;
@@ -185,7 +191,36 @@ namespace MooMythicItems
 
             MythicItemUtilities.AddMythicCompToThing(thing, String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label), String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label), this.abilityDef);
         
-            DebugActions.LogIfDebug("Created a mythic item with the following attributes: {0}", this.ToString());
+            if(this.extraItemData != null && this.extraItemData.ContainsKey(bladelink_key_traits))
+            {
+                CompBladelinkWeapon linkComp = thing.TryGetComp<CompBladelinkWeapon>();
+                if (linkComp == null)
+                {
+                    DebugActions.LogErr("Tried to realize a mythic {0} that had saved bladelink data, but no CompBladelinkWeapon was found on the resulting item to add this data to.", this.itemDef.label);
+                } else
+                {
+                    List<WeaponTraitDef> traits = weaponTraitsField.Invoke(linkComp);
+                    if (traits == null)
+                    {
+                        DebugActions.LogErr("Tried to extract traits from new mythic weapon's CompBladelinkWeapon comp, but the traits field was null.");
+                    }
+                    else
+                    {
+                        traits.Clear();
+                        foreach (string traitName in this.extraItemData[bladelink_key_traits].Split('/'))
+                        {
+                            WeaponTraitDef trait = DefDatabase<WeaponTraitDef>.GetNamedSilentFail(traitName);
+                            if (trait == null)
+                            {
+                                DebugActions.LogErr("Tried adding bladelink trait named '{0}' to a new mythic weapon, but no such trait could be found. Ignoring it.", traitName);
+                                continue;
+                            }
+                            traits.Add(trait);
+                        }
+                    }
+                }
+            }
+
             return thing;
         }
     }

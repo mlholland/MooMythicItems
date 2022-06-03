@@ -74,6 +74,12 @@ namespace MooMythicItems
 
         public virtual MythicItem TryCreateMythicItem(Pawn originator, string reason)
         {
+            DebugActions.LogIfDebug("Mythic Cause '{0}' is trying to create a mythic item.", this.defName);
+            if (reason == null || reason.Length == 0)
+            {
+                DebugActions.LogErr("Mythic Item Creation Failed. an empty or null reason was inputted.");
+                return null;
+            }
             if (originator == null || !originator.IsColonist || originator.NonHumanlikeOrWildMan())// only make mythic items for colonists, not animals, and not raiders
             {
                 DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn either wasn't a colonist, wasn't humanoid, or didn't exist at all.");
@@ -93,7 +99,12 @@ namespace MooMythicItems
                 item = originator.equipment.Primary;
                 // don't allow stackabout stuff like thrumbo horns and wood
                 // don't allow single use stuff like rocket launchers
-                if (item == null || MythicItemUtilities.IsValidDefOption(item.def))
+                if (item == null)
+                {
+                    DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn {0} did not have any weapon equipped.", originator.Name);
+                    return null;
+                }
+                if (!MythicItemUtilities.IsValidDefOption(item.def))
                 {
                     DebugActions.LogIfDebug("Mythic Item Creation Failed. The inputted pawn {0} did not have a valid weapon equipped.", originator.Name);
                     return null;
@@ -120,7 +131,22 @@ namespace MooMythicItems
             // make sure we got 
             if (item == null)
             {
-                DebugActions.LogIfDebug("Mythic Item Creation Failed. Failed to find a valid item to make a mythic item for an unknown reason.");
+                DebugActions.LogErr("Mythic Item Creation Failed. Failed to find a valid item to make a mythic item for an unknown reason.");
+                return null;
+            }
+            if (title == null)
+            {
+                DebugActions.LogErr("Mythic Item Creation Failed - no valid title option was found. This should never happen, and indicates a malformed MythicCauseDef. The cause def in use was '{0}'", this.defName);
+                return null;
+            }
+            if (description == null)
+            {
+                DebugActions.LogErr("Mythic Item Creation Failed - no valid description option was found. This should never happen, and indicates a malformed MythicCauseDef. The cause def in use was '{0}'", this.defName);
+                return null;
+            }
+            if (effect == null)
+            {
+                DebugActions.LogErr("Mythic Item Creation Failed - no valid effect option was found. This should never happen, and indicates a malformed MythicCauseDef. The cause def in use was '{0}'", this.defName);
                 return null;
             }
             return new MythicItem(item, originator, description, title, effect, reason + "-" + priority);
