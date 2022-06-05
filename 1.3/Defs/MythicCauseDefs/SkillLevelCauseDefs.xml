@@ -15,6 +15,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Shooting_1</li>
+      <li>MooMF_MythicStory_Mastery_Shooting_2</li>
+      <li>MooMF_MythicStory_Mastery_Shooting_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Shooting_1</li>
@@ -31,6 +33,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Melee_1</li>
+      <li>MooMF_MythicStory_Mastery_Melee_2</li>
+      <li>MooMF_MythicStory_Mastery_Melee_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Melee_1</li>
@@ -47,6 +51,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Construction_1</li>
+      <li>MooMF_MythicStory_Mastery_Construction_2</li>
+      <li>MooMF_MythicStory_Mastery_Construction_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Construction_1</li>
@@ -64,6 +70,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Mining_1</li>
+      <li>MooMF_MythicStory_Mastery_Mining_2</li>
+      <li>MooMF_MythicStory_Mastery_Mining_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Mining_1</li>
@@ -80,6 +88,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Cooking_1</li>
+      <li>MooMF_MythicStory_Mastery_Cooking_2</li>
+      <li>MooMF_MythicStory_Mastery_Cooking_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Cooking_1</li>
@@ -95,6 +105,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Plants_1</li>
+      <li>MooMF_MythicStory_Mastery_Plants_2</li>
+      <li>MooMF_MythicStory_Mastery_Plants_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Plants_1</li>
@@ -113,6 +125,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Animals_1</li>
+      <li>MooMF_MythicStory_Mastery_Animals_2</li>
+      <li>MooMF_MythicStory_Mastery_Animals_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Animals_1</li>
@@ -129,6 +143,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Crafting_1</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_2</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Crafting_1</li>
@@ -147,6 +163,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Artistic_1</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_2</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Artistic_1</li>
@@ -163,6 +181,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Medicine_1</li>
+      <li>MooMF_MythicStory_Mastery_Medicine_2</li>
+      <li>MooMF_MythicStory_Mastery_Medicine_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Medicine_1</li>
@@ -178,6 +198,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Social_1</li>
+      <li>MooMF_MythicStory_Mastery_Social_2</li>
+      <li>MooMF_MythicStory_Mastery_Social_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Social_1</li>
@@ -193,6 +215,8 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Intellectual_1</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_2</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_Mastery_Intellectual_1</li>
