@@ -19,23 +19,27 @@ namespace MooMythicItems
         public MythicEffectDef() { }
 
         public string effectDescTranslationKey = null;
+        public List<string> extraDescriptionFields = new List<string>(); // For arbitary extra info that needs to be injected into a description.
 
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var error in base.ConfigErrors()) yield return error;
             if (effectDescTranslationKey == null) yield return "effectDescTranslationKey cannot be null";
+            if (extraDescriptionFields == null) yield return "extraDescriptionFields cannot be null. If nothing else, leave it alone since it defaults to an empty non-null list.";
         }
 
         public virtual void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
         public virtual void OnUnequip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
-        // You probably don't want to call this directly, see CompMythic.DoOnKillEffects
+        // Mythic weapons only
         public virtual void OnKill(Pawn killedPawn, Pawn killer, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }
 
         public virtual string EffectDescription(ThingWithComps mythicItem)
         {
-            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label);
+            List<string> args = new List<string>() { mythicItem.def.label};
+            args.AddRange(extraDescriptionFields);
+            return string.Format(effectDescTranslationKey.Translate(), args.ToArray());
         }
     }
 }

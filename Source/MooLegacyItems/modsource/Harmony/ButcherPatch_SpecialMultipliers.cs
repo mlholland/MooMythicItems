@@ -9,7 +9,7 @@ using Verse;
  */
 namespace MooMythicItems
 {
-    public class Corpse_ButcherProducts
+    public class ButcherPatch_SpecialMultipliers
     {
         private static List<ThingDef> thrumboDefs;
         private static List<ThingDef> ThrumboDefs

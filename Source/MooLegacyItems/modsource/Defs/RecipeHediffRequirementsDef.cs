@@ -15,7 +15,9 @@ namespace MooMythicItems
 {
     public class RecipeHediffRequirementsDef : Def
     {
+        // Possible hediffs that can unlock a recipe
         public List<HediffDef> hediffDefOptions;
+        // The recipe that is unlocked by the above hediffs
         public RecipeDef recipeDef;
 
 

@@ -32,7 +32,7 @@ namespace MooMythicItems
             if (effectDurationTicks < 1) yield return "effectDurationTicks must be a positive integer.";
             if (severityPerStack <= 0) yield return "severityPerStack must be a positive value.";
             if (hediffToAdd == null) yield return "hediffToAdd must be set.";
-            else if (severityPerStack * maxStacks > hediffToAdd.maxSeverity + 0.0001) yield return String.Format("Severity at max stacks ({0} * {1} = {2}) cannot exceed target hediff's max possible severity (3).", severityPerStack, maxStacks, severityPerStack * maxStacks, hediffToAdd.maxSeverity);
+            else if (severityPerStack * (maxStacks - 1) > hediffToAdd.maxSeverity) yield return String.Format("Severity before the max number of stacks ({0} * {1} = {2}) cannot exceed target hediff's max possible severity (3).", severityPerStack, maxStacks - 1, severityPerStack * maxStacks, hediffToAdd.maxSeverity);
         }
 
 
@@ -46,7 +46,7 @@ namespace MooMythicItems
                     if (killer.health.hediffSet.HasHediff(hediffToAdd))
                     {
                         hediff = killer.health.hediffSet.GetFirstHediffOfDef(hediffToAdd);
-                        if (hediff != null && hediff.Severity + 0.0001 < severityPerStack * maxStacks) // Added value is just defence against floating point problems
+                        if (hediff != null && hediff.Severity + 0.0001 < severityPerStack * maxStacks && hediff.Severity != hediff.def.maxSeverity) // Added 0.0001 is just defence against floating point problems
                         {
                             hediff.Severity = Math.Min(hediff.Severity + severityPerStack, hediff.def.maxSeverity);
                         }

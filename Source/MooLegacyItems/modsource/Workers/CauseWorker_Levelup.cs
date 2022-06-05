@@ -50,7 +50,6 @@ namespace MooMythicItems
                 }
             }
             skillsWatched[causeDef.skill].Add(causeDef);
-            DebugActions.LogIfDebug("accounting for new mythic cause that waits for skill '{0}' to reach a level of {1}.", causeDef.skill.defName, causeDef.minLevelThreshold);
         }
 
         public override string GetReasonFragmentKey()
@@ -75,14 +74,13 @@ namespace MooMythicItems
                 }
                 if (curThreshold > -1)
                 {
-                    DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", pawn.Name, bestCause.defName);
                     string reason = masteryPrefix + skillRecord.def.skillLabel;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)
                     {
                         // When doing reason checks, we only care about mythic items related to the same skill,
                         // So we input a reason fragment that specifies the skill in question.
-                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, reason, bestCause.priority, bestCause.reasonLimit, bestCause.GetPrintedReasonFragment(newItem.ownerFullName));
+                        MythicItemCache.TrySaveOrOverwriteNewItem(newItem, pawn, reason, bestCause.priority, bestCause.reasonLimit, bestCause.GetPrintedReasonFragment(newItem.ownerFullName));
                     }
                 }
             }

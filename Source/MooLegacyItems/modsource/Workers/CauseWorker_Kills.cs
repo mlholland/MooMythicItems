@@ -48,7 +48,6 @@ namespace MooMythicItems
                 }
             }
             recordsWatched[causeDef.record].Add(causeDef);
-            DebugActions.LogIfDebug("accounting for new mythic cause that waits for record '{0}' to reach a threshold of {1}.", causeDef.record.defName, causeDef.threshold);
         }
 
         public override string GetReasonFragmentKey()
@@ -78,7 +77,7 @@ namespace MooMythicItems
                 Tuple<MythicItem, MythicCauseDef_RecordThreshold> creationResult = CreateMythicItemIfCauseMet(__state, killer);
                 if (creationResult != null && creationResult.Item1 != null && creationResult.Item2 != null)
                 {
-                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, killReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
+                    MythicItemCache.TrySaveOrOverwriteNewItem(creationResult.Item1, killer, killReasonPrefix, creationResult.Item2.priority, creationResult.Item2.reasonLimit, creationResult.Item2.GetPrintedReasonFragment(creationResult.Item1.ownerFullName));
                 }
             }
         }
@@ -108,7 +107,6 @@ namespace MooMythicItems
 
             if (bestCause != null)
             {
-                DebugActions.LogIfDebug("Trying to create new mythic item for {0} based on cause {1}.", killer.Name, bestCause.defName);
                 return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(bestCause.TryCreateMythicItem(killer, killReasonPrefix + bestCause.subreason), bestCause);
             }
             return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(null, null);

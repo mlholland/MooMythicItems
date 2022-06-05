@@ -6,11 +6,11 @@ using RimWorld;
 using Verse;
 
 /* This patch runs after InteractionWorker_RecruitAttempt.DoRecruit to see if the recruited thing was a thrumbo (or anything we consider a thrumbo according to a def list).
- * If so, it updates the tamer's records and possibly creates a legacy item based on it.
+ * If so, it updates the tamer's records.
  */
 namespace MooMythicItems
 {
-    public class MythicMaker_DoRecruit
+    public class RecruitPatch_UpdateRecruitmentRecords
     {
 
         private static readonly string thrumboTameReason = "taming_thrumbos";

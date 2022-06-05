@@ -4,26 +4,32 @@
   
   <MooMF_SettingsLabel>Moo's Mythic Framework Settings and Controls</MooMF_SettingsLabel>
   <MooMF_SettingsTitle>Moo's Mythic Framework Settings</MooMF_SettingsTitle>
-  <MooMF_ClearAllSavedItemsDescription>Deletes all saved mythic items.</MooMF_ClearAllSavedItemsDescription>
+  <MooMF_DeleteWarning>DANGER ZONE BELOW</MooMF_DeleteWarning>
+  <MooMF_ClearAllSavedItemsDescription>WARNING: The button below does exactly what it says and deletes all saved mythic items. You won't see any new mythic items for a while after pressing this.</MooMF_ClearAllSavedItemsDescription>
   <MooMF_ClearAllSavedItemsButton>Clear Saved Mythic Items</MooMF_ClearAllSavedItemsButton>
   <MooMF_FlagNotifyItemCreation>Notify player when mythic item is created.</MooMF_FlagNotifyItemCreation>
+  <MooMF_FlagNotifyItemCreationTooltip>If active, then you'll get a small notification whenever a colonist's achievements create a new mythic item.</MooMF_FlagNotifyItemCreationTooltip>
+  <MooMF_FlagNotifyItemDeletion>Notify player when mythic item is deleted</MooMF_FlagNotifyItemDeletion>
+  <MooMF_FlagNotifyItemDeletionTooltip>Individual mythic items only occur so many times before disappearing. If this is active, you'll get a small notification when a mythic item shows up for the last time.</MooMF_FlagNotifyItemDeletionTooltip>
   <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
+  <MooMF_PrintExtraStartupDebugLogsTooltip>Prints a bunch of extra stuff during startup for debugging purposes, like all the flavor text. Not recommended during normal play unless you want to clog your log file.</MooMF_PrintExtraStartupDebugLogsTooltip>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
+  <MooMF_FlagMythicOwnersCanCreateNewMythicItems>Mythic Item Owners Can Create New Mythic Items</MooMF_FlagMythicOwnersCanCreateNewMythicItems>
+  <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
   <MooMF_MaxMythicItemsSaved>Max Saved Mythic Items</MooMF_MaxMythicItemsSaved>
+  <MooMF_RandomMythicRelicButtonText>Create Random Mythic Relic</MooMF_RandomMythicRelicButtonText>
   <MooMF_MinLevelForSkillItems>Minimum level for skill-based mythic items.</MooMF_MinLevelForSkillItems>
   <MooMF_MinLevelForSkillItemsToolTip>Upon leveling up a skill, the mod will try to create a mythic item if the new level is at least this value. Only creates an item once per skill per pawn.</MooMF_MinLevelForSkillItemsToolTip>
   <MooMF_MaxItemOccurence>Mythic Item Occurrence Limit: </MooMF_MaxItemOccurence>
-  <MooMF_MaxItemOccurenceTooltip>This value controls how many times a mythic item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of mythic items. If set to 0, then mythic items won't be removed unless the total mythic item save limit is reached, in which case the oldest items are removed first.</MooMF_MaxItemOccurenceTooltip>
+  <MooMF_MaxItemOccurenceTooltip>This value controls how many times a mythic item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of mythic items. If this is set to 0, then mythic items won't be removed unless the total mythic item save limit is reached, in which case the oldest items are removed first.</MooMF_MaxItemOccurenceTooltip>
   <MooMF_PrintDebugLogs>Enable Debug Logging</MooMF_PrintDebugLogs>
+  <MooMF_PrintDebugLogsTooltip>Causes various events to print extra info to the logs. Useful for modders, or for trying to determine if this mod is causing problems.</MooMF_PrintDebugLogsTooltip>
   <MooMF_CreateRandomItemsIfNeeded>Create Random Mythic Items If Needed</MooMF_CreateRandomItemsIfNeeded>
-  <MooMF_CreateRandomItemsIfNeededToolTip>If this is enabled, and the game tries to make a mythic items but finds no valid saved options, create a random mythic item based on some hard-coded preset options.</MooMF_CreateRandomItemsIfNeededToolTip>
+  <MooMF_CreateRandomItemsIfNeededTooltip>If this is enabled, then when the game tries to make a mythic item but finds no valid saved items, it will create a random mythic item. Off by default to encourage your own stories.</MooMF_CreateRandomItemsIfNeededTooltip>
   
-  <MooMF_ManualSaveButton>save button pressed</MooMF_ManualSaveButton>
-  <MooMF_ManualLoadBUtton>load button pressed</MooMF_ManualLoadBUtton>
-  <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file</MooMF_ClearSavedItemsButtonPressed>
-  
+  <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file. You must play the game more before Mythic Items will start showing up again.</MooMF_ClearSavedItemsButtonPressed>
   <MooMF_FailedToCreateMIFromDebug>Tried to place a saved mythic item via debug actions, but failed to create one. There's probably no saved mythic items right now.</MooMF_FailedToCreateMIFromDebug>
 
   <!-- {0} is expected to be a sentence clause that includes the achiever's name, and a reason for why they produced a mythic item
@@ -31,9 +37,13 @@
        {2} is the resulting mythic item's name-->
   <MooMF_CreatedNewItemMessage>Congragulations! Because {0}, their {1} become a mythic item called "{2}"!</MooMF_CreatedNewItemMessage>
   <MooMF_NoMythicReasonGiven>{0} did something impressive (it's unclear what and this is probably either a bug or a debug action)</MooMF_NoMythicReasonGiven>
+  <!-- Killer name, quantity, killed thing type-->
   <MooMF_PrintKillCountReason>{0} killed {1} {2}</MooMF_PrintKillCountReason>
+  <!-- Leveler name, skill level, skill name-->
   <MooMF_PrintLevelupReason>{0} reached level {1} in {2}</MooMF_PrintLevelupReason>
+  <!-- Recruiter, quantity, recruited thing type-->
   <MooMF_PrintRecruitOrTameReason>{0} got {1} {2} to join the colony</MooMF_PrintRecruitOrTameReason>
+  <!-- Name-->
   <MooMF_PrintVictoryReason>{0} escaped this Rimworld</MooMF_PrintVictoryReason>
   
   <MooMF_AddMythicRelic>Add Mythic Relic</MooMF_AddMythicRelic>
@@ -41,34 +51,18 @@
   
   <MooMF_MythicPrefix>\n\nMythic: </MooMF_MythicPrefix>
 
-
-  <!--Effect description notes: 
-   - these are added to the in-game description of mythic items, after the flavor string.
-   - The element {0} should always be the label of the mythic item itself (ex: Revolver).
-   - All other elements can vary depending on what subtype of mythic effect def uses these,
-   although {1} should try to be the label of whatever is added to this weapon, if applicable. -->
-  <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
-  <MooMF_AbilityDescription_GrantStatAbility>Grants the user a buff called "{1}", which increases their performance in the relevant ability.,</MooMF_AbilityDescription_GrantStatAbility>
-  <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yield's from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
-  <MooMF_AbilityDescription_GrantEpicureanWisdom>Grants the user the "{1}" buff, which allows them to cook epicurean delights.</MooMF_AbilityDescription_GrantEpicureanWisdom>
-  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. When the user kills a mechanoid, it will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
-  <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural ability to find extra insect jelly when hunting insects, which is dropped whenever they kill an insect. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
-  <MooMF_AbilityDescription_Thrumbocall>This {0} grants the user the "{1}" ability, which summons a thrumbo herd up to once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
-  <MooMF_AbilityDescription_APRocket>This {0} has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
-  <MooMF_AbilityDescription_EMPRocket>This {0} has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day to immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
-  <MooMF_AbilityDescription_KillstreakDR>While equipped, this {0}'s user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakDR>
-  <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this {0}'s user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakFirerate>
-  <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this {0}'s user enters a battle trance every time they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakSpeed>
-  <MooMF_AbilityDescription_AttactTradeShips>This {0} has some special radio codes embroidered into it. Anyone wearing it can occasionally use these codes to attract a nearby merchant ship into trading range.</MooMF_AbilityDescription_AttactTradeShips>
-  <MooMF_AbilityDescription_TamingInspiration>This {0} contains the vestiges of an animal master's wisdom. A wearer can draw upon this wisdom to immediately gain a taming inspiration.</MooMF_AbilityDescription_TamingInspiration>
-  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master's crafter's insight. A wearer can draw upon this insight to immediately gain a creative inspirtion.</MooMF_AbilityDescription_CreativeInspiration>
-  <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to theirself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
-  <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
-  <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
+  <!--Name, Job -->
   <MooMF_RecipeRequiresHediffs>{0} cannot {1} because it requires the worker to have a specific mythic item ability affecting them.</MooMF_RecipeRequiresHediffs>
-
+  <!-- Name-->
   <MooMF_MineralsProspectedLetterTitle>{0} Prospected</MooMF_MineralsProspectedLetterTitle>
+  <!-- Metal label-->
   <MooMF_MineralsProspectedLetterText>The mythical wisdom of an ancient mining expert has divined the location of an underground deposit of {0}. You'll still need the usual equipment to find it though.</MooMF_MineralsProspectedLetterText>
+
+  <MooMF_RequestMythicItemDialogOption>Request mythic item location for {0} silver and {1} goodwill.</MooMF_RequestMythicItemDialogOption>
+  <MooMF_MythicItemRequestedDialogFollowUp>The {0} recites an old story about ancient heroes of the Rim. Supposedly the events from those stories transpired nearby, and the {0} is convinced that you'll find something there.</MooMF_MythicItemRequestedDialogFollowUp>
+  <MooMF_NoMythicItemsExist>No valid mythic items exist</MooMF_NoMythicItemsExist>
+  <MooMF_MinDaysRequired>Earn trust after lasting {0} days.</MooMF_MinDaysRequired>
+  <MooMF_MythicItemLastOccurence>The mythic item "{0}" has appeared {1} times. This is the last time you'll see this item.</MooMF_MythicItemLastOccurence>
 
 
 </LanguageData>

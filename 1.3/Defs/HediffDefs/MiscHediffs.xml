@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_ThrumboButcher</defName>
     <label>Thrumbo Butcher</label>
     <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
   </HediffDef>
 
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_EpicureanWisdom</defName>
     <label>Epicurean Wisdom</label>
     <description>The epicurean wisdom of a legendary cook grants this person the ability to cook similarly legendary meals.</description>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_HerdFeedersWisdom</defName>
     <label>Herd Feeder's Wisdom</label>
     <description>The wisdom of a legendary animal handler grants this person the ability to produce enough kibble to feed a herd of thrumbos with ease.</description>
   </HediffDef>
 
-  <HediffDef>
+  <HediffDef ParentName="OnApparelHediff">
     <defName>MooMF_Hediff_HealersWisdom</defName>
     <label>Healer's Wisdom</label>
     <description>The wisdom of a legendary doctor grants this person the ability to produce glitterworld medicine.</description>
@@ -58,6 +58,46 @@
   </HediffDef>
 
 
+  <HediffDef ParentName="OnApparelHediff">
+    <defName>MooMF_Hediff_ImpPsyboost</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>High Stellarch's Eltex Weave</label>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>1</minSeverity>
+    <description>This person is wearing clothes that have been rewoven with the best psychic focusing materials known to the Imperium.</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PsychicSensitivity>4</PsychicSensitivity>
+          <PsychicEntropyRecoveryRate MayRequire="Ludeon.RimWorld.Royalty">1.2</PsychicEntropyRecoveryRate>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+
+  <HediffDef ParentName="OnApparelHediff">
+    <defName>MooMF_Hediff_ArchoPriest</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Archopriest</label>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <minSeverity>1</minSeverity>
+    <description>The persuasive whispers of an ancient archotech have empowered this person's ideological certainty, making them much better at converting people.</description>
+    <stages>
+      <li>
+        <statFactors>
+          <NegotiationAbility>5</NegotiationAbility>
+          <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">.1</CertaintyLossFactor>
+          <SocialIdeoSpreadFrequencyFactor MayRequire="Ludeon.RimWorld.Ideology">10</SocialIdeoSpreadFrequencyFactor>
+          <ConversionPower MayRequire="Ludeon.RimWorld.Ideology">10</ConversionPower>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+
   <HediffDef Name="KillstreakBase" Abstract="True">
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
@@ -81,70 +121,70 @@
         <label>1</label>
         <minSeverity>0</minSeverity>
         <statFactors> 
-            <IncomingDamageFactor>.95</IncomingDamageFactor> 
+            <IncomingDamageFactor>.75</IncomingDamageFactor> 
         </statFactors>
       </li>
       <li>
         <label>2</label>
         <minSeverity>.2</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.9</IncomingDamageFactor>
+          <IncomingDamageFactor>.7</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>3</label>
         <minSeverity>.3</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.85</IncomingDamageFactor>
+          <IncomingDamageFactor>.65</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>4</label>
         <minSeverity>.4</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.80</IncomingDamageFactor>
+          <IncomingDamageFactor>.60</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>5</label>
         <minSeverity>.5</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.75</IncomingDamageFactor>
+          <IncomingDamageFactor>.55</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>6</label>
         <minSeverity>.6</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.70</IncomingDamageFactor>
+          <IncomingDamageFactor>.50</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>7</label>
         <minSeverity>.7</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.65</IncomingDamageFactor>
+          <IncomingDamageFactor>.45</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>8</label>
         <minSeverity>.8</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.60</IncomingDamageFactor>
+          <IncomingDamageFactor>.40</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>9</label>
         <minSeverity>.9</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.55</IncomingDamageFactor>
+          <IncomingDamageFactor>.35</IncomingDamageFactor>
         </statFactors>
       </li>
       <li>
         <label>10</label>
         <minSeverity>1</minSeverity>
         <statFactors>
-          <IncomingDamageFactor>.50</IncomingDamageFactor>
+          <IncomingDamageFactor>.30</IncomingDamageFactor>
         </statFactors>
       </li>
     </stages>
@@ -159,80 +199,80 @@
         <label>1</label>
         <minSeverity>0</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.975</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.975</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.85</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.85</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>2</label>
         <minSeverity>.2</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.95</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.95</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.825</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.825</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>3</label>
         <minSeverity>.3</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.925</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.925</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.8</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.8</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>4</label>
         <minSeverity>.4</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.90</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.90</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.775</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.775</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>5</label>
         <minSeverity>.5</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.875</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.875</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.75</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.75</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>6</label>
         <minSeverity>.6</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.85</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.85</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.725</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.725</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>7</label>
         <minSeverity>.7</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.825</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.825</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.7</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.7</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>8</label>
         <minSeverity>.8</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.80</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.80</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.625</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.625</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>9</label>
         <minSeverity>.9</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.775</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.775</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.6</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.6</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
       <li>
         <label>10</label>
         <minSeverity>1</minSeverity>
         <statFactors>
-          <AimingDelayFactor>.75</AimingDelayFactor>
-          <VEF_VerbCooldownFactor>.75</VEF_VerbCooldownFactor>
+          <AimingDelayFactor>.575</AimingDelayFactor>
+          <VEF_VerbCooldownFactor>.575</VEF_VerbCooldownFactor>
         </statFactors>
       </li>
     </stages>
@@ -249,7 +289,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.2</offset>
+            <offset>2</offset>
           </li>
         </capMods>
       </li>
@@ -259,7 +299,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.4</offset>
+            <offset>2.5</offset>
           </li>
         </capMods>
       </li>
@@ -269,7 +309,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.6</offset>
+            <offset>3</offset>
           </li>
         </capMods>
       </li>
@@ -279,7 +319,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.8</offset>
+            <offset>3.5</offset>
           </li>
         </capMods>
       </li>
@@ -289,7 +329,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1</offset>
+            <offset>4</offset>
           </li>
         </capMods>
       </li>
@@ -299,7 +339,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.2</offset>
+            <offset>4.5</offset>
           </li>
         </capMods>
       </li>
@@ -309,7 +349,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.4</offset>
+            <offset>5</offset>
           </li>
         </capMods>
       </li>
@@ -319,7 +359,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.6</offset>
+            <offset>5.5</offset>
           </li>
         </capMods>
       </li>
@@ -329,7 +369,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>1.8</offset>
+            <offset>6</offset>
           </li>
         </capMods>
       </li>
@@ -339,9 +379,42 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>2</offset>
+            <offset>6.5</offset>
           </li>
         </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+
+  <HediffDef ParentName="KillstreakBase">
+    <defName>MooMF_Hediff_KillstreakHealing</defName>
+    <label>Killstreak: Regeneration</label>
+    <description>This person is in a battle trance. They gain a huge boost to natural healing whenever they kill something.</description>
+    <stages>
+      <li>
+        <label>1</label>
+        <minSeverity>0</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>15</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>2</label>
+        <minSeverity>.2</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>30</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <label>3</label>
+        <minSeverity>.3</minSeverity>
+        <statOffsets>
+          <ImmunityGainSpeed>1</ImmunityGainSpeed>
+          <InjuryHealingFactor>45</InjuryHealingFactor>
+        </statOffsets>
       </li>
     </stages>
   </HediffDef>

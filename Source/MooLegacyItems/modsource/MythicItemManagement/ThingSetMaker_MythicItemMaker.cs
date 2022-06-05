@@ -36,7 +36,7 @@ namespace MooMythicItems
         protected override IEnumerable<ThingDef> AllGeneratableThingsDebugSub(ThingSetMakerParams parms)
         {
             DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker AllGeneratableThingsDebugSub");
-            return MythicItemCache.GetPossibleMythicItemDefs().AsEnumerable();
+            return MythicItemCache.GetPossibleMythicThingDefs().AsEnumerable();
         }
          
     }

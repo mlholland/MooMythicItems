@@ -4,7 +4,8 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-/* This def is causes a mythic item to apply an XML-specific hediff when equipped. Only works for clothing-based items, not weapons.
+/* This def is causes a mythic item to apply a hediff when equipped. Hediffs meant for clothing-based mythic items need the vanilla hediffcomp for linking
+ * apparel and hediffs together.
  */
 namespace MooMythicItems
 {
@@ -71,7 +72,7 @@ namespace MooMythicItems
                 Hediff targetHediff = pawn.health.hediffSet.GetFirstHediffOfDef(equipHediff);
                 if (targetHediff == null)
                 {
-                    DebugActions.LogErr("A mythic {0} is supposed to remove an associated hediff {1} when unequipped, but no such hediff could be found on wielder {2} when an unequip occurred.", mythicItem.Label, equipHediff.label, pawn.Name.ToStringFull);
+                    DebugActions.LogErr("A mythic item ({0}) is supposed to remove an associated hediff '{1}' when unequipped, but no such hediff could be found on the wielder {2} when an unequip occurred.", mythicItem.Label, equipHediff.label, pawn.Name.ToStringFull);
                     return;
                 }
                 pawn.health.RemoveHediff(targetHediff);
@@ -80,7 +81,9 @@ namespace MooMythicItems
 
         public override string EffectDescription(ThingWithComps mythicItem)
         {
-            return string.Format(effectDescTranslationKey.Translate(), mythicItem.def.label, equipHediff.label);
+            List<string> args = new List<string>() { mythicItem.def.label, equipHediff.label };
+            args.AddRange(extraDescriptionFields);
+            return string.Format(effectDescTranslationKey.Translate(), args.ToArray());
         }
     }
 }

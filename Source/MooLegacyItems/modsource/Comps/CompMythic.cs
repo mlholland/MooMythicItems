@@ -4,9 +4,9 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-/* This comp is what actually contains the data on an in-game item that makes it a mythic item, and 
+/* This comp is what actually contains the data attached to an in-game item that makes it a mythic item, and 
  * gives that items the unusual text/abilities to show it. All items that could possibly be a mythic 
- * item have this comp, but it's only populated with data in actual mythic items.
+ * item need this comp, but it's only populated with data in actual mythic items.
  */
 namespace MooMythicItems
 {
@@ -20,11 +20,11 @@ namespace MooMythicItems
         public String newLabel = null;
 
         public String newDescription = null;
-        
+
         public MythicEffectDef abilityDef = null;
-        
+
         // for arbitrary data storage by specific mythic effect logic.
-        private string effectVal1 = null, effectVal2 = null, effectVal3 = null;
+        public string effectVal1 = null, effectVal2 = null, effectVal3 = null;
 
         // Need to persist flavor and special abilities across saves
         public override void PostExposeData()

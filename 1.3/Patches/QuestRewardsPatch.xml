@@ -6,7 +6,7 @@
           <xpath>/Defs/ThingSetMakerDef[defName= "Reward_ItemsStandard"]/root/options/*[position()=1]/thingSetMaker/options</xpath>
           <value> 
             <li>
-              <weight>.6</weight>
+              <weight>1.5</weight>
               <thingSetMaker Class="MooMythicItems.ThingSetMaker_MythicItemMaker" />
             </li> 
           </value>

@@ -5,19 +5,30 @@
    - these are added to the in-game description of mythic items, after the flavor string.
    - The element {0} should always be the label of the mythic item itself (ex: Revolver).
    - All other elements can vary depending on what subtype of mythic effect def uses these,
-   although {1} should try to be the label of whatever is added to this weapon, if applicable. -->
+   although {1} should try to be the label of whatever is added to this weapon (ex a hediff, or ability label), if applicable. -->
   <MooMF_AbilityDescription_Addon>\n\nMythic Effect: {0}</MooMF_AbilityDescription_Addon>
-  <MooMF_AbilityDescription_GrantStatAbility>Grants the user a buff called "{1}", which increases their performance in the relevant ability.,</MooMF_AbilityDescription_GrantStatAbility>
-  <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yield's from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
-  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. Mechanoid kills will drop extra steel, among other things.</MooMF_AbilityDescription_MechDrops>
-  <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural ability to find extra insect jelly when hunting insects, which is dropped whenever they kill an insect. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
-  <MooMF_AbilityDescription_Thrumbocall>This item grants the user the "{1}" ability to summon a thrumbo herd once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
-  <MooMF_AbilityDescription_APRocket>This weapon has a small shrapnel rocket jury-rigged onto it, granting the "{1}" ability. This can be used once a day deal heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
-  <MooMF_AbilityDescription_EMPRocket>This weapon has a small EMP cannon jury-rigged onto it, granting the "{1}" ability. This can be used once a day quadrum tom immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
-  <MooMF_AbilityDescription_KillstreakDR>While equipped, this weapon's user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakDR>
-  <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this weapon's user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect.</MooMF_AbilityDescription_KillstreakFirerate>
+  <MooMF_AbilityDescription_GrantStatAbility>Grants the user the "{1}" buff, which passively improves attributes related to the {2} skill.</MooMF_AbilityDescription_GrantStatAbility>
+  <MooMF_AbilityDescription_GrantThurmboButcher>Grants the user the "{1}" buff, which doubles their butcher yields from thrumbos.</MooMF_AbilityDescription_GrantThurmboButcher>
+  <MooMF_AbilityDescription_GrantEpicureanWisdom>Grants the user the "{1}" buff, which allows them to cook epicurean delights.</MooMF_AbilityDescription_GrantEpicureanWisdom>
+  <MooMF_AbilityDescription_MechDrops>This weapon makes the user unusually good at dismantling mechanoids. When they kill a mechanoid, it will drop extra steel, and possibly other things.</MooMF_AbilityDescription_MechDrops>
+  <MooMF_AbilityDescription_InsectDrops>This weapon grants the user a supernatural efficiency for harvesting insects, causing wild hive insects to drop extra insect jelly when killed. Just don't ask where it comes from.</MooMF_AbilityDescription_InsectDrops>
+  <MooMF_AbilityDescription_Thrumbocall>This {0} grants the user the "{1}" ability, which summons a thrumbo herd up to once a year. This effect has no impact on normal Thrumbo migration frequencies.</MooMF_AbilityDescription_Thrumbocall>
+  <MooMF_AbilityDescription_APRocket>This {0} has a grapeshot rocket jury-rigged onto its side, granting the "{1}" ability. This deals heavy damage to unarmored foes.</MooMF_AbilityDescription_APRocket>
+  <MooMF_AbilityDescription_EMPRocket>This {0} has an EMP cannon jury-rigged onto its side, granting the "{1}" ability. The resulting EMP burst will immobolize a large cluster of mechanoids for significantly more time than other EMP weapons.</MooMF_AbilityDescription_EMPRocket>
+  <MooMF_AbilityDescription_InfernoRocket>This {0} has a centipede's inferno cannon jury-rigged onto its side, with the words "burn them all" carved into the metal. Grants the "{1}" ability, which will start a lot of fires. </MooMF_AbilityDescription_InfernoRocket>
+  <MooMF_AbilityDescription_KillstreakDR>While equipped, this {0}'s user enters a battle trance every time they kill something, granting damage resistance. Subsequent kills before it wears off will increase the effect slightly.</MooMF_AbilityDescription_KillstreakDR>
+  <MooMF_AbilityDescription_KillstreakFirerate>While equipped, this {0}'s user enters a battle trance every time they kill something, granting improved fire rates and firing cooldown. Subsequent kills before it wears off will increase the effect slightly.</MooMF_AbilityDescription_KillstreakFirerate>
+  <MooMF_AbilityDescription_KillstreakSpeed>While equipped, this {0}'s user enters a battle trance when they kill something, granting increased movespeed. Subsequent kills before it wears off will increase the effect slightly.</MooMF_AbilityDescription_KillstreakSpeed>
+  <MooMF_AbilityDescription_AttactTradeShips>This {0} has some special ship codes embroidered into it. Anyone wearing it can occasionally broadcast these codes to attract a nearby merchant ship into trading range.</MooMF_AbilityDescription_AttactTradeShips>
+  <MooMF_AbilityDescription_TamingInspiration>This {0} contains the vestiges of an animal master's wisdom. A wearer can draw upon this wisdom to gain a taming inspiration.</MooMF_AbilityDescription_TamingInspiration>
+  <MooMF_AbilityDescription_CreativeInspiration>This {0} contains a master crafter's insight. A wearer can draw upon this insight to gain a creative inspiration.</MooMF_AbilityDescription_CreativeInspiration>
+  <MooMF_AbilityDescription_TradingInspiration>This {0} bears the ancient instincts of a master merchant. A wearer can draw upon this instinct to gain a trading inspiration.</MooMF_AbilityDescription_TradingInspiration>
+  <MooMF_AbilityDescription_ShootingInspiration>The instincts of a peerless sniper are hewn into this {0}. A wielder can draw upon these instincts to grant a shooting inspiration to themself and their companions.</MooMF_AbilityDescription_ShootingInspiration>
+  <MooMF_AbilityDescription_GrantHerdFeedersWisdom>Grants the user the "{1}" buff, which allows them to produce kibble with miraculous efficiency.</MooMF_AbilityDescription_GrantHerdFeedersWisdom>
+  <MooMF_AbilityDescription_Prospecting>This {0} grants the user the "{1}" ability, which can be used every few days to immediatly find an underground mineral deposit.</MooMF_AbilityDescription_Prospecting>
+  <MooMF_AbilityDescription_KillstreakHealing>While equipped, this {0}'s user enters a battle trance every time they kill something, granting a huge boost to their natural healing rate - enough to recover from injuries mid-battle. More powerful versions of this might even increase the effect after multiple kills. Old stories about this weapon claim that heartless warriors recoved from intense battles by killing their pets. But surely you wouldn't do that...</MooMF_AbilityDescription_KillstreakHealing>
+  <MooMF_AbilityDescription_GrantRoyalPsyboost>This {0} has been retrofitted with a weave of the highest-quality eltex threads - a luxury only available to the most powerful royals of the imperium. Wearing this will grant an absurd boost to the wearer's psychic abilities.</MooMF_AbilityDescription_GrantRoyalPsyboost>
+  <MooMF_AbilityDescription_ArchoPriest>This {0} is still psychically linked to an ancient archotect. People who wear this {0} occasionally hear persuasive whispers and ideological advice. This makes the pawn incredibly persuasive, especially in matters concerning ideologions.</MooMF_AbilityDescription_ArchoPriest>
 
-
-
-
+  
 </LanguageData>
