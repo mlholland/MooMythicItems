@@ -19,8 +19,8 @@ namespace MooMythicItems
     public class DialogPatch_AddRequestMythicOption
     {
         public static int MythicItemQuestCost = 7500;
-        public static int GoodwillCost = 75;
-        public static int MinDaysToUnlockQuest = 120;
+        public static int BaseGoodwillCost = 75;
+        public static int MinDaysToUnlockQuest = 90;
 
         // This was private in FactionDialogMaker, and I like to avoid fieldRefs when possible.
         private static int AmountSendableSilver(Map map)
@@ -40,7 +40,7 @@ namespace MooMythicItems
             {
                 return;
             }
-            DiaOption diaOption = new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, GoodwillCost));
+            DiaOption diaOption = new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, BaseGoodwillCost));
             if (!MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false))
             {
                 diaOption.Disable(String.Format("MooMF_NoMythicItemsExist".Translate()));
@@ -53,9 +53,9 @@ namespace MooMythicItems
                 __result.options.Insert(__result.options.Count - 1, diaOption);
                 return;
             }
-            else if (faction.PlayerGoodwill < GoodwillCost)
+            else if (faction.PlayerGoodwill < BaseGoodwillCost)
             {
-                diaOption.Disable("NeedGoodwill".Translate(GoodwillCost.ToString("F0")));
+                diaOption.Disable("NeedGoodwill".Translate(BaseGoodwillCost.ToString("F0")));
                 __result.options.Insert(__result.options.Count - 1, diaOption);
                 return;
             }
@@ -73,7 +73,7 @@ namespace MooMythicItems
                 MythicItem mi = MythicItemCache.SelectRandomMythicItemFromCache();
                 slate.Set<MythicItem>("itemStashOnlyMythicItem", mi, false); // This is used by another patch to replace the normal quest contents with a mythic item
                 // need to make new diaOption to set complex values (at least that's how vanilla code did it).
-                __result.options.Insert(__result.options.Count - 1, new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, GoodwillCost))
+                __result.options.Insert(__result.options.Count - 1, new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, -1 * Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, -BaseGoodwillCost)))
                 {
                     action = delegate ()
                     {
@@ -83,7 +83,7 @@ namespace MooMythicItems
                             QuestUtility.SendLetterQuestAvailable(quest);
                         }
                         TradeUtility.LaunchThingsOfType(ThingDefOf.Silver, MythicItemQuestCost, map, null);
-                        Faction.OfPlayer.TryAffectGoodwillWith(faction, GoodwillCost, false, true, null, null);
+                        Faction.OfPlayer.TryAffectGoodwillWith(faction, -BaseGoodwillCost, false, true, null, null);
                     },
                     link = new DiaNode(String.Format("MooMF_MythicItemRequestedDialogFollowUp".Translate(), faction.LeaderTitle))
                     {

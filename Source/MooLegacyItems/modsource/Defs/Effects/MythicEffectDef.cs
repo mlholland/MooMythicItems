@@ -25,6 +25,7 @@ namespace MooMythicItems
         {
             foreach (var error in base.ConfigErrors()) yield return error;
             if (effectDescTranslationKey == null) yield return "effectDescTranslationKey cannot be null";
+            if (extraDescriptionFields == null) yield return "extraDescriptionFields cannot be null. If nothing else, leave it alone since it defaults to an empty non-null list.";
         }
 
         public virtual void OnEquip(Pawn pawn, ThingWithComps mythicItem, ref string effectVal1, ref string effectVal2, ref string effectVal3) { }

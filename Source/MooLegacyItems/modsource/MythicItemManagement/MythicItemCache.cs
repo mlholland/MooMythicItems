@@ -295,6 +295,10 @@ namespace MooMythicItems
                     s_cachedItems.Remove(mi);
                     SaveCachedMythicItems();
                     DebugActions.LogIfDebug("Mythic Item {0} has been used in {1} worlds, removing it from the saved list of mythic items.", mi.GetFormattedTitle(), mi.worldsUsedIn.Count);
+                    if (MooMythicItems_Mod.settings.flagNotifyItemDeletion)
+                    {
+                        Messages.Message(string.Format("MooMF_MythicItemLastOccurence".Translate(), mi.GetFormattedTitle(), MooMythicItems_Mod.settings.individualItemOccurenceLimit), MessageTypeDefOf.PositiveEvent, true);
+                    }
                     return true;
                 }
                 SaveCachedMythicItems();

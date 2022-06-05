@@ -9,6 +9,8 @@
   <MooMF_ClearAllSavedItemsButton>Clear Saved Mythic Items</MooMF_ClearAllSavedItemsButton>
   <MooMF_FlagNotifyItemCreation>Notify player when mythic item is created.</MooMF_FlagNotifyItemCreation>
   <MooMF_FlagNotifyItemCreationTooltip>If active, then you'll get a small notification whenever a colonist's achievements create a new mythic item.</MooMF_FlagNotifyItemCreationTooltip>
+  <MooMF_FlagNotifyItemDeletion>Notify player when mythic item is deleted</MooMF_FlagNotifyItemDeletion>
+  <MooMF_FlagNotifyItemDeletionTooltip>Individual mythic items only occur so many times before disappearing. If this is active, you'll get a small notification when a mythic item shows up for the last time.</MooMF_FlagNotifyItemDeletionTooltip>
   <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
   <MooMF_PrintExtraStartupDebugLogsTooltip>Prints a bunch of extra stuff during startup for debugging purposes, like all the flavor text. Not recommended during normal play unless you want to clog your log file.</MooMF_PrintExtraStartupDebugLogsTooltip>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>
@@ -21,7 +23,7 @@
   <MooMF_MinLevelForSkillItems>Minimum level for skill-based mythic items.</MooMF_MinLevelForSkillItems>
   <MooMF_MinLevelForSkillItemsToolTip>Upon leveling up a skill, the mod will try to create a mythic item if the new level is at least this value. Only creates an item once per skill per pawn.</MooMF_MinLevelForSkillItemsToolTip>
   <MooMF_MaxItemOccurence>Mythic Item Occurrence Limit: </MooMF_MaxItemOccurence>
-  <MooMF_MaxItemOccurenceTooltip>This value controls how many times a mythic item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of mythic items. If set to 0, then mythic items won't be removed unless the total mythic item save limit is reached, in which case the oldest items are removed first.</MooMF_MaxItemOccurenceTooltip>
+  <MooMF_MaxItemOccurenceTooltip>This value controls how many times a mythic item can show up in any capacity (as a quest reward, as a random shop item, etc) before it is removed from the saved list of mythic items. If this is set to 0, then mythic items won't be removed unless the total mythic item save limit is reached, in which case the oldest items are removed first.</MooMF_MaxItemOccurenceTooltip>
   <MooMF_PrintDebugLogs>Enable Debug Logging</MooMF_PrintDebugLogs>
   <MooMF_PrintDebugLogsTooltip>Causes various events to print extra info to the logs. Useful for modders, or for trying to determine if this mod is causing problems.</MooMF_PrintDebugLogsTooltip>
   <MooMF_CreateRandomItemsIfNeeded>Create Random Mythic Items If Needed</MooMF_CreateRandomItemsIfNeeded>
@@ -59,7 +61,8 @@
   <MooMF_RequestMythicItemDialogOption>Request mythic item location for {0} silver and {1} goodwill.</MooMF_RequestMythicItemDialogOption>
   <MooMF_MythicItemRequestedDialogFollowUp>The {0} recites an old story about ancient heroes of the Rim. Supposedly the events from those stories transpired nearby, and the {0} is convinced that you'll find something there.</MooMF_MythicItemRequestedDialogFollowUp>
   <MooMF_NoMythicItemsExist>No valid mythic items exist</MooMF_NoMythicItemsExist>
-  <MooMF_MinDaysRequired>Earn trust after {0} days here.</MooMF_MinDaysRequired>
+  <MooMF_MinDaysRequired>Earn trust after lasting {0} days.</MooMF_MinDaysRequired>
+  <MooMF_MythicItemLastOccurence>The mythic item "{0}" has appeared {1} times. This is the last time you'll see this item.</MooMF_MythicItemLastOccurence>
 
 
 </LanguageData>

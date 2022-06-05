@@ -143,25 +143,35 @@ namespace MooMythicItems
             DebugSpawnMythicItem(MythicItemUtilities.CreateRandomMythicItem().Realize(), UI.MouseCell(), false);
         }
 
-        [DebugAction("Spawning", "Spawn Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Saved Mythic Item", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItem()
         {
-            Thing item = MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, false, true);
-            if (item == null)
+            List<DebugMenuOption> itemList = new List<DebugMenuOption>();
+            foreach (MythicItem mi in MythicItemCache.GetMythicItems(true, true))
             {
-                DebugActions.LogIfDebug("MooMF_FailedToCreateMIFromDebug".Translate());
-                Messages.Message("MooMF_FailedToCreateLIFromDebug".Translate(), MessageTypeDefOf.NeutralEvent, true);
+                itemList.Add(new DebugMenuOption(mi.GetFormattedTitle(), DebugMenuOptionMode.Tool, delegate ()
+                {
+                    DebugSpawnMythicItem(MythicItemCache.RealizeSelectedMythicItem(mi, false), UI.MouseCell(), false);
+                }));
             }
-            DebugSpawnMythicItem(item, UI.MouseCell(), false);
+            Find.WindowStack.Add(new Dialog_DebugOptionListLister(itemList));
         }
 
-        [DebugAction("Spawning", "Try place Saved Mythic Item - Record World", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Try place Saved Mythic Item - Record World", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItemRecordWorld()
         {
-            DebugSpawnMythicItem(MythicItemCache.RealizeRandomMythicItemFromCacheWithOptions(false, false, true, true), UI.MouseCell(), false);
-            
+            List<DebugMenuOption> itemList = new List<DebugMenuOption>();
+            foreach (MythicItem mi in MythicItemCache.GetMythicItems(true, true))
+            {
+                itemList.Add(new DebugMenuOption(mi.GetFormattedTitle(), DebugMenuOptionMode.Tool, delegate ()
+                {
+                    DebugSpawnMythicItem(MythicItemCache.RealizeSelectedMythicItem(mi, true), UI.MouseCell(), false);
+                }));
+            }
+            Find.WindowStack.Add(new Dialog_DebugOptionListLister(itemList));
         }
 
+        // simple helper function just places a thing.
         public static void DebugSpawnMythicItem(Thing item, IntVec3 c,  bool direct = false, ThingStyleDef thingStyleDef = null)
         {
             if (direct)
@@ -172,10 +182,10 @@ namespace MooMythicItems
             GenPlace.TryPlaceThing(item, c, Find.CurrentMap, ThingPlaceMode.Near, null, null, default(Rot4));
         }
 
-        [DebugAction("Spawning", "Try place all mythic item types", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        /*[DebugAction("Spawning", "Try place all mythic item types", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         public static void DebugSpawnAllMythicItems()
         {
             // Todo
-        }
+        }*/
     }
 }

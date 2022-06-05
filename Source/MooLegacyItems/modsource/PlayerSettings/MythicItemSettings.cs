@@ -10,8 +10,9 @@ namespace MooMythicItems
 {
     public class MythicItemSettings : ModSettings
     {
-        public bool flagCreateRandomMythicItemsIfNoneAvailable = true;
+        public bool flagCreateRandomMythicItemsIfNoneAvailable = false;
         public bool flagNotifyItemCreation = true;
+        public bool flagNotifyItemDeletion = true;
         public bool flagMythicOwnersCanCreateNewMythicItems = false;
         public bool flagDebug = false;
         public bool flagStartupDebug = false;
@@ -30,8 +31,9 @@ namespace MooMythicItems
         {
             base.ExposeData();
 
-            Scribe_Values.Look(ref flagCreateRandomMythicItemsIfNoneAvailable, "flagCreateRandomMythicItemsIfNoneAvailable", true, true);
+            Scribe_Values.Look(ref flagCreateRandomMythicItemsIfNoneAvailable, "flagCreateRandomMythicItemsIfNoneAvailable", false, true);
             Scribe_Values.Look(ref flagNotifyItemCreation, "flagNotifyItemCreation", true, true);
+            Scribe_Values.Look(ref flagNotifyItemDeletion, "flagNotifyItemDeletion", true, true);
             Scribe_Values.Look(ref flagMythicOwnersCanCreateNewMythicItems, "flagMythicOwnersCanCreateNewMythicItems", false, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
             Scribe_Values.Look(ref flagStartupDebug, "flagStartupDebug", false, true);
@@ -49,6 +51,7 @@ namespace MooMythicItems
             ls.Label("MooMF_SettingsLabel".Translate());
             ls.CheckboxLabeled("MooMF_CreateRandomItemsIfNeeded".Translate(), ref flagCreateRandomMythicItemsIfNoneAvailable, "MooMF_CreateRandomItemsIfNeededTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagNotifyItemCreation".Translate(), ref flagNotifyItemCreation, "MooMF_FlagNotifyItemCreationTooltip".Translate());
+            ls.CheckboxLabeled("MooMF_FlagNotifyItemDeletion".Translate(), ref flagNotifyItemDeletion, "MooMF_FlagNotifyItemDeletionTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagMythicOwnersCanCreateNewMythicItems".Translate(), ref flagMythicOwnersCanCreateNewMythicItems, "MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip".Translate());
             ls.CheckboxLabeled("MooMF_PrintDebugLogs".Translate(), ref flagDebug, "MooMF_PrintDebugLogsTooltip".Translate());
             ls.CheckboxLabeled("MooMF_PrintExtraStartupDebugLogs".Translate(), ref flagStartupDebug, "MooMF_PrintExtraStartupDebugLogsTooltip".Translate());
