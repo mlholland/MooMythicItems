@@ -134,11 +134,8 @@
       <li>MooMF_GrantEMPRocket</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_1</li>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_2</li>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_3</li>
-      <li>MooMF_MythicStory_HumanKills3_Ranged_1</li>
-      <li>MooMF_MythicStory_HumanKills3_Ranged_2</li>
+      <li>MooMF_MythicStory_MechKills1_RangedM1</li>
+      <li>MooMF_MythicStory_MechKills1_RangedM2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_MechKills1_Ranged_1</li>
@@ -149,8 +146,8 @@
       <li>MooMF_KillMechsForDrops_1</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_MechKills1_MeleeM1</li>
+      <li>MooMF_MythicStory_MechKills1_MeleeM2</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_MechKills1_Melee_1</li>
@@ -169,11 +166,8 @@
       <li>MooMF_GrantEMPRocket2</li>
     </effects>
     <descriptions>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_1</li>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_2</li>
-      <li>MooMF_MythicStory_HumanKills2_Ranged_3</li>
-      <li>MooMF_MythicStory_HumanKills3_Ranged_1</li>
-      <li>MooMF_MythicStory_HumanKills3_Ranged_2</li>
+      <li>MooMF_MythicStory_MechKills2_RangedM1</li>
+      <li>MooMF_MythicStory_MechKills2_RangedM2</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_MechKills2_Ranged_1</li>
@@ -184,8 +178,8 @@
       <li>MooMF_KillMechsForDrops_2</li>
     </meleeEffects>
     <meleeDescriptions>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
-      <li>MooMF_MythicStory_HumanKills1_Melee_1</li>
+      <li>MooMF_MythicStory_MechKills2_MeleeM1</li>
+      <li>MooMF_MythicStory_MechKills2_MeleeM2</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_MechKills2_Melee_1</li>
