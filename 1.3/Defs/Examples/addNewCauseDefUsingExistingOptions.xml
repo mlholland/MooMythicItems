@@ -24,6 +24,9 @@
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_HumanKills2_Ranged_M1</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_1</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_3</li>
     </descriptions>
     <titles>
       <li>MooMF_MythicTitle_HumanKills2_Ranged_1</li>
@@ -43,6 +46,9 @@
     <meleeDescriptions>
       <li>MooMF_MythicStory_HumanKills2_Melee_M1</li>
       <li>MooMF_MythicStory_HumanKills2_Melee_M2</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_3</li>
     </meleeDescriptions>
     <meleeTitles>
       <li>MooMF_MythicTitle_HumanKills2_Melee_1</li>
