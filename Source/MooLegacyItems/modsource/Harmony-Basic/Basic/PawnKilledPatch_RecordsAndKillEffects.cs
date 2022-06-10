@@ -5,11 +5,11 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-/* This patch allows for custom kill-count records to be incremented.
+/* This patch allows for custom kill-count records to be incremented, and runs on-kill effects if needed.
  */
 namespace MooMythicItems
 {
-    public class MythicMaker_Notify_PawnKilled
+    public class PawnKilledPatch_RecordsAndKillEffects
     {
 
         private static RecordDef insectKills;
@@ -84,7 +84,7 @@ namespace MooMythicItems
             }
         }
 
-        private static void UpdateNewRecords(Pawn killed, Pawn killer)
+        public static void UpdateNewRecords(Pawn killed, Pawn killer)
         {
             if (killed.Faction != null && killed.Faction.def.Equals(FactionDefOf.Insect))
             {

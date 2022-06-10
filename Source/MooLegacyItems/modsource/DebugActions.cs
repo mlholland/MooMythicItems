@@ -22,7 +22,7 @@ namespace MooMythicItems
         {
             if (MooMythicItems_Mod.settings.flagDebug)
             {
-                DebugActions.MooLog(debugPrefix.Translate() + String.Format(printVal, args)); 
+                DebugActions.MooLog(printVal, args); 
             }
         }
 
