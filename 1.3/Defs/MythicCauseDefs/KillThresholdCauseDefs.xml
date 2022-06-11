@@ -79,7 +79,7 @@
       <li>MooMF_MythicTitle_HumanKills1_Melee_M13</li>
       <li>MooMF_MythicTitle_HumanKills1_Melee_M14</li>
     </meleeTitles>
-    <threshold>50</threshold>
+    <threshold>30</threshold>
     <record>KillsHumanlikes</record>
     <priority>1</priority>
     <subreason>humanoids</subreason>
@@ -119,7 +119,7 @@
       <li>MooMF_MythicTitle_HumanKills3_Melee_4</li>
       <li>MooMF_MythicTitle_HumanKills3_Melee_5</li>
     </meleeTitles>
-    <threshold>300</threshold>
+    <threshold>200</threshold>
     <record>KillsHumanlikes</record>
     <priority>4</priority>
     <subreason>humanoid</subreason>
@@ -150,7 +150,7 @@
       <li>MooMF_MythicTitle_MechKills1_Melee_2</li>
       <li>MooMF_MythicTitle_MechKills1_Melee_3</li>
     </meleeTitles>
-    <threshold>25</threshold>
+    <threshold>20</threshold>
     <record>KillsMechanoids</record>
     <priority>2</priority>
     <subreason>mechs</subreason>
@@ -180,7 +180,7 @@
       <li>MooMF_MythicTitle_MechKills2_Melee_2</li>
       <li>MooMF_MythicTitle_MechKills2_Melee_3</li>
     </meleeTitles>
-    <threshold>100</threshold>
+    <threshold>75</threshold>
     <record>KillsMechanoids</record>
     <priority>2</priority>
     <subreason>mechs</subreason>
@@ -216,7 +216,7 @@
       <li>MooMF_MythicTitle_InsectKills1_Melee_5</li>
       <li>MooMF_MythicTitle_InsectKills2_Melee_M6</li>
     </meleeTitles>
-    <threshold>75</threshold>
+    <threshold>40</threshold>
     <record>MooMF_killsInsects</record>
     <priority>2</priority>
     <subreason>insects</subreason>
@@ -246,7 +246,7 @@
       <li>MooMF_MythicTitle_InsectKills2_Melee_2</li>
       <li>MooMF_MythicTitle_InsectKills2_Melee_3</li>
     </meleeTitles>
-    <threshold>400</threshold>
+    <threshold>150</threshold>
     <record>MooMF_killsInsects</record>
     <priority>3</priority>
     <subreason>insects</subreason>

@@ -58,7 +58,7 @@
       <li>MooMF_MythicTitle_HumanKills2_Melee_5</li>
       <li>MooMF_MythicTitle_HumanKills2_Melee_6</li>
     </meleeTitles>
-    <threshold>125</threshold>
+    <threshold>100</threshold>
     <record>KillsHumanlikes</record>
     <priority>2</priority>
     <subreason>humanoids</subreason>
