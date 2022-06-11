@@ -32,15 +32,13 @@
   <MooMF_MythicStory_HumanKills3_Melee_M1>The God of War. Corpse-Bringer. The Hound of {2}. These are just a few of the titles earned by the legendary killer named {0}. It's hard to believe that they were a real person, and even harder to believe that you somehow found their long-lost {3}. Picking it up, this {3} feels like a natural extension of your body. It's clearly more than ready to continue drawing blood in {1}'s name.</MooMF_MythicStory_HumanKills3_Melee_M1>
   <MooMF_MythicStory_HumanKills3_Melee_M2>The name "{1}" is slang for bad luck among raiders, thanks to old folk tales about a monstrous pirate-killer named {0}. They're said to have killed more raiders than should logically exist on any one rimworld. Is it happens, this old {3} fits the description of {1}'s long-lost weapon, so hopefully you can use it to start some new slang soon.</MooMF_MythicStory_HumanKills3_Melee_M2>
   <MooMF_MythicStory_HumanKills3_Melee_1>This {3} does strike true
-    as {1} brings death anew
-    If they decide
-    to have your hide
-    They'll make their clothes of you!</MooMF_MythicStory_HumanKills3_Melee_1>
+as {1} brings death anew
+If they decide
+to have your hide
+They'll make their clothes of you!</MooMF_MythicStory_HumanKills3_Melee_1>
   <MooMF_MythicStory_HumanKills3_Melee_2>A palpable sense of menace emanates from this {3}, as if the weapon itself begs to be bathed in the blood of enemies. Simply reading the name {1} inscribed in this weapon sends a chill down the spine, and the stories told of {2} leaves no doubt that this {3} has seen more war than some armies.</MooMF_MythicStory_HumanKills3_Melee_2>
 
   <MooMF_MythicStory_HumanKills3_RangedM1>Have you heard the story of {1} the Grim? Of course not. It's not a tale the raiders would tell you. It's a Rimworlder legend. {0} was a lord of the {2}, so powerful and so accurate that they could use their {3} to create death on an incomparable scale. They had such a knowledge of violence that they could even keep the ones they cared about from dying on the Rim. Absolute violence is a pathway to many abilities some consider to be unnatural, and this {3} is evidence of that.</MooMF_MythicStory_HumanKills3_RangedM1>
-  <MooMF_MythicStory_HumanKills3_Ranged_1>  </MooMF_MythicStory_HumanKills3_Ranged_1>
-  <MooMF_MythicStory_HumanKills3_Ranged_2>  </MooMF_MythicStory_HumanKills3_Ranged_2>
 
   <!-- Insect kills tier 1-->
   <MooMF_MythicStory_InsectKills1_MeleeM1>Insect hives are a concern for all Rimworld colonies, but some colonies fear the bugs less than others. The "{2}" faction in particular was known for producing mountains of insect meat. Apparently one of their warriors, a {3}-wielding killer named {0}, was very adept at squashing every bug that burrowed into their lands. Now their chitin-encrusted {3} has somehow found its way here, and you feel a sudden urge to go poke the nearest hive...</MooMF_MythicStory_InsectKills1_MeleeM1>
@@ -53,9 +51,9 @@
   <MooMF_MythicStory_InsectKills2_RangedM1>Have you ever fought an insect hive that was infested with Megamantises and Ultraspiders? No, you haven't, and you can thank {1} the Queenslayer for that. {0} was a legendary hunter, and supposedly they caused the extinction of multiple giant insect species. This {3} is what they used when they were first getting started. Make sure you treat it with respect.</MooMF_MythicStory_InsectKills2_RangedM1>
 
   <!-- mech kills tier 1-->
-  <MooMF_MythicStory_MechKills1_MeleeM1></MooMF_MythicStory_MechKills1_MeleeM1>
+  <MooMF_MythicStory_MechKills1_MeleeM1>Have you even gone toe to toe with a scyther and lived? Most people haven't. But at least one person has pulled that off, a wild Rimworlder named {0}. They're a legend around here, known for shredding mechanoids well before they reached a machining bench with their handy {3}. You're fairly sure this is the very {3} from those stories, as it's decorated with a dozen centipede sensors and multiple scyther blades.</MooMF_MythicStory_MechKills1_MeleeM1>
   <MooMF_MythicStory_MechKills1_MeleeM2></MooMF_MythicStory_MechKills1_MeleeM2>
-  <MooMF_MythicStory_MechKills1_RangedM1></MooMF_MythicStory_MechKills1_RangedM1>
+  <MooMF_MythicStory_MechKills1_RangedM1>There are only three known cases where mechanoid troops retreated from battle. Two cases were due to imminent threats to nearby mechanoid hives, but the third is attributed to... intimidation. As the report goes, mechanoids surrounding a colony of {2} scattered after a lone warrior split the first approaching scyther's head with a single shot. According to rumors, the robots recognized their opponent, and aborted their hunt. Rumors aside, there's no doubt that this warrior, {0}, left a mountain of dead mechs in their wake.</MooMF_MythicStory_MechKills1_RangedM1>
   <MooMF_MythicStory_MechKills1_RangedM2></MooMF_MythicStory_MechKills1_RangedM2>
 
   <!-- mech kills tier 2-->
