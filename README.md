@@ -29,5 +29,36 @@ At the moment I just have 3 simple examples - 1 patch and 2 conditional defs. Fe
   - [How to create an entirely new mythic effect](https://github.com/mlholland/MooMythicItems/blob/main/1.3/Defs/Examples/addNewEffectDefUsingExistingOptions.xml)
   - [How to create a new mythic cause](https://github.com/mlholland/MooMythicItems/blob/main/1.3/Defs/Examples/addNewCauseDefUsingExistingOptions.xml)
 
+## Want To Contribute Flavor Text Directly?
 
+Note: This section assumes an sufficient understanding of Git to make pull requests. 
+
+If you wish to write and add new titles and descriptions directly to the mod, then there are only a few files you need to work with. First are the [translation key files](https://github.com/mlholland/MooMythicItems/tree/main/Languages/English/Keyed). These are the files that map names to blocks of text, like [mythic titles](https://github.com/mlholland/MooMythicItems/blob/main/Languages/English/Keyed/Titles.xml) and [mythic flavor descriptions](https://github.com/mlholland/MooMythicItems/blob/main/Languages/English/Keyed/Flavor_Descriptions.xml). The second group of files to be aware of are the [cause def files](https://github.com/mlholland/MooMythicItems/tree/main/1.3/Defs/MythicCauseDefs). These are explained above, but to recap, they are the files that define both a trigger that creates a mythic item, and as well as the pool of mythic titles, descriptions, and effects to draw from when making the resulting item.
+
+In order to add new titles and descriptions, you must first define them as translation strings in the appropriate translation file. Simply assign them a unique key (that is <this> part of each line), and write whatever you like. When writing titles and descriptions, there are certain values you can enter which will be replaced by specific information in-game. For example adding `{0}` to a title will insert the creator pawn's short name (nickname if present, first name otherwise) into the title. See the relevant translation files for info on what you can inject into titles and descriptions.
+ 
+Once you've created new titles and descriptions as translation keys, you must enter those key values into a MythicCauseDef. Just add it as a new line in one of 4 locations within the appropriate MythicCauseDef's XML: titles, descriptions, meleeTitles, or meleeDescriptions. If a mythic cause creates a weapon, and has uses different flavor text for melee and ranged weapons, then the `titles` and `descriptions` values are used for ranged weapons. 
+
+### Testing 
+ 
+If you would like to test your flavor text. Follow these steps: 
+ - Prep Install the [Hugslib](https://steamcommunity.com/workshop/filedetails/?id=818773962) mod for some extra helper features.
+ - Run Rimworld with the mod running locally (place it in the mods directory of your Rimworld game folder, then select the version of this mod from the mod selection list that has a folder next to its name instead of a Steam icon). 
+ - Go to Rimworld's options and turn on development mode.
+ - Go the this Mod's settings (click mod settings from the game options window) and enable the "Print Extra Startup Logs" option. This will cause the mod to print ALL flavor text to the game's logs on startup, with example values filling in for all the `{0}`'s and such.
+ - Restart the game.
+ - Once the game opens, click the left-most button from the array of buttons in the top center of the screen to open up the logs.
+ - Click the Files button and select "Open log file".
+ - You know have open a text file that contains all the flavor text currently in the mod. Ctrl-f for your flavor tex and see if it sounds ok with example names plugged in.
+ 
+ If you want to see what your flavor text looks like on an in-game item. Perform the following steps:
+ - Once again run Rimworld with this mod locally.
+ - Enable development mode.
+ - Click the debug actions menu from the buttons in the top center of the screen (fourth from the left, the first of the two triangle buttons).
+ - Select the "Create Mythic Weapon" button near the bottom of the "Spwaning" list.
+ - Select the mythic cause your flavor text is for (these are defNames in the XML), then select any mythic effect, then select a melee or ranged weapon if that matters. This will take you back to the game map. Spam click on the map's terrain to create a bunch of mythic items using that creation trigger. These randomly select from the title and description options of that mythic cause, so once a bunch of items are on the ground. Check them out to find one that uses your flavor text. In the future I plan to make it possible to select the description and title directly, but for now this is the only option.
+ 
+ ### Submitting.
+ 
+ Once you made your changes. Commit them to a new Git branch, push the branch to Github, and make a pull request to merge your branch into the main branch of this repository. I'll take a look, make some suggestions if I feel the need, then merge it into the main code base once any suggestions are resolved. From there the changes will be included the next time I update the mod!.
  
