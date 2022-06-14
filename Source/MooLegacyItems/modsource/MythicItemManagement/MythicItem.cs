@@ -50,7 +50,7 @@ namespace MooMythicItems
         public Dictionary<string, string> extraItemData;
 
         /* This should only be called by the SaveUtility, all other calls from within the game should use the other constructor*/
-        public MythicItem(
+        internal MythicItem(
             ThingDef itemDef,
             string originatorFullName,
             string originatorShortName,
@@ -91,7 +91,8 @@ namespace MooMythicItems
             this.extraItemData = extraItemData == null ? new Dictionary<string, string>() : extraItemData; 
         }
 
-        public MythicItem(Thing item, 
+        // Constructor for use by triggers, to create a new mythic item from an in-game item.
+        public MythicItem(ThingWithComps item, 
             Pawn originator,
             string descriptionTranslationString, 
             string titleTranslationString, 
@@ -165,10 +166,8 @@ namespace MooMythicItems
         }
 
         /* Turn a mythic item into a real Thing that can show up in-game.
-         * MODDER INFO. If you try to patch this file for whatever reason, you'll probably just need to input the hand-typed function name
-         * into the harmony header, since this function is internal.
         */
-        internal Thing Realize()
+        public ThingWithComps Realize()
         {
             DebugActions.LogIfDebug("Realizing mythic item: {0}", this.ToString());
             ThingDef def = this.itemDef;

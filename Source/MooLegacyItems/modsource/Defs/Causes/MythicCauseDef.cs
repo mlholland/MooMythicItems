@@ -86,7 +86,7 @@ namespace MooMythicItems
                 return null;
             }
             // Get the item to turn into a mythic item, and return null if nothing could be found that fits this cause's requirements.
-            Thing item = null;
+            ThingWithComps item = null;
             string title = titles.RandomElement(), description = descriptions.RandomElement();
             MythicEffectDef effect = effects.RandomElement();
             if (createsMythicWeapon)

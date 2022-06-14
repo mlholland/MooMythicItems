@@ -37,8 +37,9 @@ namespace MooMythicItems
         {
             static void Postfix(ref IEnumerable<Thing> __result, Corpse __instance, Pawn butcher, float efficiency)
             {
-                if (butcher != null && butcher.health != null && butcher.health.hediffSet != null && ThrumboDefs != null && 
-                    butcher.health.hediffSet.HasHediff(HediffDef.Named("MooMF_ThrumboButcher")) && ThrumboDefs.Contains(__instance.InnerPawn.def))
+                HediffDef thrumboButcher = DefDatabase<HediffDef>.GetNamedSilentFail("MooMF_Hediff_ThrumboButcher");
+                if (thrumboButcher != null && butcher != null && butcher.health != null && butcher.health.hediffSet != null && ThrumboDefs != null && 
+                    butcher.health.hediffSet.HasHediff(thrumboButcher) && ThrumboDefs.Contains(__instance.InnerPawn.def))
                 {
                     __result = ButcherProductsSpecial(__result, 2); // TODO make this multiplier part of the related cause/hediff or something?
                 }

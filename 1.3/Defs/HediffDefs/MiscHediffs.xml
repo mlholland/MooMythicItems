@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <HediffDef ParentName="OnApparelHediff">
+  <HediffDef>
     <defName>MooMF_Hediff_ThrumboButcher</defName>
     <label>Thrumbo Butcher</label>
     <description>This person is inspired by the legacy of a legendary thrumbo killer, and will produce twice as many resources when butchering thrumbos.</description>
