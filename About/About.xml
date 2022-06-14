@@ -86,9 +86,9 @@ Supported/Compatible:
  
  - Vanilla Expanded Insectoids: Insectoid faction insects are counted towards insect kills.
  
+ - A Rimworld Of Magic: Custom Enchantments (using Gems) are preserved on mythic items. Only enchantments that were active WHEN THE ITEM BECAME MYTHIC will apply.
+ 
 Currently Unsupported:
-
- - Rimworld of Magic: Custom Enchantments (using gems) are not preserved in mythic items. I plan to fix this for version 2, but I suspect it will be difficult.
  
  - Infusion (1 and 2): Infusions are not preserved in mythic items. I plan to fix this.
  

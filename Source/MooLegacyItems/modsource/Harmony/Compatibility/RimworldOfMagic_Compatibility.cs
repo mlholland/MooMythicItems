@@ -4,7 +4,6 @@ using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
-using TorannMagic.Enchantment;
 
 /* This class contains functions that make this mod compatible with the "Rimworld of Magic" mod. Specifically,
  * it includes patches for the saving and loading of mythic items in order to allow magical enhancements to persist
@@ -17,46 +16,58 @@ namespace MooMythicItems
     {
         public static readonly string RoMMythicKey = "RoMEnchantData";
 
+
+        private static Type CompEnchantedItemType;
+        private static AccessTools.FieldRef<object, float> maxMpField;
+
+
+        // Tries to find all the needed values from Rimworld of Magic via reflection. Returns true if all values were found and set, false otherwise.
+        public static bool InitializeReflectionValues()
+        {
+            CompEnchantedItemType = AccessTools.TypeByName("TorannMagic.Enchantment.CompEnchantedItem");
+            if(CompEnchantedItemType == null)
+            {
+                Log.Error("Mythic Framework failed to find Rimworld of Magic Enchantment Class");
+                return false;
+            }
+
+
+            //private static readonly AccessTools.FieldRef<object, List<WeaponTraitDef>> weaponTraitsField = AccessTools.FieldRefAccess<List<WeaponTraitDef>>(typeof(CompBladelinkWeapon), "traits");
+            maxMpField = AccessTools.FieldRefAccess<float>(CompEnchantedItemType, "maxMp");
+            return true;
+        }
+
         // After realizing a mythic item, check if it contains enchantment data, and if so, apply it to the item.
         public static void RealizePatch(ThingWithComps __result, MythicItem __instance)
         {
-            if (__instance != null && __instance.extraItemData != null && __instance.extraItemData.ContainsKey(RoMMythicKey))
+            /*if (__instance != null && __instance.extraItemData != null && __instance.extraItemData.ContainsKey(RoMMythicKey))
             {
                 CompEnchantedItem targetComp = __result.TryGetComp<CompEnchantedItem>();
                 if (targetComp == null)
                 {
-                    // TODO make and add comp to thing, check how original mod does this
+                    DebugActions.LogErr("Tried loading Rimworld of Magic Enchant data when instantiating a mythic item, but the resulting {0} had no CompEnchantedItem to attach enchant data to.", __result.def.label);
+                    return;
                 }
                 ApplyEncodedComp(__instance.extraItemData[RoMMythicKey], targetComp);
-            } else
-            {
-                Log.Message("no enchant comp found to load")
-;            }
+            } */
         }
 
 
         // After initializing a mythic item from an in-game item, check if it has enchantment data worth saving.
         public static void CreationPatch(MythicItem __instance, ThingWithComps item)
         {
-            Log.Message("Running magic patch.");
-            if (item == null) return;
+            /*if (item == null) return;
             CompEnchantedItem enchantComp = item.TryGetComp<CompEnchantedItem>();
             if (enchantComp != null && enchantComp.HasEnchantment)
             {
-                Log.Message("saving enchant comp...");
+                DebugActions.LogIfDebug("Saving Rimworld of Magic Enchant Data to Mythic Item...");
                 string encodedEnchantComp = EncodeEnchantmentComp(enchantComp);
                 __instance.extraItemData[RoMMythicKey] = encodedEnchantComp;
-            } else if (enchantComp != null){
-                Log.Message("enchant comp 'HasEnchantment' value is false, not saving.");
-            }
-            else
-            {
-                Log.Message("no enchant comp found to save");
-            }
+            } */
         }
 
         // helper function to encode enchant data into a single, dash-separated string.
-        private static string EncodeEnchantmentComp(CompEnchantedItem enchantComp)
+        /*private static string EncodeEnchantmentComp(CompEnchantedItem enchantComp)
         {
             List<string> values = new List<string>();
             values.Add(string.Format("{0:N2}", enchantComp.maxMP));
@@ -79,9 +90,8 @@ namespace MooMythicItems
 
             values.Add(string.Format("{0:N2}", enchantComp.arcaneDmg));
             values.Add(enchantComp.arcaneDmgTier.ToString());
-            //values.Add(enchantComp);
-            foreach (string val in values) Log.Message(val);
-            return string.Join("^", values); // whoops don't use dashes cause of negative numbers
+
+            return string.Join("^", values); // whoops don't use dashes in case of negative numbers
         }
 
         // helper function to decode enchant data and apply its values to an in-game comp.
@@ -161,6 +171,6 @@ namespace MooMythicItems
                 targetComp.arcaneDmg = dmg;
                 targetComp.arcaneDmgTier = tier;
             }
-        }
+        }*/
     }     
 }

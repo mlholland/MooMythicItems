@@ -80,7 +80,6 @@ namespace MooMythicItems
         { 
             if (ModsConfig.IsActive("Torann.ARimworldOfMagic") || ModsConfig.IsActive("torann.arimworldofmagic_steam"))
             {
-                Log.Message("applying rimworld of magic patches~~~~");
                 // Load non-standard enchantment data from Rimworld of Magic
                 System.Reflection.MethodInfo original_realize = typeof(MythicItem).GetMethod("Realize");
                 System.Reflection.MethodInfo patch_realize = typeof(RimworldOfMagic_Compatibility).GetMethod(nameof(RimworldOfMagic_Compatibility.RealizePatch));

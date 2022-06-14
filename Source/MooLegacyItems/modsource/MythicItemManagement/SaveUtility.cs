@@ -116,7 +116,12 @@ namespace MooMythicItems
             List<string> extraDescriptions= ConvertArgToStringList(values[13]);
             Dictionary<string, string> extraInfo = ConvertArgToStringDict(values[14]);
 
-            ThingDef itemDef = DefDatabase<ThingDef>.GetNamed(values[0]);
+            ThingDef itemDef = DefDatabase<ThingDef>.GetNamed(values[0], false);
+            if (itemDef == null)
+            {
+                DebugActions.LogWarn("Tried and failed to load a mythic item from the mythic save file because we could not recognize the item {0}. It's probably an item from an inactive mod.", values[0]);
+                return null;
+            }
             MythicEffectDef abiltyDef = DefDatabase<MythicEffectDef>.GetNamed(values[6]);
             ThingDef stuffDef = null;
             if (values[7].Length > 0)

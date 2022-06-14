@@ -32,7 +32,7 @@ namespace MooMythicItems
             FactionDef insectoidFaction = FactionDef.Named("VFEI_Insect");
             if (insectoidFaction == null)
             {
-                DebugActions.LogErr("Could not find vanilla explanded insectoid faction def. This should never happen, since we null-checked this during startup before allowing this code to run.");
+                Log.Error("Could not find vanilla explanded insectoid faction def. This should never happen, since we null-checked this during startup before allowing this code to run.");
                 return;
             }
             if (killed.Faction != null && killed.Faction.def.Equals(insectoidFaction))
@@ -47,7 +47,7 @@ namespace MooMythicItems
             FactionDef blackHiveFaction = FactionDef.Named("AA_BlackHive");
             if (blackHiveFaction == null)
             {
-                DebugActions.LogErr("Could not find Alpha Animals Black Hive faction def. This should never happen, since we null-checked this during startup before allowing this code to run.");
+                Log.Error("Could not find Alpha Animals Black Hive faction def. This should never happen, since we null-checked this during startup before allowing this code to run.");
                 return;
             }
             if (killed.Faction != null && killed.Faction.def.Equals(blackHiveFaction))

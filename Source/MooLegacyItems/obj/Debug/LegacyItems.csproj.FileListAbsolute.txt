@@ -12,10 +12,10 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems_ORIGI
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems_ORIGINAL_DO_NOT_PUBLISH\Source\MooLegacyItems\obj\Debug\LegacyItems.csproj.GenerateResource.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems_ORIGINAL_DO_NOT_PUBLISH\Source\MooLegacyItems\obj\Debug\LegacyItems.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems_ORIGINAL_DO_NOT_PUBLISH\Source\MooLegacyItems\obj\Debug\MooLegacyItems.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\1.3\Assemblies\MooLegacyItems.dll.config
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\1.3\Assemblies\MooLegacyItems.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\LegacyItems.csprojAssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\MooLegacyItems.Properties.Resources.resources
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\LegacyItems.csproj.GenerateResource.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\LegacyItems.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\MooLegacyItems.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\1.3\Assemblies\MooMythicItems.dll.config
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\1.3\Assemblies\MooMythicItems.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\MooMythicItems.Properties.Resources.resources
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\MooLegacyItems\obj\Debug\MooMythicItems.dll
