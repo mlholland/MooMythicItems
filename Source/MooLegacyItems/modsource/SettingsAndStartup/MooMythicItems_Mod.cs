@@ -20,10 +20,10 @@ namespace MooMythicItems
             harm = new Harmony("rimworld.moomf");
             harm.PatchAll();
 
+            MythicItem_BladelinkAddon.AddBladelinkFunctionsToMythicItems();
             // Apply extra patches based on what other mods are present
             CheckForVEInsectoids();
             CheckForAlphaAnimals();
-            CheckForRimworldOfMagic();
 
         }
 
@@ -75,64 +75,6 @@ namespace MooMythicItems
                 }
             }
         }
-
-        private void CheckForRimworldOfMagic()
-        { 
-            if (ModsConfig.IsActive("Torann.ARimworldOfMagic") || ModsConfig.IsActive("torann.arimworldofmagic_steam"))
-            {
-                if(!RimworldOfMagic_Compatibility.InitializeReflectionValues())
-                {
-                    Log.Error("Mythic Framework failed to find all values needed to work with Rimworld of Magic Patch. Enchant data will not be saved across worlds.");
-                    return;
-                }
-
-
-                // Load non-standard enchantment data from Rimworld of Magic
-                System.Reflection.MethodInfo original_realize = typeof(MythicItem).GetMethod("Realize");
-                System.Reflection.MethodInfo patch_realize = typeof(RimworldOfMagic_Compatibility).GetMethod(nameof(RimworldOfMagic_Compatibility.RealizePatch));
-                if (original_realize == null)
-                {
-                    Log.Error("Mythic Framework harmony patch for load Rimworld of Magic Enchantment data failed to find realize function. Something went very wrong.");
-                    return;
-                }
-                else if (patch_realize == null)
-                {
-                    Log.Error("Mythic Framework harmony patch for load Rimworld of Magic Enchantment data failed to find realize patch function. Something went very wrong.");
-                    return;
-                }
-                else
-                {
-                    harm.Patch(original_realize, postfix: new HarmonyMethod(patch_realize));
-                }
-
-                // Save non-standard enchantment data from Rimworld of Magic
-                System.Reflection.ConstructorInfo original_constructor = typeof(MythicItem).GetConstructor(new Type[] {
-                    typeof(ThingWithComps),
-                    typeof(Pawn),
-                    typeof(string),
-                    typeof(string),
-                    typeof(MythicEffectDef),
-                    typeof(string),
-                    typeof(List<string>),
-                    typeof(List<string>),
-                    typeof(Dictionary<string, string>)
-                });
-                System.Reflection.MethodInfo patch_constructor = typeof(RimworldOfMagic_Compatibility).GetMethod(nameof(RimworldOfMagic_Compatibility.CreationPatch));
-                if (original_constructor == null)
-                {
-                    Log.Error("Mythic Framework harmony patch for save Rimworld of Magic Enchantment data failed to find constructor. Something went very wrong.");
-                    return;
-                }
-                else if (patch_constructor == null)
-                {
-                    Log.Error("Mythic Framework harmony patch for save Rimworld of Magic Enchantment data failed to find constructor patch function. Something went very wrong.");
-                    return;
-                }
-                else
-                {
-                    harm.Patch(original_constructor, postfix: new HarmonyMethod(patch_constructor));
-                }
-            }
-        }
+       
     }
 }

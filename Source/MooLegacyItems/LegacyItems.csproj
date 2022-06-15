@@ -348,9 +348,10 @@
     <Compile Include="modsource\Harmony\Basic\DialogPatch_AddRequestMythicOption.cs" />
     <Compile Include="modsource\Harmony\Basic\JobPatch_HediffRequirements.cs" />
     <Compile Include="modsource\Harmony\Basic\PreceptPatch_MythicRelics.cs" />
-    <Compile Include="modsource\Harmony\Compatibility\RimworldOfMagic_Compatibility.cs" />
+    <Compile Include="modsource\Harmony\Compatibility\Infused_Compatibility.cs" />
     <Compile Include="modsource\Harmony\Compatibility\PawnKilledPatch_Compatibility.cs" />
     <Compile Include="modsource\Ideology\Precept_MythicRelic.cs" />
+    <Compile Include="modsource\MythicItemManagement\MythicItem_BladelinkAddon.cs" />
     <Compile Include="modsource\MythicItemManagement\MythicItemUtilities.cs" />
     <Compile Include="modsource\MythicItemManagement\ThingSetMaker_MythicItemMaker.cs" />
     <Compile Include="modsource\MythicItemManagement\MythicItemCache.cs" />

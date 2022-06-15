@@ -15,11 +15,12 @@ namespace MooMythicItems
 {
     public class MythicItem
     {
-        private static readonly string bladelink_key_traits = "RWR_BL_T"; // rimworld royalty bladelink traits
-        // The traits field is private normally - this lets us mess with it.
-        private static readonly AccessTools.FieldRef<object, List<WeaponTraitDef>> weaponTraitsField = AccessTools.FieldRefAccess<List<WeaponTraitDef>>(typeof(CompBladelinkWeapon), "traits");
+        // These dictionaries contain extra behaviors that encode/decode additional info about mythic items
+        // This is meant to allow for extra data that items have to be encoded.
+        private static readonly Dictionary<string, Func<ThingWithComps, string>> ConstructorAddons = new Dictionary<string, Func<ThingWithComps, string>>();
+        private static readonly Dictionary<string, Func<ThingWithComps, string, bool>> RealizeAddons = new Dictionary<string, Func<ThingWithComps, string, bool>>();
 
-
+        // Actual data that's saved/loaded.
         public ThingDef itemDef { get; }
         public String ownerFullName { get; } // Owner in this context refers to the original owner
         public String ownerShortName { get; } 
@@ -122,11 +123,17 @@ namespace MooMythicItems
             this.extraDescriptionValues = extraDescriptionValues == null ? new List<string>() : extraDescriptionValues;
             this.extraItemData = extraItemData == null ? new Dictionary<string, string>() : extraItemData;
 
-            // extra item data in vanilla
-            CompBladelinkWeapon linkComp = item.TryGetComp<CompBladelinkWeapon>();
-            if (linkComp != null && linkComp.TraitsListForReading != null)
+            // This strange look runs injected functions.
+            // The purpose of these injected functions is to encoded modded data into the save format of mythic items
+            // The resulting encoding is added to the extraItemData dictionary, using the string key provided by the function dictionary
+            // as the extraItemData key.
+            foreach (KeyValuePair<string, Func<ThingWithComps, string>> kv in ConstructorAddons)
             {
-                this.extraItemData[bladelink_key_traits] =string.Join("/", linkComp.TraitsListForReading.Select(def => def.defName));
+                string result = kv.Value(item);
+                if (result != null && result.Length > 0)
+                {
+                    this.extraItemData[kv.Key] = result;
+                }
             }
             
         }
@@ -189,38 +196,32 @@ namespace MooMythicItems
             }
 
             MythicItemUtilities.AddMythicCompToThing(thing, String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label), String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label), this.abilityDef);
-        
-            if(this.extraItemData != null && this.extraItemData.ContainsKey(bladelink_key_traits))
+
+            if(this.extraItemData != null)
             {
-                CompBladelinkWeapon linkComp = thing.TryGetComp<CompBladelinkWeapon>();
-                if (linkComp == null)
+                foreach(KeyValuePair<string, Func<ThingWithComps, string, bool>> kv in RealizeAddons)
                 {
-                    DebugActions.LogErr("Tried to realize a mythic {0} that had saved bladelink data, but no CompBladelinkWeapon was found on the resulting item to add this data to.", this.itemDef.label);
-                } else
-                {
-                    List<WeaponTraitDef> traits = weaponTraitsField.Invoke(linkComp);
-                    if (traits == null)
-                    {
-                        DebugActions.LogErr("Tried to extract traits from new mythic weapon's CompBladelinkWeapon comp, but the traits field was null.");
-                    }
-                    else
-                    {
-                        traits.Clear();
-                        foreach (string traitName in this.extraItemData[bladelink_key_traits].Split('/'))
-                        {
-                            WeaponTraitDef trait = DefDatabase<WeaponTraitDef>.GetNamedSilentFail(traitName);
-                            if (trait == null)
-                            {
-                                DebugActions.LogErr("Tried adding bladelink trait named '{0}' to a new mythic weapon, but no such trait could be found. Ignoring it.", traitName);
-                                continue;
-                            }
-                            traits.Add(trait);
-                        }
-                    }
+                    if (kv.Key == null || kv.Key.Length == 0 || kv.Value == null || !this.extraItemData.ContainsKey(kv.Key)) continue;
+                    string encodedData = this.extraItemData[kv.Key];
+                    if (encodedData == null || encodedData.Length == 0) continue;
+                    bool result = kv.Value(thing, encodedData);
+                    if (result) DebugActions.LogIfDebug("Loaded extra data from mod with key '{0}' onto mythic item {1}", kv.Key, this.GetFormattedTitle());
                 }
             }
 
             return thing;
+        }
+        
+        public static void AddConstructorAddon(string key, Func<ThingWithComps, string> addon)
+        {
+            if (key == null || key.Length == 0 || addon == null) return;
+            ConstructorAddons[key] = addon;
+        }
+
+        public static void AddRealizeAddon(string key, Func<ThingWithComps, string, bool> addon)
+        {
+            if (key == null || key.Length == 0 || addon == null) return;
+            RealizeAddons[key] = addon;
         }
     }
 }
