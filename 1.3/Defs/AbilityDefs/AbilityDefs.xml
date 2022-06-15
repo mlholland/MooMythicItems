@@ -292,7 +292,7 @@
     </verbProperties>
     <comps>
       <li Class = "MooMythicItems.CompProperties_MapWideIncident">
-        <incident>ThrumboPasses</incident>
+        <incident>MooMF_OrbitalTraderSummoned</incident>
       </li>
     </comps>
   </AbilityDef>
