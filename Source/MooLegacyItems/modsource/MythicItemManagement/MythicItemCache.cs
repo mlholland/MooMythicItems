@@ -249,9 +249,9 @@ namespace MooMythicItems
         }
 
 
-        public static MythicItem SelectRandomMythicItemFromCache()
+        public static MythicItem SelectRandomMythicItemFromCache_Standard()
         {
-            return SelectRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
+            return SelectRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false);
         }
 
 

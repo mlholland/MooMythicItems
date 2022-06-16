@@ -70,7 +70,7 @@ namespace MooMythicItems
                 Slate slate = new Slate();
                 slate.Set<float>("points", StorytellerUtility.DefaultThreatPointsNow(Find.World), false);
                 slate.Set<Pawn>("asker", faction.leader, false);
-                MythicItem mi = MythicItemCache.SelectRandomMythicItemFromCache();
+                MythicItem mi = MythicItemCache.SelectRandomMythicItemFromCache_Standard();
                 slate.Set<MythicItem>("itemStashOnlyMythicItem", mi, false); // This is used by another patch to replace the normal quest contents with a mythic item
                 // need to make new diaOption to set complex values (at least that's how vanilla code did it).
                 __result.options.Insert(__result.options.Count - 1, new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, -1 * Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, -BaseGoodwillCost)))

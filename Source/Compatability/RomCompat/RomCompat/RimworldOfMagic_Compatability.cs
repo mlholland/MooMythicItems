@@ -11,13 +11,14 @@ namespace RomCompat
     /* Loads functions into the core mod to allow for enchantments to be properly saved/loaded as part of mythic items*/
 
     [StaticConstructorOnStartup]
-    public static class RimworldOfMagic_Compatability
+    public static class RimworldOfMagic_Compatibility
     {
         public static readonly string RoMMythicKey = "RoMEnchantData";
 
 
-        static RimworldOfMagic_Compatability()
+        static RimworldOfMagic_Compatibility()
         {
+            Log.Message("Rimworld of Magic found, applying compatibility patch for mythic items.");
             MythicItem.AddConstructorAddon(RoMMythicKey, ConstructorFunc);
             MythicItem.AddRealizeAddon(RoMMythicKey, RealizeFunc);
         }
@@ -39,21 +40,21 @@ namespace RomCompat
         // After initializing a mythic item from an in-game item, check if it has enchantment data worth saving.
         public static string ConstructorFunc(ThingWithComps item)
         {
-            Log.Message("Running magic patch.");
+            DebugActions.LogIfDebug("Running magic patch.");
             if (item == null) return null;
             CompEnchantedItem enchantComp = item.TryGetComp<CompEnchantedItem>();
             if (enchantComp != null && enchantComp.HasEnchantment)
             {
-                Log.Message("saving enchant comp...");
+                DebugActions.LogIfDebug("saving enchant comp...");
                 return EncodeEnchantmentComp(enchantComp); 
             }
             else if (enchantComp != null)
             {
-                Log.Message("enchant comp 'HasEnchantment' value is false, not saving.");
+                DebugActions.LogIfDebug("enchant comp 'HasEnchantment' value is false, not saving.");
             }
             else
             {
-                Log.Message("no enchant comp found to save");
+                DebugActions.LogIfDebug("no enchant comp found to save");
             }
             return null;
         }
@@ -83,8 +84,6 @@ namespace RomCompat
 
             values.Add(string.Format("{0:N2}", enchantComp.arcaneDmg));
             values.Add(enchantComp.arcaneDmgTier.ToString());
-            //values.Add(enchantComp);
-            foreach (string val in values) Log.Message(val);
             return string.Join("^", values); // whoops don't use dashes cause of negative numbers
         }
 
