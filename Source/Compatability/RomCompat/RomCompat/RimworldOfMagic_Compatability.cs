@@ -18,7 +18,6 @@ namespace RomCompat
 
         static RimworldOfMagic_Compatability()
         {
-            Log.Message("Applying Changes to Mythic Items mod to account for Rimworld of Magic");
             MythicItem.AddConstructorAddon(RoMMythicKey, ConstructorFunc);
             MythicItem.AddRealizeAddon(RoMMythicKey, RealizeFunc);
         }
