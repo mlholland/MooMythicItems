@@ -274,7 +274,7 @@ namespace MooMythicItems
         /* This is the normal way of producing a mythic item for in-game use.*/
         public static Thing RealizeRandomMythicItemFromCache()
         {
-            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true, true);
+            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true, false);
         }
 
 

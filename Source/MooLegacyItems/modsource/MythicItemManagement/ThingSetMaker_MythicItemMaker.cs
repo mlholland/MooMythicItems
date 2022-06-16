@@ -11,13 +11,15 @@ using System;
 namespace MooMythicItems
 {
     public class ThingSetMaker_MythicItemMaker : ThingSetMaker
-    { 
+    {
+        private static int MinDaysToUnlockQuestReward = 60;
+
         public ThingSetMaker_MythicItemMaker() { }
          
         protected override bool CanGenerateSub(ThingSetMakerParams parms)
         {
             DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker CanGenerateSub");
-            return MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true);
+            return (Find.TickManager.TicksGame > MinDaysToUnlockQuestReward * 60000) && MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false);
         }
          
         protected override void Generate(ThingSetMakerParams parms, List<Thing> outThings)
