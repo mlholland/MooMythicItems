@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Compatibility-Assemblies\Infusion2\Assemblies\Infusion2Compat.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Compatibility-Assemblies\Infusion2\Assemblies\Infusion2Compat.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\Infusion2Compat\Infusion2Compat\obj\Debug\Infusion2Compat.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\Infusion2Compat\Infusion2Compat\obj\Debug\Infusion2Compat.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\Infusion2Compat\Infusion2Compat\obj\Debug\Infusion2Compat.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\Infusion2Compat\Infusion2Compat\obj\Debug\Infusion2Compat.pdb

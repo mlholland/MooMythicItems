@@ -24,7 +24,7 @@ namespace MooMythicItems
             // Apply extra patches based on what other mods are present
             CheckForVEInsectoids();
             CheckForAlphaAnimals();
-
+            //foreach (ModMetaData mod in ModLister.AllInstalledMods) Log.Message(mod.PackageId);
         }
 
         public override string SettingsCategory() => "MooMF_SettingsTitle".Translate();

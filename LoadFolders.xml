@@ -4,6 +4,7 @@
     <li>/</li>
     <li>1.3</li>
     <li IfModActive="Torann.ARimworldOfMagic, torann.arimworldofmagic_steam">Compatibility-Assemblies/RoM</li>
-    <li IfModActive="notfood.Infused">Compatibility-Assemblies/Infused</li>
+    <li IfModActive="notfood.Infused, notfood.infused_steam">Compatibility-Assemblies/Infused</li>
+    <li IfModActive="latta.infusion, latta.infusion_steam">Compatibility-Assemblies/Infusion2</li>
   </v1.3>
 </loadFolders>
