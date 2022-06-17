@@ -1,0 +1,8 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\bin\Debug\InfiniteReinforce_Compat.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\bin\Debug\InfiniteReinforce_Compat.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\obj\Debug\InfiniteReinforce_Compat.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\obj\Debug\InfiniteReinforce_Compat.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\obj\Debug\InfiniteReinforce_Compat.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Source\Compatability\InfiniteReinforce_Compat\InfiniteReinforce_Compat\obj\Debug\InfiniteReinforce_Compat.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Compatibility-Assemblies\Reinforce\Assemblies\InfiniteReinforce_Compat.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\MooMythicItems\Compatibility-Assemblies\Reinforce\Assemblies\InfiniteReinforce_Compat.pdb
