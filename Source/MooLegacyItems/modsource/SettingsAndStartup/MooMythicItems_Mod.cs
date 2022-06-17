@@ -14,6 +14,7 @@ namespace MooMythicItems
         public static MythicItemSettings settings;
         public static Harmony harm;
 
+
         public MooMythicItems_Mod(ModContentPack content) : base(content)
         {
             settings = GetSettings<MythicItemSettings>();
@@ -34,9 +35,8 @@ namespace MooMythicItems
             base.DoSettingsWindowContents(inRect);
 
             settings.DoWindowContents(inRect);
-            
-        }
 
+        }
 
         private void CheckForVEInsectoids()
         {

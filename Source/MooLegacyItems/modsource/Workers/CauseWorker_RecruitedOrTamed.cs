@@ -17,7 +17,7 @@ namespace MooMythicItems
 
         public static readonly string recruitReasonPrefix = "recruited-";
         private static readonly string printReasonKey = "MooMF_PrintRecruitOrTameReason";
-        public static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
+        private static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
 
         public CauseWorker_RecruitedOrTamed(MythicCauseDef def) : base(def) { }
 
@@ -119,7 +119,17 @@ namespace MooMythicItems
             return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(null, null);
         }
 
-
+        public String GetPrintedReasonFragment(params object[] args)
+        {
+            MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
+            if (causeDef == null)
+            {
+                DebugActions.LogErr("Recruitment Recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                    " Use a different worker class, or correct the def class.", def.defName);
+                return "";
+            }
+            return base.GetPrintedReasonFragment(args[0], causeDef.threshold, causeDef.subreason); // TODO need to somehow make this scale with settings
+        }
 
     }
 }

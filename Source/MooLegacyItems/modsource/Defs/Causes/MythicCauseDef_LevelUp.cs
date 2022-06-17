@@ -31,11 +31,5 @@ namespace MooMythicItems
             base.ResolveReferences();
             this.priority = this.minLevelThreshold;
         }
-
-        public override String GetPrintedReasonFragment(params object[] args)
-        {
-            return base.GetPrintedReasonFragment(args[0], minLevelThreshold, skill.label);
-        }
-
     }
 }

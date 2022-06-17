@@ -3,6 +3,7 @@
 
   <MooMythicItems.MythicCauseDef_RecordThreshold>
     <defName>MooMF_ThumbosTamedCause</defName>
+    <label>Thrumbos Tamed</label>
     <effects>
       <li>MooMF_GrantThurmbocall</li>
     </effects>

@@ -10,6 +10,7 @@
   <!-- thumbo killer-->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_ThrumboKillerCause</defName>
+    <label>Thurmbo Kills</label>
     <effects>
       <li>MooMF_GrantThrumboButcher</li>
     </effects>
@@ -31,6 +32,7 @@
   <!-- humanoid kills-->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause1</defName>
+    <label>Humanoid Kills Tier 1</label>
     <effects>
       <li>MooMF_Effect_KillstreakFirerate_1</li>
     </effects>
@@ -89,6 +91,7 @@
 
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_HumanoidKillerCause3</defName>
+    <label>Humanoid Kills Tier 3</label>
     <effects>
       <li>MooMF_GrantAPRocket3</li>
       <li>MooMF_Effect_KillstreakFirerate_3</li>
@@ -128,6 +131,7 @@
   <!-- Mech kills -->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_MechKillerCause1</defName>
+    <label>Mechanoid Kills Tier 1</label>
     <effects>
       <li>MooMF_GrantEMPRocket</li>
     </effects>
@@ -158,6 +162,7 @@
 
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_MechKillerCause2</defName>
+    <label>Mechanoid Kills Tier 2</label>
     <effects>
       <li>MooMF_GrantEMPRocket2</li>
     </effects>
@@ -190,6 +195,7 @@
   <!-- Insect kills-->
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_InsectKillerCause1</defName>
+    <label>Insect Kills Tier 1</label>
     <effects>
       <li>MooMF_GrantInfernoRocket</li>
     </effects>
@@ -224,6 +230,7 @@
 
   <MooMythicItems.MythicCauseDef_RecordThreshold ParentName="baseKillCause">
     <defName>MooMF_InsectKillerCause2</defName>
+    <label>Insect Kills Tier 2</label>
     <effects>
       <li>MooMF_GrantInfernoRocket2</li>
     </effects>

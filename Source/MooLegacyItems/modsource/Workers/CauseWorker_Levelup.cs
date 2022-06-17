@@ -18,7 +18,7 @@ namespace MooMythicItems
 
         public static readonly string masteryPrefix = "skill-mastery-";
         private static readonly string printReasonKey = "MooMF_PrintLevelupReason";
-        public static Dictionary<SkillDef, List<MythicCauseDef_LevelUp>> skillsWatched = new Dictionary<SkillDef, List<MythicCauseDef_LevelUp>>();
+        private static Dictionary<SkillDef, List<MythicCauseDef_LevelUp>> skillsWatched = new Dictionary<SkillDef, List<MythicCauseDef_LevelUp>>();
 
         public CauseWorker_LevelUp(MythicCauseDef def) : base(def) { }
 
@@ -74,7 +74,7 @@ namespace MooMythicItems
                 }
                 if (curThreshold > -1)
                 {
-                    string reason = masteryPrefix + skillRecord.def.skillLabel;
+                    string reason = masteryPrefix + skillRecord.def.label;
                     MythicItem newItem = bestCause.TryCreateMythicItem(pawn, reason);
                     if (newItem != null)
                     {
@@ -128,6 +128,18 @@ namespace MooMythicItems
                     previousInstruction = currentInstruction;
                 }
             }
+        }
+
+        public override String GetPrintedReasonFragment(params object[] args)
+        {
+            MythicCauseDef_LevelUp causeDef = def as MythicCauseDef_LevelUp;
+            if (causeDef == null)
+            {
+                DebugActions.LogErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                    " Use a different worker class, or correct the def class.", def.defName);
+                return "";
+            }
+            return base.GetPrintedReasonFragment(args[0], causeDef.minLevelThreshold, causeDef.skill.label);
         }
 
     }

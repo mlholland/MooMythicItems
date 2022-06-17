@@ -9,6 +9,7 @@
   
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_ShootingMastery</defName>
+    <label>Shooting Mastery</label>
     <effects>
       <li>MooMF_ShootingBoost</li>
       <li>MooMF_GrantShootingInspiration</li>
@@ -28,6 +29,7 @@
   
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_MeleeMastery</defName>
+    <label>Melle Mastery</label>
     <effects>
       <li>MooMF_MeleeBoost</li>
     </effects>
@@ -48,6 +50,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_ConstructionMastery</defName>
+    <label>Construction Mastery</label>
     <effects>
       <li>MooMF_ConstructionBoost</li>
     </effects>
@@ -67,6 +70,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_MiningMastery</defName>
+    <label>Mining Mastery</label>
     <effects>
       <li>MooMF_MiningBoost</li>
       <li>MooMF_GrantDiscoverUndergroundDeposit</li>
@@ -86,6 +90,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_CookingMastery</defName>
+    <label>Cooking Mastery</label>
     <effects>
       <li>MooMF_CookingBoost</li>
       <li>MooMF_GrantEpicureanWisdom</li>
@@ -105,6 +110,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_PlantsMastery</defName>
+    <label>Plants Mastery</label>
     <effects>
       <li>MooMF_PlantsBoost</li>
     </effects>
@@ -125,6 +131,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_AnimalsMastery</defName>
+    <label>Animals Mastery</label>
     <effects>
       <li>MooMF_AnimalsBoost</li>
       <li>MooMF_GrantTamingInspiration</li>
@@ -144,6 +151,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_CraftingMastery</defName>
+    <label>Crafting Mastery</label>
     <effects>
       <!--li>MooMF_CraftingBoost</li-->
       <li>MooMF_GrantCreativeInspiration</li>
@@ -165,6 +173,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_ArtisticMastery</defName>
+    <label>Artistic Mastery</label>
     <effects>
       <!--li>MooMF_ArtisticBoost</li-->
       <li>MooMF_GrantCreativeInspiration</li>
@@ -184,6 +193,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_MedicineMastery</defName>
+    <label>Medicine Mastery</label>
     <effects>
       <li>MooMF_MedicineBoost</li>
       <li>MooMF_GrantHealersWisdom</li>
@@ -202,6 +212,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_SocialMastery</defName>
+    <label>Social Mastery</label>
     <effects>
       <li>MooMF_SocialBoost</li>
       <li>MooMF_GrantTradingInspiration</li>
@@ -220,6 +231,7 @@
 
   <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
     <defName>MooMF_IntellectualMastery</defName>
+    <label>Intellectual Mastery</label>
     <effects>
       <li>MooMF_IntellectualBoost</li>
     </effects>

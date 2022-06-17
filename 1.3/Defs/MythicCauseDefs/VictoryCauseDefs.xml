@@ -7,6 +7,7 @@
   </MooMythicItems.MythicCauseDef_Victory>
 
   <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
+    <label>Space Vicotry</label>
     <defName>MooMF_SpaceVictoryMythicCause</defName>
     <effects>
       <li>MooMF_GrantAttractTradeShips</li>
@@ -24,6 +25,7 @@
 
   <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
     <defName>MooMF_RoyalVictoryMythicCause</defName>
+    <label>Royal Vicotry</label>
     <effects>
       <li>MooMF_GrantRoyalPsyboost</li>
     </effects>
@@ -39,6 +41,7 @@
 
   <MooMythicItems.MythicCauseDef_Victory ParentName="baseVictoryCause">
     <defName>MooMF_ArchoVictoryMythicCause</defName>
+    <label>Archonexus Vicotry</label>
     <effects>
       <li>MooMF_GrantArchoPriest</li>
     </effects>

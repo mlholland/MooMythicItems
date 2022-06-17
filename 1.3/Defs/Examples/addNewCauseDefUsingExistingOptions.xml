@@ -15,6 +15,7 @@
 <Defs>
   <MooMythicItems.MythicCauseDef_RecordThreshold>
     <defName>MooMF_HumanoidKillerCause2</defName>
+    <label>Humanoid Kills Tier 2</label>
     <workerClass>MooMythicItems.CauseWorker_Kills</workerClass>
     <createsMythicWeapon>true</createsMythicWeapon>
     <hasDifferentMeleeOptions>true</hasDifferentMeleeOptions>

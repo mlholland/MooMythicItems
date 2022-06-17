@@ -23,7 +23,7 @@ namespace MooMythicItems
         private static readonly string archo = "GameOverColonistsTranscended";
         private static readonly string printReasonKey = "MooMF_PrintVictoryReason";
 
-        public static Dictionary<string, List<MythicCauseDef_Victory>> victoryToTriggerMap = new Dictionary<string, List<MythicCauseDef_Victory>>();
+        private static Dictionary<string, List<MythicCauseDef_Victory>> victoryToTriggerMap = new Dictionary<string, List<MythicCauseDef_Victory>>();
         public CauseWorker_Victory(MythicCauseDef def) : base(def) { }
 
         // TODO consider abstracting int-record-based cause workers to have a shared parent that sets up the recordsWatched dictionary.
@@ -119,7 +119,7 @@ namespace MooMythicItems
             {
                 if (archo == colonistsEscapeeTKey) // archo victory
                 {
-                    Log.Message("archo ending achieved");
+                    DebugActions.LogIfDebug("archo ending achieved");
                     if (victoryToTriggerMap.ContainsKey(archo) && victoryToTriggerMap[archo].Count > 0)
                     {
                         return victoryToTriggerMap[archo].RandomElement();
@@ -128,7 +128,7 @@ namespace MooMythicItems
                 }
                 else if (spaceIntroKey.Translate() == intro) // space and royal victory can't be differentiated by escapee translation string, use space intro string instead
                 {
-                    Log.Message("space ending achieved");
+                    DebugActions.LogIfDebug("space ending achieved");
                     if (victoryToTriggerMap.ContainsKey(space) && victoryToTriggerMap[space].Count > 0)
                     {
                         return victoryToTriggerMap[space].RandomElement();
@@ -137,7 +137,7 @@ namespace MooMythicItems
                 }
                 else // AFAIK royalty has no consistent values that are hard-coded in or near the victory code, so just assume this ending until the 3rd expansion.
                 {
-                    Log.Message("royal ending achieved");
+                    DebugActions.LogIfDebug("royal ending achieved");
                     if (victoryToTriggerMap.ContainsKey(royal) && victoryToTriggerMap[royal].Count > 0)
                     {
                         return victoryToTriggerMap[royal].RandomElement();
@@ -147,7 +147,5 @@ namespace MooMythicItems
                 return null;
             }
         }
-        
-
     }
 }

@@ -38,7 +38,7 @@ namespace MooMythicItems
                 {
                     DebugActions.MooLog("Description: " + String.Format(desc.Translate(), exampleFullName, exampleOwnerName, exampleFaction,  exampleItemName));
                 }
-                DebugActions.MooLog("Reason Fragment: " +  def.GetPrintedReasonFragment(exampleOwnerName));
+                DebugActions.MooLog("Reason Fragment: " +  GetPrintedReasonFragment(exampleOwnerName));
                 // TODO add effect translation in child implementations
                 if (def.hasDifferentMeleeOptions)
                 {
@@ -53,6 +53,18 @@ namespace MooMythicItems
                     }
                 }
             }
+        }
+
+        /** This string should be a sentence fragment, which will be injected into the printed statement about a mythic item being produced */
+        public virtual String GetPrintedReasonFragment(params object[] args)
+        {
+            string translationKey = this.GetReasonFragmentKey();
+            if (translationKey == null)
+            {
+                DebugActions.LogErr("Causeworker is returning a null format key. That shouldn't happen.");
+                return null;
+            }
+            return String.Format(translationKey.Translate(), args);
         }
 
         public abstract string GetReasonFragmentKey();

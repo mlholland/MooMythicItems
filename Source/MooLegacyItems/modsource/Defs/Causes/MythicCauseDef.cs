@@ -49,6 +49,7 @@ namespace MooMythicItems
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var error in base.ConfigErrors()) yield return error;
+            if (label == null) yield return "Mythic Causes Need a human-readable label";
             if (workerClass == null) yield return "Worker class cannot be null";
             if (effects == null || effects.Count == 0) yield return "effects list must be nonnull and have at least one element";
             if (descriptions == null || descriptions.Count == 0) yield return "descriptions list must be nonnull and have at least one element";
@@ -152,15 +153,10 @@ namespace MooMythicItems
             return new MythicItem(item, originator, description, title, effect, reason + "-" + priority);
         }
 
-        /** This string should be a sentence fragment, which will be injected into the printed statement about a mythic item being produced */
-        public virtual String GetPrintedReasonFragment(params object[] args) {
-            string translationKey = Worker.GetReasonFragmentKey();
-            if (translationKey == null)
-            {
-                DebugActions.LogErr("Causeworker is returning a null format key. That shouldn't happen.");
-                return null;
-            }
-            return String.Format(translationKey.Translate(), args);
+        public virtual String GetPrintedReasonFragment(params object[] args)
+        {
+            return Worker.GetPrintedReasonFragment(args);
         }
     }
+
 }

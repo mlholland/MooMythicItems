@@ -16,7 +16,7 @@ namespace MooMythicItems
 
         public static readonly string killReasonPrefix = "kills-";
         private static readonly string printReasonKey = "MooMF_PrintKillCountReason";
-        public static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
+        private static Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>> recordsWatched = new Dictionary<RecordDef, List<MythicCauseDef_RecordThreshold>>();
 
         public CauseWorker_Kills(MythicCauseDef def) : base(def) { }
 
@@ -38,7 +38,7 @@ namespace MooMythicItems
             {
                 foreach (MythicCauseDef_RecordThreshold savedCause in recordsWatched[causeDef.record])
                 {
-                    if (savedCause.threshold == causeDef.threshold)
+                    if (savedCause.threshold == ApplySettingsScalingToThreshold(causeDef.threshold))
                     {
                         DebugActions.LogErr("Encountered error while loading mythic item creation causes. Two kill count-based causes, '{0}' and '{1}' have the same threshold on the same record." +
                             " The second cause '{1}' will be ignored.", savedCause.defName, causeDef.defName);
@@ -96,7 +96,7 @@ namespace MooMythicItems
                 {
                     foreach (MythicCauseDef_RecordThreshold causeDef in kv.Value)
                     {
-                        if (curVal == causeDef.threshold && causeDef.priority > bestPrio)
+                        if (curVal == ApplySettingsScalingToThreshold(causeDef.threshold) && causeDef.priority > bestPrio)
                         {
                             bestPrio = causeDef.priority;
                             bestCause = causeDef;
@@ -112,7 +112,22 @@ namespace MooMythicItems
             return new Tuple<MythicItem, MythicCauseDef_RecordThreshold>(null, null);
         }
 
-
-
+        public static int ApplySettingsScalingToThreshold(int threshold)
+        {
+            float scaledThreshold = threshold * MooMythicItems_Mod.settings.killCountScaling;
+            return Math.Max(1, (int)Math.Round(scaledThreshold, 0));
+        }
+        
+        public override String GetPrintedReasonFragment(params object[] args)
+        {
+            MythicCauseDef_RecordThreshold causeDef = def as MythicCauseDef_RecordThreshold;
+            if (causeDef == null)
+            {
+                DebugActions.LogErr("Kill-recording cause worker was supplied a mythic cause def {0} that wasn't the RecordThreshold sub-type." +
+                    " Use a different worker class, or correct the def class.", def.defName);
+                return "";
+            }
+            return base.GetPrintedReasonFragment(args[0], ApplySettingsScalingToThreshold(causeDef.threshold), causeDef.subreason); // TODO need to somehow make this scale with settings
+        }
     }
 }
