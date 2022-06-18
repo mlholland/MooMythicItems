@@ -26,8 +26,7 @@ namespace MooMythicItems
         // private string minimumLevelForSkillItemsString = "18";
         private string mythicItemSaveLimitInputString = "100";
         private string individualItemOccurenceLimitString = "3";
-
-        private static readonly string clearItemsPrintoutKey = "MooMF_ClearSavedItemsButtonPressed";
+        
 
         // for a scrollbar
         private float lastHeight = float.MaxValue;
@@ -94,6 +93,10 @@ namespace MooMythicItems
             // show extra logs
             ls.CheckboxLabeled("MooMF_PrintDebugLogs".Translate(), ref flagDebug, "MooMF_PrintDebugLogsTooltip".Translate());
             ls.CheckboxLabeled("MooMF_PrintExtraStartupDebugLogs".Translate(), ref flagStartupDebug, "MooMF_PrintExtraStartupDebugLogsTooltip".Translate());
+
+
+
+            ls.Label("MooMF_ResetSettingsLabel".Translate(), -1, "MooMF_ResetSettingsLabelTooltip".Translate());
             if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ResetSettingsButton".Translate(), true, true, true))
             {
                 DebugActions.LogIfDebug("Resetting Settings");
@@ -101,15 +104,29 @@ namespace MooMythicItems
                 ResetSettings();
             }
             ls.Gap(30f);
-            // danger zone - clear button
+            ls.Label("MooMF_LoadInvalidCacheLabel".Translate(), -1, "MooMF_LoadInvalidCacheTooltip".Translate());
+            if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_LoadInvalidCache".Translate(), true, true, true))
+            {
+                MythicItemCache.TryLoadingInvalidItems();
+            }
+            ls.Gap(30f);
+
+            // danger zone - file cleanres
             ls.Label("MooMF_DeleteWarning".Translate(), -1, "MooMF_ClearAllSavedItemsDescription".Translate());
             ls.CheckboxLabeled("MooMF_ShowClearButton".Translate(), ref flagShowClearButton, "MooMF_ShowClearButtonTooltip".Translate());
             if (flagShowClearButton) {
                 if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ClearAllSavedItemsButton".Translate(), true, true, true))
                 {
-                    DebugActions.LogIfDebug(clearItemsPrintoutKey.Translate());
-                    Messages.Message(clearItemsPrintoutKey.Translate(), MessageTypeDefOf.PositiveEvent, true);
+                    DebugActions.LogIfDebug("MooMF_ClearSavedItemsButtonPressed".Translate());
+                    Messages.Message("MooMF_ClearSavedItemsButtonPressed".Translate(), MessageTypeDefOf.PositiveEvent, true);
                     MythicItemCache.ClearCacheAndSaveFile();
+                }
+                ls.Gap(45f);
+                if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ClearAllInvalidItemsButton".Translate(), true, true, true))
+                {
+                    DebugActions.LogIfDebug("MooMF_ClearInvalidSavedItemsButtonPressed".Translate());
+                    Messages.Message("MooMF_ClearInvalidSavedItemsButtonPressed".Translate(), MessageTypeDefOf.PositiveEvent, true);
+                    MythicItemCache.ClearInvalidSaveFile();
                 }
                 ls.Gap(30f);
             }

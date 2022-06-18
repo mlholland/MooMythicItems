@@ -32,12 +32,22 @@
   <MooMF_KillCountScalingTooltip>Kill count thresholds to create mythic items are multiplied by this value. Lower numbers mean that it takes less kills for a colonist to generate a mythic item, while higher numbers require more. Consider changing this value if you are seeing more or less kill-based mythic items than you would like. For the resulting kill counts thresholds are always rounded up, and have a minimum of 1.</MooMF_KillCountScalingTooltip>
   <MooMF_ShowKillThresholds>Show kill count thresholds</MooMF_ShowKillThresholds>
   <MooMF_ShowKillThresholdsToolTip>Slight spoilers. Toggle this value on to see exact the thresholds needed for kill count-based mythic items. The displayed value takes into account the current theshold scaling set above.</MooMF_ShowKillThresholdsToolTip>
-
-  <MooMF_ResetSettingsButton>Reset Settings</MooMF_ResetSettingsButton>
+  <MooMF_ResetSettingsLabel>Reset Settings</MooMF_ResetSettingsLabel>
+  <MooMF_ResetSettingsLabel>Click the button below to reset this mod's settings back to their original state.</MooMF_ResetSettingsLabel>
+  <MooMF_ResetSettingsButton>Reset</MooMF_ResetSettingsButton>
   <MooMF_ResetSettingsPressed>Resetting Mythic Framework Settings.</MooMF_ResetSettingsPressed>
   <MooMF_ShowClearButton>Show Clear Saved Mythic Items Button</MooMF_ShowClearButton>
   <MooMF_ShowClearButtonTooltip>Shows the button that lets you clear your saved mythic items. Hidden by default to make sure you don't accidentally click on it.</MooMF_ShowClearButtonTooltip>
   <MooMF_ClearSavedItemsButtonPressed>Reset button pressed. Removing all cached mythic items, and clearing the mythic item save file. You must play the game more before Mythic Items will start showing up again.</MooMF_ClearSavedItemsButtonPressed>
+  <MooMF_InvalidItemsCached>While loading saved mythic items, found {0} unreadable items. These items have been saved to another file, and you can try manually reloading them in the settings of this mod. Chances are, the items in question are based on now-missing items from a removed mod.</MooMF_InvalidItemsCached>
+  <MooMF_LoadInvalidCacheLabel>Load Invalid Items</MooMF_LoadInvalidCacheLabel>
+  <MooMF_LoadInvalidCache>Load Invalid</MooMF_LoadInvalidCache>
+  <MooMF_LoadInvalidCacheTooltip>Mythic Items which become incompatibile with your current modlist are saved in another file. If you think you've added back the required mods, you can click this button to try loading items from that file. Items found to now be valid will be moved back to the normal list.</MooMF_LoadInvalidCacheTooltip>
+  <MooMF_LoadInvalidCacheResult>Tried to load the invalid mythic items file. Found {0} results, {1} of which were now found to be valid, and were moved back to the normal list of mythic items.</MooMF_LoadInvalidCacheResult>
+  <MooMF_LoadInvalidCacheNothingChanged>Tried to load the invalid mythic items file. All {0} items found were still invalid, they probably depend on inactive mods.</MooMF_LoadInvalidCacheNothingChanged>
+  <MooMF_ClearAllInvalidItemsButton>Clear Invalid Items</MooMF_ClearAllInvalidItemsButton>
+  <MooMF_ClearInvalidSavedItemsButtonPressed>Saved Invalid Items Have been deleted.</MooMF_ClearInvalidSavedItemsButtonPressed>
+  
   <MooMF_FailedToCreateMIFromDebug>Tried to place a saved mythic item via debug actions, but failed to create one. There's probably no saved mythic items right now.</MooMF_FailedToCreateMIFromDebug>
 
   <!-- {0} is expected to be a sentence clause that includes the achiever's name, and a reason for why they produced a mythic item

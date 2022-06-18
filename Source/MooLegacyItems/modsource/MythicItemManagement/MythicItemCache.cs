@@ -15,25 +15,66 @@ namespace MooMythicItems
 {
     [StaticConstructorOnStartup]
     public static class MythicItemCache
-    { 
+    {
         // all elements of this list are assumed to be valid in the current modlist,
         // since they're checked upon loading the save file, and other incoming elements
         // must be coming from the live game itself.
-        private static List<MythicItem> s_cachedItems = new List<MythicItem>();
+        private static List<MythicItem> s_cachedItems;
         private static readonly string noReasonKey = "MooMF_NoMythicReasonGiven";
 
         private static readonly string newItemMessageKey = "MooMF_CreatedNewItemMessage";
 
         static MythicItemCache()
         {
-            List<MythicItem> savedItems = SaveUtility.LoadMythicItemsFile();
-            DebugActions.LogIfDebug("found {0} items from the save file into the cache", savedItems.Count);
-            foreach (MythicItem savedItem in savedItems)
+            s_cachedItems = new List<MythicItem>();
+            Tuple<List<MythicItem>, List<string>> savedItems = SaveUtility.LoadMythicItemsFile();
+            if (savedItems == null || savedItems.Item1 == null || savedItems.Item2 == null)
             {
-                s_cachedItems.Add(savedItem);
+                DebugActions.LogErr("Mythic item loading process produced null lists. No items were loaded.");
+                return;
             }
+            List<MythicItem> validItems = savedItems.Item1;
+            List<string> badItems = savedItems.Item2;
+            DebugActions.LogIfDebug("found {0} items from the save file into the cache", savedItems.Item1.Count);
+            foreach (MythicItem validItem in validItems)
+            { 
+                s_cachedItems.Add(validItem);
+            }
+            if (badItems.Count > 0)
+            { 
+                DebugActions.LogErr("MooMF_InvalidItemsCached".Translate(), badItems.Count); 
+                SaveUtility.AddToInvalidMythicItemsFile(badItems);
+                SaveUtility.SaveMythicItemsFile(validItems);
+            } 
             DebugActions.LogIfDebug("loaded {0} items from the save file into the cache", s_cachedItems.Count);
         } 
+
+        public static void TryLoadingInvalidItems()
+        {
+            DebugActions.LogIfDebug("Loading Invalid Mythic Items");
+            Tuple<List<MythicItem>, List<string>> savedItems = SaveUtility.ReadInvalidMythicItemsFile();
+            if (savedItems == null || savedItems.Item1 == null || savedItems.Item2 == null)
+            {
+                DebugActions.LogIfDebug("Invalid Mythic item loading process produced null lists. No items were loaded.");
+            }
+            else if (savedItems.Item1.Count == 0)
+            {
+                DebugActions.LogIfDebug("No invalid mythic items were moved into the normal cache.");
+                Messages.Message(String.Format("MooMF_LoadInvalidCacheNothingChanged".Translate(), savedItems.Item2.Count), MessageTypeDefOf.PositiveEvent, true);
+            }
+            else
+            {
+                List<MythicItem> validItems = savedItems.Item1;
+                List<string> badItems = savedItems.Item2;
+                foreach (MythicItem validItem in validItems)
+                {
+                    MythicItemCache.SaveNewMythicItem(validItem, "LoadingInvalids", false);
+                }
+                SaveUtility.SaveInvalidMythicItemsFile(badItems);
+                DebugActions.LogIfDebug("found {0} items from the invalid save file to move into the normal cache", savedItems.Item1.Count);
+                Messages.Message(String.Format("MooMF_LoadInvalidCacheResult".Translate(), validItems.Count + badItems.Count, validItems.Count), MessageTypeDefOf.PositiveEvent, true);
+            }
+        }
 
         /* The main function for saving new mythic items. Returns true if the cache and save state were modified, and false otherwise.
          * Can modify the cache by either adding newItem to the cache, or by replacing a lower-priority version of this type of mythic
@@ -110,9 +151,9 @@ namespace MooMythicItems
         }
 
         /* New values are added to the end of line, to keep an implicitly time-ordered list of items */
-        public static void SaveNewMythicItem(MythicItem newMythicItem, string reason)
+        public static void SaveNewMythicItem(MythicItem newMythicItem, string reason, bool allowNotify = true)
         {
-            if (MooMythicItems_Mod.settings.flagNotifyItemCreation)
+            if (MooMythicItems_Mod.settings.flagNotifyItemCreation && allowNotify)
             {
                 if (reason == null) reason = string.Format(noReasonKey.Translate(), newMythicItem.ownerFullName);
                 Messages.Message(string.Format(newItemMessageKey.Translate(), reason, newMythicItem.itemDef.label, newMythicItem.GetFormattedTitle()), MessageTypeDefOf.PositiveEvent, true);
@@ -187,7 +228,12 @@ namespace MooMythicItems
             s_cachedItems.Clear();
             SaveCachedMythicItems();
         }
-        
+
+        public static void ClearInvalidSaveFile()
+        {
+            SaveUtility.SaveInvalidMythicItemsFile(new List<string>());
+        }
+
         public static List<MythicItem> GetMythicItemsFromThisColony(int colonyID)
         {
             List<MythicItem> results = new List<MythicItem>();

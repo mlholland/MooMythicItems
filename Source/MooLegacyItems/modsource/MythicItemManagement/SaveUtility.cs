@@ -27,7 +27,7 @@ namespace MooMythicItems
         private static readonly string s_pipeReplacement = "~~pipe~~";
         private static readonly string s_ColonReplacement = "~~colon~~";
 
-        private static string PATH_MODDIR
+        private static string pathModDirectory
         {
             get
             {
@@ -35,57 +35,126 @@ namespace MooMythicItems
             }
         }
         
-        private static string PATH_MythicITEMS
+        private static string pathMythicItemsFile
         {
             get
             {
-                return PATH_MODDIR + Path.DirectorySeparatorChar.ToString() + "moo_mythicitems.csv";
+                return pathModDirectory + Path.DirectorySeparatorChar.ToString() + "moo_mythicitems.csv";
+            }
+        }
+
+        private static string pathInvalidMythicItemsFile
+        {
+            get
+            {
+                return pathModDirectory + Path.DirectorySeparatorChar.ToString() + "moo_mythicitems.invalid.csv";
             }
         }
 
 
-
         /* Loads the mythic items from the csv located at <RimworldFiles>/PATH_LEGACYITEMS. Mythic items with
-         * invalid def or stuff types are ignored, and will be cleared from the file upon the next save.*/
-        internal static List<MythicItem> LoadMythicItemsFile()
+         * invalid mythic items (which can occur if other mods are removed due to missing defs) are returned in 
+         * a secondary list in raw string form.*/
+        internal static Tuple<List<MythicItem>, List<string>> LoadMythicItemsFile()
         {
             string mythicItemsFileText = "";
-            List<MythicItem> results = new List<MythicItem>();
             try
             {
-                bool flag = FileIO.Exists(PATH_MythicITEMS);
+                bool flag = FileIO.Exists(pathMythicItemsFile);
                 if (flag)
                 {
-                    mythicItemsFileText = BytesToString(FileIO.ReadFile(PATH_MythicITEMS), Encoding.UTF8);
+                    mythicItemsFileText = BytesToString(FileIO.ReadFile(pathMythicItemsFile), Encoding.UTF8);
                 } else {
-                    return results;
+                    return null;
                 }
             }
             catch(Exception e)
             {
                 DebugActions.LogErr("Failed to read mythic items from save file due the following error: {0}", e.Message); 
-                return results;
+                return null;
             }
-            string[] fileLines = mythicItemsFileText.Split('\n');
-            foreach (string line in fileLines)
-            { 
-                string escapedLine = line.Replace(s_newLineReplacement, "\n");
-                MythicItem parsedItem = ConvertStringToMythicItem(escapedLine);
-                if (parsedItem != null) results.Add(parsedItem);
-            }
-            return results;
+            return DecodeMythicItems(mythicItemsFileText.Split('\n').ToList());
         }
 
         /*Saves the inputted list to <RimworldFiles>/PATH_LEGACYITEMS as a csv, overwriting whatever is currently saved there.*/
         internal static void SaveMythicItemsFile(List<MythicItem> mythicItems)
         {
-            FileIO.CheckOrCreateDir(PATH_MODDIR);
+            FileIO.CheckOrCreateDir(pathModDirectory);
             List<string> encodedItems = new List<string>();
             foreach (MythicItem item in mythicItems)
             {
                 encodedItems.Add(ConvertMythicItemToCSVString(item).Replace("\n", s_newLineReplacement));
             }
-            FileIO.WriteFile(PATH_MythicITEMS, StringToBytes(string.Join("\n", encodedItems), Encoding.UTF8));
+            FileIO.WriteFile(pathMythicItemsFile, StringToBytes(string.Join("\n", encodedItems), Encoding.UTF8));
+        }
+
+        internal static void SaveInvalidMythicItemsFile(List<string> mythicItems)
+        {
+            FileIO.CheckOrCreateDir(pathModDirectory);
+            if (mythicItems == null || mythicItems.Count == 0)
+            {
+                FileIO.WriteFile(pathInvalidMythicItemsFile, StringToBytes("", Encoding.UTF8));
+            }
+            FileIO.WriteFile(pathInvalidMythicItemsFile, StringToBytes(string.Join("\n", mythicItems), Encoding.UTF8));
+        }
+
+        internal static void AddToInvalidMythicItemsFile(List<string> mythicItems)
+        {
+            if (mythicItems == null || mythicItems.Count == 0) return;
+            FileIO.CheckOrCreateDir(pathModDirectory);
+            string previous = ReadInvalidMythicItemsFileAsText();
+            if (previous == null || previous.Length == 0)
+            {
+                FileIO.WriteFile(pathInvalidMythicItemsFile, StringToBytes(string.Join("\n", mythicItems), Encoding.UTF8));
+                return;
+            }
+            FileIO.WriteFile(pathInvalidMythicItemsFile, StringToBytes(ReadInvalidMythicItemsFileAsText() + "\n" +  string.Join("\n", mythicItems), Encoding.UTF8));
+        }
+
+        internal static string ReadInvalidMythicItemsFileAsText()
+        {
+            string invalidMythicItemsFileText = "";
+            try
+            {
+                bool flag = FileIO.Exists(pathInvalidMythicItemsFile);
+                if (flag)
+                {
+                    invalidMythicItemsFileText = BytesToString(FileIO.ReadFile(pathInvalidMythicItemsFile), Encoding.UTF8);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            catch (Exception e)
+            {
+                DebugActions.LogErr("Failed to read mythic items from save file due the following error: {0}", e.Message);
+                return "";
+            }
+            return invalidMythicItemsFileText;
+        }
+
+        internal static Tuple<List<MythicItem>, List<string>> ReadInvalidMythicItemsFile()
+        {
+            FileIO.CheckOrCreateDir(pathModDirectory);
+            return DecodeMythicItems(ReadInvalidMythicItemsFileAsText().Split('\n').ToList());
+        }
+
+
+        // returns valid mythic items as mythic items, and invalid mythic items (usually due to mod removals) in their raw string form.
+        private static Tuple<List<MythicItem>, List<string>> DecodeMythicItems(List<string> encodedMythicItems)
+        {
+            List<MythicItem> results = new List<MythicItem>();
+            List<string> badResults = new List<string>();
+            foreach (string line in encodedMythicItems)
+            {
+                if (line.Trim().Length == 0) continue;
+                string escapedLine = line.Replace(s_newLineReplacement, "\n");
+                MythicItem parsedItem = ConvertStringToMythicItem(escapedLine);
+                if (parsedItem != null) results.Add(parsedItem);
+                else badResults.Add(line);
+            }
+            return new Tuple<List<MythicItem>, List<string>>(results, badResults);
         }
 
         /* Assumes that a mythic item is encoded as a comma separated value with the
