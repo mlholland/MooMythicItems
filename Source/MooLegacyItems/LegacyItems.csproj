@@ -323,7 +323,12 @@
     <Compile Include="modsource\Comps\CompAbilityEffect_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_Empty.cs" />
     <Compile Include="modsource\Comps\CompAbilityEffect_MapWideIncident.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_UseEffectWithDefInput.cs" />
+    <Compile Include="modsource\Comps\CompUsable_OptionPerDef.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_Mythic.cs" />
+    <Compile Include="modsource\Comps\CompUseEffect_WithDefInput.cs" />
+    <Compile Include="modsource\Comps\CompUseEffect_CreateMythicItemFromUser.cs" />
+    <Compile Include="modsource\Comps\CompProperties\CompProperties_UsableOptionPerDef.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_GiveSpecificInspiration.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_Empty.cs" />
     <Compile Include="modsource\Comps\CompProperties\CompProperties_MapWideIncident.cs" />
@@ -381,6 +386,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="modsource\Abilities\" />
+    <Folder Include="modsource\JobDrivers\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

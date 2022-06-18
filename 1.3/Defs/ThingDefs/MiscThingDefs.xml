@@ -10,7 +10,7 @@
       <Nutrition>1</Nutrition>
     </statBases>
     <label>Epicurean Delight</label>
-    <description>A meal worthy of song and praise, produced using the supernatural guidance of a mythical cook. Beyond wasteful and decadant, this meal will motivate the eater beyond their mortal limits.</description>
+    <description>A meal worthy of song and praise, produced using the supernatural guidance of a mythical cook. Wasteful and decadant beyond compare, this meal will motivate the eater past their mortal limits.</description>
     <graphicData>
       <texPath>Things/Item/Meal/Lavish</texPath>
       <graphicClass>Graphic_MealVariants</graphicClass>
@@ -31,5 +31,68 @@
       </outcomeDoers>
     </ingestible>
   </ThingDef>
-  
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>MooMF_MythMaker</defName>
+    <label>Myth Maker</label>
+    <thingClass>ThingWithComps</thingClass>
+    <description>A strange, expensive relic, thought to be related to tribal anima stones and psychic shock tools. Interacting with it will psychically spread stories about the user far and wide, immortalizing them as a myth. 
+
+This item allows you to manually create mythic weapons to celebrate your own achievements and stories. Options that produce mythic items from apparel select randomly from worn items, so strip down the user if you want to guarantee a specific piece of apparel.</description>
+    <graphicData>
+      <texPath>Things/Item/Artifact/PsychicAnimalPulser</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>150,0,150</color>
+    </graphicData>
+    <useHitPoints>true</useHitPoints>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MarketValue>10000</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <DeteriorationRate>0.0</DeteriorationRate>
+      <Flammability>0.0</Flammability>
+      <WorkToMake>36000</WorkToMake>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <techLevel>Neolithic</techLevel>
+    <tradeability>Sellable</tradeability>
+    <costList>
+      <Silver>250</Silver>
+      <Gold>5</Gold>
+      <Jade>150</Jade>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+      <researchPrerequisite>MooMF_MythMakerProduction</researchPrerequisite>
+    </recipeMaker>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+    <comps>
+      <li Class="MooMythicItems.CompProperties_UsableOptionPerDef">
+        <useJob>UseItem</useJob>
+        <useLabel>Make Mythic Item</useLabel>
+        <useDuration>600</useDuration>
+        <defType>MooMythicItems.MythicCauseDef</defType>
+      </li>
+      <li Class="MooMythicItems.CompProperties_UseEffectWithDefInput">
+        <compClass>MooMythicItems.CompUseEFfect_CreateMythicItemFromUser</compClass>
+        <parameterizeableUseLabel>Make mythic item from {0} using trigger '{1}'</parameterizeableUseLabel>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+    </thingSetMakerTags>
+  </ThingDef>
 </Defs>

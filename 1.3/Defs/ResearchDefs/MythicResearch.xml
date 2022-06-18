@@ -42,4 +42,15 @@
     <researchViewY>3.0</researchViewY>
   </ResearchProjectDef>
 
+  <ResearchProjectDef>
+    <defName>MooMF_MythMakerProduction</defName>
+    <label>Myth Making</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Allows the construction of myth makers at sculpting tables. Myth makers are very expensive, but allow you to manually create a mythic item from a chosen pawn. Useful for commemorating events that are not covered by normal mythic item triggers.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+
 </Defs>

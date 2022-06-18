@@ -71,6 +71,9 @@
   <MooMF_NoMythicItemsExist>No valid mythic items exist</MooMF_NoMythicItemsExist>
   <MooMF_MinDaysRequired>Earn trust after lasting {0} days.</MooMF_MinDaysRequired>
   <MooMF_MythicItemLastOccurence>The mythic item "{0}" has appeared {1} times. This is the last time you'll see this item.</MooMF_MythicItemLastOccurence>
-
+  <MooMF_Weapon>weapon</MooMF_Weapon>
+  <MooMF_Apparel>apparel</MooMF_Apparel>
+  <MooMF_MythMakerFailed>A Myth Maker failed to make a mythic item from {0}. Make sure they have a weapon equipped or are wearing at least one piece of apparel, depending on the mythic trigger you wish to use.</MooMF_MythMakerFailed>
+  <MooMF_MythMakerReason>{0} used a myth maker</MooMF_MythMakerReason>
 
 </LanguageData>
