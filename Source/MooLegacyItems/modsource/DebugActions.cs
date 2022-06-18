@@ -137,13 +137,13 @@ namespace MooMythicItems
             Find.WindowStack.Add(new Dialog_DebugOptionListLister(causeList));
         }
 
-        [DebugAction("Spawning", "Spawn Random Mythic Item", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Random Mythic...", false, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceRandomizedMythicItem()
         {
             DebugSpawnMythicItem(MythicItemUtilities.CreateRandomMythicItem().Realize(), UI.MouseCell(), false);
         }
 
-        [DebugAction("Spawning", "Spawn Saved Mythic Item", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Saved Mythic...", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItem()
         {
             List<DebugMenuOption> itemList = new List<DebugMenuOption>();
@@ -157,7 +157,7 @@ namespace MooMythicItems
             Find.WindowStack.Add(new Dialog_DebugOptionListLister(itemList));
         }
 
-        [DebugAction("Spawning", "Try place Saved Mythic Item - Record World", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugAction("Spawning", "Spawn Mythic (Record World)", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void TryPlaceSavedMythicItemRecordWorld()
         {
             List<DebugMenuOption> itemList = new List<DebugMenuOption>();

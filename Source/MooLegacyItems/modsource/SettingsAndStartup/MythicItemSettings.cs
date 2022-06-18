@@ -14,6 +14,7 @@ namespace MooMythicItems
         public bool flagNotifyItemCreation = true;
         public bool flagNotifyItemDeletion = true;
         public bool flagMythicOwnersCanCreateNewMythicItems = false;
+        public bool flagLoadExtraData = true;
         public bool flagDebug = false;
         public bool flagStartupDebug = false;
         // public int minimumLevelForSkillItems = 18;
@@ -40,6 +41,7 @@ namespace MooMythicItems
             Scribe_Values.Look(ref flagNotifyItemCreation, "flagNotifyItemCreation", true, true);
             Scribe_Values.Look(ref flagNotifyItemDeletion, "flagNotifyItemDeletion", true, true);
             Scribe_Values.Look(ref flagMythicOwnersCanCreateNewMythicItems, "flagMythicOwnersCanCreateNewMythicItems", false, true);
+            Scribe_Values.Look(ref flagLoadExtraData, "flagLoadExtraData", true, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
             Scribe_Values.Look(ref flagStartupDebug, "flagStartupDebug", false, true);
             // Scribe_Values.Look(ref minimumLevelForSkillItems, "minimumLevelForSkillItems", 18, true);
@@ -68,6 +70,7 @@ namespace MooMythicItems
             ls.CheckboxLabeled("MooMF_FlagNotifyItemCreation".Translate(), ref flagNotifyItemCreation, "MooMF_FlagNotifyItemCreationTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagNotifyItemDeletion".Translate(), ref flagNotifyItemDeletion, "MooMF_FlagNotifyItemDeletionTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagMythicOwnersCanCreateNewMythicItems".Translate(), ref flagMythicOwnersCanCreateNewMythicItems, "MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip".Translate());
+            ls.CheckboxLabeled("MooMF_FlagLoadExtraData".Translate(), ref flagLoadExtraData, "MooMF_FlagLoadExtraDataTooltip".Translate());
             // not currently used, level thresholds are set in the cause defs.
             //ls.Label("MooMF_MinLevelForSkillItems".Translate() + ": " + minimumLevelForSkillItems, -1, "MooMF_MinLevelForSkillItemsToolTip".Translate());
             //ls.IntEntry(ref minimumLevelForSkillItems, ref minimumLevelForSkillItemsString);
@@ -96,7 +99,7 @@ namespace MooMythicItems
 
 
 
-            ls.Label("MooMF_ResetSettingsLabel".Translate(), -1, "MooMF_ResetSettingsLabelTooltip".Translate());
+            ls.Label("MooMF_ResetSettingsLabel".Translate(), -1, "MooMF_ResetSettingsTooltip".Translate());
             if (Widgets.ButtonText(new Rect(0f, ls.CurHeight, 180f, 29f), "MooMF_ResetSettingsButton".Translate(), true, true, true))
             {
                 DebugActions.LogIfDebug("Resetting Settings");
@@ -143,6 +146,7 @@ namespace MooMythicItems
             flagNotifyItemCreation = true;
             flagNotifyItemDeletion = true;
             flagMythicOwnersCanCreateNewMythicItems = false;
+            flagLoadExtraData = true;
             flagDebug = false;
             flagStartupDebug = false;
             // public int minimumLevelForSkillItems = 18;

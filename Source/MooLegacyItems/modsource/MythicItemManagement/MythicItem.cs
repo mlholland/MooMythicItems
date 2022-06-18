@@ -197,7 +197,7 @@ namespace MooMythicItems
 
             MythicItemUtilities.AddMythicCompToThing(thing, String.Format(this.titleTranslationString.Translate(), this.ownerShortName, def.label), String.Format(this.descriptionTranslationString.Translate(), this.ownerFullName, this.ownerShortName, this.factionName, def.label), this.abilityDef);
 
-            if(this.extraItemData != null)
+            if(this.extraItemData != null && MooMythicItems_Mod.settings.flagLoadExtraData)
             {
                 foreach(KeyValuePair<string, Func<ThingWithComps, string, bool>> kv in RealizeAddons)
                 {

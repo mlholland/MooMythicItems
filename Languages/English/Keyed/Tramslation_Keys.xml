@@ -17,6 +17,8 @@
   <MooMF_FlagAllowMythicItemSpawning>Allow Mythic Item Spawning.</MooMF_FlagAllowMythicItemSpawning>
   <MooMF_FlagMythicOwnersCanCreateNewMythicItems>Mythic Item Owners Can Create New Mythic Items</MooMF_FlagMythicOwnersCanCreateNewMythicItems>
   <MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>Disabled by default due to balance concerns</MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip>
+  <MooMF_FlagLoadExtraData>Load extra mythic item data</MooMF_FlagLoadExtraData>
+  <MooMF_FlagLoadExtraDataTooltip>Allow extra item attributes to be loaded when adding mythic items into the world. In vanilla, this only includes bladelink personality types, but it also includes several modded attributes like Rimworld of Magic Enchanting, Infusions, and Infinite Reinforcements. Be aware that this is all-or-nothing, you cannot toggle loading on per-attribute basis.</MooMF_FlagLoadExtraDataTooltip>
   <MooMF_MaxMythicItemsProducedPerColony>Max Mythic Items Produced Per Colony:</MooMF_MaxMythicItemsProducedPerColony>
   <MooMF_MaxMythicItemsSaved>Max Saved Mythic Items</MooMF_MaxMythicItemsSaved>
   <MooMF_RandomMythicRelicButtonText>Create Random Mythic Relic</MooMF_RandomMythicRelicButtonText>
@@ -33,7 +35,7 @@
   <MooMF_ShowKillThresholds>Show kill count thresholds</MooMF_ShowKillThresholds>
   <MooMF_ShowKillThresholdsToolTip>Slight spoilers. Toggle this value on to see exact the thresholds needed for kill count-based mythic items. The displayed value takes into account the current theshold scaling set above.</MooMF_ShowKillThresholdsToolTip>
   <MooMF_ResetSettingsLabel>Reset Settings</MooMF_ResetSettingsLabel>
-  <MooMF_ResetSettingsLabel>Click the button below to reset this mod's settings back to their original state.</MooMF_ResetSettingsLabel>
+  <MooMF_ResetSettingsTooltip>Click the button below to reset this mod's settings back to their original state.</MooMF_ResetSettingsTooltip>
   <MooMF_ResetSettingsButton>Reset</MooMF_ResetSettingsButton>
   <MooMF_ResetSettingsPressed>Resetting Mythic Framework Settings.</MooMF_ResetSettingsPressed>
   <MooMF_ShowClearButton>Show Clear Saved Mythic Items Button</MooMF_ShowClearButton>
@@ -42,7 +44,7 @@
   <MooMF_InvalidItemsCached>While loading saved mythic items, found {0} unreadable items. These items have been saved to another file, and you can try manually reloading them in the settings of this mod. Chances are, the items in question are based on now-missing items from a removed mod.</MooMF_InvalidItemsCached>
   <MooMF_LoadInvalidCacheLabel>Load Invalid Items</MooMF_LoadInvalidCacheLabel>
   <MooMF_LoadInvalidCache>Load Invalid</MooMF_LoadInvalidCache>
-  <MooMF_LoadInvalidCacheTooltip>Mythic Items which become incompatibile with your current modlist are saved in another file. If you think you've added back the required mods, you can click this button to try loading items from that file. Items found to now be valid will be moved back to the normal list.</MooMF_LoadInvalidCacheTooltip>
+  <MooMF_LoadInvalidCacheTooltip>Mythic Items which become incompatibile with your current modlist are saved in another file. If you think you've added back the required mods, you can click this button to try loading items from that file. Items that are now valid will be moved back to the normal list.</MooMF_LoadInvalidCacheTooltip>
   <MooMF_LoadInvalidCacheResult>Tried to load the invalid mythic items file. Found {0} results, {1} of which were now found to be valid, and were moved back to the normal list of mythic items.</MooMF_LoadInvalidCacheResult>
   <MooMF_LoadInvalidCacheNothingChanged>Tried to load the invalid mythic items file. All {0} items found were still invalid, they probably depend on inactive mods.</MooMF_LoadInvalidCacheNothingChanged>
   <MooMF_ClearAllInvalidItemsButton>Clear Invalid Items</MooMF_ClearAllInvalidItemsButton>
