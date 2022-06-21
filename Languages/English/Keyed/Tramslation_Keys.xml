@@ -11,6 +11,8 @@
   <MooMF_FlagNotifyItemCreationTooltip>If active, then you'll get a small notification whenever a colonist's achievements create a new mythic item.</MooMF_FlagNotifyItemCreationTooltip>
   <MooMF_FlagNotifyItemDeletion>Notify player when mythic item is deleted</MooMF_FlagNotifyItemDeletion>
   <MooMF_FlagNotifyItemDeletionTooltip>Individual mythic items only occur so many times before disappearing. If this is active, you'll get a small notification when a mythic item shows up for the last time.</MooMF_FlagNotifyItemDeletionTooltip>
+  <MooMF_FlagAllowSameWorldItems>Allow Same-World Item Spawning</MooMF_FlagAllowSameWorldItems>
+  <MooMF_FlagAllowSameWorldItemsTooltip>Allows mythic items produced by the currently-played colony to spawn. Breaks immersion a bit, but useful if you tend to stay on the same world for very long periods of time.</MooMF_FlagAllowSameWorldItemsTooltip>
   <MooMF_PrintExtraStartupDebugLogs>Print Extra Startup Logs</MooMF_PrintExtraStartupDebugLogs>
   <MooMF_PrintExtraStartupDebugLogsTooltip>Prints a bunch of extra stuff during startup for debugging purposes, like all the flavor text. Not recommended during normal play unless you want to clog your log file.</MooMF_PrintExtraStartupDebugLogsTooltip>
   <MooMF_FlagAllowMythicItemCreation>Allow Mythic Item Saving.</MooMF_FlagAllowMythicItemCreation>

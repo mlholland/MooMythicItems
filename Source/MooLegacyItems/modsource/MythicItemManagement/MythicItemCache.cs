@@ -49,6 +49,7 @@ namespace MooMythicItems
             DebugActions.LogIfDebug("loaded {0} items from the save file into the cache", s_cachedItems.Count);
         } 
 
+        /* Loads items from the invalid save file, and checks if any are now valid. Valid items are added back to the normal save file and the cache.*/
         public static void TryLoadingInvalidItems()
         {
             DebugActions.LogIfDebug("Loading Invalid Mythic Items");
@@ -182,8 +183,20 @@ namespace MooMythicItems
             SaveUtility.SaveMythicItemsFile(s_cachedItems);
         }
 
+        public static void ClearCacheAndSaveFile()
+        {
+            s_cachedItems.Clear();
+            SaveCachedMythicItems();
+        }
+
+        public static void ClearInvalidSaveFile()
+        {
+            SaveUtility.SaveInvalidMythicItemsFile(new List<string>());
+        }
+
         /* Return the first mythic item from the cached list that is not from the specified colony.
          * Includes optional parameter to keep the returned value from the cache, which is false by default.
+         * TODO: unused... remove?
          */
         public static MythicItem GetFirstMythicItemNotFromThisColony(int colonyId, bool keepReturnValueInCache=false)
         {
@@ -221,17 +234,6 @@ namespace MooMythicItems
                 return MythicItemUtilities.CreateRandomMythicItem();
             }
             return null;
-        }
-
-        public static void ClearCacheAndSaveFile()
-        {
-            s_cachedItems.Clear();
-            SaveCachedMythicItems();
-        }
-
-        public static void ClearInvalidSaveFile()
-        {
-            SaveUtility.SaveInvalidMythicItemsFile(new List<string>());
         }
 
         public static List<MythicItem> GetMythicItemsFromThisColony(int colonyID)
@@ -297,14 +299,19 @@ namespace MooMythicItems
 
         public static MythicItem SelectRandomMythicItemFromCache_Standard()
         {
-            return SelectRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false);
+            // be aware of the'not' on the allowSameWorldItems flag
+            return SelectRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, !MooMythicItems_Mod.settings.flagAllowSameWorldItems, false);
         }
 
-
         /* Answers the question of 'given the current cached mythic items and settings, could we create a mythic item for the current world?'*/
-        public static bool CanRealizeRandomMythicItem(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool allowDuplicatesInCurrentMap)
+        private static bool CanRealizeRandomMythicItem(bool createRandomMythicItemsIfNoValidOptionsFound, bool excludeItemsFromThisWorld, bool allowDuplicatesInCurrentMap)
         {
             return SelectRandomMythicItemFromCacheWithOptions(createRandomMythicItemsIfNoValidOptionsFound, excludeItemsFromThisWorld, allowDuplicatesInCurrentMap) != null;
+        }
+
+        public static bool CanRealizeRandomMythicItem_Standard()
+        {
+            return CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, !MooMythicItems_Mod.settings.flagAllowSameWorldItems, false);
         }
 
         /* Return the first mythic item from the cached list that is not from the specified colony. Contains a bunch of optional parameters, most of which are only used for debugging/testing.
@@ -320,7 +327,7 @@ namespace MooMythicItems
         /* This is the normal way of producing a mythic item for in-game use.*/
         public static Thing RealizeRandomMythicItemFromCache()
         {
-            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, true, false);
+            return RealizeRandomMythicItemFromCacheWithOptions(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, !MooMythicItems_Mod.settings.flagAllowSameWorldItems, true, false);
         }
 
 

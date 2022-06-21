@@ -48,7 +48,7 @@ Mythic Items can be created and saved whenever a colonist meets one of the follo
 
  - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Kill thresholds differ between categories and can be scaled up or down in the settings. Some categories have multiple thresholds which replace/upgrade the resulting mythic item. I tried to balance the thresholds such that you'll usually hit the first threshold on your best combat colonist within three years on medium/hard difficulty.
 
- - A colonist reaches level 20 in a skill via working. Skilltrainers don't count.
+ - A colonist reaches level 20 in a skill.
 
  - A colonist tames their second thrumbo.
 
@@ -58,13 +58,15 @@ Mythic Items can be created and saved whenever a colonist meets one of the follo
 
 &lt;size=24&gt;Finding Mythic Items&lt;/size&gt;
 
-Once you've played the game enough and have produced a few mythic items, these items can show up in subsequent games in several ways. Bear in mind that mythic items can only show up ONCE per world, and after showing up in a few worlds, a given mythic item will disappear entirely (this can be changed in the mod settings).
+Once you've played the game enough and have produced a few mythic items, these items can show up in subsequent games in several ways. Bear in mind that mythic items can only show up ONCE per world, and after showing up in a few worlds, a given mythic item will disappear entirely. 
 
  - The simplest way to find mythic items is through normal quest reward. Mythic items will only generate as quest rewards after at least a year has passed in the current colony, and it is as common as the vanilla reward for masterwork/legendary items.
 
  - If you are allied with a faction, you can pay 7500 silver and a ton of goodwill to create a quest to find a mythic item (this works like the AI persona core quest). This option is only available after the current colony has survived at least 90 days.
 
  - If Ideology is installed, a mythic item can be selected as an Ideoligion relic. This does not remove the selected mythic item from the list of currently saved mythic items, that way you can use a mythic item in multiple Ideologions. This can lead to duplicate mythic items in the same world - one as a relic and one as a normal quest reward. That seemed worth it to allow for relic/mythic items without rewriting too much code.
+
+Note: Multiple aspects of this can be changed in the mod;s settings, like the disappearance rate, and the no-same-world restriction.
 
 &lt;size=24&gt;Mythic Item Effects&lt;/size&gt;
 

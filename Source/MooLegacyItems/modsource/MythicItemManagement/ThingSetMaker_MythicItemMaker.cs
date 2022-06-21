@@ -19,7 +19,7 @@ namespace MooMythicItems
         protected override bool CanGenerateSub(ThingSetMakerParams parms)
         {
             DebugActions.LogIfDebug("running ThingSetMaker_MythicItemMaker CanGenerateSub");
-            return (Find.TickManager.TicksGame > MinDaysToUnlockQuestReward * 60000) && MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false);
+            return (Find.TickManager.TicksGame > MinDaysToUnlockQuestReward * 60000) && MythicItemCache.CanRealizeRandomMythicItem_Standard();
         }
          
         protected override void Generate(ThingSetMakerParams parms, List<Thing> outThings)

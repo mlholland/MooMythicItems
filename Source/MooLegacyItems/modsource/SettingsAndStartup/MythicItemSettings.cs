@@ -13,6 +13,7 @@ namespace MooMythicItems
         public bool flagCreateRandomMythicItemsIfNoneAvailable = false;
         public bool flagNotifyItemCreation = true;
         public bool flagNotifyItemDeletion = true;
+        public bool flagAllowSameWorldItems = false;
         public bool flagMythicOwnersCanCreateNewMythicItems = false;
         public bool flagLoadExtraData = true;
         public bool flagDebug = false;
@@ -40,6 +41,7 @@ namespace MooMythicItems
             Scribe_Values.Look(ref flagCreateRandomMythicItemsIfNoneAvailable, "flagCreateRandomMythicItemsIfNoneAvailable", false, true);
             Scribe_Values.Look(ref flagNotifyItemCreation, "flagNotifyItemCreation", true, true);
             Scribe_Values.Look(ref flagNotifyItemDeletion, "flagNotifyItemDeletion", true, true);
+            Scribe_Values.Look(ref flagAllowSameWorldItems, "flagAllowSameWorldItems", false, true);
             Scribe_Values.Look(ref flagMythicOwnersCanCreateNewMythicItems, "flagMythicOwnersCanCreateNewMythicItems", false, true);
             Scribe_Values.Look(ref flagLoadExtraData, "flagLoadExtraData", true, true);
             Scribe_Values.Look(ref flagDebug, "flagDebug", false, true);
@@ -69,6 +71,7 @@ namespace MooMythicItems
             ls.CheckboxLabeled("MooMF_CreateRandomItemsIfNeeded".Translate(), ref flagCreateRandomMythicItemsIfNoneAvailable, "MooMF_CreateRandomItemsIfNeededTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagNotifyItemCreation".Translate(), ref flagNotifyItemCreation, "MooMF_FlagNotifyItemCreationTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagNotifyItemDeletion".Translate(), ref flagNotifyItemDeletion, "MooMF_FlagNotifyItemDeletionTooltip".Translate());
+            ls.CheckboxLabeled("MooMF_FlagAllowSameWorldItems".Translate(), ref flagAllowSameWorldItems, "MooMF_FlagAllowSameWorldItemsTooltip".Translate());
             ls.CheckboxLabeled("MooMF_FlagMythicOwnersCanCreateNewMythicItems".Translate(), ref flagMythicOwnersCanCreateNewMythicItems, "MooMF_FlagMythicOwnersCanCreateNewMythicItemsToolTip".Translate());
             ls.CheckboxLabeled("MooMF_FlagLoadExtraData".Translate(), ref flagLoadExtraData, "MooMF_FlagLoadExtraDataTooltip".Translate());
             // not currently used, level thresholds are set in the cause defs.
@@ -145,6 +148,7 @@ namespace MooMythicItems
             flagCreateRandomMythicItemsIfNoneAvailable = false;
             flagNotifyItemCreation = true;
             flagNotifyItemDeletion = true;
+            flagAllowSameWorldItems = false;
             flagMythicOwnersCanCreateNewMythicItems = false;
             flagLoadExtraData = true;
             flagDebug = false;

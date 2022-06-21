@@ -41,7 +41,7 @@ namespace MooMythicItems
                 return;
             }
             DiaOption diaOption = new DiaOption(String.Format("MooMF_RequestMythicItemDialogOption".Translate(), MythicItemQuestCost, BaseGoodwillCost));
-            if (!MythicItemCache.CanRealizeRandomMythicItem(MooMythicItems_Mod.settings.flagCreateRandomMythicItemsIfNoneAvailable, true, false))
+            if (!MythicItemCache.CanRealizeRandomMythicItem_Standard())
             {
                 diaOption.Disable(String.Format("MooMF_NoMythicItemsExist".Translate()));
                 __result.options.Insert(__result.options.Count - 1, diaOption);
