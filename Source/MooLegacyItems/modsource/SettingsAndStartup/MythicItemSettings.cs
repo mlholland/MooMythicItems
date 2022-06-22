@@ -10,6 +10,8 @@ namespace MooMythicItems
 {
     public class MythicItemSettings : ModSettings
     {
+        public static float maxSkillOffset = 0;
+
         public bool flagCreateRandomMythicItemsIfNoneAvailable = false;
         public bool flagNotifyItemCreation = true;
         public bool flagNotifyItemDeletion = true;
@@ -21,6 +23,7 @@ namespace MooMythicItems
         // public int minimumLevelForSkillItems = 18;
         public int mythicItemSaveLimit = 100;
         public int individualItemOccurenceLimit = 3;
+        public int skillLevelOffset = 0;
         public float killCountScaling = 1;
         public bool flagShowKillThresholds = false;
         public bool flagShowClearButton = false;
@@ -28,7 +31,8 @@ namespace MooMythicItems
         // private string minimumLevelForSkillItemsString = "18";
         private string mythicItemSaveLimitInputString = "100";
         private string individualItemOccurenceLimitString = "3";
-        
+        internal float skillLevelOffsetFloat = 0f;
+
 
         // for a scrollbar
         private float lastHeight = float.MaxValue;
@@ -51,6 +55,8 @@ namespace MooMythicItems
             Scribe_Values.Look(ref mythicItemSaveLimitInputString, "mythicItemSaveLimit", "100", true);
             Scribe_Values.Look(ref individualItemOccurenceLimit, "individualItemOccurenceLimit", 3, true);
             Scribe_Values.Look(ref individualItemOccurenceLimitString, "individualItemOccurenceLimit", "3", true);
+            Scribe_Values.Look(ref skillLevelOffset, "skillLevelOffset", 0, true);
+            Scribe_Values.Look(ref skillLevelOffsetFloat, "skillLevelOffsetFloat", 0, true);
             Scribe_Values.Look(ref killCountScaling, "killCountScaling", 1, true);
             Scribe_Values.Look(ref flagShowKillThresholds, "flagShowKillThresholds", false, true);
             Scribe_Values.Look(ref flagShowClearButton, "flagShowClearButton", false, true);
@@ -81,6 +87,9 @@ namespace MooMythicItems
             ls.IntEntry(ref mythicItemSaveLimit, ref mythicItemSaveLimitInputString);
             ls.Label("MooMF_MaxItemOccurence".Translate() + ": " + individualItemOccurenceLimit, -1, "MooMF_MaxItemOccurenceTooltip".Translate());
             ls.IntEntry(ref individualItemOccurenceLimit, ref individualItemOccurenceLimitString);
+            ls.Label(String.Format("MooMF_SkillLevelOffset".Translate(), skillLevelOffset, (20 + skillLevelOffset)), -1, "MooMF_SkillLevelOffsetTooltip".Translate());
+            skillLevelOffsetFloat = ls.Slider(skillLevelOffsetFloat, -15f, maxSkillOffset);
+            skillLevelOffset = (int)skillLevelOffsetFloat;
 
             // kill count scaling and showing
             ls.Label("MooMF_KillCountScaling".Translate() + ": " + killCountScaling, -1, "MooMF_KillCountScalingTooltip".Translate());
@@ -153,9 +162,9 @@ namespace MooMythicItems
             flagLoadExtraData = true;
             flagDebug = false;
             flagStartupDebug = false;
-            // public int minimumLevelForSkillItems = 18;
             mythicItemSaveLimit = 100;
             individualItemOccurenceLimit = 3;
+            skillLevelOffset = 0;
             killCountScaling = 1;
             flagShowKillThresholds = false;
             flagShowClearButton = false;
@@ -163,6 +172,7 @@ namespace MooMythicItems
             // private string minimumLevelForSkillItemsString = "18";
             mythicItemSaveLimitInputString = "100";
             individualItemOccurenceLimitString = "3";
+            skillLevelOffsetFloat = 0;
         }
     }
 }

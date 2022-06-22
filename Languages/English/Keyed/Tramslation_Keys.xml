@@ -32,6 +32,8 @@
   <MooMF_PrintDebugLogsTooltip>Causes various events to print extra info to the logs. Useful for modders, or for trying to determine if this mod is causing problems.</MooMF_PrintDebugLogsTooltip>
   <MooMF_CreateRandomItemsIfNeeded>Create Random Mythic Items If Needed</MooMF_CreateRandomItemsIfNeeded>
   <MooMF_CreateRandomItemsIfNeededTooltip>If this is enabled, then when the game tries to make a mythic item but finds no valid saved items, it will create a random mythic item. Off by default to encourage your own stories.</MooMF_CreateRandomItemsIfNeededTooltip>
+  <MooMF_SkillLevelOffset>Mythic skill requirement modifier: {0}. Current required level for most skills: {1}</MooMF_SkillLevelOffset>
+  <MooMF_SkillLevelOffsetTooltip>This number is added to the normal skill thresholds needed to produce a mythic item, 20 for the triggers added by this mod. Be warned that lowering this too much might result in too many mythic items being produced. This modifier is applied to ALL skill thresholds.</MooMF_SkillLevelOffsetTooltip>
   <MooMF_KillCountScaling>Kill Count Mythic Creation Scaling</MooMF_KillCountScaling>
   <MooMF_KillCountScalingTooltip>Kill count thresholds to create mythic items are multiplied by this value. Lower numbers mean that it takes less kills for a colonist to generate a mythic item, while higher numbers require more. Consider changing this value if you are seeing more or less kill-based mythic items than you would like. For the resulting kill counts thresholds are always rounded up, and have a minimum of 1.</MooMF_KillCountScalingTooltip>
   <MooMF_ShowKillThresholds>Show kill count thresholds</MooMF_ShowKillThresholds>

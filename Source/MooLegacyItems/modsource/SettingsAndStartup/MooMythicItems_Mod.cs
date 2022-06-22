@@ -25,6 +25,7 @@ namespace MooMythicItems
             // Apply extra patches based on what other mods are present
             CheckForVEInsectoids();
             CheckForAlphaAnimals();
+            CheckForDucksInsaneSkills();
             //foreach (ModMetaData mod in ModLister.AllInstalledMods) Log.Message(mod.PackageId);
         }
 
@@ -73,6 +74,20 @@ namespace MooMythicItems
                 {
                     harm.Patch(original, postfix: new HarmonyMethod(patch));
                 }
+            }
+        }
+
+        private void CheckForDucksInsaneSkills()
+        {
+            // Increase max skill offset
+            if (ModsConfig.IsActive("Ducks.InsaneSkills") || ModsConfig.IsActive("Ducks.InsaneSkills_steam"))
+            {
+                MythicItemSettings.maxSkillOffset = 100f;
+            }
+            else if(MooMythicItems_Mod.settings.skillLevelOffset > MythicItemSettings.maxSkillOffset)
+            {
+                MooMythicItems_Mod.settings.skillLevelOffset = 0;
+                MooMythicItems_Mod.settings.skillLevelOffsetFloat = 0f;
             }
         }
        

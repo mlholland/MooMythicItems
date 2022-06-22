@@ -66,7 +66,7 @@ namespace MooMythicItems
                 int curThreshold = -1;
                 foreach (MythicCauseDef_LevelUp causeDef in skillsWatched[skillRecord.def])
                 {
-                    if (causeDef.minLevelThreshold > curThreshold && skillRecord.levelInt >= causeDef.minLevelThreshold)
+                    if (causeDef.minLevelThreshold > curThreshold && skillRecord.levelInt >= Math.Max(1, causeDef.minLevelThreshold + MooMythicItems_Mod.settings.skillLevelOffset))
                     {
                         curThreshold = causeDef.minLevelThreshold;
                         bestCause = causeDef;
@@ -139,7 +139,7 @@ namespace MooMythicItems
                     " Use a different worker class, or correct the def class.", def.defName);
                 return "";
             }
-            return base.GetPrintedReasonFragment(args[0], causeDef.minLevelThreshold, causeDef.skill.label);
+            return base.GetPrintedReasonFragment(args[0], Math.Max(1, causeDef.minLevelThreshold + MooMythicItems_Mod.settings.skillLevelOffset), causeDef.skill.label);
         }
 
     }

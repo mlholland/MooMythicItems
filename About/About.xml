@@ -48,7 +48,7 @@ Mythic Items can be created and saved whenever a colonist meets one of the follo
 
  - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Kill thresholds differ between categories and can be scaled up or down in the settings. Some categories have multiple thresholds which replace/upgrade the resulting mythic item. I tried to balance the thresholds such that you'll usually hit the first threshold on your best combat colonist within three years on medium/hard difficulty.
 
- - A colonist reaches level 20 in a skill.
+ - A colonist reaches level 20 in a skill (can be lowered to a minimum of 5 in the mod's settings).
 
  - A colonist tames their second thrumbo.
 
@@ -96,11 +96,11 @@ Compatible:
 
  - Vanilla Expanded Insectoids: Insectoid faction insects are counted towards insect kills.
 
+ - Ducks Insane skills: The skill threshold for creating mythic items can be increased above 20 in the mod's setting. If this mod is removed while the settings are above 20, skill requirements are reset back to 20.
+
 Unsupported/Unknown:
 
  - Character Editor - Moderate issue: If a pawn with a mythic item is saved, the mythic item will stop being mythic when that pawn is loaded. The original pawn and mythic item are unaffected.
-
- - Ducks Insane skills - Minor issue: Skill thresholds remain at 20.
 
  - Combat Extended - Unknown: I don't play with this mod, but I don't expect too many issues. At worst, a couple of the combat-oriented mythic effects might interact weirdly with CE. If someone tries it out and lets me know that there are issues, I'll look into it. 
 
@@ -138,6 +138,7 @@ This mod would benefit from more than just two people writing flavor text. If yo
 
 &lt;size=24&gt;Changelog&lt;/size&gt;
 
+  - 6/23/2022: v1.1 Add several new settings options, some bug fixes, and mod compatability patches.
   - 6/11/2022: v1.0 Initial Release
 
 </description>
