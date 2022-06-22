@@ -46,7 +46,7 @@ If a saved mythic item becomes invalid (EX: because you disabled the mod that a 
 
 Mythic Items can be created and saved whenever a colonist meets one of the following conditions, assuming the colonist in question does not already have a mythic item equipped:
 
- - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Kill thresholds differ between categories and can be scaled up or down in the settings. Some categories have multiple thresholds which replace/upgrade the resulting mythic item. I tried to balance the thresholds such that you'll usually hit the first threshold on your best combat colonist within three years on medium/hard difficulty.
+ - A colonist kills enough humanoids, mechanoids, insects, or thrumbos. Kill thresholds differ between categories, and can be scaled up or down in the settings. Some categories have multiple thresholds which replace/upgrade the resulting mythic item. 
 
  - A colonist reaches level 20 in a skill (can be lowered to a minimum of 5 in the mod's settings).
 
@@ -80,7 +80,7 @@ Mythic items can have a variety of effects, and are always of legendary quality.
 
 &lt;size=24&gt;Mod Compatibility&lt;/size&gt;
 
-I don't expect this mod to have too many compatibility issues. The only exceptions are mods which add extra data to weapons and apparel, and mods which mess around with combat. Here's list of mod interactions that I know of. Note: In the case of extra data that's preserved on items (like infusions), you can prevent these values from being used in the mod settings if you're worried about balance.
+Here's list of mod interactions that I know of. Note: In the case of extra data that's preserved on saved mythic items (like infusions), you can prevent these values from being used in the mod settings if you're worried about balance.
 
 Compatible: 
 
@@ -96,7 +96,7 @@ Compatible:
 
  - Vanilla Expanded Insectoids: Insectoid faction insects are counted towards insect kills.
 
- - Ducks Insane skills: The skill threshold for creating mythic items can be increased above 20 in the mod's setting. If this mod is removed while the settings are above 20, skill requirements are reset back to 20.
+ - Ducks Insane skills: The skill threshold for creating mythic items can be increased above 20 in this mod's setting. If Duck's Insane Skills is removed while the skill requirement is above 20, they will reset back to 20.
 
 Unsupported/Unknown:
 
@@ -106,7 +106,7 @@ Unsupported/Unknown:
 
 &lt;size=24&gt;Other considerations&lt;/size&gt;
 
-I'm not a good creative writer. Despite that, I convinced myself to write and proofread a LOT of flavor text. There's probably some grammar errors that slipped through. If you see one, please feel free to comment about it, and I'll thank you.
+I'm not a good creative writer. Despite that, I wrote and proofread a LOT of flavor text. There's probably some grammar errors that slipped through. If you see one, please feel free to comment about it, and I'll thank you.
 
 I intentionally didn't overwrite the vanilla artwork on legendary items for two reasons: I think the vanilla artwork text is funny and didn't want to remove it, and it would've been tedious to do anyway.
 
@@ -138,7 +138,7 @@ This mod would benefit from more than just two people writing flavor text. If yo
 
 &lt;size=24&gt;Changelog&lt;/size&gt;
 
-  - 6/23/2022: v1.1 Add several new settings options, some bug fixes, and mod compatability patches.
+  - 6/22/2022: v1.1 Add several new settings options, some bug fixes, and mod compatability patches.
   - 6/11/2022: v1.0 Initial Release
 
 </description>
