@@ -28,7 +28,7 @@
 
 	<packageId>mooloh.mythicitems</packageId>
 
-  <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities. They appear in your OTHER colonies as quest rewards.
+  <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities. They appear in your OTHER colonies as quest rewards. See description for in-depth mechanics and info.
 
 &lt;size=24&gt;Overview&lt;/size&gt;
 
@@ -66,7 +66,7 @@ Once you've played the game enough and have produced a few mythic items, these i
 
  - If Ideology is installed, a mythic item can be selected as an Ideoligion relic. This does not remove the selected mythic item from the list of currently saved mythic items, that way you can use a mythic item in multiple Ideologions. This can lead to duplicate mythic items in the same world - one as a relic and one as a normal quest reward. That seemed worth it to allow for relic/mythic items without rewriting too much code.
 
-Note: Multiple aspects of this can be changed in the mod;s settings, like the disappearance rate, and the no-same-world restriction.
+Note: Multiple aspects of this can be changed in the mod's settings, like the disappearance rate, and the no-same-world restriction.
 
 &lt;size=24&gt;Mythic Item Effects&lt;/size&gt;
 
@@ -77,8 +77,6 @@ Mythic items can have a variety of effects, and are always of legendary quality.
  - A shirt that grants the wearer the ability to cook Epicurean Delights, a wildly opulent meal that grants a huge buff to people who eat it.
 
  - A cowboy hat which passively boosts the wearer's mining abilities.
-
- - A pair of pants which can periodically grant the wearer a creative inspiration.
 
 &lt;size=24&gt;Mod Compatibility&lt;/size&gt;
 
@@ -100,15 +98,15 @@ Compatible:
 
 Unsupported/Unknown:
 
- - Character Editor: Mythic Items worn by saved pawns stop being mythic, and revert to normal legendary items.
+ - Character Editor - Moderate issue: If a pawn with a mythic item is saved, the mythic item will stop being mythic when that pawn is loaded. The original pawn and mythic item are unaffected.
 
- - Ducks Insane skills: Skill thresholds remain at 20.
+ - Ducks Insane skills - Minor issue: Skill thresholds remain at 20.
 
- - Combat Extended: I don't play with this mod, so I'm not sure how the combat abilities this mod adds will interact with CE. If someone tries it out and lets me know that there are issues, I'll look into it.
+ - Combat Extended - Unknown: I don't play with this mod, but I don't expect too many issues. At worst, a couple of the combat-oriented mythic effects might interact weirdly with CE. If someone tries it out and lets me know that there are issues, I'll look into it. 
 
 &lt;size=24&gt;Other considerations&lt;/size&gt;
 
-I'm not a good creative writer, nor am I a good editor. Despite that, I somehow convinced myself to write and proofread a LOT of flavor text. There's probably some grammar errors that slipped through. If you see one, please feel free to comment about it, and I'll thank you.
+I'm not a good creative writer. Despite that, I convinced myself to write and proofread a LOT of flavor text. There's probably some grammar errors that slipped through. If you see one, please feel free to comment about it, and I'll thank you.
 
 I intentionally didn't overwrite the vanilla artwork on legendary items for two reasons: I think the vanilla artwork text is funny and didn't want to remove it, and it would've been tedious to do anyway.
 
@@ -120,7 +118,7 @@ For more information and a few examples of how you can add your own mythic stuff
 
 &lt;size=24&gt;Want to contribute without modding?&lt;/size&gt;
 
-I think this mod would benefit from more than just two people writing flavor text. If you have an idea but don't want to write an entire mod, feel free to post your ideas for titles, descriptions, effects, or triggers in the relevant discussion page ofnthis mod's steam page. If I use them, I'll show my graditude by... thanking you and adding you to the to the contributors list.
+This mod would benefit from more than just two people writing flavor text. If you have an idea but don't want to write an entire mod, feel free to post your ideas for titles, descriptions, effects, or triggers in the relevant discussion page of this mod's steam page. If I use them, I'll show my graditude by... thanking you and adding you to the to the contributors list.
    
 &lt;size=24&gt;Credits and Thanks&lt;/size&gt;
 

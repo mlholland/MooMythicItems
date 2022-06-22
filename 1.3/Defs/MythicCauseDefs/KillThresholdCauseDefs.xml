@@ -187,7 +187,7 @@
     </meleeTitles>
     <threshold>75</threshold>
     <record>KillsMechanoids</record>
-    <priority>2</priority>
+    <priority>3</priority>
     <subreason>mechs</subreason>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
 

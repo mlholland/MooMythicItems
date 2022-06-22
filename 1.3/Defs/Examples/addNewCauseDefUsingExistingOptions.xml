@@ -61,7 +61,7 @@
     </meleeTitles>
     <threshold>100</threshold>
     <record>KillsHumanlikes</record>
-    <priority>2</priority>
+    <priority>3</priority>
     <subreason>humanoids</subreason>
   </MooMythicItems.MythicCauseDef_RecordThreshold>
 

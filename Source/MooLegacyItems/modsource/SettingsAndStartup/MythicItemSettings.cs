@@ -84,7 +84,7 @@ namespace MooMythicItems
 
             // kill count scaling and showing
             ls.Label("MooMF_KillCountScaling".Translate() + ": " + killCountScaling, -1, "MooMF_KillCountScalingTooltip".Translate());
-            killCountScaling = (float)Math.Round(ls.Slider(killCountScaling, 0.1f, 5f), 2);
+            killCountScaling = (float)Math.Round(ls.Slider(killCountScaling, 0.1f, 10f), 2);
             ls.CheckboxLabeled("MooMF_ShowKillThresholds".Translate(), ref flagShowKillThresholds, "MooMF_ShowKillThresholdsToolTip".Translate());
             if (flagShowKillThresholds)
             {
