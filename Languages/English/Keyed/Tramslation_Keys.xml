@@ -59,7 +59,7 @@
   <!-- {0} is expected to be a sentence clause that includes the achiever's name, and a reason for why they produced a mythic item
        {1} is the label of the item becomming a mythic item
        {2} is the resulting mythic item's name-->
-  <MooMF_CreatedNewItemMessage>Congragulations! Because {0}, their {1} become a mythic item called "{2}"!</MooMF_CreatedNewItemMessage>
+  <MooMF_CreatedNewItemMessage>Congragulations! Because {0}, their {1} will appear in future colonies as a mythic item called "{2}"!</MooMF_CreatedNewItemMessage>
   <MooMF_NoMythicReasonGiven>{0} did something impressive (it's unclear what and this is probably either a bug or a debug action)</MooMF_NoMythicReasonGiven>
   <!-- Killer name, quantity, killed thing type-->
   <MooMF_PrintKillCountReason>{0} killed {1} {2}</MooMF_PrintKillCountReason>
