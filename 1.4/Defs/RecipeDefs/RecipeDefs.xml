@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef ParentName="CookMealBase">
+    <defName>MooMF_CookMealEpicureanDelight</defName>
+    <label>cook epicurean delight</label>
+    <description>Draw upon the wisdom of a legendary cook to produce a masterpiece of culinary prowess. The resulting meal is incomprehensibly wasteful and slow to make, but it is also transcendentally decilious, and grants numerous benefits.
+    
+This meal can only be cooked by someone who has the mythical "Epicurean Wisdom" effect bestowed upon them.</description>
+    <jobString>Cooking epicurean delight.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <workAmount>4000</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <products>
+      <MooMF_MealEpicurean>1</MooMF_MealEpicurean>
+    </products>
+    <researchPrerequisite>MooMF_UnlockEpicureanDelight</researchPrerequisite> 
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+      <li>Campfire</li>
+    </recipeUsers>
+  </RecipeDef>
+
+
+  <RecipeDef ParentName="CookMealBase">
+    <defName>MooMF_EfficientKibble</defName>
+    <label>make hyper-efficient kibble</label>
+    <description>Draw upon the wisdom of a grand animal handler to produce kibble at an unimaginably efficient rate. This technique seems to create extra nutrition out of thin air, and is invaluable for feeding large herds on small budgets.
+
+Kibble can only be produced this way by someone who has the mythical "Herd Feeder's Wisdom" effect bestowed upon them.</description>
+    <jobString>Making kibble.</jobString>
+    <workAmount>1000</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+    <recipeUsers>
+      <li>ButcherSpot</li>
+      <li>TableButcher</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>MeatRaw</li>
+            <li>AnimalProductRaw</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>PlantFoodRaw</li>
+          </categories>
+          <thingDefs>
+            <li>Hay</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <Kibble>300</Kibble>
+    </products>
+    <fixedIngredientFilter>
+      <categories>
+        <li>FoodRaw</li>
+      </categories>
+      <thingDefs>
+        <li>Hay</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>Foods</li>
+      </categories>
+      <disallowedCategories>
+        <li>EggsFertilized</li>
+      </disallowedCategories>
+      <disallowedThingDefs>
+        <li>InsectJelly</li>
+      </disallowedThingDefs>
+    </defaultIngredientFilter>
+    <workSkill>Cooking</workSkill>
+    <researchPrerequisite>MooMF_UnlockEfficientKibble</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MooMF_UpgradeIndustrialMedicine</defName>
+    <label>Upgrade Industrial Medicine</label>
+    <description>Draw upon the wisdom of a legendary doctor to upgrade industrial medicine into glitterworld medicine. This task is time-comsuming, but upgrades medicine at a 1-to-1 ratio.
+
+This task can only be performed by someone who has the mythical "Healer's Wisdom" effect bestowed upon them.</description>
+    <jobString>Upgrading Medicine.</jobString>
+    <workAmount>2000</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MedicineUltratech>1</MedicineUltratech>
+    </products>
+    <researchPrerequisite>MooMF_UnlockUpgradeMedicine</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+  </RecipeDef>
+
+
+  <RecipeDef>
+    <defName>MooMF_UpgradeHerbalMedicine</defName>
+    <label>Upgrade Herbal Medicine</label>
+    <description>Draw upon the wisdom of a legendary doctor to upgrade herbal medicine directly into glitterworld medicine. This task is time-comsuming, but upgrades medicine at a 3-to-1 ratio.
+
+This task can only be performed by someone who has the mythical "Healer's Wisdom" effect bestowed upon them.</description>
+    <jobString>Upgrading Medicine.</jobString>
+    <workAmount>2700</workAmount>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <MedicineUltratech>1</MedicineUltratech>
+    </products>
+    <researchPrerequisite>MooMF_UnlockUpgradeMedicine</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <workSkill>Intellectual</workSkill>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+  </RecipeDef>
+</Defs>

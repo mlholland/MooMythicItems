@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Difficulty: Medium/XML only.
+
+  This patch shows how to add a new cause for creating mythic items - that is, a trigger which, when met, will save a new mythic item to be spawned later in other colonies.
+  
+  Please note that this file only shows the creation of a new def - for the sake of brevity I did not include all the translation keys and MythicEffectDefs here. Those are
+  defined in their normal locations elsewhere in my mod. When creating your own MythicCauseDef, you'll need to define all the inputs into the def as well.
+  
+  Below is the MythicCauseDef for tier 2 humanoid kills. It creates mythic items based on the weapon of the achiever, and has different options depending on whether or not
+  the weapon chosen is a melee or ranged weapon. NOte that we aren't creating a "MooMythicItems.MythicCauseDef", but instead one of the subtypes called a
+  "MooMythicItems.MythicCauseDef_RecordThreshold". This is because colonists have records for how many humanoids they've killed, so we can tap into that bookkeeping for
+  determining when to create a mythic item. Of course, we also need code check at the correct time (aka after something has died) if this kill threshold has been reached,
+  which is why we must supply a workerClass that's designed to watch kill records being updated. That's the class 'MooMythicItems.CauseWorker_Kills' in this case.
+ -->
+<Defs>
+  <MooMythicItems.MythicCauseDef_RecordThreshold>
+    <defName>MooMF_HumanoidKillerCause2</defName>
+    <label>Humanoid Kills Tier 2</label>
+    <workerClass>MooMythicItems.CauseWorker_Kills</workerClass>
+    <createsMythicWeapon>true</createsMythicWeapon>
+    <hasDifferentMeleeOptions>true</hasDifferentMeleeOptions>
+    <effects>
+      <li>MooMF_GrantAPRocket2</li>
+      <li>MooMF_Effect_KillstreakFirerate_2</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_M1</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_1</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_2</li>
+      <li>MooMF_MythicStory_HumanKills2_Ranged_3</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_1</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_2</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_3</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_4</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_5</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_6</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_7</li>
+      <li>MooMF_MythicTitle_HumanKills2_Ranged_8</li>
+    </titles>
+    <meleeEffects>
+      <li>MooMF_Effect_KillstreakDR_2</li>
+      <li>MooMF_Effect_KillstreakSpeed_2</li>
+      <li>MooMF_Effect_KillstreakHealing_2</li>
+    </meleeEffects>
+    <meleeDescriptions>
+      <li>MooMF_MythicStory_HumanKills2_Melee_M1</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_M2</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_1</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_2</li>
+      <li>MooMF_MythicStory_HumanKills2_Melee_3</li>
+    </meleeDescriptions>
+    <meleeTitles>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_1</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_2</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_3</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_4</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_5</li>
+      <li>MooMF_MythicTitle_HumanKills2_Melee_6</li>
+    </meleeTitles>
+    <threshold>100</threshold>
+    <record>KillsHumanlikes</record>
+    <priority>3</priority>
+    <subreason>humanoids</subreason>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+</Defs>

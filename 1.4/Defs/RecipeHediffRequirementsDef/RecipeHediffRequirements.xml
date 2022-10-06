@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_EpicureanDelightRequirements</defName>
+    <recipeDef>MooMF_CookMealEpicureanDelight</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_EpicureanWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_EfficientKibbleRequirements</defName>
+    <recipeDef>MooMF_EfficientKibble</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HerdFeedersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
+
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_UpgradeIndustrialMedicineRequirements</defName>
+    <recipeDef>MooMF_UpgradeIndustrialMedicine</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HealersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
+
+  <MooMythicItems.RecipeHediffRequirementsDef>
+    <defName>MooMF_UpgradeHerbalMedicineRequirements</defName>
+    <recipeDef>MooMF_UpgradeHerbalMedicine</recipeDef>
+    <hediffDefOptions>
+      <li>MooMF_Hediff_HealersWisdom</li>
+    </hediffDefOptions>
+  </MooMythicItems.RecipeHediffRequirementsDef>
+
+</Defs>

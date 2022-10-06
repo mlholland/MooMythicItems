@@ -62,7 +62,7 @@ namespace MooMythicItems
 
         public static bool PawnCanReceiveInspirationNow(Pawn pawn, InspirationDef inspiration)
         {
-            return pawn != null && inspiration != null && AbilityUtility.ValidateNoInspiration(pawn, false) && inspiration.Worker.InspirationCanOccur(pawn);
+            return pawn != null && inspiration != null && AbilityUtility.ValidateNoInspiration(pawn, false, null) && inspiration.Worker.InspirationCanOccur(pawn);
         }
     }
 }

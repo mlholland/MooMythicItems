@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Difficulty: Easy/XML only.
+
+  This patch shows how to add new effects, titles, and descriptions to existing MythicCauseDefs. In order for this to work, you must have the following 
+prepared in other files:
+ - for titles and descriptions, you must define trasnlation keys using the values you input here.
+ - The effects you must define a MythicEffectDef of using the defName inputted here.
+ 
+ Also remember: if you're editing a mythicCauseDef that has different options for melee weapons, those lists are called meleeEffects, meleeDescriptions, and meleeTitles. Ranged weapons
+ use the original lists.
+ -->
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Moo's Mythic Framework</li> <!-- This is to make sure that your patch is only applied when the Mythic Item Mod is loaded.-->
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <!-- Set the defName to whatever mythic cause you want to append to. You'll need to search through the mythicCauseDef files to find the right one: https://github.com/mlholland/MooMythicItems/tree/main/1.3/Defs/MythicCauseDefs
+          Also note that the xpath is searching for a 'MooMythicItems.MythicCauseDef_RecordThreshold' and NOT a 'MooMythicItems.MythicCauseDef'. There are a bunch of different sub-types of MythicCauseDefs, 
+          and you'll need to match the subtype of the def you wish to change here. Once again, you'll see the sub-types defined in the opening tags of each MythicCauseDef in the folder linked above.-->
+          <xpath>/Defs/MooMythicItems.MythicCauseDef_RecordThreshold[defName = "MooMF_HumanoidKillerCause1"]/titles</xpath>
+          <value>
+            <li>MooMF_MythicTitle_HumanKills1_Ranged_1</li>
+            <!-- This is a translation key-->
+            <!--You can add as many as you want to each of these lists. This example just adds one each for brevity-->
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/MooMythicItems.MythicCauseDef_RecordThreshold[defName = "MooMF_HumanoidKillerCause1"]/descriptions</xpath>
+          <value>
+            <li>MooMF_MythicStory_HumanKills1_Ranged_1</li>
+            <!-- This is a translation key-->
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/MooMythicItems.MythicCauseDef_RecordThreshold[defName = "MooMF_HumanoidKillerCause1"]/effects</xpath>
+          <value>
+            <li>MooMF_GrantAPRocket</li>
+            <!-- This is a MythicEffectDef defName-->
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

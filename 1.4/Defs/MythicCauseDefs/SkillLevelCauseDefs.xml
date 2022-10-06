@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MooMythicItems.MythicCauseDef_LevelUp Abstract="true" Name="baseLevelUp">
+    <workerClass>MooMythicItems.CauseWorker_LevelUp</workerClass>
+    <createsMythicWeapon>false</createsMythicWeapon>
+    <minLevelThreshold>20</minLevelThreshold>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+  
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_ShootingMastery</defName>
+    <label>Shooting Mastery</label>
+    <effects>
+      <li>MooMF_ShootingBoost</li>
+      <li>MooMF_GrantShootingInspiration</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Shooting_1</li>
+      <li>MooMF_MythicStory_Mastery_Shooting_2</li>
+      <li>MooMF_MythicStory_Mastery_Shooting_3</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Shooting_1</li>
+      <li>MooMF_MythicTitle_Mastery_Shooting_2</li>
+    </titles>
+    <skill>Shooting</skill>
+    <createsMythicWeapon>true</createsMythicWeapon>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+  
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_MeleeMastery</defName>
+    <label>Melle Mastery</label>
+    <effects>
+      <li>MooMF_MeleeBoost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Melee_1</li>
+      <li>MooMF_MythicStory_Mastery_Melee_2</li>
+      <li>MooMF_MythicStory_Mastery_Melee_3</li>
+      <li>MooMF_MythicStory_Mastery_Melee_M1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Melee_1</li>
+      <li>MooMF_MythicTitle_Mastery_Melee_2</li>
+      <li>MooMF_MythicTitle_Mastery_Melee_M3</li>
+    </titles>
+    <skill>Melee</skill>
+    <createsMythicWeapon>true</createsMythicWeapon>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_ConstructionMastery</defName>
+    <label>Construction Mastery</label>
+    <effects>
+      <li>MooMF_ConstructionBoost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Construction_1</li>
+      <li>MooMF_MythicStory_Mastery_Construction_2</li>
+      <li>MooMF_MythicStory_Mastery_Construction_3</li>
+      <li>MooMF_MythicStory_Mastery_Construction_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Construction_1</li>
+      <li>MooMF_MythicTitle_Mastery_Construction_2</li>
+      <li>MooMF_MythicTitle_Mastery_Construction_3</li>
+    </titles>
+    <skill>Construction</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_MiningMastery</defName>
+    <label>Mining Mastery</label>
+    <effects>
+      <li>MooMF_MiningBoost</li>
+      <li>MooMF_GrantDiscoverUndergroundDeposit</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Mining_1</li>
+      <li>MooMF_MythicStory_Mastery_Mining_2</li>
+      <li>MooMF_MythicStory_Mastery_Mining_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Mining_1</li>
+      <li>MooMF_MythicTitle_Mastery_Mining_2</li>
+      <li>MooMF_MythicTitle_Mastery_Mining_M3</li>
+    </titles>
+    <skill>Mining</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_CookingMastery</defName>
+    <label>Cooking Mastery</label>
+    <effects>
+      <li>MooMF_CookingBoost</li>
+      <li>MooMF_GrantEpicureanWisdom</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Cooking_1</li>
+      <li>MooMF_MythicStory_Mastery_Cooking_2</li>
+      <li>MooMF_MythicStory_Mastery_Cooking_3</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Cooking_1</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking_2</li>
+      <li>MooMF_MythicTitle_Mastery_Cooking_M3</li>
+    </titles>
+    <skill>Cooking</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_PlantsMastery</defName>
+    <label>Plants Mastery</label>
+    <effects>
+      <li>MooMF_PlantsBoost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Plants_1</li>
+      <li>MooMF_MythicStory_Mastery_Plants_2</li>
+      <li>MooMF_MythicStory_Mastery_Plants_3</li>
+      <li>MooMF_MythicStory_Mastery_Plants_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Plants_1</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_2</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_3</li>
+      <li>MooMF_MythicTitle_Mastery_Plants_4</li>
+    </titles>
+    <skill>Plants</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_AnimalsMastery</defName>
+    <label>Animals Mastery</label>
+    <effects>
+      <li>MooMF_AnimalsBoost</li>
+      <li>MooMF_GrantTamingInspiration</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Animals_1</li>
+      <li>MooMF_MythicStory_Mastery_Animals_2</li>
+      <li>MooMF_MythicStory_Mastery_Animals_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Animals_1</li>
+      <li>MooMF_MythicTitle_Mastery_Animals_2</li>
+      <li>MooMF_MythicTitle_Mastery_Animals_3</li>
+    </titles>
+    <skill>Animals</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_CraftingMastery</defName>
+    <label>Crafting Mastery</label>
+    <effects>
+      <!--li>MooMF_CraftingBoost</li-->
+      <li>MooMF_GrantCreativeInspiration</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Crafting_1</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_2</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_3</li>
+      <li>MooMF_MythicStory_Mastery_Crafting_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Crafting_1</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_2</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_3</li>
+      <li>MooMF_MythicTitle_Mastery_Crafting_4</li>
+    </titles>
+    <skill>Crafting</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_ArtisticMastery</defName>
+    <label>Artistic Mastery</label>
+    <effects>
+      <!--li>MooMF_ArtisticBoost</li-->
+      <li>MooMF_GrantCreativeInspiration</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Artistic_1</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_2</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_3</li>
+      <li>MooMF_MythicStory_Mastery_Artistic_M2</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Artistic_1</li>
+      <li>MooMF_MythicTitle_Mastery_Artistic_2</li>
+    </titles>
+    <skill>Artistic</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_MedicineMastery</defName>
+    <label>Medicine Mastery</label>
+    <effects>
+      <li>MooMF_MedicineBoost</li>
+      <li>MooMF_GrantHealersWisdom</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Medicine_1</li>
+      <li>MooMF_MythicStory_Mastery_Medicine_2</li>
+      <li>MooMF_MythicStory_Mastery_Medicine_3</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Medicine_1</li>
+      <li>MooMF_MythicTitle_Mastery_Medicine_2</li>
+    </titles>
+    <skill>Medicine</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_SocialMastery</defName>
+    <label>Social Mastery</label>
+    <effects>
+      <li>MooMF_SocialBoost</li>
+      <li>MooMF_GrantTradingInspiration</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Social_1</li>
+      <li>MooMF_MythicStory_Mastery_Social_2</li>
+      <li>MooMF_MythicStory_Mastery_Social_3</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Social_1</li>
+      <li>MooMF_MythicTitle_Mastery_Social_2</li>
+    </titles>
+    <skill>Social</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+  <MooMythicItems.MythicCauseDef_LevelUp ParentName="baseLevelUp">
+    <defName>MooMF_IntellectualMastery</defName>
+    <label>Intellectual Mastery</label>
+    <effects>
+      <li>MooMF_IntellectualBoost</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_Mastery_Intellectual_1</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_2</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_3</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M2</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M3</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M4</li>
+      <li>MooMF_MythicStory_Mastery_Intellectual_M5</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_1</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_2</li>
+      <li>MooMF_MythicTitle_Mastery_Intellectual_3</li>
+    </titles>
+    <skill>Intellectual</skill>
+  </MooMythicItems.MythicCauseDef_LevelUp>
+
+</Defs>

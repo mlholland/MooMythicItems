@@ -65,7 +65,8 @@ namespace MooMythicItems
                 {
                     mythicItemsFileText = BytesToString(FileIO.ReadFile(pathMythicItemsFile), Encoding.UTF8);
                 } else {
-                    return null;
+                    
+                    return new Tuple<List<MythicItem>, List<string>>(new List<MythicItem>(), new List<string>());
                 }
             }
             catch(Exception e)

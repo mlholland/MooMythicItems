@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <!-- add a tab for this? Final choice will depend on how many recipes like this I add-->
+  <ResearchTabDef>
+    <defName>MooMF_MythicTab</defName>
+    <label>Mythic</label>
+  </ResearchTabDef>
+
+
+
+  <!-- recipe unlocks-->
+  <ResearchProjectDef>
+    <defName>MooMF_UnlockEpicureanDelight</defName>
+    <label>Epicurean Delight</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Unlocks the ability to cook epicurean delights, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing this item. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>1.0</researchViewY>
+  </ResearchProjectDef> 
+
+  <ResearchProjectDef>
+  <defName>MooMF_UnlockEfficientKibble</defName>
+    <label>Hyper-Efficient Kibble Production</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Unlocks the ability to produce kibble with absurd efficiency, assuming someone possesses the necessary mythical wisdom. Like most mythic techs, this is not meant to the real barrier to producing this recipe. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MooMF_UnlockUpgradeMedicine</defName>
+    <label>Medicine Upgrading</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Unlocks the ability to upgrade herbal and industrial medicine into glitterworld medicine. Like most mythic techs, this is not meant to the real barrier to producing this recipe. This just keeps un-craftable recipes out of your menu bars unless you actually want to see them.</description>
+    <baseCost>1</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>1.0</researchViewX>
+    <researchViewY>3.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>MooMF_MythMakerProduction</defName>
+    <label>Myth Making</label>
+    <tab>MooMF_MythicTab</tab>
+    <description>Allows the construction of myth makers at sculpting tables. Myth makers are very expensive, but allow you to manually create a mythic item from a chosen pawn. Useful for commemorating events that are not covered by normal mythic item triggers.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <researchViewX>2.0</researchViewX>
+    <researchViewY>2.0</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>
