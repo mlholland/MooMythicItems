@@ -11,9 +11,5 @@
   <v1.4>
     <li>/</li>
     <li>1.4</li>
-    <!--li IfModActive="Torann.ARimworldOfMagic, torann.arimworldofmagic_steam">Compatibility-Assemblies/RoM</li>
-    <li IfModActive="notfood.Infused, notfood.infused_steam">Compatibility-Assemblies/Infused</li>
-    <li IfModActive="latta.infusion, latta.infusion_steam">Compatibility-Assemblies/Infusion2</li>
-    <li IfModActive="O.inf.reinforce">Compatibility-Assemblies/Reinforce</li-->
   </v1.4>
 </loadFolders>
