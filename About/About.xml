@@ -13,7 +13,7 @@
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
     <li>
-      <packageId>OskarPotocki.VanillaFactionsExpanded.Core,oskarPotocki.vanillaFactionsExpanded.core</packageId>
+      <packageId>oskarPotocki.vanillaFactionsExpanded.core</packageId>
       <displayName>Vanilla Expanded Framework</displayName>
       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
     </li>
@@ -23,7 +23,7 @@
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
     <li>brrainz.harmony</li>
-    <li>OskarPotocki.VanillaFactionsExpanded.Core,oskarPotocki.vanillaFactionsExpanded.core</li>
+    <li>oskarPotocki.vanillaFactionsExpanded.core</li>
 	</loadAfter>
 	<author>Mooloh</author>
 
