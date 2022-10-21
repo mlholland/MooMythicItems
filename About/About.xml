@@ -13,7 +13,7 @@
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
     </li>
     <li>
-      <packageId>oskarPotocki.vanillaFactionsExpanded.core</packageId>
+      <packageId>oskarPotocki.vanillafactionsexpanded.core</packageId>
       <displayName>Vanilla Expanded Framework</displayName>
       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
     </li>
@@ -23,13 +23,20 @@
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
     <li>brrainz.harmony</li>
-    <li>oskarPotocki.vanillaFactionsExpanded.core</li>
+    <li>oskarPotocki.vanillafactionsexpanded.core</li>
 	</loadAfter>
 	<author>Mooloh</author>
 
 	<packageId>mooloh.mythicitems</packageId>
 
   <description>Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities. They appear in your OTHER colonies as quest rewards. See description for in-depth mechanics and info.
+  
+RW v1.4 NOTICE: Although I've gotten this mod to a state where it doesn't immediately seem to break on v1.4, I'm sure there are issues I've missed, since this mod is too big for me to test thoroughly in a few evenings. You see a bug, please report it in the comments of this mod's steam page. Thank you for your patience.
+  
+Known 1.4 issues include:
+  
+  - Compatability patches to allow item qualities from other mods (like enchantments or infusions) are disabled until those mods are updated to 1.4 and I have time to examine them again.
+  - Mythic ability icons are lost upon loading a saved game. This does not appear to effect the actual abilities, and can be fixed by re-equipping the item that is granting the ability.
 
 &lt;size=24&gt;Overview&lt;/size&gt;
 
