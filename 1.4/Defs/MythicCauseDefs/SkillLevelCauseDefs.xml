@@ -135,6 +135,7 @@
     <effects>
       <li>MooMF_AnimalsBoost</li>
       <li>MooMF_GrantTamingInspiration</li>
+      <li>MooMF_GrantHerdFeedersWisdom</li>
     </effects>
     <descriptions>
       <li>MooMF_MythicStory_Mastery_Animals_1</li>
