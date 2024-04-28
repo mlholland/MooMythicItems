@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MooMythicItems.MythicCauseDef_RecordThreshold>
+    <defName>MooMF_ThumbosTamedCause</defName>
+    <label>Thrumbos Tamed</label>
+    <effects>
+      <li>MooMF_GrantThurmbocall</li>
+    </effects>
+    <descriptions>
+      <li>MooMF_MythicStory_ThrumboFriend_1</li>
+    </descriptions>
+    <titles>
+      <li>MooMF_MythicTitle_ThurmboFriend_1</li>
+      <li>MooMF_MythicTitle_ThurmboFriend_2</li>
+    </titles>
+    <threshold>3</threshold>
+    <record>MooMF_thrumbosTamed</record>
+    <subreason>thrumbos</subreason>
+    <workerClass>MooMythicItems.CauseWorker_RecruitedOrTamed</workerClass>
+  </MooMythicItems.MythicCauseDef_RecordThreshold>
+
+</Defs>

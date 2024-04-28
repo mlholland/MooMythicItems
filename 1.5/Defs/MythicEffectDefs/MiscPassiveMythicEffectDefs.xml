@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Mythic effects that grant a passive effect like a hediff, but aren't related to the standard 'improve a skill' array-->
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantThrumboButcher</defName>
+    <equipHediff>MooMF_Hediff_ThrumboButcher</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantThurmboButcher</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantEpicureanWisdom</defName>
+    <equipHediff>MooMF_Hediff_EpicureanWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantEpicureanWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantHerdFeedersWisdom</defName>
+    <equipHediff>MooMF_Hediff_HerdFeedersWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantHerdFeedersWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantHealersWisdom</defName>
+    <equipHediff>MooMF_Hediff_HealersWisdom</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantHealersWisdom</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantRoyalPsyboost</defName>
+    <equipHediff>MooMF_Hediff_ImpPsyboost</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_GrantRoyalPsyboost</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+
+  <MooMythicItems.MythicEffectDef_EquipHediff>
+    <defName>MooMF_GrantArchoPriest</defName>
+    <equipHediff>MooMF_Hediff_ArchoPriest</equipHediff>
+    <effectDescTranslationKey>MooMF_AbilityDescription_ArchoPriest</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_EquipHediff>
+</Defs>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantThurmbocall</defName>
+    <mythicAbilityDef>MooMF_Thrumbocall</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_Thrumbocall</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <!---MooMF_GrantAPRocket is in example patches -->
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAPRocket2</defName>
+    <mythicAbilityDef>MooMF_GrapeshotRocket2</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_APRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAPRocket3</defName>
+    <mythicAbilityDef>MooMF_GrapeshotRocket3</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_APRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantEMPRocket</defName>
+    <mythicAbilityDef>MooMF_BigEMPRocket</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_EMPRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantEMPRocket2</defName>
+    <mythicAbilityDef>MooMF_BigEMPRocket2</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_EMPRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantInfernoRocket</defName>
+    <mythicAbilityDef>MooMF_BigInfernoRocket</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_InfernoRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantInfernoRocket2</defName>
+    <mythicAbilityDef>MooMF_BigInfernoRocket2</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_InfernoRocket</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantAttractTradeShips</defName>
+    <mythicAbilityDef>MooMF_AttractTradeShips</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_AttactTradeShips</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantTamingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveTamingInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_TamingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantCreativeInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveCreativeInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_CreativeInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantTradingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveTradingInspiration</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_TradingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantShootingInspiration</defName>
+    <mythicAbilityDef>MooMF_GiveMassShootingInspirations</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_ShootingInspiration</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+
+  <MooMythicItems.MythicEffectDef_GrantAbility>
+    <defName>MooMF_GrantDiscoverUndergroundDeposit</defName>
+    <mythicAbilityDef>MooMF_DiscoverUndergroundDeposit</mythicAbilityDef>
+    <coolDownWhileUnequipped>false</coolDownWhileUnequipped>
+    <effectDescTranslationKey>MooMF_AbilityDescription_Prospecting</effectDescTranslationKey>
+  </MooMythicItems.MythicEffectDef_GrantAbility>
+ 
+</Defs>

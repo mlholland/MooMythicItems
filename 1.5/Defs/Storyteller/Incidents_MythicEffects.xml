@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- This is a separate incident from the normal Thurmbopasses event to ensure that calling thrumbos doesn't affect the likelihood of a normal thrumbo event from occurring.-->
+  <IncidentDef>
+    <defName>MooMF_ThrumbosAnswer</defName>
+    <label>thrumbos pass (mythic effect)</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_ThrumboPasses</workerClass>
+    <baseChance>0.0</baseChance>
+  </IncidentDef>
+
+
+  <IncidentDef>
+    <defName>MooMF_OrbitalTraderSummoned</defName>
+    <label>orbital traders attracted</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_OrbitalTraderArrival</workerClass>
+    <category>OrbitalVisitor</category>
+    <baseChance>0</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>MooMF_MineralsProspected</defName>
+    <label>Minerals Prospected</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MooMythicItems.IncidentWorker_MineralsProspected</workerClass>
+    <category>Misc</category>
+    <baseChance>0</baseChance>
+    <requireColonistsPresent>True</requireColonistsPresent>
+  </IncidentDef>
+
+</Defs>

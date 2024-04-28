@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Combat -->
+ 
+  <RecordDef>
+    <defName>MooMF_killsInsects</defName>
+    <label>kills (hive insects)</label>
+    <description>The number of aggressive, burrowing insects I have killed.</description>
+    <type>Int</type>
+  </RecordDef>
+
+  <RecordDef>
+    <defName>MooMF_killsThrumbos</defName>
+    <label>kills (non-ally thrumbos)</label>
+    <description>The number of non-allied thrumbos I have killed.</description>
+    <type>Int</type>
+  </RecordDef>
+
+
+  <RecordDef>
+    <defName>MooMF_killsFactionLeaders</defName>
+    <label>kills (faction leaders)</label>
+    <description>The number of faction leaders I have killed.</description>
+    <type>Int</type>
+  </RecordDef>
+
+
+  <RecordDef>
+    <defName>MooMF_thrumbosTamed</defName>
+    <label>thrumbos tamed</label>
+    <description>The number of wild thurmbos I have tamed.</description>
+    <type>Int</type>
+  </RecordDef>
+
+</Defs>

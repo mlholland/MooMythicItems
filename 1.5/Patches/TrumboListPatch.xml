@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- This patch adds modded animal defs to the thrumbo list that is used to determine what consitutes a thrumbo for counting kills and tamings.
+  AnimaThrumbo
+  RoyalThrumbo
+  Archothrumbo
+  -->
+  <Operation  Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Anima Animals</li>
+          <!-- This is to make sure that your patch is only applied when the Mythic Item Mod is loaded.-->
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/MooMythicItems.ThingDefListDef[defName = "MooMF_ThrumboDefList"]/values</xpath>
+          <value>
+            <li>AnimaThrumbo</li>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Royal Thrumbos</li>
+          <!-- This is to make sure that your patch is only applied when the Mythic Item Mod is loaded.-->
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/MooMythicItems.ThingDefListDef[defName = "MooMF_ThrumboDefList"]/values</xpath>
+          <value>
+            <li>RoyalThrumbo</li>
+          </value>
+        </match>
+      </li>
+      <li Class="PatchOperationFindMod">
+        <mods>
+          <li>Save Our Ship 2</li>
+          <!-- This is to make sure that your patch is only applied when the Mythic Item Mod is loaded.-->
+        </mods>
+        <match Class="PatchOperationAdd">
+          <xpath>/Defs/MooMythicItems.ThingDefListDef[defName = "MooMF_ThrumboDefList"]/values</xpath>
+          <value>
+            <li>Archothrumbo</li>
+          </value>
+        </match>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
