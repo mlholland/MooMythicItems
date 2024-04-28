@@ -24,7 +24,6 @@ namespace MooMythicItems
         // need both for logic because coolDownWhileUnequipped is toggle-able
         private static readonly string tickKey = "tickKey";
         private static readonly string cooldownRemaining = "cdKey";
-        private static readonly AccessTools.FieldRef<object, int> coolDownTicksField = AccessTools.FieldRefAccess<int>(typeof(Ability), "cooldownTicks");
 
         public override IEnumerable<string> ConfigErrors()
         {
@@ -65,7 +64,7 @@ namespace MooMythicItems
                 else if (cooldownTicksRemaining != 0) // if this is non-zero, then this item was dropped while its mythic ability was on cooldown.
                 {
                     ability.StartCooldown(mythicAbilityDef.cooldownTicksRange.RandomInRange);
-                    ref int abilityCooldownTicks = ref coolDownTicksField.Invoke(ability);
+                    int abilityCooldownTicks = ability.CooldownTicksRemaining;
                     if (!coolDownWhileUnequipped)
                     {
                         abilityCooldownTicks = cooldownTicksRemaining;

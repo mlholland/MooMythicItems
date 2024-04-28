@@ -54,7 +54,7 @@ namespace MooMythicItems
                 return false;
             }
             // make sure it's not an item that destroys after running out of charges like an insanity lance.
-            CompProperties_Reloadable reload = def.GetCompProperties<CompProperties_Reloadable>();
+            CompProperties_ApparelReloadable reload = def.GetCompProperties<CompProperties_ApparelReloadable>();
             if (reload != null && reload.destroyOnEmpty)
             {
                 DebugActions.LogIfDebug("Item type '{0}' is not a valid mythic item option because it gets destroyed when it runs out of charges.", def.label);

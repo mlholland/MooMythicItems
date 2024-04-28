@@ -47,9 +47,10 @@ namespace MooMythicItems
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn myPawn)
         {
             string text;
-            if (!this.CanBeUsedBy(myPawn, out text))
+            if (!this.CanBeUsedBy(myPawn))
             {
-                yield return new FloatMenuOption(this.FloatMenuOptionLabel(myPawn) + ((text != null) ? (" (" + text + ")") : ""), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
+                // TODO see 1.5 update history: What happened to fail reason?
+                yield return new FloatMenuOption(this.FloatMenuOptionLabel(myPawn), null, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
             }
             else if (!myPawn.CanReach(this.parent, PathEndMode.Touch, Danger.Deadly, false, false, TraverseMode.ByPawn))
             {
@@ -86,18 +87,17 @@ namespace MooMythicItems
             yield break;
         }
 
-        protected bool CanBeUsedBy(Pawn p, out string failReason)
+        protected bool CanBeUsedBy(Pawn p)
         {
             List<ThingComp> allComps = this.parent.AllComps;
             for (int i = 0; i < allComps.Count; i++)
             {
                 CompUseEffect compUseEffect = allComps[i] as CompUseEffect;
-                if (compUseEffect != null && !compUseEffect.CanBeUsedBy(p, out failReason))
+                if (compUseEffect != null && !compUseEffect.CanBeUsedBy(p))
                 {
                     return false;
                 }
             }
-            failReason = null;
             return true;
         }
 

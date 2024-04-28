@@ -1,0 +1,6 @@
+
+*.cache
+Source/MooLegacyItems/.vs/LegacyItems/v15/.suo
+*.ide
+*.ide-shm
+*.ide-wal
