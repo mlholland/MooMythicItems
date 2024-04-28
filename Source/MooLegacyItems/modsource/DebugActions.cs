@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using LudeonTK;
 
 /* The settings tab for this mod, will eventually include a bunch of controls.*/
 namespace MooMythicItems
@@ -36,7 +37,7 @@ namespace MooMythicItems
             Log.Warning(debugPrefix.Translate() + String.Format(printVal, args));
         }
 
-        [DebugAction("Spawning", "Create Mythic Item", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [DebugActionAttribute("Spawning", "Create Mythic Item", false, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void CreateAndPlaceMythicItem()
         {
             // select a cause
