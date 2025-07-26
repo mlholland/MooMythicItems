@@ -85,14 +85,14 @@ namespace MooMythicItems
             //ls.IntEntry(ref minimumLevelForSkillItems, ref minimumLevelForSkillItemsString);
             ls.Label("MooMF_MaxMythicItemsSaved".Translate() + ": " + mythicItemSaveLimit, -1);
             ls.IntEntry(ref mythicItemSaveLimit, ref mythicItemSaveLimitInputString);
-            ls.Label("MooMF_MaxItemOccurence".Translate() + ": " + individualItemOccurenceLimit, -1, "MooMF_MaxItemOccurenceTooltip".Translate());
+            ls.Label(new TaggedString("MooMF_MaxItemOccurence".Translate() + ": " + individualItemOccurenceLimit), -1, "MooMF_MaxItemOccurenceTooltip".Translate());
             ls.IntEntry(ref individualItemOccurenceLimit, ref individualItemOccurenceLimitString);
-            ls.Label(String.Format("MooMF_SkillLevelOffset".Translate(), skillLevelOffset, (20 + skillLevelOffset)), -1, "MooMF_SkillLevelOffsetTooltip".Translate());
+            ls.Label(new TaggedString(String.Format("MooMF_SkillLevelOffset".Translate(), skillLevelOffset, (20 + skillLevelOffset))), -1, "MooMF_SkillLevelOffsetTooltip".Translate());
             skillLevelOffsetFloat = ls.Slider(skillLevelOffsetFloat, -15f, maxSkillOffset);
             skillLevelOffset = (int)skillLevelOffsetFloat;
 
             // kill count scaling and showing
-            ls.Label("MooMF_KillCountScaling".Translate() + ": " + killCountScaling, -1, "MooMF_KillCountScalingTooltip".Translate());
+            ls.Label(new TaggedString("MooMF_KillCountScaling".Translate() + ": " + killCountScaling), -1, (string)"MooMF_KillCountScalingTooltip".Translate());
             killCountScaling = (float)Math.Round(ls.Slider(killCountScaling, 0.1f, 10f), 2);
             ls.CheckboxLabeled("MooMF_ShowKillThresholds".Translate(), ref flagShowKillThresholds, "MooMF_ShowKillThresholdsToolTip".Translate());
             if (flagShowKillThresholds)

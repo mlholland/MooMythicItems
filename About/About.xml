@@ -4,7 +4,8 @@
 	<supportedVersions>
 		<li>1.3</li>
     <li>1.4</li>
-    <li>1.5</li>
+		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
   <modDependencies>
     <li>
@@ -30,7 +31,7 @@
 
 	<packageId>mooloh.mythicitems</packageId>
 
-  <description>Now (tentatively) updated for Rimworld 1.5! Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities. They appear in your OTHER colonies as quest rewards. See description for in-depth mechanics and info.
+  <description>Now (tentatively) updated for Rimworld 1.6! Chronicles the triumphs of your colonists by creating 'Mythic Items' based on their achievements. Mythic Items are weapons and apparel with special names, descriptions, and abilities. They appear in your OTHER colonies as quest rewards. See description for in-depth mechanics and info.
 Known issues include:
   
   - Compatability patches to allow item qualities from other mods (like enchantments or infusions) are disabled until those mods are updated to 1.4 and I have time to examine them again.
@@ -40,13 +41,13 @@ Known issues include:
 
 I play a lot of Dungeons and Dragons, so I believe that what makes an item 'legendary' is NOT just the quality of the item when it is first assembled. What really matters are the stories and events that an item has been involved in. In other words, something should be legendary because it has legends about it! However, since the words 'legendary', 'relic', and 'artifact' are already used in this game, I'm calling these storied items 'mythic items'.
  
-To that end, this mod waits for your colonists to achieve impressive feats. When that happens, it creates a mythic item based on that colonist's weapon or clothing. This mythic item is a legendary version of the original item, with a unique name, description, and ability that pertain to whatever the colonist did to earn their reputation. Once mythic items have been created, this mod will occasionally spawn those mythic items as quest rewards once you start a new colony, There they will serve as a reminder your prior achievements while also giving your new colony a unique boost.
+To that end, this mod waits for your colonists to achieve impressive feats. When that happens, it creates a mythic item based on that colonist's weapon or clothing. This mythic item is a legendary version of the original item, with a unique name, description, and ability that pertain to whatever the colonist did to earn their reputation. Once mythic items have been created, this mod will occasionally spawn those mythic items as quest rewards once you start a new colony, where they will serve as a reminder your prior achievements while also giving your new colony a unique boost.
 
 &lt;size=24&gt;Installing&lt;/size&gt;
 
 This mod is safe to add and remove from existing saves. If it's removed from an existing game, any mythic items in the game will revert to normal items. Saved mythic items (that could potentially be generated in new games) are not removed upon disabling the mod, but can be manually cleared in the settings.
 
-If a saved mythic item becomes invalid (EX: because you disabled the mod that a mythic item's actual item is from), that mythic item will be stored in a backup file. You can manually try to reload such items in this mod's settings.
+If a saved mythic item becomes invalid (EX: because you disabled the mod that a mythic item's base item is from), that mythic item will be stored in a backup file. You can manually try to reload such items in this mod's settings.
 
 &lt;size=24&gt;Mythic Creation&lt;/size&gt;
 
@@ -144,9 +145,10 @@ This mod would benefit from more than just two people writing flavor text. If yo
 
 &lt;size=24&gt;Changelog&lt;/size&gt;
 
-  - ???: v1.1u added Rimworld v1.4 support. Future development will before this version only.
-  - 6/22/2022: v1.1 Add several new settings options, some bug fixes, and mod compatability patches.
-  - 6/11/2022: v1.0 Initial Release
+    - 7/2025: v1.1o added Rimworld v1.6 support.
+    - ???: v1.1u added Rimworld v1.4 support. Future development will before this version only.
+    - 6/22/2022: v1.1 Add several new settings options, some bug fixes, and mod compatability patches.
+    - 6/11/2022: v1.0 Initial Release
 
-</description>
+  </description>
 </ModMetaData>

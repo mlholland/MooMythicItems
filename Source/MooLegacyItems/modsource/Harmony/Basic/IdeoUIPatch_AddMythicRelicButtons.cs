@@ -22,7 +22,7 @@ namespace MooMythicItems
         // Slightly wider than normal buttons for differentiation
         private static readonly Vector2 AddMythicRelicButtonSize = new Vector2(200f, 30f);
 
-        static void Postfix(string categoryLabel, string addPreceptLabel, bool mainPrecepts, Ideo ideo, IdeoEditMode editMode, ref float curY, float width, Func<PreceptDef, bool> filter, bool sortFloatMenuOptionsByLabel) //pass the __result by ref to alter it.
+        static void Postfix(string categoryLabel, string addPreceptLabel, bool mainPrecepts, Ideo ideo, IdeoEditMode editMode, ref float curY, float width, Func<PreceptDef, bool> filter, bool group) //pass the __result by ref to alter it.
         {
             // First, only add the mythic-relic buttons right after the normal relic stuff, and only if we're in an editing mode
             if (categoryLabel == "IdeoRelics".Translate() && editMode != IdeoEditMode.None)
